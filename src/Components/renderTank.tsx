@@ -2,7 +2,7 @@
 import { Tank } from "../tanksData.";
 import { renderColor } from "../functions/renderColor";
 
-const BORDER_THICKNESS = 10;
+const BORDER_THICKNESS = 7.5;
 const DEFAULT_VIEW_BOUNDARIES = 150
 
 interface RenderTankProps {
@@ -58,7 +58,7 @@ export function RenderTank({
     for (let offset of offsets) {
       const points = Array.from({ length: 6 }, (_, i) => {
         const angle = (Math.PI * 2 * (i + offset)) / 6 + rotation;
-        const distance = tankSize / Math.cos(Math.PI / 6);
+        const distance = 50 * sizeFactor / Math.cos(Math.PI / 6);
         return `${distance * Math.cos(angle)},${distance * Math.sin(angle)}`;
       }).join(" ");
       polygons.push(
@@ -73,20 +73,68 @@ export function RenderTank({
       );
     }
   }
+  if (tank.preAddon === "dominator") {
+    const points = Array.from({ length: 6 }, (_, i) => {
+      const angle = (Math.PI * 2 * i) / 6;
+      const distance = 62 * sizeFactor;
+      return `${distance * Math.cos(angle)},${distance * Math.sin(angle)}`;
+    }).join(" ");
+    polygons.push(
+      <polygon
+        key={`${tank.id}-post-addon-${polygons.length}`}
+        points={points}
+        fill={renderColor(smasherColor)}
+        stroke={renderColor(smasherColor.map(v => v * (1 - borderOpacity)))}
+        strokeWidth={BORDER_THICKNESS}
+        strokeLinejoin="round"
+      />
+    );
+  }
 
+  
+  
   // barrels
+  const barrelPolygons: Array<Array<[number, number]>> = []
+  
+  // barrel decorations
+  if (tank.preAddon === "skimmer-rocketeer") {
+    const width = 0.8
+    const size = 65 * Math.SQRT2
+    let points: Array<[number, number]> = [
+      [size, width * 42 * 0.5 * 1.75],
+      [size, -width * 42 * 0.5 * 1.75],
+      [0, -width * 42 * 0.5],
+      [0, width * 42 * 0.5],
+    ]
+    barrelPolygons.push(points)
+  }
+  if (tank.preAddon === "glider") {
+    const width = 0.8
+    const size = 65 * Math.SQRT2
+    let points: Array<[number, number]> = [
+      [size, width * 42 * 0.5],
+      [size, -width * 42 * 0.5],
+      [0, -width * 42 * 0.5 * 1.75],
+      [0, width * 42 * 0.5 * 1.75],
+    ]
+    barrelPolygons.push(points)
+  }
+
   for (const barrel of tank.barrels) {
     let points: Array<[number, number]> = []
+    
     if (barrel.isTrapezoid) {
       if (barrel.trapezoidDirection === 0) {
         points = [
-            [barrel.size, barrel.width * 42 * 0.5 * 1.75],
-            [barrel.size, -barrel.width * 42 * 0.5 * 1.75],
-            [0, -barrel.width * 42 * 0.5],
-            [0, barrel.width * 42 * 0.5],
-          ]
+          ...points,
+          [barrel.size, barrel.width * 42 * 0.5 * 1.75],
+          [barrel.size, -barrel.width * 42 * 0.5 * 1.75],
+          [0, -barrel.width * 42 * 0.5],
+          [0, barrel.width * 42 * 0.5],
+        ]
       } else {
         points = [
+          ...points,
           [barrel.size, barrel.width * 42 * 0.5],
           [barrel.size, -barrel.width * 42 * 0.5],
           [0, -barrel.width * 42 * 0.5 * 1.75],
@@ -95,6 +143,7 @@ export function RenderTank({
       }
     } else {
       points = [
+        ...points,
         [barrel.size, barrel.width * 42 * 0.5],
         [barrel.size, -barrel.width * 42 * 0.5],
         [0, -barrel.width * 42 * 0.5],
@@ -110,12 +159,44 @@ export function RenderTank({
         [barrel.size, -barrel.width * 42 * 0.5],
       ];
     }
-
+    
     points = points.map(([x, y]) => [x, y + barrel.offset]);
+    points = points.map(([x, y]) =>
+      rotateVector([x, y], barrel.angle)
+    );
+
+    barrelPolygons.push(points)
+  }
+
+  // post addons
+  if (tank.postAddon === "ranger") {
+    const width = 1
+    let points: Array<[number, number]> = [
+      [67.5, width * 42 * 0.5],
+      [67.5, -width * 42 * 0.5],
+      [12.5, -width * 42 * 0.5 * 1.75],
+      [12.5, width * 42 * 0.5 * 1.75],
+    ]
+    barrelPolygons.push(points)
+  }
+  if (tank.postAddon === "dominator") {
+    const width = 5/6
+    let points: Array<[number, number]> = [
+      [66, width * 42 * 0.5],
+      [66, -width * 42 * 0.5],
+      [44, -width * 42 * 0.5 * 1.75],
+      [44, width * 42 * 0.5 * 1.75],
+    ]
+    barrelPolygons.push(points)
+  }
+
+
+  // rendering
+  for (let points of barrelPolygons) {
     points = points.map(([x, y]) => [x * sizeFactor, y * sizeFactor])
     points = points.map(([x, y]) =>
-      rotateVector([x, y], barrel.angle + rotation)
-    );
+      rotateVector([x, y], rotation)
+    )
 
     for (let [x,y] of points) {
       maxX = Math.max(maxX, x)
@@ -124,16 +205,18 @@ export function RenderTank({
       minY = Math.min(minY, y)
     }
 
-    polygons.push(
-      <polygon
-        key={`${tank.id}-barrel-${polygons.length}`}
-        points={points.map((p) => p.join(",")).join(" ")}
-        fill={renderColor(barrelColor)}
-        stroke={renderColor(barrelColor.map(v => v * (1 - borderOpacity)))}
-        strokeWidth={BORDER_THICKNESS}
-        strokeLinejoin="round"
-      />
-    );
+    for (let pointGroupStart = 0; pointGroupStart < points.length; pointGroupStart += 4) {
+      polygons.push(
+        <polygon
+          key={`${tank.id}-barrel-${polygons.length}`}
+          points={points.slice(pointGroupStart, pointGroupStart + 4).map((p) => p.join(",")).join(" ")}
+          fill={renderColor(barrelColor)}
+          stroke={renderColor(barrelColor.map(v => v * (1 - borderOpacity)))}
+          strokeWidth={BORDER_THICKNESS}
+          strokeLinejoin="round"
+        />
+      );
+    }
   }
 
   // body
