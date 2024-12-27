@@ -80,34 +80,34 @@ export function RenderTank({
     if (barrel.isTrapezoid) {
       if (barrel.trapezoidDirection === 0) {
         points = [
-            [barrel.size, barrel.width * 0.5 * 1.75],
-            [barrel.size, -barrel.width * 0.5 * 1.75],
-            [0, -barrel.width * 0.5],
-            [0, barrel.width * 0.5],
+            [barrel.size, barrel.width * 42 * 0.5 * 1.75],
+            [barrel.size, -barrel.width * 42 * 0.5 * 1.75],
+            [0, -barrel.width * 42 * 0.5],
+            [0, barrel.width * 42 * 0.5],
           ]
       } else {
         points = [
-          [barrel.size, barrel.width * 0.5],
-          [barrel.size, -barrel.width * 0.5],
-          [0, -barrel.width * 0.5 * 1.75],
-          [0, barrel.width * 0.5 * 1.75],
+          [barrel.size, barrel.width * 42 * 0.5],
+          [barrel.size, -barrel.width * 42 * 0.5],
+          [0, -barrel.width * 42 * 0.5 * 1.75],
+          [0, barrel.width * 42 * 0.5 * 1.75],
         ]
       }
     } else {
       points = [
-        [barrel.size, barrel.width * 0.5],
-        [barrel.size, -barrel.width * 0.5],
-        [0, -barrel.width * 0.5],
-        [0, barrel.width * 0.5],
+        [barrel.size, barrel.width * 42 * 0.5],
+        [barrel.size, -barrel.width * 42 * 0.5],
+        [0, -barrel.width * 42 * 0.5],
+        [0, barrel.width * 42 * 0.5],
       ];
     }
 
     if (barrel.addon === "trapLauncher") {
       points = [...points, 
-        [barrel.size, barrel.width * 0.5],
-        [barrel.size + (tank.id === 34 ? 26 : 20), barrel.width * 0.5 * 1.75],
-        [barrel.size + (tank.id === 34 ? 26 : 20), -barrel.width * 0.5 * 1.75],
-        [barrel.size, -barrel.width * 0.5],
+        [barrel.size, barrel.width * 42 * 0.5],
+        [barrel.size + (tank.id === 34 ? 26 : 20), barrel.width * 42 * 0.5 * 1.75],
+        [barrel.size + (tank.id === 34 ? 26 : 20), -barrel.width * 42 * 0.5 * 1.75],
+        [barrel.size, -barrel.width * 42 * 0.5],
       ];
     }
 
