@@ -15,7 +15,7 @@ function TankGrid({tankIds}: {tankIds: Array<string>}) {
                 const tank = tanksData[id]
                 return (
                     
-                    <Link to={"/tank/" + id} className="tank" style={{"--color": renderColor(tankColors[tank.color])} as React.CSSProperties}>
+                    <Link to={"/tanks/" + id} className="tank" style={{"--color": renderColor(tankColors[tank.color])} as React.CSSProperties}>
                         <RenderTank tank={tank} level={Math.max(tank.levelRequirement ?? 0, 1)} rotation={-Math.PI / 4} />
                         <div className="name">{tank.name}</div>
                     </Link>
