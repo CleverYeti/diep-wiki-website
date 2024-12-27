@@ -1,0 +1,34 @@
+#main-nav {
+    position: sticky;
+    top: 0;
+    margin: 0 auto 1rem auto;
+    width: calc(100% - 2rem);
+    max-width: 60rem;
+    height: 4rem;
+    border-radius: 0 0 0.75rem 0.75rem;
+    background: var(--section-bg);
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    gap: 0.5rem;
+    box-shadow: var(--shadow);
+}
+
+#main-nav > a {
+    display: contents;
+}
+
+#main-nav > * > .logo {
+    height: 3rem;
+    opacity: 0.9;
+}
+#main-nav > * > .tab {
+    height: 3rem;
+    display: grid;
+    place-content: center;
+    padding: 0 0.5rem;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 500;
+    color: var(--text-2)
+}

@@ -1,0 +1,66 @@
+import { useState } from "react";
+import { Tank } from "../tanksData.";
+import { RenderTank } from "./renderTank";
+import "./tankPreview.css"
+import { renderColor } from "../functions/renderColor"
+import { tankColors } from "../tanksData.";
+
+export function TankPreview({tank}: {tank: Tank}) {
+    const [isSettingsOpen, setSettingsOpen] = useState(false)
+
+    const [rotation, setRotation] = useState(-45)
+    const [color, setColor] = useState([0, 177, 222])
+    const [fixedLevel, setFixedLevel] = useState(0)
+    const [lastTankFixedLevel, setLastTankFixedLevel] = useState("")
+    const setLevel = (level: number) => {
+        setLastTankFixedLevel(tank.key)
+        setFixedLevel(level)
+    }
+    const [hexColor, setHexColor] = useState(getHexColor(color))
+    function setColorFromHex(value:string) {
+        setHexColor(value)
+        value = value.replaceAll(" ", "")
+        if (value[0] == "#") value = value.slice(1)
+        const hexRegex = /^[0-9A-Fa-f]{3,6}$/;
+        if (!hexRegex.test(value)) return
+        if (value.length === 3) value = value.split('').map(x => x + x).join('')
+        if (value.length !== 6) return
+        const r = parseInt(value.slice(0, 2), 16);
+        const g = parseInt(value.slice(2, 4), 16);
+        const b = parseInt(value.slice(4, 6), 16);
+        setColor([r, g, b])
+    }
+    function getHexColor(color: Array<number>) {
+        return "#" + color.map(value => value.toString(16).padStart(2, '0')).join('');
+    }
+    return (
+        <div className="tank-preview" style={{"--color": renderColor(tankColors[tank.color])} as React.CSSProperties}>
+            <RenderTank tank={tank} rotation={rotation / 180 * Math.PI} color={color} level={lastTankFixedLevel == tank.key ? fixedLevel : Math.max(1, tank.levelRequirement ?? 0)}/>
+            <div className="toggle-settings">
+            </div>
+            <div className="preview-settings">
+                <div className="setting-row">
+                    <div className="name">Level</div>
+                    <input type="number" name="" id="" min={1} max={45}
+                        value={lastTankFixedLevel == tank.key ? fixedLevel : Math.max(1, tank.levelRequirement ?? 0)}
+                        onChange={event => setLevel(parseInt(event.target.value))}
+                    />
+                    <input type="range" name="" id="" min={1} max={45}
+                        value={lastTankFixedLevel == tank.key ? fixedLevel : Math.max(1, tank.levelRequirement ?? 0)}
+                        onChange={event => setLevel(parseInt(event.target.value))}
+                    />
+                </div>
+                <div className="setting-row">
+                    <div className="name">Rotation</div>
+                    <input type="number" name="" id="" min={0} max={360} value={rotation} onChange={event => setRotation(parseInt(event.target.value))}/>
+                    <input type="range" name="" id="" min={0} max={360} value={rotation} onChange={event => setRotation(parseInt(event.target.value))}/>
+                </div>
+                <div className="setting-row">
+                    <div className="name">Color</div>
+                    <input type="text" name="" id="" value={hexColor} onChange={event => setColorFromHex(event.target.value)}/>
+                    <input type="color" name="" id="" value={getHexColor(color)} onChange={event => setColorFromHex(event.target.value)}/>
+                </div>
+            </div>
+        </div>
+    )
+}
