@@ -11,11 +11,11 @@ import { TankPreview } from "../Components/TankPreview"
 function TankGrid({tankIds}: {tankIds: Array<string>}) {
     return (
         <div className="tank-grid">
-            {tankIds.map(id => {
+            {tankIds.map((id, i) => {
                 const tank = tanksData[id]
                 return (
                     
-                    <Link to={"/tanks/" + id} className="tank" style={{"--color": renderColor(tankColors[tank.color])} as React.CSSProperties}>
+                    <Link to={"/tanks/" + id} className="tank" style={{"--color": renderColor(tankColors[i])} as React.CSSProperties}>
                         <RenderTank tank={tank} level={Math.max(tank.levelRequirement ?? 0, 1)} rotation={-Math.PI / 4} />
                         <div className="name">{tank.name}</div>
                     </Link>
