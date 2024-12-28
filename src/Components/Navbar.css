@@ -12,6 +12,7 @@
     padding: 0.5rem;
     gap: 0.5rem;
     box-shadow: var(--shadow);
+    z-index: 1000;
 }
 
 #main-nav > a {
