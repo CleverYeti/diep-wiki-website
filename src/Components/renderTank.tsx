@@ -9,6 +9,7 @@ interface RenderTankProps {
   tank: Tank;
   level?: number;
   rotation?: number;
+  autoTurretRotation?: number;
   color?: Array<number>;
   borderOpacity?: number;
   barrelColor?: Array<number>;
@@ -20,6 +21,7 @@ export function RenderTank({
   tank,
   level = 1,
   rotation = 0,
+  autoTurretRotation = 0,
   color = [0, 177, 222],
   borderOpacity = 0.25,
   barrelColor = [153, 153, 153],
@@ -182,12 +184,36 @@ export function RenderTank({
   if (tank.postAddon === "dominator") {
     const width = 5/6
     let points: Array<[number, number]> = [
-      [66, width * 42 * 0.5],
-      [66, -width * 42 * 0.5],
-      [44, -width * 42 * 0.5 * 1.75],
-      [44, width * 42 * 0.5 * 1.75],
+      [61, width * 42 * 0.5],
+      [61, -width * 42 * 0.5],
+      [39, -width * 42 * 0.5 * 1.75],
+      [39, width * 42 * 0.5 * 1.75],
     ]
     barrelPolygons.push(points)
+  }
+
+  // auto 3/5 turret barrels
+  if (["auto3", "auto5"].includes(tank.postAddon ?? "")) {
+    const cannonCount = tank.postAddon === "auto5" ? 5 : 3
+    for (let i = 0; i < cannonCount; i++) {
+      const angle = i / cannonCount * Math.PI * 2
+      const size = 55
+      const width = 0.7
+      let points:Array<[number, number]> = [
+        [size, width * 42 * 0.5],
+        [size, -width * 42 * 0.5],
+        [0, -width * 42 * 0.5],
+        [0, width * 42 * 0.5],
+      ];
+      points = points.map(([x, y]) =>
+        rotateVector([x, y], autoTurretRotation)
+      );
+      points = points.map(([x, y]) => [x + 40, y])
+      points = points.map(([x, y]) =>
+        rotateVector([x, y], angle)
+      );
+      barrelPolygons.push(points)
+    }
   }
 
 
@@ -216,6 +242,26 @@ export function RenderTank({
           strokeLinejoin="round"
         />
       );
+    }
+  }
+
+  // auto circles
+  if (["auto3", "auto5"].includes(tank.postAddon ?? "")) {
+    const cannonCount = tank.postAddon === "auto5" ? 5 : 3
+    for (let i = 0; i < cannonCount; i++) {
+      const angle = i / cannonCount * Math.PI * 2
+      polygons.push(
+        <circle
+          key={tank.id + "-barrel-" + polygons.length}
+          cx={Math.cos(rotation + angle) * 40 * sizeFactor}
+          cy={Math.sin(rotation + angle) * 40 * sizeFactor}
+          r={25 * sizeFactor}
+          fill={renderColor(barrelColor)}
+          stroke={renderColor(barrelColor.map(v => v * (1 - borderOpacity)))}
+          strokeWidth={BORDER_THICKNESS}
+          strokeLinejoin="round"
+        />
+      )
     }
   }
 
@@ -254,6 +300,46 @@ export function RenderTank({
   if (reCenter) {
     offsetX = -0.5 * (maxX + minX)
     offsetY = -0.5 * (maxY + minY)
+  }
+
+
+  // auto turret
+  if (tank.postAddon == "autoturret") {
+    const size = 55
+    const width = 0.7
+    let points = [
+      [size, width * 42 * 0.5],
+      [size, -width * 42 * 0.5],
+      [0, -width * 42 * 0.5],
+      [0, width * 42 * 0.5],
+    ];
+    points = points.map(([x, y]) => [x * sizeFactor, y * sizeFactor])
+    points = points.map(([x, y]) =>
+      rotateVector([x, y], autoTurretRotation)
+    );
+    polygons.push(
+      <polygon
+        key={`${tank.id}-barrel-${polygons.length}`}
+        points={points.map((p) => p.join(",")).join(" ")}
+        fill={renderColor(barrelColor)}
+        stroke={renderColor(barrelColor.map(v => v * (1 - borderOpacity)))}
+        strokeWidth={BORDER_THICKNESS}
+        strokeLinejoin="round"
+      />
+    );
+    
+    polygons.push(
+      <circle
+        key={tank.id + "-barrel-" + polygons.length}
+        cx="0"
+        cy="0"
+        r={25 * sizeFactor}
+        fill={renderColor(barrelColor)}
+        stroke={renderColor(barrelColor.map(v => v * (1 - borderOpacity)))}
+        strokeWidth={BORDER_THICKNESS}
+        strokeLinejoin="round"
+      />
+    )
   }
 
   // return svg

@@ -554,7 +554,7 @@ export const tanksData:TanksData = {
     "levelRequirement": 30,
     "upgrades": [
       "octo tank",
-      "auto 5"
+      "auto-5"
     ],
     "flags": {
       "invisibility": false,
@@ -1137,7 +1137,7 @@ export const tanksData:TanksData = {
       "tri-angle",
       "quad tank",
       "twin flank",
-      "auto 3"
+      "auto-3"
     ],
     "flags": {
       "invisibility": false,
@@ -5107,11 +5107,11 @@ export const tanksData:TanksData = {
     "key": "auto gunner",
     "upgradesFrom": [
       "gunner",
-      "auto 3"
+      "auto-3"
     ],
     "color": 0
   },
-  "auto 5": {
+  "auto-5": {
     "id": 40,
     "name": "Auto 5",
     "upgradeMessage": "",
@@ -5169,20 +5169,20 @@ export const tanksData:TanksData = {
         "max": 7
       }
     ],
-    "key": "auto 5",
+    "key": "auto-5",
     "upgradesFrom": [
       "quad tank",
-      "auto 3"
+      "auto-3"
     ],
     "color": 1
   },
-  "auto 3": {
+  "auto-3": {
     "id": 41,
     "name": "Auto 3",
     "upgradeMessage": "",
     "levelRequirement": 30,
     "upgrades": [
-      "auto 5",
+      "auto-5",
       "auto gunner"
     ],
     "flags": {
@@ -5237,7 +5237,7 @@ export const tanksData:TanksData = {
         "max": 7
       }
     ],
-    "key": "auto 3",
+    "key": "auto-3",
     "upgradesFrom": [
       "flank guard"
     ],
