@@ -348,6 +348,7 @@ export function RenderTank({
       key={tank.id}
       viewBox={`-${viewBoundaries + offsetX} -${viewBoundaries + offsetY} ${viewBoundaries * 2} ${viewBoundaries * 2}`}
       xmlns="http://www.w3.org/2000/svg"
+      data-view-boundaries={viewBoundaries}
     >
       {polygons}
     </svg>

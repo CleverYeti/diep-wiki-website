@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useState, MutableRefObject, useRef} from "react";
 import { Tank } from "../tanksData.";
 import { RenderTank } from "./renderTank";
 import "./tankPreview.css"
 import { renderColor } from "../functions/renderColor"
 import { tankColors } from "../tanksData.";
+import { downloadSVG } from "../functions/downloadSVG";
 
 export function TankPreview({tank}: {tank: Tank}) {
     const [isSettingsOpen, setSettingsOpen] = useState(false)
+    const [isDownloadOpen, setDownloadOpen] = useState(false)
 
     const [rotation, setRotation] = useState(-45)
     const [color, setColor] = useState([0, 177, 222])
@@ -33,12 +35,40 @@ export function TankPreview({tank}: {tank: Tank}) {
     function getHexColor(color: Array<number>) {
         return "#" + color.map(value => value.toString(16).padStart(2, '0')).join('');
     }
+    const elementRef = useRef<HTMLDivElement>(null)
     return (
-        <div className="tank-preview" style={{"--color": renderColor(tankColors[tank.color])} as React.CSSProperties}>
+        <div ref={elementRef} className="tank-preview" style={{"--color": renderColor(tankColors[tank.color])} as React.CSSProperties}>
             <RenderTank tank={tank} rotation={rotation / 180 * Math.PI} color={color} level={lastTankFixedLevel == tank.key ? fixedLevel : Math.max(1, tank.levelRequirement ?? 0)}/>
-            <div className="toggle-settings">
+            <div className="toggle-settings corner-button" onClick={() => setSettingsOpen(!isSettingsOpen)}>
+                <img src="/icons/settings.svg"/>
             </div>
-            <div className="preview-settings">
+            <div className="toggle-download corner-button" onClick={() => setDownloadOpen(!isDownloadOpen)}>
+                <img src="/icons/download.svg" alt="" />
+            </div>
+            <div className="preview-download" data-active={isDownloadOpen}>
+                <a className="option" onClick={() => {
+                    if (!elementRef.current) return
+                    const svg = elementRef.current.querySelector("svg")
+                    if (!svg) return
+                    downloadSVG(svg, tank.key, false, 1)
+                    setDownloadOpen(false)
+                }}>Download SVG</a>
+                <a className="option" onClick={() => {
+                    if (!elementRef.current) return
+                    const svg = elementRef.current.querySelector("svg")
+                    if (!svg) return
+                    downloadSVG(svg, tank.key, true, 1)
+                    setDownloadOpen(false)
+                }}>Download PNG (x1)</a>
+                <a className="option" onClick={() => {
+                    if (!elementRef.current) return
+                    const svg = elementRef.current.querySelector("svg")
+                    if (!svg) return
+                    downloadSVG(svg, tank.key, true, 5)
+                    setDownloadOpen(false)
+                }}>Download PNG (x5)</a>
+            </div>
+            <div className="preview-settings" data-active={isSettingsOpen}>
                 <div className="setting-row">
                     <div className="name">Level</div>
                     <input type="number" name="" id="" min={1} max={45}
