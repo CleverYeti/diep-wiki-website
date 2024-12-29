@@ -19,16 +19,21 @@ export interface Barrel {
   offset: number;
   size: number;
   width: number;
-  delay: number;
-  reload: number;
-  recoil: number;
   isTrapezoid: boolean;
   trapezoidDirection: number;
   addon: string | null;
-  bullet: Bullet;
+  delay: number;
+  barrelStats: string;
+}
+
+export interface BarrelStats {
+  name: string;
+  reload: number;
+  recoil: number;
   droneCount?: number;
   canControlDrones?: boolean;
   forceFire?: boolean;
+  bullet: Bullet;
 }
 
 export interface Flags {
@@ -61,6 +66,9 @@ export interface Tank {
   key: string;
   upgradesFrom: string[];
   color: number;
+  barrelStats: {
+    [key: string]: BarrelStats
+  }
 }
 
 export interface TanksData {
@@ -86,8 +94,8 @@ export const tanksData:TanksData = {
     "upgrades": [
       "twin",
       "sniper",
-      "machine gun",
-      "flank guard",
+      "machine-gun",
+      "flank-guard",
       "smasher"
     ],
     "flags": {
@@ -113,22 +121,11 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 1,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -166,7 +163,24 @@ export const tanksData:TanksData = {
       }
     ],
     "key": "basic",
-    "upgradesFrom": []
+    "upgradesFrom": [],
+    "barrelStats": {
+      "main": {
+        "name": "Cannon",
+        "reload": 1,
+        "recoil": 1,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 1,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "twin": {
     "id": 1,
@@ -174,9 +188,9 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 15,
     "upgrades": [
-      "triple shot",
-      "quad tank",
-      "twin flank"
+      "triple-shot",
+      "quad-tank",
+      "twin-flank"
     ],
     "flags": {
       "invisibility": false,
@@ -201,44 +215,22 @@ export const tanksData:TanksData = {
         "offset": -26,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 0.75,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 0.9,
-          "damage": 0.65,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": 26,
         "size": 95,
         "width": 1,
-        "delay": 0.5,
-        "reload": 1,
-        "recoil": 0.75,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 0.9,
-          "damage": 0.65,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.5,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -279,7 +271,24 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "basic"
     ],
-    "color": 0
+    "color": 0,
+    "barrelStats": {
+      "main": {
+        "name": "Cannons",
+        "reload": 1,
+        "recoil": 0.75,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 0.9,
+          "damage": 0.65,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "triplet": {
     "id": 2,
@@ -310,66 +319,33 @@ export const tanksData:TanksData = {
         "offset": -26,
         "size": 80,
         "width": 1,
-        "delay": 0.5,
-        "reload": 1,
-        "recoil": 0.5,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 0.7,
-          "damage": 0.6,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.5,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": 26,
         "size": 80,
         "width": 1,
-        "delay": 0.5,
-        "reload": 1,
-        "recoil": 0.5,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 0.7,
-          "damage": 0.6,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.5,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 0.5,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 0.7,
-          "damage": 0.6,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -408,19 +384,36 @@ export const tanksData:TanksData = {
     ],
     "key": "triplet",
     "upgradesFrom": [
-      "triple shot"
+      "triple-shot"
     ],
-    "color": 0
+    "color": 0,
+    "barrelStats": {
+      "main": {
+        "name": "Cannons",
+        "reload": 1,
+        "recoil": 0.5,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 0.7,
+          "damage": 0.6,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
-  "triple shot": {
+  "triple-shot": {
     "id": 3,
     "name": "Triple Shot",
     "upgradeMessage": "",
     "levelRequirement": 30,
     "upgrades": [
       "triplet",
-      "penta shot",
-      "spread shot"
+      "penta-shot",
+      "spread-shot"
     ],
     "flags": {
       "invisibility": false,
@@ -445,66 +438,33 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.7,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": 0.7853981633974483,
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.7,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.7,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -541,19 +501,36 @@ export const tanksData:TanksData = {
         "max": 7
       }
     ],
-    "key": "triple shot",
+    "key": "triple-shot",
     "upgradesFrom": [
       "twin"
     ],
-    "color": 0
+    "color": 0,
+    "barrelStats": {
+      "main": {
+        "name": "Cannons",
+        "reload": 1,
+        "recoil": 1,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 0.7,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
-  "quad tank": {
+  "quad-tank": {
     "id": 4,
     "name": "Quad Tank",
     "upgradeMessage": "",
     "levelRequirement": 30,
     "upgrades": [
-      "octo tank",
+      "octo-tank",
       "auto-5"
     ],
     "flags": {
@@ -579,88 +556,44 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.75,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": -1.5707963267948966,
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.75,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": 1.5707963267948966,
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.75,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.75,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -697,14 +630,31 @@ export const tanksData:TanksData = {
         "max": 7
       }
     ],
-    "key": "quad tank",
+    "key": "quad-tank",
     "upgradesFrom": [
       "twin",
-      "flank guard"
+      "flank-guard"
     ],
-    "color": 1
+    "color": 1,
+    "barrelStats": {
+      "main": {
+        "name": "Cannons",
+        "reload": 1,
+        "recoil": 1,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 0.75,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
-  "octo tank": {
+  "octo-tank": {
     "id": 5,
     "name": "Octo Tank",
     "upgradeMessage": "",
@@ -733,176 +683,88 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0.5,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.65,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.5,
+        "barrelStats": "main"
       },
       {
         "angle": 0.7853981633974483,
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0.5,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.65,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.5,
+        "barrelStats": "main"
       },
       {
         "angle": -2.356194490192345,
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0.5,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.65,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.5,
+        "barrelStats": "main"
       },
       {
         "angle": 2.356194490192345,
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0.5,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.65,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.5,
+        "barrelStats": "main"
       },
       {
         "angle": 3.141592653589793,
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.65,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": -1.5707963267948966,
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.65,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": 1.5707963267948966,
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.65,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.65,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -939,11 +801,28 @@ export const tanksData:TanksData = {
         "max": 7
       }
     ],
-    "key": "octo tank",
+    "key": "octo-tank",
     "upgradesFrom": [
-      "quad tank"
+      "quad-tank"
     ],
-    "color": 0
+    "color": 0,
+    "barrelStats": {
+      "main": {
+        "name": "Barrels",
+        "reload": 1,
+        "recoil": 1,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 0.65,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "sniper": {
     "id": 6,
@@ -979,22 +858,11 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 110,
         "width": 1,
-        "delay": 0,
-        "reload": 1.5,
-        "recoil": 3,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 1,
-          "speed": 1.5,
-          "scatterRate": 0.3,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -1035,9 +903,26 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "basic"
     ],
-    "color": 1
+    "color": 1,
+    "barrelStats": {
+      "main": {
+        "name": "Cannon",
+        "reload": 1.5,
+        "recoil": 3,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 1,
+          "speed": 1.5,
+          "scatterRate": 0.3,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
-  "machine gun": {
+  "machine-gun": {
     "id": 7,
     "name": "Machine Gun",
     "upgradeMessage": "",
@@ -1070,22 +955,11 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 0.5,
-        "recoil": 1,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.7,
-          "speed": 1,
-          "scatterRate": 3,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -1122,21 +996,38 @@ export const tanksData:TanksData = {
         "max": 7
       }
     ],
-    "key": "machine gun",
+    "key": "machine-gun",
     "upgradesFrom": [
       "basic"
     ],
-    "color": 2
+    "color": 2,
+    "barrelStats": {
+      "main": {
+        "name": "Cannon",
+        "reload": 0.5,
+        "recoil": 1,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 0.7,
+          "speed": 1,
+          "scatterRate": 3,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
-  "flank guard": {
+  "flank-guard": {
     "id": 8,
     "name": "Flank Guard",
     "upgradeMessage": "",
     "levelRequirement": 15,
     "upgrades": [
       "tri-angle",
-      "quad tank",
-      "twin flank",
+      "quad-tank",
+      "twin-flank",
       "auto-3"
     ],
     "flags": {
@@ -1162,44 +1053,22 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 1,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": 3.141592653589793,
         "offset": 0,
         "size": 80,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 1,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -1236,11 +1105,28 @@ export const tanksData:TanksData = {
         "max": 7
       }
     ],
-    "key": "flank guard",
+    "key": "flank-guard",
     "upgradesFrom": [
       "basic"
     ],
-    "color": 3
+    "color": 3,
+    "barrelStats": {
+      "main": {
+        "name": "Cannons",
+        "reload": 1,
+        "recoil": 1,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 1,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "tri-angle": {
     "id": 9,
@@ -1274,66 +1160,33 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 0.2,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 1,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": 3.665191429188092,
         "offset": 0,
         "size": 80,
         "width": 1,
-        "delay": 0.5,
-        "reload": 1,
-        "recoil": 2.5,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.2,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 0.5,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.5,
+        "barrelStats": "back"
       },
       {
         "angle": 2.6179938779914944,
         "offset": 0,
         "size": 80,
         "width": 1,
-        "delay": 0.5,
-        "reload": 1,
-        "recoil": 2.5,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.2,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 0.5,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.5,
+        "barrelStats": "back"
       }
     ],
     "stats": [
@@ -1372,9 +1225,41 @@ export const tanksData:TanksData = {
     ],
     "key": "tri-angle",
     "upgradesFrom": [
-      "flank guard"
+      "flank-guard"
     ],
-    "color": 0
+    "color": 0,
+    "barrelStats": {
+      "main": {
+        "name": "Front Cannon",
+        "reload": 1,
+        "recoil": 0.2,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 1,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      },
+      "back": {
+        "name": "Back Cannons",
+        "reload": 1,
+        "recoil": 2.5,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 0.2,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 0.5,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "destroyer": {
     "id": 10,
@@ -1410,22 +1295,11 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 95,
         "width": 1.7,
-        "delay": 0,
-        "reload": 4,
-        "recoil": 15,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 3,
-          "speed": 0.7,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 0.1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -1464,9 +1338,26 @@ export const tanksData:TanksData = {
     ],
     "key": "destroyer",
     "upgradesFrom": [
-      "machine gun"
+      "machine-gun"
     ],
-    "color": 0
+    "color": 0,
+    "barrelStats": {
+      "main": {
+        "name": "Cannon",
+        "reload": 4,
+        "recoil": 15,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 2,
+          "damage": 3,
+          "speed": 0.7,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 0.1
+        }
+      }
+    }
   },
   "overseer": {
     "id": 11,
@@ -1504,48 +1395,22 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 70,
         "width": 1,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 1,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 4,
-        "canControlDrones": true,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.8,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "drones"
       },
       {
         "angle": 1.5707963267948966,
         "offset": 0,
         "size": 70,
         "width": 1,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 1,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 4,
-        "canControlDrones": true,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.8,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "drones"
       }
     ],
     "stats": [
@@ -1586,7 +1451,26 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "sniper"
     ],
-    "color": 1
+    "color": 1,
+    "barrelStats": {
+      "drones": {
+        "name": "Drones",
+        "reload": 6,
+        "recoil": 1,
+        "bullet": {
+          "type": "drone",
+          "sizeRatio": 1,
+          "health": 2,
+          "damage": 0.7,
+          "speed": 0.8,
+          "scatterRate": 1,
+          "lifeLength": -1,
+          "absorbtionFactor": 1
+        },
+        "droneCount": 4,
+        "canControlDrones": true
+      }
+    }
   },
   "overlord": {
     "id": 12,
@@ -1617,96 +1501,44 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 70,
         "width": 1,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 1,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 2,
-        "canControlDrones": true,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.8,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "drones"
       },
       {
         "angle": 1.5707963267948966,
         "offset": 0,
         "size": 70,
         "width": 1,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 1,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 2,
-        "canControlDrones": true,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.8,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "drones"
       },
       {
         "angle": 0,
         "offset": 0,
         "size": 70,
         "width": 1,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 1,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 2,
-        "canControlDrones": true,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.8,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "drones"
       },
       {
         "angle": 3.141592653589793,
         "offset": 0,
         "size": 70,
         "width": 1,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 1,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 2,
-        "canControlDrones": true,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.8,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "drones"
       }
     ],
     "stats": [
@@ -1747,15 +1579,34 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "overseer"
     ],
-    "color": 0
+    "color": 0,
+    "barrelStats": {
+      "drones": {
+        "name": "Drones",
+        "reload": 6,
+        "recoil": 1,
+        "bullet": {
+          "type": "drone",
+          "sizeRatio": 1,
+          "health": 2,
+          "damage": 0.7,
+          "speed": 0.8,
+          "scatterRate": 1,
+          "lifeLength": -1,
+          "absorbtionFactor": 1
+        },
+        "droneCount": 2,
+        "canControlDrones": true
+      }
+    }
   },
-  "twin flank": {
+  "twin-flank": {
     "id": 13,
     "name": "Twin Flank",
     "upgradeMessage": "",
     "levelRequirement": 30,
     "upgrades": [
-      "triple twin",
+      "triple-twin",
       "battleship"
     ],
     "flags": {
@@ -1781,88 +1632,44 @@ export const tanksData:TanksData = {
         "offset": -26,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.5,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": 26,
         "size": 95,
         "width": 1,
-        "delay": 0.5,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.5,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.5,
+        "barrelStats": "main"
       },
       {
         "angle": 3.141592653589793,
         "offset": -26,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.5,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": 3.141592653589793,
         "offset": 26,
         "size": 95,
         "width": 1,
-        "delay": 0.5,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.5,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.5,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -1899,14 +1706,31 @@ export const tanksData:TanksData = {
         "max": 7
       }
     ],
-    "key": "twin flank",
+    "key": "twin-flank",
     "upgradesFrom": [
       "twin",
-      "flank guard"
+      "flank-guard"
     ],
-    "color": 2
+    "color": 2,
+    "barrelStats": {
+      "main": {
+        "name": "Cannons",
+        "reload": 1,
+        "recoil": 1,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 0.5,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
-  "penta shot": {
+  "penta-shot": {
     "id": 14,
     "name": "Penta Shot",
     "upgradeMessage": "",
@@ -1935,110 +1759,55 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 80,
         "width": 1,
-        "delay": 0.66,
-        "reload": 1,
-        "recoil": 0.7,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.55,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.66,
+        "barrelStats": "main"
       },
       {
         "angle": 0.7853981633974483,
         "offset": 0,
         "size": 80,
         "width": 1,
-        "delay": 0.66,
-        "reload": 1,
-        "recoil": 0.7,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.55,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.66,
+        "barrelStats": "main"
       },
       {
         "angle": -0.39269908169872414,
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0.33,
-        "reload": 1,
-        "recoil": 0.7,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.55,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.33,
+        "barrelStats": "main"
       },
       {
         "angle": 0.39269908169872414,
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0.33,
-        "reload": 1,
-        "recoil": 0.7,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.55,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.33,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": 0,
         "size": 110,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 0.7,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.55,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -2075,11 +1844,28 @@ export const tanksData:TanksData = {
         "max": 7
       }
     ],
-    "key": "penta shot",
+    "key": "penta-shot",
     "upgradesFrom": [
-      "triple shot"
+      "triple-shot"
     ],
-    "color": 1
+    "color": 1,
+    "barrelStats": {
+      "main": {
+        "name": "Cannons",
+        "reload": 1,
+        "recoil": 0.7,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 0.55,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "assassin": {
     "id": 15,
@@ -2113,22 +1899,11 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 120,
         "width": 1,
-        "delay": 0,
-        "reload": 2,
-        "recoil": 3,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 1,
-          "speed": 1.5,
-          "scatterRate": 0.3,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -2169,9 +1944,26 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "sniper"
     ],
-    "color": 0
+    "color": 0,
+    "barrelStats": {
+      "main": {
+        "name": "Cannon",
+        "reload": 2,
+        "recoil": 3,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 1,
+          "speed": 1.5,
+          "scatterRate": 0.3,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
-  "arena closer": {
+  "arena-closer": {
     "id": 16,
     "name": "Arena Closer",
     "upgradeMessage": "",
@@ -2200,22 +1992,11 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 75,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 300,
-          "damage": 7,
-          "speed": 2,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -2252,9 +2033,26 @@ export const tanksData:TanksData = {
         "max": 7
       }
     ],
-    "key": "arena closer",
+    "key": "arena-closer",
     "upgradesFrom": [],
     "color": 3,
+    "barrelStats": {
+      "main": {
+        "name": "Cannon",
+        "reload": 1,
+        "recoil": 1,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 300,
+          "damage": 7,
+          "speed": 2,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "necromancer": {
     "id": 17,
@@ -2285,48 +2083,22 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 70,
         "width": 1,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 1,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 0,
-        "canControlDrones": true,
-        "bullet": {
-          "type": "necrodrone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.42,
-          "speed": 0.72,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "drones"
       },
       {
         "angle": 1.5707963267948966,
         "offset": 0,
         "size": 70,
         "width": 1,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 1,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 0,
-        "canControlDrones": true,
-        "bullet": {
-          "type": "necrodrone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.42,
-          "speed": 0.72,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "drones"
       }
     ],
     "stats": [
@@ -2367,9 +2139,28 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "overseer"
     ],
-    "color": 1
+    "color": 1,
+    "barrelStats": {
+      "drones": {
+        "name": "Drones",
+        "reload": 6,
+        "recoil": 1,
+        "bullet": {
+          "type": "necrodrone",
+          "sizeRatio": 1,
+          "health": 2,
+          "damage": 0.42,
+          "speed": 0.72,
+          "scatterRate": 1,
+          "lifeLength": -1,
+          "absorbtionFactor": 1
+        },
+        "droneCount": 0,
+        "canControlDrones": true
+      }
+    }
   },
-  "triple twin": {
+  "triple-twin": {
     "id": 18,
     "name": "Triple Twin",
     "upgradeMessage": "",
@@ -2398,132 +2189,66 @@ export const tanksData:TanksData = {
         "offset": -26,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.5,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": 26,
         "size": 95,
         "width": 1,
-        "delay": 0.5,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.5,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.5,
+        "barrelStats": "main"
       },
       {
         "angle": 2.0943951023931953,
         "offset": -26,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.5,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": 2.0943951023931953,
         "offset": 26,
         "size": 95,
         "width": 1,
-        "delay": 0.5,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.5,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.5,
+        "barrelStats": "main"
       },
       {
         "angle": -2.0943951023931953,
         "offset": -26,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.5,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": -2.0943951023931953,
         "offset": 26,
         "size": 95,
         "width": 1,
-        "delay": 0.5,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.5,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.5,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -2560,11 +2285,28 @@ export const tanksData:TanksData = {
         "max": 7
       }
     ],
-    "key": "triple twin",
+    "key": "triple-twin",
     "upgradesFrom": [
-      "twin flank"
+      "twin-flank"
     ],
-    "color": 0
+    "color": 0,
+    "barrelStats": {
+      "main": {
+        "name": "Cannons",
+        "reload": 1,
+        "recoil": 1,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 0.5,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "hunter": {
     "id": 19,
@@ -2598,44 +2340,22 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 110,
         "width": 1,
-        "delay": 0,
-        "reload": 2.5,
-        "recoil": 0.3,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 0.7,
-          "health": 1,
-          "damage": 0.75,
-          "speed": 1.4,
-          "scatterRate": 0.3,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": 0,
         "size": 95,
         "width": 1.35,
-        "delay": 0.2,
-        "reload": 2.5,
-        "recoil": 0.3,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 0.7,
-          "health": 1,
-          "damage": 0.75,
-          "speed": 1.4,
-          "scatterRate": 0.3,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.2,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -2676,7 +2396,24 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "sniper"
     ],
-    "color": 2
+    "color": 2,
+    "barrelStats": {
+      "main": {
+        "name": "Cannon",
+        "reload": 2.5,
+        "recoil": 0.3,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 0.7,
+          "health": 1,
+          "damage": 0.75,
+          "speed": 1.4,
+          "scatterRate": 0.3,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "gunner": {
     "id": 20,
@@ -2684,8 +2421,8 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 30,
     "upgrades": [
-      "auto gunner",
-      "gunner trapper",
+      "auto-gunner",
+      "gunner-trapper",
       "streamliner"
     ],
     "flags": {
@@ -2711,88 +2448,44 @@ export const tanksData:TanksData = {
         "offset": -32,
         "size": 65,
         "width": 0.6,
-        "delay": 0.5,
-        "reload": 1,
-        "recoil": 0.2,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 0.45,
-          "damage": 0.5,
-          "speed": 1.1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.5,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": 32,
         "size": 65,
         "width": 0.6,
-        "delay": 0.75,
-        "reload": 1,
-        "recoil": 0.2,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 0.45,
-          "damage": 0.5,
-          "speed": 1.1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.75,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": -17,
         "size": 85,
         "width": 0.6,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 0.2,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 0.45,
-          "damage": 0.5,
-          "speed": 1.1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": 17,
         "size": 85,
         "width": 0.6,
-        "delay": 0.25,
-        "reload": 1,
-        "recoil": 0.2,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 0.45,
-          "damage": 0.5,
-          "speed": 1.1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.25,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -2831,9 +2524,26 @@ export const tanksData:TanksData = {
     ],
     "key": "gunner",
     "upgradesFrom": [
-      "machine gun"
+      "machine-gun"
     ],
-    "color": 1
+    "color": 1,
+    "barrelStats": {
+      "main": {
+        "name": "Cannons",
+        "reload": 1,
+        "recoil": 0.2,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 0.45,
+          "damage": 0.5,
+          "speed": 1.1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "stalker": {
     "id": 21,
@@ -2864,22 +2574,11 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 120,
         "width": 1,
-        "delay": 0,
-        "reload": 2,
-        "recoil": 3,
         "isTrapezoid": true,
         "trapezoidDirection": 3.141592653589793,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 1,
-          "speed": 1.5,
-          "scatterRate": 0.3,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -2920,7 +2619,24 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "assassin"
     ],
-    "color": 1
+    "color": 1,
+    "barrelStats": {
+      "main": {
+        "name": "Cannon",
+        "reload": 2,
+        "recoil": 3,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 1,
+          "speed": 1.5,
+          "scatterRate": 0.3,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "ranger": {
     "id": 22,
@@ -2951,22 +2667,11 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 120,
         "width": 1,
-        "delay": 0,
-        "reload": 2,
-        "recoil": 3,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 1,
-          "speed": 1.5,
-          "scatterRate": 0.3,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -3007,7 +2712,24 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "assassin"
     ],
-    "color": 0
+    "color": 0,
+    "barrelStats": {
+      "main": {
+        "name": "Cannon",
+        "reload": 2,
+        "recoil": 3,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 1,
+          "speed": 1.5,
+          "scatterRate": 0.3,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "booster": {
     "id": 23,
@@ -3038,110 +2760,55 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 0.2,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 1,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": 3.9269908169872414,
         "offset": 0,
         "size": 70,
         "width": 1,
-        "delay": 0.66,
-        "reload": 1,
-        "recoil": 0.2,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.2,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 0.5,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.66,
+        "barrelStats": "diagonal"
       },
       {
         "angle": 2.356194490192345,
         "offset": 0,
         "size": 70,
         "width": 1,
-        "delay": 0.66,
-        "reload": 1,
-        "recoil": 0.2,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.2,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 0.5,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.66,
+        "barrelStats": "diagonal"
       },
       {
         "angle": 3.665191429188092,
         "offset": 0,
         "size": 80,
         "width": 1,
-        "delay": 0.33,
-        "reload": 1,
-        "recoil": 2.5,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.2,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 0.5,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.33,
+        "barrelStats": "back"
       },
       {
         "angle": 2.6179938779914944,
         "offset": 0,
         "size": 80,
         "width": 1,
-        "delay": 0.33,
-        "reload": 1,
-        "recoil": 2.5,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.2,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 0.5,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.33,
+        "barrelStats": "back"
       }
     ],
     "stats": [
@@ -3182,7 +2849,54 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "tri-angle"
     ],
-    "color": 0
+    "color": 0,
+    "barrelStats": {
+      "main": {
+        "name": "Front Cannon",
+        "reload": 1,
+        "recoil": 0.2,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 1,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      },
+      "diagonal": {
+        "name": "Diagonal Cannons",
+        "reload": 1,
+        "recoil": 0.2,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 0.2,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 0.5,
+          "absorbtionFactor": 1
+        }
+      },
+      "back": {
+        "name": "Back Cannons",
+        "reload": 1,
+        "recoil": 2.5,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 0.2,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 0.5,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "fighter": {
     "id": 24,
@@ -3213,110 +2927,55 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 0.2,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 1,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": 1.5707963267948966,
         "offset": 0,
         "size": 80,
         "width": 1,
-        "delay": 0,
-        "reload": 1.5,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.8,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "side"
       },
       {
         "angle": -1.5707963267948966,
         "offset": 0,
         "size": 80,
         "width": 1,
-        "delay": 0,
-        "reload": 1.5,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.8,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "side"
       },
       {
         "angle": 3.665191429188092,
         "offset": 0,
         "size": 80,
         "width": 1,
-        "delay": 0.5,
-        "reload": 1,
-        "recoil": 2.5,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.2,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 0.5,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.5,
+        "barrelStats": "back"
       },
       {
         "angle": 2.6179938779914944,
         "offset": 0,
         "size": 80,
         "width": 1,
-        "delay": 0.5,
-        "reload": 1,
-        "recoil": 2.5,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.2,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 0.5,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.5,
+        "barrelStats": "back"
       }
     ],
     "stats": [
@@ -3357,7 +3016,54 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "tri-angle"
     ],
-    "color": 1
+    "color": 1,
+    "barrelStats": {
+      "main": {
+        "name": "Front Cannon",
+        "reload": 1,
+        "recoil": 0.2,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 1,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      },
+      "side": {
+        "name": "Side Cannons",
+        "reload": 1.5,
+        "recoil": 1,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 0.8,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      },
+      "back": {
+        "name": "Back Cannons",
+        "reload": 1,
+        "recoil": 2.5,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 0.2,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 0.5,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "hybrid": {
     "id": 25,
@@ -3388,46 +3094,22 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 95,
         "width": 1.7,
-        "delay": 0,
-        "reload": 4,
-        "recoil": 15,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 3,
-          "speed": 0.7,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 0.1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": 3.141592653589793,
         "offset": 0,
         "size": 70,
         "width": 1,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 1,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 2,
-        "canControlDrones": false,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 1.4,
-          "damage": 0.7,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "drones"
       }
     ],
     "stats": [
@@ -3468,7 +3150,41 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "destroyer"
     ],
-    "color": 0
+    "color": 0,
+    "barrelStats": {
+      "main": {
+        "name": "Cannon",
+        "reload": 4,
+        "recoil": 15,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 2,
+          "damage": 3,
+          "speed": 0.7,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 0.1
+        }
+      },
+      "drones": {
+        "name": "Drones",
+        "reload": 6,
+        "recoil": 1,
+        "bullet": {
+          "type": "drone",
+          "sizeRatio": 1,
+          "health": 1.4,
+          "damage": 0.7,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": -1,
+          "absorbtionFactor": 1
+        },
+        "droneCount": 2,
+        "canControlDrones": false
+      }
+    }
   },
   "manager": {
     "id": 26,
@@ -3499,24 +3215,11 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 70,
         "width": 1,
-        "delay": 0,
-        "reload": 3,
-        "recoil": 1,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 8,
-        "canControlDrones": true,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.8,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "drones"
       }
     ],
     "stats": [
@@ -3557,7 +3260,26 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "overseer"
     ],
-    "color": 2
+    "color": 2,
+    "barrelStats": {
+      "drones": {
+        "name": "Drones",
+        "reload": 3,
+        "recoil": 1,
+        "bullet": {
+          "type": "drone",
+          "sizeRatio": 1,
+          "health": 2,
+          "damage": 0.7,
+          "speed": 0.8,
+          "scatterRate": 1,
+          "lifeLength": -1,
+          "absorbtionFactor": 1
+        },
+        "droneCount": 8,
+        "canControlDrones": true
+      }
+    }
   },
   "mothership": {
     "id": 27,
@@ -3588,384 +3310,176 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 60,
         "width": 0.25,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 0,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 2,
-        "canControlDrones": true,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.48,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "controllableDrones"
       },
       {
         "angle": 0.5890486225480862,
         "offset": 0,
         "size": 60,
         "width": 0.25,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 0,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 2,
-        "canControlDrones": false,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.48,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "autoDrones"
       },
       {
         "angle": 0.9817477042468103,
         "offset": 0,
         "size": 60,
         "width": 0.25,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 0,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 2,
-        "canControlDrones": true,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.48,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "controllableDrones"
       },
       {
         "angle": 1.3744467859455345,
         "offset": 0,
         "size": 60,
         "width": 0.25,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 0,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 2,
-        "canControlDrones": false,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.48,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "autoDrones"
       },
       {
         "angle": 1.7671458676442586,
         "offset": 0,
         "size": 60,
         "width": 0.25,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 0,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 2,
-        "canControlDrones": true,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.48,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "controllableDrones"
       },
       {
         "angle": 2.159844949342983,
         "offset": 0,
         "size": 60,
         "width": 0.25,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 0,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 2,
-        "canControlDrones": false,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.48,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "autoDrones"
       },
       {
         "angle": 2.552544031041707,
         "offset": 0,
         "size": 60,
         "width": 0.25,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 0,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 2,
-        "canControlDrones": true,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.48,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "controllableDrones"
       },
       {
         "angle": 2.9452431127404313,
         "offset": 0,
         "size": 60,
         "width": 0.25,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 0,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 2,
-        "canControlDrones": false,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.48,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "autoDrones"
       },
       {
         "angle": 3.3379421944391554,
         "offset": 0,
         "size": 60,
         "width": 0.25,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 0,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 2,
-        "canControlDrones": true,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.48,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "controllableDrones"
       },
       {
         "angle": 3.7306412761378795,
         "offset": 0,
         "size": 60,
         "width": 0.25,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 0,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 2,
-        "canControlDrones": false,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.48,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "autoDrones"
       },
       {
         "angle": 4.12333992150429,
         "offset": 0,
         "size": 60,
         "width": 0.25,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 0,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 2,
-        "canControlDrones": true,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.48,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "controllableDrones"
       },
       {
         "angle": 4.516039439535327,
         "offset": 0,
         "size": 60,
         "width": 0.25,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 0,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 2,
-        "canControlDrones": false,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.48,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "autoDrones"
       },
       {
         "angle": 4.908738521234052,
         "offset": 0,
         "size": 60,
         "width": 0.25,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 0,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 2,
-        "canControlDrones": true,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.48,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "controllableDrones"
       },
       {
         "angle": 5.301437166600463,
         "offset": 0,
         "size": 60,
         "width": 0.25,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 0,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 2,
-        "canControlDrones": false,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.48,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "autoDrones"
       },
       {
         "angle": 5.6941366846315,
         "offset": 0,
         "size": 60,
         "width": 0.25,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 0,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 2,
-        "canControlDrones": true,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.48,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "controllableDrones"
       },
       {
         "angle": 6.086835766330224,
         "offset": 0,
         "size": 60,
         "width": 0.25,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 0,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 2,
-        "canControlDrones": false,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.48,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "autoDrones"
       }
     ],
     "stats": [
@@ -4004,7 +3518,43 @@ export const tanksData:TanksData = {
     ],
     "key": "mothership",
     "color": 4,
-    "upgradesFrom": []
+    "upgradesFrom": [],
+    "barrelStats": {
+      "controllableDrones": {
+        "name": "Main",
+        "reload": 6,
+        "recoil": 0,
+        "bullet": {
+          "type": "Controllable Drones",
+          "sizeRatio": 1,
+          "health": 2,
+          "damage": 0.7,
+          "speed": 0.48,
+          "scatterRate": 1,
+          "lifeLength": -1,
+          "absorbtionFactor": 1
+        },
+        "droneCount": 2,
+        "canControlDrones": true
+      },
+      "autoDrones": {
+        "name": "Main",
+        "reload": 6,
+        "recoil": 0,
+        "bullet": {
+          "type": "Automatic Drones",
+          "sizeRatio": 1,
+          "health": 2,
+          "damage": 0.7,
+          "speed": 0.48,
+          "scatterRate": 1,
+          "lifeLength": -1,
+          "absorbtionFactor": 1
+        },
+        "droneCount": 2,
+        "canControlDrones": false
+      }
+    }
   },
   "predator": {
     "id": 28,
@@ -4035,66 +3585,33 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 110,
         "width": 1,
-        "delay": 0,
-        "reload": 3,
-        "recoil": 0.3,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 0.7,
-          "health": 1,
-          "damage": 0.75,
-          "speed": 1.4,
-          "scatterRate": 0.3,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "dc9843d5bb85417dad5dd8a13292868a"
       },
       {
         "angle": 0,
         "offset": 0,
         "size": 95,
         "width": 1.35,
-        "delay": 0.2,
-        "reload": 3,
-        "recoil": 0.3,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 0.7,
-          "health": 1,
-          "damage": 0.75,
-          "speed": 1.4,
-          "scatterRate": 0.3,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.2,
+        "barrelStats": "dc9843d5bb85417dad5dd8a13292868a"
       },
       {
         "angle": 0,
         "offset": 0,
         "size": 80,
         "width": 1.7,
-        "delay": 0.4,
-        "reload": 3,
-        "recoil": 0.3,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 0.7,
-          "health": 1,
-          "damage": 0.75,
-          "speed": 1.4,
-          "scatterRate": 0.3,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.4,
+        "barrelStats": "dc9843d5bb85417dad5dd8a13292868a"
       }
     ],
     "stats": [
@@ -4135,7 +3652,24 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "hunter"
     ],
-    "color": 0
+    "color": 0,
+    "barrelStats": {
+      "dc9843d5bb85417dad5dd8a13292868a": {
+        "name": "Main",
+        "reload": 3,
+        "recoil": 0.3,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 0.7,
+          "health": 1,
+          "damage": 0.75,
+          "speed": 1.4,
+          "scatterRate": 0.3,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "sprayer": {
     "id": 29,
@@ -4166,44 +3700,22 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 110,
         "width": 1,
-        "delay": 0.5,
-        "reload": 1,
-        "recoil": 0,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 0.7,
-          "health": 1,
-          "damage": 0.1,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.5,
+        "barrelStats": "small"
       },
       {
         "angle": 0,
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 0.5,
-        "recoil": 1,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.7,
-          "speed": 1,
-          "scatterRate": 3,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -4242,9 +3754,41 @@ export const tanksData:TanksData = {
     ],
     "key": "sprayer",
     "upgradesFrom": [
-      "machine gun"
+      "machine-gun"
     ],
-    "color": 2
+    "color": 2,
+    "barrelStats": {
+      "small": {
+        "name": "Small Cannon",
+        "reload": 1,
+        "recoil": 0,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 0.7,
+          "health": 1,
+          "damage": 0.1,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      },
+      "main": {
+        "name": "Main Cannon",
+        "reload": 0.5,
+        "recoil": 1,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 0.7,
+          "speed": 1,
+          "scatterRate": 3,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "trapper": {
     "id": 31,
@@ -4253,10 +3797,10 @@ export const tanksData:TanksData = {
     "levelRequirement": 30,
     "upgrades": [
       "tri-trapper",
-      "gunner trapper",
+      "gunner-trapper",
       "overtrapper",
-      "mega trapper",
-      "auto trapper"
+      "mega-trapper",
+      "auto-trapper"
     ],
     "flags": {
       "invisibility": false,
@@ -4281,22 +3825,11 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 60,
         "width": 1,
-        "delay": 0,
-        "reload": 1.5,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
-        "bullet": {
-          "type": "trap",
-          "sizeRatio": 0.8,
-          "health": 2,
-          "damage": 1,
-          "speed": 2,
-          "scatterRate": 1,
-          "lifeLength": 8,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "traps"
       }
     ],
     "stats": [
@@ -4337,9 +3870,26 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "sniper"
     ],
-    "color": 3
+    "color": 3,
+    "barrelStats": {
+      "traps": {
+        "name": "Traps",
+        "reload": 1.5,
+        "recoil": 1,
+        "bullet": {
+          "type": "trap",
+          "sizeRatio": 0.8,
+          "health": 2,
+          "damage": 1,
+          "speed": 2,
+          "scatterRate": 1,
+          "lifeLength": 8,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
-  "gunner trapper": {
+  "gunner-trapper": {
     "id": 32,
     "name": "Gunner Trapper",
     "upgradeMessage": "",
@@ -4368,66 +3918,33 @@ export const tanksData:TanksData = {
         "offset": -16,
         "size": 75,
         "width": 0.5,
-        "delay": 0.66,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.5,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.66,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": 16,
         "size": 75,
         "width": 0.5,
-        "delay": 0.33,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.5,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.33,
+        "barrelStats": "main"
       },
       {
         "angle": 3.141592653589793,
         "offset": 0,
         "size": 60,
         "width": 1.3,
-        "delay": 0,
-        "reload": 3,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
-        "bullet": {
-          "type": "trap",
-          "sizeRatio": 0.8,
-          "health": 2,
-          "damage": 1,
-          "speed": 2,
-          "scatterRate": 1,
-          "lifeLength": 8,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "traps"
       }
     ],
     "stats": [
@@ -4464,12 +3981,44 @@ export const tanksData:TanksData = {
         "max": 7
       }
     ],
-    "key": "gunner trapper",
+    "key": "gunner-trapper",
     "upgradesFrom": [
       "gunner",
       "trapper"
     ],
-    "color": 1
+    "color": 1,
+    "barrelStats": {
+      "main": {
+        "name": "Cannons",
+        "reload": 1,
+        "recoil": 1,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 0.5,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      },
+      "traps": {
+        "name": "Traps",
+        "reload": 3,
+        "recoil": 1,
+        "bullet": {
+          "type": "trap",
+          "sizeRatio": 0.8,
+          "health": 2,
+          "damage": 1,
+          "speed": 2,
+          "scatterRate": 1,
+          "lifeLength": 8,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "overtrapper": {
     "id": 33,
@@ -4500,70 +4049,33 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 60,
         "width": 1,
-        "delay": 0,
-        "reload": 1.5,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
-        "bullet": {
-          "type": "trap",
-          "sizeRatio": 0.8,
-          "health": 2,
-          "damage": 1,
-          "speed": 2,
-          "scatterRate": 1,
-          "lifeLength": 8,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "traps"
       },
       {
         "angle": 2.0943951023931953,
         "offset": 0,
         "size": 70,
         "width": 1,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 1,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 1,
-        "canControlDrones": false,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 1.4,
-          "damage": 0.7,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "drones"
       },
       {
         "angle": 4.1887902047863905,
         "offset": 0,
         "size": 70,
         "width": 1,
-        "delay": 0,
-        "reload": 6,
-        "recoil": 1,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 1,
-        "canControlDrones": false,
-        "bullet": {
-          "type": "drone",
-          "sizeRatio": 1,
-          "health": 1.4,
-          "damage": 0.7,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "drones"
       }
     ],
     "stats": [
@@ -4605,9 +4117,43 @@ export const tanksData:TanksData = {
       "overseer",
       "trapper"
     ],
-    "color": 3
+    "color": 3,
+    "barrelStats": {
+      "traps": {
+        "name": "Traps",
+        "reload": 1.5,
+        "recoil": 1,
+        "bullet": {
+          "type": "trap",
+          "sizeRatio": 0.8,
+          "health": 2,
+          "damage": 1,
+          "speed": 2,
+          "scatterRate": 1,
+          "lifeLength": 8,
+          "absorbtionFactor": 1
+        }
+      },
+      "drones": {
+        "name": "Drones",
+        "reload": 6,
+        "recoil": 1,
+        "bullet": {
+          "type": "drone",
+          "sizeRatio": 1,
+          "health": 1.4,
+          "damage": 0.7,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": -1,
+          "absorbtionFactor": 1
+        },
+        "droneCount": 1,
+        "canControlDrones": false
+      }
+    }
   },
-  "mega trapper": {
+  "mega-trapper": {
     "id": 34,
     "name": "Mega Trapper",
     "upgradeMessage": "",
@@ -4636,22 +4182,11 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 60,
         "width": 1.3,
-        "delay": 0,
-        "reload": 3.3,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
-        "bullet": {
-          "type": "trap",
-          "sizeRatio": 1.28,
-          "health": 3.2,
-          "damage": 1.6,
-          "speed": 2,
-          "scatterRate": 1,
-          "lifeLength": 8,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "traps"
       }
     ],
     "stats": [
@@ -4688,11 +4223,28 @@ export const tanksData:TanksData = {
         "max": 7
       }
     ],
-    "key": "mega trapper",
+    "key": "mega-trapper",
     "upgradesFrom": [
       "trapper"
     ],
-    "color": 3
+    "color": 3,
+    "barrelStats": {
+      "traps": {
+        "name": "Traps",
+        "reload": 3.3,
+        "recoil": 1,
+        "bullet": {
+          "type": "trap",
+          "sizeRatio": 1.28,
+          "health": 3.2,
+          "damage": 1.6,
+          "speed": 2,
+          "scatterRate": 1,
+          "lifeLength": 8,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "tri-trapper": {
     "id": 35,
@@ -4723,66 +4275,33 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 60,
         "width": 1,
-        "delay": 0,
-        "reload": 1.5,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
-        "bullet": {
-          "type": "trap",
-          "sizeRatio": 0.8,
-          "health": 2,
-          "damage": 1,
-          "speed": 2,
-          "scatterRate": 1,
-          "lifeLength": 3.2,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "traps"
       },
       {
         "angle": 2.0943951023931953,
         "offset": 0,
         "size": 60,
         "width": 1,
-        "delay": 0,
-        "reload": 1.5,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
-        "bullet": {
-          "type": "trap",
-          "sizeRatio": 0.8,
-          "health": 2,
-          "damage": 1,
-          "speed": 2,
-          "scatterRate": 1,
-          "lifeLength": 3.2,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "traps"
       },
       {
         "angle": 4.1887902047863905,
         "offset": 0,
         "size": 60,
         "width": 1,
-        "delay": 0,
-        "reload": 1.5,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
-        "bullet": {
-          "type": "trap",
-          "sizeRatio": 0.8,
-          "health": 2,
-          "damage": 1,
-          "speed": 2,
-          "scatterRate": 1,
-          "lifeLength": 3.2,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "traps"
       }
     ],
     "stats": [
@@ -4823,7 +4342,24 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "trapper"
     ],
-    "color": 0
+    "color": 0,
+    "barrelStats": {
+      "traps": {
+        "name": "Traps",
+        "reload": 1.5,
+        "recoil": 1,
+        "bullet": {
+          "type": "trap",
+          "sizeRatio": 0.8,
+          "health": 2,
+          "damage": 1,
+          "speed": 2,
+          "scatterRate": 1,
+          "lifeLength": 3.2,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "smasher": {
     "id": 36,
@@ -4832,7 +4368,7 @@ export const tanksData:TanksData = {
     "levelRequirement": 30,
     "upgrades": [
       "landmine",
-      "auto smasher",
+      "auto-smasher",
       "spike"
     ],
     "flags": {
@@ -4891,7 +4427,8 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "basic"
     ],
-    "color": 4
+    "color": 4,
+    "barrelStats": {}
   },
   "landmine": {
     "id": 38,
@@ -4955,9 +4492,10 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "smasher"
     ],
-    "color": 0
+    "color": 0,
+    "barrelStats": {}
   },
-  "auto gunner": {
+  "auto-gunner": {
     "id": 39,
     "name": "Auto Gunner",
     "upgradeMessage": "",
@@ -4986,88 +4524,44 @@ export const tanksData:TanksData = {
         "offset": -32,
         "size": 65,
         "width": 0.6,
-        "delay": 0.5,
-        "reload": 1,
-        "recoil": 0.2,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 0.45,
-          "damage": 0.5,
-          "speed": 1.1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.5,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": 32,
         "size": 65,
         "width": 0.6,
-        "delay": 0.75,
-        "reload": 1,
-        "recoil": 0.2,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 0.45,
-          "damage": 0.5,
-          "speed": 1.1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.75,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": -17,
         "size": 85,
         "width": 0.6,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 0.2,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 0.45,
-          "damage": 0.5,
-          "speed": 1.1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": 17,
         "size": 85,
         "width": 0.6,
-        "delay": 0.25,
-        "reload": 1,
-        "recoil": 0.2,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 0.45,
-          "damage": 0.5,
-          "speed": 1.1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.25,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -5104,12 +4598,29 @@ export const tanksData:TanksData = {
         "max": 7
       }
     ],
-    "key": "auto gunner",
+    "key": "auto-gunner",
     "upgradesFrom": [
       "gunner",
       "auto-3"
     ],
-    "color": 0
+    "color": 0,
+    "barrelStats": {
+      "main": {
+        "name": "Main Cannons",
+        "reload": 1,
+        "recoil": 0.2,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 0.45,
+          "damage": 0.5,
+          "speed": 1.1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "auto-5": {
     "id": 40,
@@ -5171,10 +4682,11 @@ export const tanksData:TanksData = {
     ],
     "key": "auto-5",
     "upgradesFrom": [
-      "quad tank",
+      "quad-tank",
       "auto-3"
     ],
-    "color": 1
+    "color": 1,
+    "barrelStats": {}
   },
   "auto-3": {
     "id": 41,
@@ -5183,7 +4695,7 @@ export const tanksData:TanksData = {
     "levelRequirement": 30,
     "upgrades": [
       "auto-5",
-      "auto gunner"
+      "auto-gunner"
     ],
     "flags": {
       "invisibility": false,
@@ -5239,11 +4751,12 @@ export const tanksData:TanksData = {
     ],
     "key": "auto-3",
     "upgradesFrom": [
-      "flank guard"
+      "flank-guard"
     ],
-    "color": 3
+    "color": 3,
+    "barrelStats": {}
   },
-  "spread shot": {
+  "spread-shot": {
     "id": 42,
     "name": "Spread Shot",
     "upgradeMessage": "",
@@ -5272,242 +4785,121 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 65,
         "width": 0.7,
-        "delay": 0.833325,
-        "reload": 2,
-        "recoil": 0.1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.6,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.833325,
+        "barrelStats": "small"
       },
       {
         "angle": -1.3089969389957472,
         "offset": 0,
         "size": 65,
         "width": 0.7,
-        "delay": 0.833325,
-        "reload": 2,
-        "recoil": 0.1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.6,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.833325,
+        "barrelStats": "small"
       },
       {
         "angle": 1.0471975511965976,
         "offset": 0,
         "size": 71,
         "width": 0.7,
-        "delay": 0.666675,
-        "reload": 2,
-        "recoil": 0.1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.6,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.666675,
+        "barrelStats": "small"
       },
       {
         "angle": -1.0471975511965976,
         "offset": 0,
         "size": 71,
         "width": 0.7,
-        "delay": 0.666675,
-        "reload": 2,
-        "recoil": 0.1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.6,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.666675,
+        "barrelStats": "small"
       },
       {
         "angle": 0.7853981633974483,
         "offset": 0,
         "size": 77,
         "width": 0.7,
-        "delay": 0.5,
-        "reload": 2,
-        "recoil": 0.1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.6,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.5,
+        "barrelStats": "small"
       },
       {
         "angle": -0.7853981633974483,
         "offset": 0,
         "size": 77,
         "width": 0.7,
-        "delay": 0.5,
-        "reload": 2,
-        "recoil": 0.1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.6,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.5,
+        "barrelStats": "small"
       },
       {
         "angle": 0.5235987755982988,
         "offset": 0,
         "size": 83,
         "width": 0.7,
-        "delay": 0.333325,
-        "reload": 2,
-        "recoil": 0.1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.6,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.333325,
+        "barrelStats": "small"
       },
       {
         "angle": -0.5235987755982988,
         "offset": 0,
         "size": 83,
         "width": 0.7,
-        "delay": 0.333325,
-        "reload": 2,
-        "recoil": 0.1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.6,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.333325,
+        "barrelStats": "small"
       },
       {
         "angle": 0.2617993877991494,
         "offset": 0,
         "size": 89,
         "width": 0.7,
-        "delay": 0.166675,
-        "reload": 2,
-        "recoil": 0.1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.6,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.166675,
+        "barrelStats": "small"
       },
       {
         "angle": -0.2617993877991494,
         "offset": 0,
         "size": 89,
         "width": 0.7,
-        "delay": 0.166675,
-        "reload": 2,
-        "recoil": 0.1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.6,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.166675,
+        "barrelStats": "small"
       },
       {
         "angle": 0,
         "offset": 0,
         "size": 95,
         "width": 1,
-        "delay": 0,
-        "reload": 2,
-        "recoil": 0.1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 1,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -5544,11 +4936,43 @@ export const tanksData:TanksData = {
         "max": 7
       }
     ],
-    "key": "spread shot",
+    "key": "spread-shot",
     "upgradesFrom": [
-      "triple shot"
+      "triple-shot"
     ],
-    "color": 2
+    "color": 2,
+    "barrelStats": {
+      "small": {
+        "name": "Small Cannons",
+        "reload": 2,
+        "recoil": 0.1,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 0.6,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      },
+      "main": {
+        "name": "Main Cannon",
+        "reload": 2,
+        "recoil": 0.1,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 1,
+          "damage": 1,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "streamliner": {
     "id": 43,
@@ -5579,110 +5003,55 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 110,
         "width": 1,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 0.2,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 0.7,
-          "health": 1,
-          "damage": 0.2,
-          "speed": 1.1,
-          "scatterRate": 0.3,
-          "lifeLength": 0.8,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": 0,
         "size": 100,
         "width": 1,
-        "delay": 0.2,
-        "reload": 1,
-        "recoil": 0.2,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 0.7,
-          "health": 1,
-          "damage": 0.2,
-          "speed": 1.1,
-          "scatterRate": 0.3,
-          "lifeLength": 0.8,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.2,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": 0,
         "size": 90,
         "width": 1,
-        "delay": 0.4,
-        "reload": 1,
-        "recoil": 0.2,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 0.7,
-          "health": 1,
-          "damage": 0.2,
-          "speed": 1.1,
-          "scatterRate": 0.3,
-          "lifeLength": 0.8,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.4,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": 0,
         "size": 80,
         "width": 1,
-        "delay": 0.6,
-        "reload": 1,
-        "recoil": 0.2,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 0.7,
-          "health": 1,
-          "damage": 0.2,
-          "speed": 1.1,
-          "scatterRate": 0.3,
-          "lifeLength": 0.8,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.6,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": 0,
         "size": 70,
         "width": 1,
-        "delay": 0.8,
-        "reload": 1,
-        "recoil": 0.2,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 0.7,
-          "health": 1,
-          "damage": 0.2,
-          "speed": 1.1,
-          "scatterRate": 0.3,
-          "lifeLength": 0.8,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.8,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -5724,9 +5093,26 @@ export const tanksData:TanksData = {
       "hunter",
       "gunner"
     ],
-    "color": 1
+    "color": 1,
+    "barrelStats": {
+      "main": {
+        "name": "Cannons",
+        "reload": 1,
+        "recoil": 0.2,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 0.7,
+          "health": 1,
+          "damage": 0.2,
+          "speed": 1.1,
+          "scatterRate": 0.3,
+          "lifeLength": 0.8,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
-  "auto trapper": {
+  "auto-trapper": {
     "id": 44,
     "name": "Auto Trapper",
     "upgradeMessage": "",
@@ -5755,22 +5141,11 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 60,
         "width": 1,
-        "delay": 0,
-        "reload": 1.5,
-        "recoil": 1,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
-        "bullet": {
-          "type": "trap",
-          "sizeRatio": 0.8,
-          "health": 2,
-          "damage": 1,
-          "speed": 2,
-          "scatterRate": 1,
-          "lifeLength": 8,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "traps"
       }
     ],
     "stats": [
@@ -5807,11 +5182,28 @@ export const tanksData:TanksData = {
         "max": 7
       }
     ],
-    "key": "auto trapper",
+    "key": "auto-trapper",
     "upgradesFrom": [
       "trapper"
     ],
-    "color": 4
+    "color": 4,
+    "barrelStats": {
+      "traps": {
+        "name": "Traps",
+        "reload": 1.5,
+        "recoil": 1,
+        "bullet": {
+          "type": "trap",
+          "sizeRatio": 0.8,
+          "health": 2,
+          "damage": 1,
+          "speed": 2,
+          "scatterRate": 1,
+          "lifeLength": 8,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "destroyer-dominator": {
     "id": 45,
@@ -5842,22 +5234,11 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 80,
         "width": 0.83,
-        "delay": 0.001,
-        "reload": 3,
-        "recoil": 0,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 100,
-          "damage": 10,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 0.1
-        }
+        "delay": 0.001,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -5897,6 +5278,23 @@ export const tanksData:TanksData = {
     "key": "destroyer-dominator",
     "upgradesFrom": [],
     "color": 0,
+    "barrelStats": {
+      "main": {
+        "name": "Cannon",
+        "reload": 3,
+        "recoil": 0,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 100,
+          "damage": 10,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 0.1
+        }
+      }
+    }
   },
   "gunner-dominator": {
     "id": 46,
@@ -5927,66 +5325,33 @@ export const tanksData:TanksData = {
         "offset": -6,
         "size": 75,
         "width": 0.415,
-        "delay": 0.666,
-        "reload": 0.3,
-        "recoil": 0,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 0.6,
-          "health": 5,
-          "damage": 1,
-          "speed": 1.2,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.666,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": 6,
         "size": 75,
         "width": 0.415,
-        "delay": 0.333,
-        "reload": 0.3,
-        "recoil": 0,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 0.6,
-          "health": 5,
-          "damage": 1,
-          "speed": 1.2,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.333,
+        "barrelStats": "main"
       },
       {
         "angle": 0,
         "offset": 0,
         "size": 80,
         "width": 0.415,
-        "delay": 0.001,
-        "reload": 0.3,
-        "recoil": 0,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 0.6,
-          "health": 5,
-          "damage": 1,
-          "speed": 1.2,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0.001,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -6026,6 +5391,23 @@ export const tanksData:TanksData = {
     "key": "gunner-dominator",
     "upgradesFrom": [],
     "color": 1,
+    "barrelStats": {
+      "main": {
+        "name": "Cannons",
+        "reload": 0.3,
+        "recoil": 0,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 0.6,
+          "health": 5,
+          "damage": 1,
+          "speed": 1.2,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "trapper-dominator": {
     "id": 47,
@@ -6056,184 +5438,88 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 60,
         "width": 0.5,
-        "delay": 0,
-        "reload": 1.5,
-        "recoil": 0,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
-        "forceFire": true,
-        "bullet": {
-          "type": "trap",
-          "sizeRatio": 0.8,
-          "health": 20,
-          "damage": 3,
-          "speed": 4,
-          "scatterRate": 1,
-          "lifeLength": 3.2,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "traps"
       },
       {
         "angle": 0.7853981633974483,
         "offset": 0,
         "size": 60,
         "width": 0.5,
-        "delay": 0,
-        "reload": 1.5,
-        "recoil": 0,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
-        "forceFire": true,
-        "bullet": {
-          "type": "trap",
-          "sizeRatio": 0.8,
-          "health": 20,
-          "damage": 3,
-          "speed": 4,
-          "scatterRate": 1,
-          "lifeLength": 3.2,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "traps"
       },
       {
         "angle": 1.5707963267948966,
         "offset": 0,
         "size": 60,
         "width": 0.5,
-        "delay": 0,
-        "reload": 1.5,
-        "recoil": 0,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
-        "forceFire": true,
-        "bullet": {
-          "type": "trap",
-          "sizeRatio": 0.8,
-          "health": 20,
-          "damage": 3,
-          "speed": 4,
-          "scatterRate": 1,
-          "lifeLength": 3.2,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "traps"
       },
       {
         "angle": 2.356194490192345,
         "offset": 0,
         "size": 60,
         "width": 0.5,
-        "delay": 0,
-        "reload": 1.5,
-        "recoil": 0,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
-        "forceFire": true,
-        "bullet": {
-          "type": "trap",
-          "sizeRatio": 0.8,
-          "health": 20,
-          "damage": 3,
-          "speed": 4,
-          "scatterRate": 1,
-          "lifeLength": 3.2,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "traps"
       },
       {
         "angle": 3.141592653589793,
         "offset": 0,
         "size": 60,
         "width": 0.5,
-        "delay": 0,
-        "reload": 1.5,
-        "recoil": 0,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
-        "forceFire": true,
-        "bullet": {
-          "type": "trap",
-          "sizeRatio": 0.8,
-          "health": 20,
-          "damage": 3,
-          "speed": 4,
-          "scatterRate": 1,
-          "lifeLength": 3.2,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "traps"
       },
       {
         "angle": 3.9269908169872414,
         "offset": 0,
         "size": 60,
         "width": 0.5,
-        "delay": 0,
-        "reload": 1.5,
-        "recoil": 0,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
-        "forceFire": true,
-        "bullet": {
-          "type": "trap",
-          "sizeRatio": 0.8,
-          "health": 20,
-          "damage": 3,
-          "speed": 4,
-          "scatterRate": 1,
-          "lifeLength": 3.2,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "traps"
       },
       {
         "angle": 4.71238898038469,
         "offset": 0,
         "size": 60,
         "width": 0.5,
-        "delay": 0,
-        "reload": 1.5,
-        "recoil": 0,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
-        "forceFire": true,
-        "bullet": {
-          "type": "trap",
-          "sizeRatio": 0.8,
-          "health": 20,
-          "damage": 3,
-          "speed": 4,
-          "scatterRate": 1,
-          "lifeLength": 3.2,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "traps"
       },
       {
         "angle": 5.497787143782138,
         "offset": 0,
         "size": 60,
         "width": 0.5,
-        "delay": 0,
-        "reload": 1.5,
-        "recoil": 0,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
-        "forceFire": true,
-        "bullet": {
-          "type": "trap",
-          "sizeRatio": 0.8,
-          "health": 20,
-          "damage": 3,
-          "speed": 4,
-          "scatterRate": 1,
-          "lifeLength": 3.2,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "traps"
       }
     ],
     "stats": [
@@ -6272,7 +5558,25 @@ export const tanksData:TanksData = {
     ],
     "key": "trapper-dominator",
     "upgradesFrom": [],
-    "color": 2
+    "color": 2,
+    "barrelStats": {
+      "traps": {
+        "name": "Traps",
+        "reload": 1.5,
+        "recoil": 0,
+        "bullet": {
+          "type": "trap",
+          "sizeRatio": 0.8,
+          "health": 20,
+          "damage": 3,
+          "speed": 4,
+          "scatterRate": 1,
+          "lifeLength": 3.2,
+          "absorbtionFactor": 1
+        },
+        "forceFire": true
+      }
+    }
   },
   "battleship": {
     "id": 48,
@@ -6303,96 +5607,44 @@ export const tanksData:TanksData = {
         "offset": -20,
         "size": 75,
         "width": 0.7,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": true,
         "trapezoidDirection": 3.141592653589793,
         "addon": null,
-        "droneCount": 4294967295,
-        "canControlDrones": false,
-        "bullet": {
-          "type": "swarm",
-          "sizeRatio": 0.7,
-          "health": 1,
-          "damage": 0.15,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "autoDrones"
       },
       {
         "angle": 4.71238898038469,
         "offset": -20,
         "size": 75,
         "width": 0.7,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": true,
         "trapezoidDirection": 3.141592653589793,
         "addon": null,
-        "droneCount": 4294967295,
-        "canControlDrones": false,
-        "bullet": {
-          "type": "swarm",
-          "sizeRatio": 0.7,
-          "health": 1,
-          "damage": 0.15,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "autoDrones"
       },
       {
         "angle": 1.5707963267948966,
         "offset": 20,
         "size": 75,
         "width": 0.7,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": true,
         "trapezoidDirection": 3.141592653589793,
         "addon": null,
-        "droneCount": 4294967295,
-        "canControlDrones": true,
-        "bullet": {
-          "type": "swarm",
-          "sizeRatio": 0.7,
-          "health": 1,
-          "damage": 0.15,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "controllableDrones"
       },
       {
         "angle": 4.71238898038469,
         "offset": 20,
         "size": 75,
         "width": 0.7,
-        "delay": 0,
-        "reload": 1,
-        "recoil": 1,
         "isTrapezoid": true,
         "trapezoidDirection": 3.141592653589793,
         "addon": null,
-        "droneCount": 4294967295,
-        "canControlDrones": true,
-        "bullet": {
-          "type": "swarm",
-          "sizeRatio": 0.7,
-          "health": 1,
-          "damage": 0.15,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "controllableDrones"
       }
     ],
     "stats": [
@@ -6432,9 +5684,45 @@ export const tanksData:TanksData = {
     "key": "battleship",
     "upgradesFrom": [
       "overseer",
-      "twin flank"
+      "twin-flank"
     ],
-    "color": 4
+    "color": 4,
+    "barrelStats": {
+      "autoDrones": {
+        "name": "Automatic Drones",
+        "reload": 1,
+        "recoil": 1,
+        "bullet": {
+          "type": "swarm",
+          "sizeRatio": 0.7,
+          "health": 1,
+          "damage": 0.15,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        },
+        "droneCount": 4294967295,
+        "canControlDrones": false
+      },
+      "controllableDrones": {
+        "name": "Controllable Drones",
+        "reload": 1,
+        "recoil": 1,
+        "bullet": {
+          "type": "swarm",
+          "sizeRatio": 0.7,
+          "health": 1,
+          "damage": 0.15,
+          "speed": 1,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 1
+        },
+        "droneCount": 4294967295,
+        "canControlDrones": true
+      }
+    }
   },
   "annihilator": {
     "id": 49,
@@ -6465,22 +5753,11 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 95,
         "width": 2.3,
-        "delay": 0,
-        "reload": 4,
-        "recoil": 17,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 3,
-          "speed": 0.7,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 0.05
-        }
+        "delay": 0,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -6521,9 +5798,26 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "destroyer"
     ],
-    "color": 1
+    "color": 1,
+    "barrelStats": {
+      "main": {
+        "name": "Cannon",
+        "reload": 4,
+        "recoil": 17,
+        "bullet": {
+          "type": "bullet",
+          "sizeRatio": 1,
+          "health": 2,
+          "damage": 3,
+          "speed": 0.7,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 0.05
+        }
+      }
+    }
   },
-  "auto smasher": {
+  "auto-smasher": {
     "id": 50,
     "name": "Auto Smasher",
     "upgradeMessage": "",
@@ -6581,11 +5875,12 @@ export const tanksData:TanksData = {
         "max": 10
       }
     ],
-    "key": "auto smasher",
+    "key": "auto-smasher",
     "upgradesFrom": [
       "smasher"
     ],
-    "color": 1
+    "color": 1,
+    "barrelStats": {}
   },
   "spike": {
     "id": 51,
@@ -6649,7 +5944,8 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "smasher"
     ],
-    "color": 2
+    "color": 2,
+    "barrelStats": {}
   },
   "factory": {
     "id": 52,
@@ -6680,24 +5976,11 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 70,
         "width": 1,
-        "delay": 0,
-        "reload": 3,
-        "recoil": 1,
         "isTrapezoid": true,
         "trapezoidDirection": 0,
         "addon": null,
-        "droneCount": 6,
-        "canControlDrones": true,
-        "bullet": {
-          "type": "minion",
-          "sizeRatio": 1,
-          "health": 4,
-          "damage": 0.7,
-          "speed": 0.56,
-          "scatterRate": 1,
-          "lifeLength": -1,
-          "absorbtionFactor": 1
-        }
+        "delay": 0,
+        "barrelStats": "drones"
       }
     ],
     "stats": [
@@ -6738,7 +6021,26 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "overseer"
     ],
-    "color": 5
+    "color": 5,
+    "barrelStats": {
+      "drones": {
+        "name": "Drones",
+        "reload": 3,
+        "recoil": 1,
+        "bullet": {
+          "type": "minion",
+          "sizeRatio": 1,
+          "health": 4,
+          "damage": 0.7,
+          "speed": 0.56,
+          "scatterRate": 1,
+          "lifeLength": -1,
+          "absorbtionFactor": 1
+        },
+        "droneCount": 6,
+        "canControlDrones": true
+      }
+    }
   },
   "dev-tank": {
     "id": 53,
@@ -6800,7 +6102,8 @@ export const tanksData:TanksData = {
     ],
     "key": "dev-tank",
     "upgradesFrom": [],
-    "color": 2
+    "color": 2,
+    "barrelStats": {}
   },
   "skimmer": {
     "id": 54,
@@ -6831,22 +6134,11 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 80,
         "width": 1.7,
-        "delay": 0,
-        "reload": 4,
-        "recoil": 3,
         "isTrapezoid": false,
         "trapezoidDirection": 0,
         "addon": null,
-        "bullet": {
-          "type": "skimmer",
-          "sizeRatio": 1,
-          "health": 3,
-          "damage": 1,
-          "speed": 0.5,
-          "scatterRate": 1,
-          "lifeLength": 1.3,
-          "absorbtionFactor": 0.1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -6887,7 +6179,24 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "destroyer"
     ],
-    "color": 2
+    "color": 2,
+    "barrelStats": {
+      "main": {
+        "name": "Main Cannon",
+        "reload": 4,
+        "recoil": 3,
+        "bullet": {
+          "type": "skimmer",
+          "sizeRatio": 1,
+          "health": 3,
+          "damage": 1,
+          "speed": 0.5,
+          "scatterRate": 1,
+          "lifeLength": 1.3,
+          "absorbtionFactor": 0.1
+        }
+      }
+    }
   },
   "rocketeer": {
     "id": 55,
@@ -6918,22 +6227,11 @@ export const tanksData:TanksData = {
         "offset": 0,
         "size": 80,
         "width": 1.25,
-        "delay": 0,
-        "reload": 4,
-        "recoil": 3,
         "isTrapezoid": true,
         "trapezoidDirection": 3.141592653589793,
         "addon": null,
-        "bullet": {
-          "type": "rocket",
-          "sizeRatio": 1,
-          "health": 5,
-          "damage": 1,
-          "speed": 0.3,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 0.1
-        }
+        "delay": 0,
+        "barrelStats": "main"
       }
     ],
     "stats": [
@@ -6974,6 +6272,23 @@ export const tanksData:TanksData = {
     "upgradesFrom": [
       "destroyer"
     ],
-    "color": 3
+    "color": 3,
+    "barrelStats": {
+      "main": {
+        "name": "Main Cannon",
+        "reload": 4,
+        "recoil": 3,
+        "bullet": {
+          "type": "rocket",
+          "sizeRatio": 1,
+          "health": 5,
+          "damage": 1,
+          "speed": 0.3,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "absorbtionFactor": 0.1
+        }
+      }
+    }
   }
 }
