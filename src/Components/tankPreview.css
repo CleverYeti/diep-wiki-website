@@ -8,6 +8,7 @@
 .tank-preview > svg {
     width: 100%;
     height: 100%;
+    border-radius: 0.75rem;
 }
 
 .tank-preview > .corner-button {
@@ -89,7 +90,13 @@
     place-content: center;
 }
 .tank-preview > .preview-settings > .setting-row:has(input[type="color"]) {
-    grid-template-columns: 4.5rem 4.5rem 1fr;
+    grid-template-columns: 6rem 4.5rem 1fr;
+}
+.tank-preview > .preview-settings > .setting-row:has(input[type="checkbox"]) {
+    grid-template-columns: 6rem 4.5rem 1fr;
+}
+.tank-preview > .preview-settings > .setting-row.grid-alpha {
+    grid-template-columns: 6rem 4.5rem 1fr;
 }
 
 .tank-preview > .preview-settings > .setting-row > .name {
@@ -110,8 +117,13 @@
     width: auto;
     width: 7rem;
 }
+.tank-preview > .preview-settings > .setting-row.grid-alpha > input[type="range"] {
+    width: 4.5rem;
+}
+
+
 .tank-preview > .preview-settings > .setting-row > input[type="color"] {
-    width: 5rem;
+    width: 4.5rem;
     height: 1.5rem;
     margin-left: 0.5rem;
     border-radius: 0.25rem;

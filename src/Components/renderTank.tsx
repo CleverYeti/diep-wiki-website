@@ -4,6 +4,8 @@ import { renderColor } from "../functions/renderColor";
 
 const BORDER_THICKNESS = 7.5;
 const DEFAULT_VIEW_BOUNDARIES = 150
+const GRID_THICKNESS = 2
+function GRID_GRADIENT(x: number, y: number) {return 1 - Math.min((x ** 2 + y ** 2) * 0.75, 1)} // 0-1 => 0-1
 
 interface RenderTankProps {
   tank: Tank;
@@ -15,6 +17,9 @@ interface RenderTankProps {
   barrelColor?: Array<number>;
   smasherColor?: Array<number>;
   reCenter?: boolean;
+  zoom?: number;
+  gridColor?: Array<number>;
+  gridAlpha?: number;
 }
 
 export function RenderTank({
@@ -26,7 +31,10 @@ export function RenderTank({
   borderOpacity = 0.25,
   barrelColor = [153, 153, 153],
   smasherColor = [85, 85, 85],
-  reCenter = true
+  reCenter = true,
+  zoom = 1,
+  gridColor = [100, 100, 100],
+  gridAlpha = 0
 }: RenderTankProps) {
 
   function rotateVector(vector: [number, number], angle: number): [number, number] {
@@ -44,7 +52,7 @@ export function RenderTank({
       : 50;
   const sizeFactor = Math.pow(1.01, level - 1);
   const tankSize = tankBaseSize * sizeFactor;
-  const viewBoundaries = DEFAULT_VIEW_BOUNDARIES * sizeFactor;
+  const viewBoundaries = DEFAULT_VIEW_BOUNDARIES * sizeFactor / zoom;
   
   let maxX = 50 * sizeFactor
   let minX = -50 * sizeFactor
@@ -342,6 +350,41 @@ export function RenderTank({
     )
   }
 
+  // grid
+  const gridPolygons: JSX.Element[] = [];
+  if (gridAlpha > 0) {
+    const squareDimensions = 50
+    const gridDimensions = Math.ceil(viewBoundaries * 1.5 / squareDimensions)
+    for (let i = -gridDimensions; i < gridDimensions; i++) {
+      for (let j = -gridDimensions; j < gridDimensions; j++) {
+        const position1 = squareDimensions * i
+        const position2 = squareDimensions * j
+        gridPolygons.push(
+          <line
+            key={`grid-${Math.random()}`}
+            x1={position1}
+            y1={position2}
+            x2={position1}
+            y2={position2 + squareDimensions}
+            stroke={renderColor(gridColor, gridAlpha * GRID_GRADIENT((position2 + 0.5 * squareDimensions) / viewBoundaries, position1 / viewBoundaries))}
+            strokeWidth={GRID_THICKNESS}
+          />
+        )
+        gridPolygons.push(
+          <line
+            key={`grid-${Math.random()}`}
+            x1={position1}
+            y1={position2}
+            x2={position1 + squareDimensions}
+            y2={position2}
+            stroke={renderColor(gridColor, gridAlpha * GRID_GRADIENT((position1 + 0.5 * squareDimensions) / viewBoundaries, position2 / viewBoundaries))}
+            strokeWidth={GRID_THICKNESS}
+          />
+        )
+      }
+    }
+  }
+
   // return svg
   return (
     <svg
@@ -350,6 +393,7 @@ export function RenderTank({
       xmlns="http://www.w3.org/2000/svg"
       data-view-boundaries={viewBoundaries}
     >
+      {gridPolygons}
       {polygons}
     </svg>
   );
