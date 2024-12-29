@@ -1,0 +1,38 @@
+<description>
+    
+</description>
+<strategy>
+
+</strategy>
+
+<builds>
+    <build key="glass" name="Glass" points="0/0/0/7/7/7/7/5"/>
+</builds>
+
+
+<!-- treat these sections as html, with some extra elements-->
+    
+<tank-link tankKey="sniper" buildKey="glass" buildPoints="0/0/0/0/0/0/0/0">glass sniper</tank-link>
+<!-- becomes a link that points to glass sniper and also can be hovered to see what build that is-->
+<!-- use buildKey or buildPoints. not both-->
+
+<build-link buildKey="glass" buildPoints="0/0/0/0/0/0/0/0"></build-link>
+<!-- becomes a link that can be hovered to visually see the bars of points-->
+<!-- use buildKey or buildPoints. not both-->
+
+
+<!-- suggest others that could be useful -->
+
+
+<!-- html tags available: -->
+<h1></h1> and other h elements
+<p>pargraph</p>
+
+<b>bold</b>
+<i>italic<i>
+<u>underline<u>
+
+<br/> line break
+
+and probably others im forgetting
+NO CSS SINCE ITS PARSED IN A SPECIAL WAY
