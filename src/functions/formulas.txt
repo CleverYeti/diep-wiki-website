@@ -1,0 +1,46 @@
+// apparently not correct?
+scatterAngle = (Math.PI / 180) * this.definition.bullet.scatterRate * (Math.random() - .5) * 10;
+// half of that in each direction
+maxScatterSpreadDegrees = bullet.scatterRate * 10
+
+
+// recoil is multiplied by 2
+// firingAngle is taken after the scatter
+tank.addAcceleration(firingAngle + Math.PI, bullet.recoil * 2);
+
+
+this.barrelEntity.barrelData.reloadTime = tank.reloadTime * barrel.reload;
+
+const MAX_DRONES_PER_BARREL = 11 + this.cameraEntity.cameraData.values.statLevels.values[Stat.Reload];
+
+
+scope distance = 1500 (circle)
+
+
+
+// invisibility: every tick
+if (shooting) opacity += tank.visibilityRateShooting
+if (moving) opacity += tank.visibilityRateMoving
+opacity -= this.definition.invisibilityRate
+
+
+
+// tank entity
+const bodyDamagePerTick = bodyDamagePoints * 6 + 20;
+const maxHealth = tank.maxHealth + 2 * (level - 1) + healthPoints * 20
+const regenPerTick = maxHealth * (1 + 4 * healthRegenPoints) / 25000;
+
+const reloadTime = 15 * Math.pow(0.914, reloadPoints);
+this.accel.add({
+    x: this.inputs.movement.x * this.cameraEntity.cameraData.values.movementSpeed,
+    y: this.inputs.movement.y * this.cameraEntity.cameraData.values.movementSpeed
+});
+
+// camera entity
+this.cameraData.FOV = (.55 * fieldFactor) / Math.pow(1.01, 0.5 * (level - 1));
+const FOVWidth = (1920 / fov) / 1.5;
+const FOVHeight = (1080 / fov) / 1.5;
+
+
+
+// spawn invincibility time: 374 ticks

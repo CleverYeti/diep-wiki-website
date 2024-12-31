@@ -14,12 +14,23 @@ export interface Bullet {
   absorbtionFactor: number;
 }
 
+export enum BarrelTypes {
+  normal = "normal",
+  autoCannon = "autoCannon",
+  autoTurret = "autoTurret",
+  trapLauncher = "trapLauncher",
+  droneSpawner = "droneSpawner",
+  swarmSpawner = "swarmSpawner",
+  minionSpawner = "minionSpawner",
+}
+
 export interface Barrel {
   angle: number;
   offset: number;
   size: number;
   width: number;
   isTrapezoid: boolean;
+  type?: BarrelTypes | string;
   trapezoidDirection: number;
   addon: string | null;
   delay: number;
@@ -125,7 +136,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -219,7 +231,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -230,7 +243,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.5,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -323,7 +337,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.5,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -334,7 +349,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.5,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -345,7 +361,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -442,7 +459,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0.7853981633974483,
@@ -453,7 +471,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -464,7 +483,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -560,7 +580,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": -1.5707963267948966,
@@ -571,7 +592,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 1.5707963267948966,
@@ -582,7 +604,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -593,7 +616,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -687,7 +711,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.5,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0.7853981633974483,
@@ -698,7 +723,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.5,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": -2.356194490192345,
@@ -709,7 +735,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.5,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 2.356194490192345,
@@ -720,7 +747,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.5,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 3.141592653589793,
@@ -731,7 +759,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": -1.5707963267948966,
@@ -742,7 +771,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 1.5707963267948966,
@@ -753,7 +783,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -764,7 +795,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -862,7 +894,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -959,7 +992,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -1057,7 +1091,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 3.141592653589793,
@@ -1068,7 +1103,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -1164,7 +1200,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 3.665191429188092,
@@ -1175,7 +1212,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.5,
-        "barrelStats": "back"
+        "barrelStats": "back",
+        "type": "normal"
       },
       {
         "angle": 2.6179938779914944,
@@ -1186,7 +1224,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.5,
-        "barrelStats": "back"
+        "barrelStats": "back",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -1299,7 +1338,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -1399,7 +1439,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "drones"
+        "barrelStats": "drones",
+        "type": "droneSpawner"
       },
       {
         "angle": 1.5707963267948966,
@@ -1410,7 +1451,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "drones"
+        "barrelStats": "drones",
+        "type": "droneSpawner"
       }
     ],
     "stats": [
@@ -1505,7 +1547,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "drones"
+        "barrelStats": "drones",
+        "type": "droneSpawner"
       },
       {
         "angle": 1.5707963267948966,
@@ -1516,7 +1559,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "drones"
+        "barrelStats": "drones",
+        "type": "droneSpawner"
       },
       {
         "angle": 0,
@@ -1527,7 +1571,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "drones"
+        "barrelStats": "drones",
+        "type": "droneSpawner"
       },
       {
         "angle": 3.141592653589793,
@@ -1538,7 +1583,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "drones"
+        "barrelStats": "drones",
+        "type": "droneSpawner"
       }
     ],
     "stats": [
@@ -1636,7 +1682,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -1647,7 +1694,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.5,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 3.141592653589793,
@@ -1658,7 +1706,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 3.141592653589793,
@@ -1669,7 +1718,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.5,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -1763,7 +1813,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.66,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0.7853981633974483,
@@ -1774,7 +1825,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.66,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": -0.39269908169872414,
@@ -1785,7 +1837,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.33,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0.39269908169872414,
@@ -1796,7 +1849,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.33,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -1807,7 +1861,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -1903,7 +1958,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -1996,7 +2052,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -2087,7 +2144,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "drones"
+        "barrelStats": "drones",
+        "type": "normal"
       },
       {
         "angle": 1.5707963267948966,
@@ -2098,7 +2156,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "drones"
+        "barrelStats": "drones",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -2193,7 +2252,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -2204,7 +2264,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.5,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 2.0943951023931953,
@@ -2215,7 +2276,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 2.0943951023931953,
@@ -2226,7 +2288,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.5,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": -2.0943951023931953,
@@ -2237,7 +2300,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": -2.0943951023931953,
@@ -2248,7 +2312,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.5,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -2344,7 +2409,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -2355,7 +2421,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.2,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -2452,7 +2519,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.5,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -2463,7 +2531,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.75,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -2474,7 +2543,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -2485,7 +2555,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.25,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -2578,7 +2649,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 3.141592653589793,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -2671,7 +2743,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -2764,7 +2837,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 3.9269908169872414,
@@ -2775,7 +2849,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.66,
-        "barrelStats": "diagonal"
+        "barrelStats": "diagonal",
+        "type": "normal"
       },
       {
         "angle": 2.356194490192345,
@@ -2786,7 +2861,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.66,
-        "barrelStats": "diagonal"
+        "barrelStats": "diagonal",
+        "type": "normal"
       },
       {
         "angle": 3.665191429188092,
@@ -2797,7 +2873,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.33,
-        "barrelStats": "back"
+        "barrelStats": "back",
+        "type": "normal"
       },
       {
         "angle": 2.6179938779914944,
@@ -2808,7 +2885,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.33,
-        "barrelStats": "back"
+        "barrelStats": "back",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -2931,7 +3009,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 1.5707963267948966,
@@ -2942,7 +3021,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "side"
+        "barrelStats": "side",
+        "type": "normal"
       },
       {
         "angle": -1.5707963267948966,
@@ -2953,7 +3033,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "side"
+        "barrelStats": "side",
+        "type": "normal"
       },
       {
         "angle": 3.665191429188092,
@@ -2964,7 +3045,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.5,
-        "barrelStats": "back"
+        "barrelStats": "back",
+        "type": "normal"
       },
       {
         "angle": 2.6179938779914944,
@@ -2975,7 +3057,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.5,
-        "barrelStats": "back"
+        "barrelStats": "back",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -3098,7 +3181,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 3.141592653589793,
@@ -3109,7 +3193,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "drones"
+        "barrelStats": "drones",
+        "type": "droneSpawner"
       }
     ],
     "stats": [
@@ -3219,7 +3304,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "drones"
+        "barrelStats": "drones",
+        "type": "droneSpawner"
       }
     ],
     "stats": [
@@ -3314,7 +3400,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "controllableDrones"
+        "barrelStats": "controllableDrones",
+        "type": "droneSpawner"
       },
       {
         "angle": 0.5890486225480862,
@@ -3325,7 +3412,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "autoDrones"
+        "barrelStats": "autoDrones",
+        "type": "droneSpawner"
       },
       {
         "angle": 0.9817477042468103,
@@ -3336,7 +3424,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "controllableDrones"
+        "barrelStats": "controllableDrones",
+        "type": "droneSpawner"
       },
       {
         "angle": 1.3744467859455345,
@@ -3347,7 +3436,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "autoDrones"
+        "barrelStats": "autoDrones",
+        "type": "droneSpawner"
       },
       {
         "angle": 1.7671458676442586,
@@ -3358,7 +3448,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "controllableDrones"
+        "barrelStats": "controllableDrones",
+        "type": "droneSpawner"
       },
       {
         "angle": 2.159844949342983,
@@ -3369,7 +3460,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "autoDrones"
+        "barrelStats": "autoDrones",
+        "type": "droneSpawner"
       },
       {
         "angle": 2.552544031041707,
@@ -3380,7 +3472,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "controllableDrones"
+        "barrelStats": "controllableDrones",
+        "type": "droneSpawner"
       },
       {
         "angle": 2.9452431127404313,
@@ -3391,7 +3484,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "autoDrones"
+        "barrelStats": "autoDrones",
+        "type": "droneSpawner"
       },
       {
         "angle": 3.3379421944391554,
@@ -3402,7 +3496,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "controllableDrones"
+        "barrelStats": "controllableDrones",
+        "type": "droneSpawner"
       },
       {
         "angle": 3.7306412761378795,
@@ -3413,7 +3508,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "autoDrones"
+        "barrelStats": "autoDrones",
+        "type": "droneSpawner"
       },
       {
         "angle": 4.12333992150429,
@@ -3424,7 +3520,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "controllableDrones"
+        "barrelStats": "controllableDrones",
+        "type": "droneSpawner"
       },
       {
         "angle": 4.516039439535327,
@@ -3435,7 +3532,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "autoDrones"
+        "barrelStats": "autoDrones",
+        "type": "droneSpawner"
       },
       {
         "angle": 4.908738521234052,
@@ -3446,7 +3544,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "controllableDrones"
+        "barrelStats": "controllableDrones",
+        "type": "droneSpawner"
       },
       {
         "angle": 5.301437166600463,
@@ -3457,7 +3556,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "autoDrones"
+        "barrelStats": "autoDrones",
+        "type": "droneSpawner"
       },
       {
         "angle": 5.6941366846315,
@@ -3468,7 +3568,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "controllableDrones"
+        "barrelStats": "controllableDrones",
+        "type": "droneSpawner"
       },
       {
         "angle": 6.086835766330224,
@@ -3479,7 +3580,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "autoDrones"
+        "barrelStats": "autoDrones",
+        "type": "droneSpawner"
       }
     ],
     "stats": [
@@ -3521,11 +3623,11 @@ export const tanksData:TanksData = {
     "upgradesFrom": [],
     "barrelStats": {
       "controllableDrones": {
-        "name": "Main",
+        "name": "Controllable Drones",
         "reload": 6,
         "recoil": 0,
         "bullet": {
-          "type": "Controllable Drones",
+          "type": "drone",
           "sizeRatio": 1,
           "health": 2,
           "damage": 0.7,
@@ -3538,11 +3640,11 @@ export const tanksData:TanksData = {
         "canControlDrones": true
       },
       "autoDrones": {
-        "name": "Main",
+        "name": "Automatic Drones",
         "reload": 6,
         "recoil": 0,
         "bullet": {
-          "type": "Automatic Drones",
+          "type": "drone",
           "sizeRatio": 1,
           "health": 2,
           "damage": 0.7,
@@ -3589,7 +3691,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "dc9843d5bb85417dad5dd8a13292868a"
+        "barrelStats": "dc9843d5bb85417dad5dd8a13292868a",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -3600,7 +3703,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.2,
-        "barrelStats": "dc9843d5bb85417dad5dd8a13292868a"
+        "barrelStats": "dc9843d5bb85417dad5dd8a13292868a",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -3611,7 +3715,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.4,
-        "barrelStats": "dc9843d5bb85417dad5dd8a13292868a"
+        "barrelStats": "dc9843d5bb85417dad5dd8a13292868a",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -3704,7 +3809,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.5,
-        "barrelStats": "small"
+        "barrelStats": "small",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -3715,7 +3821,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -3829,7 +3936,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
         "delay": 0,
-        "barrelStats": "traps"
+        "barrelStats": "traps",
+        "type": "trapLauncher"
       }
     ],
     "stats": [
@@ -3922,7 +4030,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.66,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -3933,7 +4042,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.33,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 3.141592653589793,
@@ -3944,7 +4054,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
         "delay": 0,
-        "barrelStats": "traps"
+        "barrelStats": "traps",
+        "type": "trapLauncher"
       }
     ],
     "stats": [
@@ -4053,7 +4164,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
         "delay": 0,
-        "barrelStats": "traps"
+        "barrelStats": "traps",
+        "type": "trapLauncher"
       },
       {
         "angle": 2.0943951023931953,
@@ -4064,7 +4176,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "drones"
+        "barrelStats": "drones",
+        "type": "droneSpawner"
       },
       {
         "angle": 4.1887902047863905,
@@ -4075,7 +4188,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "drones"
+        "barrelStats": "drones",
+        "type": "droneSpawner"
       }
     ],
     "stats": [
@@ -4186,7 +4300,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
         "delay": 0,
-        "barrelStats": "traps"
+        "barrelStats": "traps",
+        "type": "trapLauncher"
       }
     ],
     "stats": [
@@ -4279,7 +4394,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
         "delay": 0,
-        "barrelStats": "traps"
+        "barrelStats": "traps",
+        "type": "trapLauncher"
       },
       {
         "angle": 2.0943951023931953,
@@ -4290,7 +4406,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
         "delay": 0,
-        "barrelStats": "traps"
+        "barrelStats": "traps",
+        "type": "trapLauncher"
       },
       {
         "angle": 4.1887902047863905,
@@ -4301,7 +4418,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
         "delay": 0,
-        "barrelStats": "traps"
+        "barrelStats": "traps",
+        "type": "trapLauncher"
       }
     ],
     "stats": [
@@ -4515,7 +4633,7 @@ export const tanksData:TanksData = {
     "speed": 1,
     "maxHealth": 50,
     "preAddon": null,
-    "postAddon": "autoturret",
+    "postAddon": null,
     "sides": 1,
     "borderWidth": 15,
     "barrels": [
@@ -4528,7 +4646,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.5,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -4539,7 +4658,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.75,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -4550,7 +4670,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -4561,7 +4682,20 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.25,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
+      },
+      {
+        "angle": 0,
+        "offset": 0,
+        "size": 55,
+        "width": 0.7,
+        "delay": 0.01,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "addon": null,
+        "barrelStats": "autoTurret",
+        "type": "autoTurret"
       }
     ],
     "stats": [
@@ -4619,6 +4753,21 @@ export const tanksData:TanksData = {
           "lifeLength": 1,
           "absorbtionFactor": 1
         }
+      },
+      "autoTurret": {
+        "name": "Auto Turret",
+        "recoil": 0.3,
+        "reload": 1,
+        "bullet": {
+          "type": "bullet",
+          "health": 1,
+          "damage": 0.3,
+          "speed": 1.2,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "sizeRatio": 1,
+          "absorbtionFactor": 1
+        }
       }
     }
   },
@@ -4642,10 +4791,71 @@ export const tanksData:TanksData = {
     "speed": 1,
     "maxHealth": 50,
     "preAddon": null,
-    "postAddon": "auto5",
+    "postAddon": null,
     "sides": 1,
     "borderWidth": 15,
-    "barrels": [],
+    "barrels": [
+      {
+        "angle": 0,
+        "offset": 0,
+        "size": 55,
+        "width": 0.7,
+        "delay": 0.01,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "addon": null,
+        "barrelStats": "autoCannons",
+        "type": "autoCannon"
+      },
+      {
+        "angle": Math.PI * 2 / 5 * 1,
+        "offset": 0,
+        "size": 55,
+        "width": 0.7,
+        "delay": 0.01,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "addon": null,
+        "barrelStats": "autoCannons",
+        "type": "autoCannon"
+      },
+      {
+        "angle": Math.PI * 2 / 5 * 2,
+        "offset": 0,
+        "size": 55,
+        "width": 0.7,
+        "delay": 0.01,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "addon": null,
+        "barrelStats": "autoCannons",
+        "type": "autoCannon"
+      },
+      {
+        "angle": Math.PI * 2 / 5 * 3,
+        "offset": 0,
+        "size": 55,
+        "width": 0.7,
+        "delay": 0.01,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "addon": null,
+        "barrelStats": "autoCannons",
+        "type": "autoCannon"
+      },
+      {
+        "angle": Math.PI * 2 / 5 * 4,
+        "offset": 0,
+        "size": 55,
+        "width": 0.7,
+        "delay": 0.01,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "addon": null,
+        "barrelStats": "autoCannons",
+        "type": "autoCannon"
+      },
+    ],
     "stats": [
       {
         "name": "Movement Speed",
@@ -4686,7 +4896,23 @@ export const tanksData:TanksData = {
       "auto-3"
     ],
     "color": 1,
-    "barrelStats": {}
+    "barrelStats": {
+      "autoCannons": {
+        "name": "Auto Cannons",
+        "recoil": 0.3,
+        "reload": 1,
+        "bullet": {
+          "type": "bullet",
+          "health": 1,
+          "damage": 0.3,
+          "speed": 1.2,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "sizeRatio": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "auto-3": {
     "id": 41,
@@ -4711,10 +4937,47 @@ export const tanksData:TanksData = {
     "speed": 1,
     "maxHealth": 50,
     "preAddon": null,
-    "postAddon": "auto3",
+    "postAddon": null,
     "sides": 1,
     "borderWidth": 15,
-    "barrels": [],
+    "barrels": [
+      {
+        "angle": 0,
+        "offset": 0,
+        "size": 55,
+        "width": 0.7,
+        "delay": 0.01,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "addon": null,
+        "barrelStats": "autoCannons",
+        "type": "autoCannon"
+      },
+      {
+        "angle": Math.PI * 2 / 3 * 1,
+        "offset": 0,
+        "size": 55,
+        "width": 0.7,
+        "delay": 0.01,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "addon": null,
+        "barrelStats": "autoCannons",
+        "type": "autoCannon"
+      },
+      {
+        "angle": Math.PI * 2 / 3 * 2,
+        "offset": 0,
+        "size": 55,
+        "width": 0.7,
+        "delay": 0.01,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "addon": null,
+        "barrelStats": "autoCannons",
+        "type": "autoCannon"
+      },
+    ],
     "stats": [
       {
         "name": "Movement Speed",
@@ -4754,7 +5017,23 @@ export const tanksData:TanksData = {
       "flank-guard"
     ],
     "color": 3,
-    "barrelStats": {}
+    "barrelStats": {
+      "autoCannons": {
+        "name": "Auto Cannons",
+        "recoil": 0.3,
+        "reload": 1,
+        "bullet": {
+          "type": "bullet",
+          "health": 1,
+          "damage": 0.3,
+          "speed": 1.2,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "sizeRatio": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "spread-shot": {
     "id": 42,
@@ -4789,7 +5068,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.833325,
-        "barrelStats": "small"
+        "barrelStats": "small",
+        "type": "normal"
       },
       {
         "angle": -1.3089969389957472,
@@ -4800,7 +5080,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.833325,
-        "barrelStats": "small"
+        "barrelStats": "small",
+        "type": "normal"
       },
       {
         "angle": 1.0471975511965976,
@@ -4811,7 +5092,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.666675,
-        "barrelStats": "small"
+        "barrelStats": "small",
+        "type": "normal"
       },
       {
         "angle": -1.0471975511965976,
@@ -4822,7 +5104,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.666675,
-        "barrelStats": "small"
+        "barrelStats": "small",
+        "type": "normal"
       },
       {
         "angle": 0.7853981633974483,
@@ -4833,7 +5116,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.5,
-        "barrelStats": "small"
+        "barrelStats": "small",
+        "type": "normal"
       },
       {
         "angle": -0.7853981633974483,
@@ -4844,7 +5128,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.5,
-        "barrelStats": "small"
+        "barrelStats": "small",
+        "type": "normal"
       },
       {
         "angle": 0.5235987755982988,
@@ -4855,7 +5140,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.333325,
-        "barrelStats": "small"
+        "barrelStats": "small",
+        "type": "normal"
       },
       {
         "angle": -0.5235987755982988,
@@ -4866,7 +5152,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.333325,
-        "barrelStats": "small"
+        "barrelStats": "small",
+        "type": "normal"
       },
       {
         "angle": 0.2617993877991494,
@@ -4877,7 +5164,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.166675,
-        "barrelStats": "small"
+        "barrelStats": "small",
+        "type": "normal"
       },
       {
         "angle": -0.2617993877991494,
@@ -4888,7 +5176,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.166675,
-        "barrelStats": "small"
+        "barrelStats": "small",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -4899,7 +5188,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -5007,7 +5297,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -5018,7 +5309,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.2,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -5029,7 +5321,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.4,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -5040,7 +5333,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.6,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -5051,7 +5345,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.8,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -5132,7 +5427,7 @@ export const tanksData:TanksData = {
     "speed": 1,
     "maxHealth": 50,
     "preAddon": null,
-    "postAddon": "autoturret",
+    "postAddon": null,
     "sides": 1,
     "borderWidth": 15,
     "barrels": [
@@ -5145,7 +5440,20 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
         "delay": 0,
-        "barrelStats": "traps"
+        "barrelStats": "traps",
+        "type": "trapLauncher"
+      },
+      {
+        "angle": 0,
+        "offset": 0,
+        "size": 55,
+        "width": 0.7,
+        "delay": 0.01,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "addon": null,
+        "barrelStats": "autoTurret",
+        "type": "autoTurret"
       }
     ],
     "stats": [
@@ -5202,6 +5510,21 @@ export const tanksData:TanksData = {
           "lifeLength": 8,
           "absorbtionFactor": 1
         }
+      },
+      "autoTurret": {
+        "name": "Auto Turret",
+        "recoil": 0.3,
+        "reload": 1,
+        "bullet": {
+          "type": "bullet",
+          "health": 1,
+          "damage": 0.3,
+          "speed": 1.2,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "sizeRatio": 1,
+          "absorbtionFactor": 1
+        }
       }
     }
   },
@@ -5238,7 +5561,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.001,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -5329,7 +5653,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.666,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -5340,7 +5665,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.333,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       },
       {
         "angle": 0,
@@ -5351,7 +5677,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0.001,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -5442,7 +5769,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
         "delay": 0,
-        "barrelStats": "traps"
+        "barrelStats": "traps",
+        "type": "trapLauncher"
       },
       {
         "angle": 0.7853981633974483,
@@ -5453,7 +5781,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
         "delay": 0,
-        "barrelStats": "traps"
+        "barrelStats": "traps",
+        "type": "trapLauncher"
       },
       {
         "angle": 1.5707963267948966,
@@ -5464,7 +5793,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
         "delay": 0,
-        "barrelStats": "traps"
+        "barrelStats": "traps",
+        "type": "trapLauncher"
       },
       {
         "angle": 2.356194490192345,
@@ -5475,7 +5805,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
         "delay": 0,
-        "barrelStats": "traps"
+        "barrelStats": "traps",
+        "type": "trapLauncher"
       },
       {
         "angle": 3.141592653589793,
@@ -5486,7 +5817,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
         "delay": 0,
-        "barrelStats": "traps"
+        "barrelStats": "traps",
+        "type": "trapLauncher"
       },
       {
         "angle": 3.9269908169872414,
@@ -5497,7 +5829,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
         "delay": 0,
-        "barrelStats": "traps"
+        "barrelStats": "traps",
+        "type": "trapLauncher"
       },
       {
         "angle": 4.71238898038469,
@@ -5508,7 +5841,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
         "delay": 0,
-        "barrelStats": "traps"
+        "barrelStats": "traps",
+        "type": "trapLauncher"
       },
       {
         "angle": 5.497787143782138,
@@ -5519,7 +5853,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": "trapLauncher",
         "delay": 0,
-        "barrelStats": "traps"
+        "barrelStats": "traps",
+        "type": "trapLauncher"
       }
     ],
     "stats": [
@@ -5611,7 +5946,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 3.141592653589793,
         "addon": null,
         "delay": 0,
-        "barrelStats": "autoDrones"
+        "barrelStats": "autoDrones",
+        "type": "swarmSpawner"
       },
       {
         "angle": 4.71238898038469,
@@ -5622,7 +5958,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 3.141592653589793,
         "addon": null,
         "delay": 0,
-        "barrelStats": "autoDrones"
+        "barrelStats": "autoDrones",
+        "type": "swarmSpawner"
       },
       {
         "angle": 1.5707963267948966,
@@ -5633,7 +5970,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 3.141592653589793,
         "addon": null,
         "delay": 0,
-        "barrelStats": "controllableDrones"
+        "barrelStats": "controllableDrones",
+        "type": "swarmSpawner"
       },
       {
         "angle": 4.71238898038469,
@@ -5644,7 +5982,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 3.141592653589793,
         "addon": null,
         "delay": 0,
-        "barrelStats": "controllableDrones"
+        "barrelStats": "controllableDrones",
+        "type": "swarmSpawner"
       }
     ],
     "stats": [
@@ -5757,7 +6096,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -5837,10 +6177,23 @@ export const tanksData:TanksData = {
     "speed": 1,
     "maxHealth": 50,
     "preAddon": null,
-    "postAddon": "autosmasher",
+    "postAddon": null,
     "sides": 1,
     "borderWidth": 15,
-    "barrels": [],
+    "barrels": [
+      {
+        "angle": 0,
+        "offset": 0,
+        "size": 55,
+        "width": 0.7,
+        "delay": 0.01,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "addon": null,
+        "barrelStats": "autoTurret",
+        "type": "autoTurret"
+      }
+    ],
     "stats": [
       {
         "name": "Movement Speed",
@@ -5880,7 +6233,23 @@ export const tanksData:TanksData = {
       "smasher"
     ],
     "color": 1,
-    "barrelStats": {}
+    "barrelStats": {
+      "autoTurret": {
+        "name": "Auto Turret",
+        "recoil": 0.3,
+        "reload": 1,
+        "bullet": {
+          "type": "bullet",
+          "health": 1,
+          "damage": 0.3,
+          "speed": 1.2,
+          "scatterRate": 1,
+          "lifeLength": 1,
+          "sizeRatio": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
   },
   "spike": {
     "id": 51,
@@ -5980,7 +6349,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "drones"
+        "barrelStats": "drones",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -6138,7 +6508,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 0,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [
@@ -6231,7 +6602,8 @@ export const tanksData:TanksData = {
         "trapezoidDirection": 3.141592653589793,
         "addon": null,
         "delay": 0,
-        "barrelStats": "main"
+        "barrelStats": "main",
+        "type": "normal"
       }
     ],
     "stats": [

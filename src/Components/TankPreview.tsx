@@ -63,10 +63,10 @@ export function TankPreview({tank}: {tank: Tank}) {
                 gridAlpha={gridAlpha}
                 level={lastTankFixedLevel == tank.key ? fixedLevel : Math.max(1, tank.levelRequirement ?? 0)}
             />
-            <div className="toggle-settings corner-button" onClick={() => setSettingsOpen(!isSettingsOpen)}>
+            <div className="toggle-settings corner-button" onClick={() => {setSettingsOpen(!isSettingsOpen); setDownloadOpen(false)}}>
                 <img src="/icons/settings.svg"/>
             </div>
-            <div className="toggle-download corner-button" onClick={() => setDownloadOpen(!isDownloadOpen)}>
+            <div className="toggle-download corner-button" onClick={() => {setDownloadOpen(!isDownloadOpen); setSettingsOpen(false)}}>
                 <img src="/icons/download.svg" alt="" />
             </div>
             <div className="preview-download" data-active={isDownloadOpen}>
