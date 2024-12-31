@@ -10,7 +10,7 @@
 </builds>
 
 
-<!-- treat these sections as html, with some extra elements-->
+<!-- treat the description and strategy sections as html, with some extra elements-->
     
 <tank-link tankKey="sniper" buildKey="glass" buildPoints="0/0/0/0/0/0/0/0">glass sniper</tank-link>
 <!-- becomes a link that points to glass sniper and also can be hovered to see what build that is-->
