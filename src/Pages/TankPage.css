@@ -1,4 +1,4 @@
-#tank-header-section {
+#tank-page {
     margin: 0 auto;
     width: calc(100% - 2rem);
     max-width: 60rem;
@@ -7,17 +7,15 @@
     gap: 1rem;
 }
 
-#tank-header-main {
-    background: var(--section-bg);
-    border-radius: 0.75rem;
-    box-shadow: var(--shadow);
-}
-
-#tank-header-sidebar {
+#tank-page-main-content {
     
 }
 
-#tank-header-sidebar > .tank-preview {
+#tank-page-sidebar {
+    
+}
+
+#tank-page-sidebar > .tank-preview {
     width: 100%;
     aspect-ratio: 1/1;
     background: var(--section-bg);
@@ -25,27 +23,27 @@
     box-shadow: var(--shadow);
 }
 
-#tank-header-sidebar > .section {
+#tank-page-sidebar > .section {
     margin-top: 1rem;
     background: var(--section-bg);
     border-radius: 0.75rem;
     box-shadow: var(--shadow);
 }
 
-#tank-header-sidebar > .section > .title {
+#tank-page-sidebar > .section > .title {
     text-align: center;
     padding: 0.5rem 0.5rem 0 0.5rem;
     font-size: 1.125rem;
     font-weight: 500;
 }
 
-#tank-header-sidebar > .section > .tank-grid {
+#tank-page-sidebar > .section > .tank-grid {
     display: flex;
     padding: 0.25rem;
     flex-wrap: wrap;
     justify-content: center;
 }
-#tank-header-sidebar > .section > .tank-grid > .tank {
+#tank-page-sidebar > .section > .tank-grid > .tank {
     margin: 0.25rem;
     width: calc((100% - 2rem) / 4);
     border-radius: 0.5rem;
@@ -55,22 +53,54 @@
     overflow: hidden;
     text-decoration: none;
 }
-#tank-header-sidebar > .section > .tank-grid > .tank:hover {
+#tank-page-sidebar > .section > .tank-grid > .tank:hover {
     transform: scale(1.1);
     filter: brightness(1.3);
 }
 
-#tank-header-sidebar > .section > .tank-grid > .tank > svg {
+#tank-page-sidebar > .section > .tank-grid > .tank > svg {
     aspect-ratio: 1/1;
     height: auto;
     width: 100%;
     transform: scale(1.5);
 }
-#tank-header-sidebar > .section > .tank-grid > .tank > .name {
+#tank-page-sidebar > .section > .tank-grid > .tank > .name {
     text-align: center;
     font-size: 0.875rem;
     padding-bottom: 0.25rem;
     opacity: 0.875;
     color: var(--text-1);
     text-decoration: none;
+}
+
+
+#tank-page-sidebar > .title {
+    text-align: center;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+#tank-page-sidebar > .section > .stats-header {
+    height: 5rem;
+    display: flex;
+    margin-bottom: 0.5rem;
+}
+#tank-page-sidebar > .section > .stats-header > .title {
+    flex-grow: 1;
+    text-align: center;
+    padding: 0 1rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+#tank-page-sidebar > .section > .stats-header > svg {
+    width: 5rem;
+    height: 5rem;
+}
+
+#tank-page-sidebar > .section.stats {
+    padding-bottom: 0.25rem;
 }

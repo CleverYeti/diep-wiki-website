@@ -1,0 +1,15 @@
+.stat-row {
+    height: 1.5rem;
+    display: flex;
+    color: var(--text-2);
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.stat-row > .line {
+    height: 0.125rem;
+    border-radius: 0.125rem;
+    flex-grow: 1;
+    background: #ffffff44;
+    margin: 0 0.5rem;
+}

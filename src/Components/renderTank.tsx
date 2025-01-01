@@ -5,6 +5,7 @@ import { renderColor } from "../functions/renderColor";
 const BORDER_THICKNESS = 7.5;
 const DEFAULT_VIEW_BOUNDARIES = 150
 const GRID_THICKNESS = 2
+const HIGHLIGHT_FACTOR = 0.5
 function GRID_GRADIENT(x: number, y: number) {return 1 - Math.min((x ** 2 + y ** 2) * 0.75, 1)} // 0-1 => 0-1
 
 interface RenderTankProps {
@@ -20,6 +21,7 @@ interface RenderTankProps {
   zoom?: number;
   gridColor?: Array<number>;
   gridAlpha?: number;
+  highlight?: string | null;
 }
 
 export function RenderTank({
@@ -34,7 +36,8 @@ export function RenderTank({
   reCenter = true,
   zoom = 1,
   gridColor = [100, 100, 100],
-  gridAlpha = 0
+  gridAlpha = 0,
+  highlight = null
 }: RenderTankProps) {
 
   function rotateVector(vector: [number, number], angle: number): [number, number] {
@@ -102,10 +105,14 @@ export function RenderTank({
     );
   }
 
-  
+  function applyHighlight(color: Array<number>, highlightGroup: string) {
+    if (highlight == null) return color
+    if (highlight == highlightGroup) return color
+    return color.map(v => v * HIGHLIGHT_FACTOR)
+  }
   
   // barrels
-  function renderBarrelPolygon(points: Array<[number, number]>) {
+  function renderBarrelPolygon(points: Array<[number, number]>, highlightGroup: string) {
     points = points.map(([x, y]) => [x * sizeFactor, y * sizeFactor])
     points = points.map(([x, y]) => rotateVector([x, y], rotation))
     
@@ -119,8 +126,8 @@ export function RenderTank({
     return <polygon
       key={tank.id + "-barrel-" + Math.random()}
       points={points.map((p) => p.join(",")).join(" ")}
-      fill={renderColor(barrelColor)}
-      stroke={renderColor(barrelColor.map(v => v * (1 - borderOpacity)))}
+      fill={renderColor(applyHighlight(barrelColor, highlightGroup))}
+      stroke={renderColor(applyHighlight(barrelColor.map(v => v * (1 - borderOpacity)), highlightGroup))}
       strokeWidth={BORDER_THICKNESS}
       strokeLinejoin="round"
     />
@@ -136,7 +143,7 @@ export function RenderTank({
       [0, -width * 42 * 0.5],
       [0, width * 42 * 0.5],
     ]
-    polygons.push(renderBarrelPolygon(points))
+    polygons.push(renderBarrelPolygon(points, "preAddon"))
   }
   if (tank.preAddon === "glider") {
     const width = 0.8
@@ -147,7 +154,7 @@ export function RenderTank({
       [0, -width * 42 * 0.5 * 1.75],
       [0, width * 42 * 0.5 * 1.75],
     ]
-    polygons.push(renderBarrelPolygon(points))
+    polygons.push(renderBarrelPolygon(points, "preAddon"))
   }
 
   for (const barrel of tank.barrels) {
@@ -166,7 +173,7 @@ export function RenderTank({
       points = points.map(([x, y]) =>
         rotateVector([x, y], barrel.angle)
       );
-      polygons.push(renderBarrelPolygon(points))
+      polygons.push(renderBarrelPolygon(points, barrel.barrelStats))
       
       polygons.push(
         <circle
@@ -174,8 +181,8 @@ export function RenderTank({
           cx={Math.cos(rotation + barrel.angle) * 40 * sizeFactor}
           cy={Math.sin(rotation + barrel.angle) * 40 * sizeFactor}
           r={25 * sizeFactor}
-          fill={renderColor(barrelColor)}
-          stroke={renderColor(barrelColor.map(v => v * (1 - borderOpacity)))}
+          fill={renderColor(applyHighlight(barrelColor, barrel.barrelStats))}
+          stroke={renderColor(applyHighlight(barrelColor.map(v => v * (1 - borderOpacity)), barrel.barrelStats))}
           strokeWidth={BORDER_THICKNESS}
           strokeLinejoin="round"
         />
@@ -192,15 +199,15 @@ export function RenderTank({
       points = points.map(([x, y]) =>
         rotateVector([x, y], autoTurretRotation + Math.PI + barrel.angle)
       );
-      overlayPolygons.push(renderBarrelPolygon(points))
+      overlayPolygons.push(renderBarrelPolygon(points, barrel.barrelStats))
       overlayPolygons.push(
         <circle
           key={tank.id + "-barrel-" + Math.random()}
           cx="0"
           cy="0"
           r={25 * sizeFactor}
-          fill={renderColor(barrelColor)}
-          stroke={renderColor(barrelColor.map(v => v * (1 - borderOpacity)))}
+          fill={renderColor(applyHighlight(barrelColor, barrel.barrelStats))}
+          stroke={renderColor(applyHighlight(barrelColor.map(v => v * (1 - borderOpacity)), barrel.barrelStats))}
           strokeWidth={BORDER_THICKNESS}
           strokeLinejoin="round"
         />
@@ -216,7 +223,7 @@ export function RenderTank({
       ];
       points = points.map(([x, y]) => [x, y + barrel.offset]);
       points = points.map(([x, y]) => rotateVector([x, y], barrel.angle));
-      polygons.push(renderBarrelPolygon(points))
+      polygons.push(renderBarrelPolygon(points, barrel.barrelStats))
     }
 
     if (([
@@ -243,7 +250,7 @@ export function RenderTank({
       }
       points = points.map(([x, y]) => [x, y + barrel.offset]);
       points = points.map(([x, y]) => rotateVector([x, y], barrel.angle));
-      polygons.push(renderBarrelPolygon(points))
+      polygons.push(renderBarrelPolygon(points, barrel.barrelStats))
     }
   }
 
@@ -256,7 +263,7 @@ export function RenderTank({
       [12.5, -width * 42 * 0.5 * 1.75],
       [12.5, width * 42 * 0.5 * 1.75],
     ]
-    polygons.push(renderBarrelPolygon(points))
+    polygons.push(renderBarrelPolygon(points, "postAddon"))
   }
   if (tank.postAddon === "dominator") {
     const width = 5/6
@@ -266,7 +273,7 @@ export function RenderTank({
       [39, -width * 42 * 0.5 * 1.75],
       [39, width * 42 * 0.5 * 1.75],
     ]
-    polygons.push(renderBarrelPolygon(points))
+    polygons.push(renderBarrelPolygon(points, "postAddon"))
   }
 
   // body
@@ -277,8 +284,8 @@ export function RenderTank({
         cx="0"
         cy="0"
         r={tankSize}
-        fill={renderColor(color)}
-        stroke={renderColor(color.map(v => v * (1 - borderOpacity)))}
+        fill={renderColor(applyHighlight(color, "body"))}
+        stroke={renderColor(applyHighlight(color.map(v => v * (1 - borderOpacity)), "body"))}
         strokeWidth={BORDER_THICKNESS}
         strokeLinejoin="round"
       />
@@ -291,8 +298,8 @@ export function RenderTank({
           const angle = (Math.PI * 2 * (i + 0.5)) / tank.sides + rotation;
           return `${tankSize * Math.SQRT2 * Math.cos(angle)},${tankSize * Math.SQRT2 * Math.sin(angle)}`;
         }).join(" ")}
-        fill={renderColor(color)}
-        stroke={renderColor(color.map(v => v * (1 - borderOpacity)))}
+        fill={renderColor(applyHighlight(color, "body"))}
+        stroke={renderColor(applyHighlight(color.map(v => v * (1 - borderOpacity)), "body"))}
         strokeWidth={BORDER_THICKNESS}
         strokeLinejoin="round"
       />

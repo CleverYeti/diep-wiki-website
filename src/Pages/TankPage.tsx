@@ -7,6 +7,7 @@ import { Link } from "react-router-dom"
 import { renderColor } from "../functions/renderColor"
 import { RenderTank } from "../Components/renderTank"
 import { TankPreview } from "../Components/TankPreview"
+import { BarrelStatsDisplay } from "../Components/BarrelStats"
 
 function TankGrid({tankIds}: {tankIds: Array<string>}) {
     return (
@@ -37,9 +38,9 @@ export function TankPage() {
 
     return (
         <>
-             <div id="tank-header-section">
-                <div id="tank-header-main"></div>
-                <div id="tank-header-sidebar">
+             <div id="tank-page">
+                <div id="tank-page-main-content"></div>
+                <div id="tank-page-sidebar">
                     <TankPreview tank={tank}/>
                     {tank.upgradesFrom.length > 0 && (
                         <div className="section">
@@ -53,6 +54,23 @@ export function TankPage() {
                             <TankGrid tankIds={tank.upgrades}/>
                         </div>
                     )}
+                    
+                    <div className="title">Stats</div>
+
+                    
+                    {
+                        Object.entries(tank.barrelStats).map(([key, stats]) => {
+                            return (
+                                <div className="section stats">
+                                    <div className="stats-header">
+                                        <div className="title">{stats.name}</div>
+                                        <RenderTank tank={tank} highlight={key} rotation={Math.PI * 1.75} zoom={1.5}/>
+                                    </div>
+                                    <BarrelStatsDisplay stats={stats} level={1} points={[0,0,0,0,0,0,0,0]}/>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
                 <div id="stats">
                     <div className="title">Stats</div>

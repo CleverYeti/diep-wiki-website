@@ -178,7 +178,7 @@ export const tanksData:TanksData = {
     "upgradesFrom": [],
     "barrelStats": {
       "main": {
-        "name": "Cannon",
+        "name": "Cannon Stats",
         "reload": 1,
         "recoil": 1,
         "bullet": {
@@ -288,7 +288,7 @@ export const tanksData:TanksData = {
     "color": 0,
     "barrelStats": {
       "main": {
-        "name": "Cannons",
+        "name": "Cannon Stats",
         "reload": 1,
         "recoil": 0.75,
         "bullet": {
@@ -406,7 +406,7 @@ export const tanksData:TanksData = {
     "color": 0,
     "barrelStats": {
       "main": {
-        "name": "Cannons",
+        "name": "Cannon Stats",
         "reload": 1,
         "recoil": 0.5,
         "bullet": {
@@ -528,7 +528,7 @@ export const tanksData:TanksData = {
     "color": 0,
     "barrelStats": {
       "main": {
-        "name": "Cannons",
+        "name": "Cannon Stats",
         "reload": 1,
         "recoil": 1,
         "bullet": {
@@ -662,7 +662,7 @@ export const tanksData:TanksData = {
     "color": 1,
     "barrelStats": {
       "main": {
-        "name": "Cannons",
+        "name": "Cannon Stats",
         "reload": 1,
         "recoil": 1,
         "bullet": {
@@ -939,7 +939,7 @@ export const tanksData:TanksData = {
     "color": 1,
     "barrelStats": {
       "main": {
-        "name": "Cannon",
+        "name": "Cannon Stats",
         "reload": 1.5,
         "recoil": 3,
         "bullet": {
@@ -1037,7 +1037,7 @@ export const tanksData:TanksData = {
     "color": 2,
     "barrelStats": {
       "main": {
-        "name": "Cannon",
+        "name": "Cannon Stats",
         "reload": 0.5,
         "recoil": 1,
         "bullet": {
@@ -1148,7 +1148,7 @@ export const tanksData:TanksData = {
     "color": 3,
     "barrelStats": {
       "main": {
-        "name": "Cannons",
+        "name": "Cannon Stats",
         "reload": 1,
         "recoil": 1,
         "bullet": {
@@ -1269,7 +1269,7 @@ export const tanksData:TanksData = {
     "color": 0,
     "barrelStats": {
       "main": {
-        "name": "Front Cannon",
+        "name": "Front Cannon Stats",
         "reload": 1,
         "recoil": 0.2,
         "bullet": {
@@ -1284,7 +1284,7 @@ export const tanksData:TanksData = {
         }
       },
       "back": {
-        "name": "Back Cannons",
+        "name": "Back Cannon Stats",
         "reload": 1,
         "recoil": 2.5,
         "bullet": {
@@ -1383,7 +1383,7 @@ export const tanksData:TanksData = {
     "color": 0,
     "barrelStats": {
       "main": {
-        "name": "Cannon",
+        "name": "Cannon Stats",
         "reload": 4,
         "recoil": 15,
         "bullet": {
@@ -1496,7 +1496,7 @@ export const tanksData:TanksData = {
     "color": 1,
     "barrelStats": {
       "drones": {
-        "name": "Drones",
+        "name": "Drone Spawner Stats",
         "reload": 6,
         "recoil": 1,
         "bullet": {
@@ -1628,7 +1628,7 @@ export const tanksData:TanksData = {
     "color": 0,
     "barrelStats": {
       "drones": {
-        "name": "Drones",
+        "name": "Drone Spawner Stats",
         "reload": 6,
         "recoil": 1,
         "bullet": {
@@ -1764,7 +1764,7 @@ export const tanksData:TanksData = {
     "color": 2,
     "barrelStats": {
       "main": {
-        "name": "Cannons",
+        "name": "Cannon Stats",
         "reload": 1,
         "recoil": 1,
         "bullet": {
@@ -1906,7 +1906,7 @@ export const tanksData:TanksData = {
     "color": 1,
     "barrelStats": {
       "main": {
-        "name": "Cannons",
+        "name": "Cannon Stats",
         "reload": 1,
         "recoil": 0.7,
         "bullet": {
@@ -2003,7 +2003,7 @@ export const tanksData:TanksData = {
     "color": 0,
     "barrelStats": {
       "main": {
-        "name": "Cannon",
+        "name": "Cannon Stats",
         "reload": 2,
         "recoil": 3,
         "bullet": {
@@ -2095,7 +2095,7 @@ export const tanksData:TanksData = {
     "color": 3,
     "barrelStats": {
       "main": {
-        "name": "Cannon",
+        "name": "Cannon Stats",
         "reload": 1,
         "recoil": 1,
         "bullet": {
@@ -2201,7 +2201,7 @@ export const tanksData:TanksData = {
     "color": 1,
     "barrelStats": {
       "drones": {
-        "name": "Drones",
+        "name": "Drone Spawner Stats",
         "reload": 6,
         "recoil": 1,
         "bullet": {
@@ -2357,7 +2357,7 @@ export const tanksData:TanksData = {
     "color": 0,
     "barrelStats": {
       "main": {
-        "name": "Cannons",
+        "name": "Cannon Stats",
         "reload": 1,
         "recoil": 1,
         "bullet": {
@@ -2466,7 +2466,7 @@ export const tanksData:TanksData = {
     "color": 2,
     "barrelStats": {
       "main": {
-        "name": "Cannon",
+        "name": "Cannon Stats",
         "reload": 2.5,
         "recoil": 0.3,
         "bullet": {
@@ -2600,7 +2600,7 @@ export const tanksData:TanksData = {
     "color": 1,
     "barrelStats": {
       "main": {
-        "name": "Cannons",
+        "name": "Cannon Stats",
         "reload": 1,
         "recoil": 0.2,
         "bullet": {
@@ -2694,7 +2694,7 @@ export const tanksData:TanksData = {
     "color": 1,
     "barrelStats": {
       "main": {
-        "name": "Cannon",
+        "name": "Cannon Stats",
         "reload": 2,
         "recoil": 3,
         "bullet": {
@@ -2788,7 +2788,7 @@ export const tanksData:TanksData = {
     "color": 0,
     "barrelStats": {
       "main": {
-        "name": "Cannon",
+        "name": "Cannon Stats",
         "reload": 2,
         "recoil": 3,
         "bullet": {
@@ -2930,7 +2930,7 @@ export const tanksData:TanksData = {
     "color": 0,
     "barrelStats": {
       "main": {
-        "name": "Front Cannon",
+        "name": "Front Cannon Stats",
         "reload": 1,
         "recoil": 0.2,
         "bullet": {
@@ -2945,7 +2945,7 @@ export const tanksData:TanksData = {
         }
       },
       "diagonal": {
-        "name": "Diagonal Cannons",
+        "name": "Diagonal Cannon Stats",
         "reload": 1,
         "recoil": 0.2,
         "bullet": {
@@ -2960,7 +2960,7 @@ export const tanksData:TanksData = {
         }
       },
       "back": {
-        "name": "Back Cannons",
+        "name": "Back Cannon Stats",
         "reload": 1,
         "recoil": 2.5,
         "bullet": {
@@ -3102,7 +3102,7 @@ export const tanksData:TanksData = {
     "color": 1,
     "barrelStats": {
       "main": {
-        "name": "Front Cannon",
+        "name": "Front Cannon Stats",
         "reload": 1,
         "recoil": 0.2,
         "bullet": {
@@ -3117,7 +3117,7 @@ export const tanksData:TanksData = {
         }
       },
       "side": {
-        "name": "Side Cannons",
+        "name": "Side Cannon Stats",
         "reload": 1.5,
         "recoil": 1,
         "bullet": {
@@ -3132,7 +3132,7 @@ export const tanksData:TanksData = {
         }
       },
       "back": {
-        "name": "Back Cannons",
+        "name": "Back Cannon Stats",
         "reload": 1,
         "recoil": 2.5,
         "bullet": {
@@ -3238,7 +3238,7 @@ export const tanksData:TanksData = {
     "color": 0,
     "barrelStats": {
       "main": {
-        "name": "Cannon",
+        "name": "Cannon Stats",
         "reload": 4,
         "recoil": 15,
         "bullet": {
@@ -3253,7 +3253,7 @@ export const tanksData:TanksData = {
         }
       },
       "drones": {
-        "name": "Drones",
+        "name": "Drone Spawner Stats",
         "reload": 6,
         "recoil": 1,
         "bullet": {
@@ -3349,7 +3349,7 @@ export const tanksData:TanksData = {
     "color": 2,
     "barrelStats": {
       "drones": {
-        "name": "Drones",
+        "name": "Drone Spawner Stats",
         "reload": 3,
         "recoil": 1,
         "bullet": {
@@ -3623,7 +3623,7 @@ export const tanksData:TanksData = {
     "upgradesFrom": [],
     "barrelStats": {
       "controllableDrones": {
-        "name": "Controllable Drones",
+        "name": "Controllable Drone Spawner Stats",
         "reload": 6,
         "recoil": 0,
         "bullet": {
@@ -3640,7 +3640,7 @@ export const tanksData:TanksData = {
         "canControlDrones": true
       },
       "autoDrones": {
-        "name": "Automatic Drones",
+        "name": "Automatic Drone Spawner Stats",
         "reload": 6,
         "recoil": 0,
         "bullet": {
@@ -3866,7 +3866,7 @@ export const tanksData:TanksData = {
     "color": 2,
     "barrelStats": {
       "small": {
-        "name": "Small Cannon",
+        "name": "Small Cannon Stats",
         "reload": 1,
         "recoil": 0,
         "bullet": {
@@ -3881,7 +3881,7 @@ export const tanksData:TanksData = {
         }
       },
       "main": {
-        "name": "Main Cannon",
+        "name": "Main Cannon Stats",
         "reload": 0.5,
         "recoil": 1,
         "bullet": {
@@ -3981,7 +3981,7 @@ export const tanksData:TanksData = {
     "color": 3,
     "barrelStats": {
       "traps": {
-        "name": "Traps",
+        "name": "Trap Launcher Stats",
         "reload": 1.5,
         "recoil": 1,
         "bullet": {
@@ -4100,7 +4100,7 @@ export const tanksData:TanksData = {
     "color": 1,
     "barrelStats": {
       "main": {
-        "name": "Cannons",
+        "name": "Cannon Stats",
         "reload": 1,
         "recoil": 1,
         "bullet": {
@@ -4115,7 +4115,7 @@ export const tanksData:TanksData = {
         }
       },
       "traps": {
-        "name": "Traps",
+        "name": "Trap Launcher Stats",
         "reload": 3,
         "recoil": 1,
         "bullet": {
@@ -4234,7 +4234,7 @@ export const tanksData:TanksData = {
     "color": 3,
     "barrelStats": {
       "traps": {
-        "name": "Traps",
+        "name": "Trap Launcher Stats",
         "reload": 1.5,
         "recoil": 1,
         "bullet": {
@@ -4249,7 +4249,7 @@ export const tanksData:TanksData = {
         }
       },
       "drones": {
-        "name": "Drones",
+        "name": "Drone Spawner Stats",
         "reload": 6,
         "recoil": 1,
         "bullet": {
@@ -4345,7 +4345,7 @@ export const tanksData:TanksData = {
     "color": 3,
     "barrelStats": {
       "traps": {
-        "name": "Traps",
+        "name": "Trap Launcher Stats",
         "reload": 3.3,
         "recoil": 1,
         "bullet": {
@@ -4463,7 +4463,7 @@ export const tanksData:TanksData = {
     "color": 0,
     "barrelStats": {
       "traps": {
-        "name": "Traps",
+        "name": "Trap Launcher Stats",
         "reload": 1.5,
         "recoil": 1,
         "bullet": {
@@ -4740,7 +4740,7 @@ export const tanksData:TanksData = {
     "color": 0,
     "barrelStats": {
       "main": {
-        "name": "Main Cannons",
+        "name": "Main Cannon Stats",
         "reload": 1,
         "recoil": 0.2,
         "bullet": {
@@ -4755,7 +4755,7 @@ export const tanksData:TanksData = {
         }
       },
       "autoTurret": {
-        "name": "Auto Turret",
+        "name": "Auto Turret Stats",
         "recoil": 0.3,
         "reload": 1,
         "bullet": {
@@ -4898,7 +4898,7 @@ export const tanksData:TanksData = {
     "color": 1,
     "barrelStats": {
       "autoCannons": {
-        "name": "Auto Cannons",
+        "name": "Auto Cannon Stats",
         "recoil": 0.3,
         "reload": 1,
         "bullet": {
@@ -5019,7 +5019,7 @@ export const tanksData:TanksData = {
     "color": 3,
     "barrelStats": {
       "autoCannons": {
-        "name": "Auto Cannons",
+        "name": "Auto Cannon Stats",
         "recoil": 0.3,
         "reload": 1,
         "bullet": {
@@ -5233,7 +5233,7 @@ export const tanksData:TanksData = {
     "color": 2,
     "barrelStats": {
       "small": {
-        "name": "Small Cannons",
+        "name": "Small Cannon Stats",
         "reload": 2,
         "recoil": 0.1,
         "bullet": {
@@ -5248,7 +5248,7 @@ export const tanksData:TanksData = {
         }
       },
       "main": {
-        "name": "Main Cannon",
+        "name": "Main Cannon Stats",
         "reload": 2,
         "recoil": 0.1,
         "bullet": {
@@ -5391,7 +5391,7 @@ export const tanksData:TanksData = {
     "color": 1,
     "barrelStats": {
       "main": {
-        "name": "Cannons",
+        "name": "Cannon Stats",
         "reload": 1,
         "recoil": 0.2,
         "bullet": {
@@ -5497,7 +5497,7 @@ export const tanksData:TanksData = {
     "color": 4,
     "barrelStats": {
       "traps": {
-        "name": "Traps",
+        "name": "Trap Launcher Stats",
         "reload": 1.5,
         "recoil": 1,
         "bullet": {
@@ -5512,7 +5512,7 @@ export const tanksData:TanksData = {
         }
       },
       "autoTurret": {
-        "name": "Auto Turret",
+        "name": "Auto Turret Stats",
         "recoil": 0.3,
         "reload": 1,
         "bullet": {
@@ -5604,7 +5604,7 @@ export const tanksData:TanksData = {
     "color": 0,
     "barrelStats": {
       "main": {
-        "name": "Cannon",
+        "name": "Cannon Stats",
         "reload": 3,
         "recoil": 0,
         "bullet": {
@@ -5720,7 +5720,7 @@ export const tanksData:TanksData = {
     "color": 1,
     "barrelStats": {
       "main": {
-        "name": "Cannons",
+        "name": "Cannon Stats",
         "reload": 0.3,
         "recoil": 0,
         "bullet": {
@@ -5896,7 +5896,7 @@ export const tanksData:TanksData = {
     "color": 2,
     "barrelStats": {
       "traps": {
-        "name": "Traps",
+        "name": "Trap Launcher Stats",
         "reload": 1.5,
         "recoil": 0,
         "bullet": {
@@ -6028,7 +6028,7 @@ export const tanksData:TanksData = {
     "color": 4,
     "barrelStats": {
       "autoDrones": {
-        "name": "Automatic Drones",
+        "name": "Automatic Drone Spawner Stats",
         "reload": 1,
         "recoil": 1,
         "bullet": {
@@ -6045,7 +6045,7 @@ export const tanksData:TanksData = {
         "canControlDrones": false
       },
       "controllableDrones": {
-        "name": "Controllable Drones",
+        "name": "Controllable Drone Spawner Stats",
         "reload": 1,
         "recoil": 1,
         "bullet": {
@@ -6141,7 +6141,7 @@ export const tanksData:TanksData = {
     "color": 1,
     "barrelStats": {
       "main": {
-        "name": "Cannon",
+        "name": "Cannon Stats",
         "reload": 4,
         "recoil": 17,
         "bullet": {
@@ -6235,7 +6235,7 @@ export const tanksData:TanksData = {
     "color": 1,
     "barrelStats": {
       "autoTurret": {
-        "name": "Auto Turret",
+        "name": "Auto Turret Stats",
         "recoil": 0.3,
         "reload": 1,
         "bullet": {
@@ -6394,7 +6394,7 @@ export const tanksData:TanksData = {
     "color": 5,
     "barrelStats": {
       "drones": {
-        "name": "Drones",
+        "name": "Drone Spawner Stats",
         "reload": 3,
         "recoil": 1,
         "bullet": {
@@ -6553,7 +6553,7 @@ export const tanksData:TanksData = {
     "color": 2,
     "barrelStats": {
       "main": {
-        "name": "Main Cannon",
+        "name": "Main Cannon Stats",
         "reload": 4,
         "recoil": 3,
         "bullet": {
@@ -6647,7 +6647,7 @@ export const tanksData:TanksData = {
     "color": 3,
     "barrelStats": {
       "main": {
-        "name": "Main Cannon",
+        "name": "Main Cannon Stats",
         "reload": 4,
         "recoil": 3,
         "bullet": {
