@@ -2,9 +2,12 @@ import { useState, MutableRefObject, useRef} from "react";
 import { Tank } from "../tanksData.";
 import { RenderTank } from "./renderTank";
 import "./tankPreview.css"
+import settingsIcon from '/icons/settings.svg'
+import downloadIcon from '/icons/download.svg'
 import { renderColor } from "../functions/renderColor"
 import { tankColors } from "../tanksData.";
 import { downloadSVG } from "../functions/downloadSVG";
+
 
 export function TankPreview({tank}: {tank: Tank}) {
     const [isSettingsOpen, setSettingsOpen] = useState(false)
@@ -64,10 +67,10 @@ export function TankPreview({tank}: {tank: Tank}) {
                 level={lastTankFixedLevel == tank.key ? fixedLevel : Math.max(1, tank.levelRequirement ?? 0)}
             />
             <div className="toggle-settings corner-button" onClick={() => {setSettingsOpen(!isSettingsOpen); setDownloadOpen(false)}}>
-                <img src="/icons/settings.svg"/>
+                <img src={settingsIcon}/>
             </div>
             <div className="toggle-download corner-button" onClick={() => {setDownloadOpen(!isDownloadOpen); setSettingsOpen(false)}}>
-                <img src="/icons/download.svg" alt="" />
+                <img src={downloadIcon} alt="" />
             </div>
             <div className="preview-download" data-active={isDownloadOpen}>
                 <a className="option" onClick={() => {

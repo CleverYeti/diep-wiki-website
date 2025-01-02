@@ -8,6 +8,9 @@ import { renderColor } from "../functions/renderColor"
 import { RenderTank } from "../Components/renderTank"
 import { TankPreview } from "../Components/TankPreview"
 import { BarrelStatsDisplay, TankStatsDisplay } from "../Components/StatBlocks"
+import { PageXMLBody } from "../Components/PageXMLBody"
+
+const basePath = import.meta.env.BASE_URL || '/';
 
 function TankGrid({tankIds}: {tankIds: Array<string>}) {
     return (
@@ -39,7 +42,9 @@ export function TankPage() {
     return (
         <>
              <div id="tank-page">
-                <div id="tank-page-main-content"></div>
+                <div id="tank-page-main-content">
+                    <PageXMLBody url={`${basePath}tankPages/${tank.key}.xml`}/>
+                </div>
                 <div id="tank-page-sidebar">
                     <TankPreview tank={tank}/>
                     {tank.upgradesFrom.length > 0 && (
@@ -77,14 +82,6 @@ export function TankPage() {
                             )
                         })
                     }
-                </div>
-                <div id="stats">
-                    <div className="title">Stats</div>
-                    <div className="carousel">
-                        <div className="block">
-                            <div className="title"></div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </>
