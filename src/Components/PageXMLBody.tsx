@@ -17,7 +17,7 @@ interface XMLElement {
     text?: string;
     attributes?: {
         [key: string]: string
-    }
+    } 
     elements?: Array<XMLElement>
 }
 
