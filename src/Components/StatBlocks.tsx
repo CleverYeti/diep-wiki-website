@@ -72,11 +72,11 @@ export function BarrelStatsDisplay({
 
 
 export function TankStatsDisplay({
-  stats,
+  tank,
   level = 1,
   points = [0,0,0,0,0,0,0,0]
 }: {
-  stats: Tank;
+  tank: Tank;
   level: number;
   points: Array<number>;
 }) {
@@ -87,19 +87,19 @@ export function TankStatsDisplay({
     return Math.round(value * factor) / factor
   }
 
-  const health = stats.maxHealth + 2 * (level - 1) + points[1] * 20
+  const health = tank.maxHealth + 2 * (level - 1) + points[1] * 20
   const baseHealth = 50
-  const damagePerTick = points[2] * 6 + 20
+  const damagePerTick = points[2] * 4 + 20 + tank.key == "spike" ? 8 : 0
   const baseDamagePerTick = 20
   const effectiveHealth = health * damagePerTick
   const baseEffectiveHealth = baseHealth * baseDamagePerTick
   const regenPerTick = health * (1 + 4 * points[0]) / 25000;
   const baseRegenPerTick = baseHealth / 25000 
-  const viewZoom = (.55 * stats.fieldFactor) / Math.pow(1.01, 0.5 * (level - 1));
+  const viewZoom = (.55 * tank.fieldFactor) / Math.pow(1.01, 0.5 * (level - 1));
   const baseViewZoom = 0.55
   const viewWidth = (1920 / viewZoom) / 1.5;
   const viewHeight = (1080 / viewZoom) / 1.5;
-  const movementAccel = stats.speed * 2.55 * Math.pow(1.07, points[7]) / Math.pow(1.015, level - 1)
+  const movementAccel = tank.speed * 2.55 * Math.pow(1.07, points[7]) / Math.pow(1.015, level - 1)
   const movementSpeed = movementAccel * 10
   const baseMovementAccel = 2.55
   const baseMovementSpeed = baseMovementAccel * 10
@@ -111,14 +111,14 @@ export function TankStatsDisplay({
   rows.push(["Fov", `${roundWithDecimals(viewWidth, 0)} x ${roundWithDecimals(viewHeight, 0)} (${roundWithDecimals(1 / (viewZoom / baseViewZoom))}x)`])
   rows.push(["Speed", `${roundWithDecimals(movementSpeed)}/t: ${roundWithDecimals(movementSpeed * TICK_RATE, 0)}/s (${roundWithDecimals(movementSpeed / baseMovementSpeed)}x)`])
   rows.push(["Acceleration", `${roundWithDecimals(movementAccel)}/t² (${roundWithDecimals(movementAccel / baseMovementAccel)}x)`])
-  rows.push(["Absorbtion Factor", `${roundWithDecimals(stats.absorbtionFactor)}`])
+  rows.push(["Absorbtion Factor", `${roundWithDecimals(tank.absorbtionFactor)}`])
   
-  if (stats.flags.invisibility) {
-    const timeToGoInvisible = 1 / stats.invisibilityRate
-    const timeToGoInvisibleSeconds = 1 / stats.invisibilityRate
+  if (tank.flags.invisibility) {
+    const timeToGoInvisible = 1 / tank.invisibilityRate
+    const timeToGoInvisibleSeconds = 1 / tank.invisibilityRate
     rows.push(["Time To Go Invisible", `${roundWithDecimals(timeToGoInvisible)}t: ${roundWithDecimals(timeToGoInvisible / TICK_RATE)}s`])
   }
-  if (stats.flags.zoomAbility) {
+  if (tank.flags.zoomAbility) {
     const zoomRange = 1500
     rows.push(["Zoom Range", `${roundWithDecimals(zoomRange)}: ${roundWithDecimals(zoomRange / GRID_SIZE)} grid squares`])
   }
