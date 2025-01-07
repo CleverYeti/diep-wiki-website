@@ -2023,7 +2023,7 @@ export const tanksData:TanksData = {
     "id": 16,
     "name": "Arena Closer",
     "upgradeMessage": "",
-    "levelRequirement": 0,
+    "levelRequirement": 125,
     "upgrades": [],
     "flags": {
       "invisibility": false,
