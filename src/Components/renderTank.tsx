@@ -65,7 +65,7 @@ export function RenderTank({
   const polygons: JSX.Element[] = [];
   const overlayPolygons: Array<JSX.Element> = []
 
-  // smasher and landmine
+  // smasher, landmine and spike
   if (["smasher", "landmine"].includes(tank.postAddon || "")) {
     let offsets = [0]
     if ("landmine" === tank.postAddon) offsets.push(0.6)
@@ -86,6 +86,23 @@ export function RenderTank({
         />
       );
     }
+  }
+  if (tank.postAddon == "spike") {
+    const points = Array.from({ length: 24 }, (_, i) => {
+      const angle = Math.PI * 2 * i / 24 + rotation
+      const distance = i % 2 == 0 ? tankSize * 1.3 : tankSize * 0.925
+      return `${distance * Math.cos(angle)},${distance * Math.sin(angle)}`;
+    }).join(" ");
+    polygons.push(
+      <polygon
+        key={`${tank.id}-post-addon-${polygons.length}`}
+        points={points}
+        fill={renderColor(smasherColor)}
+        stroke={renderColor(smasherColor.map(v => v * (1 - borderOpacity)))}
+        strokeWidth={BORDER_THICKNESS}
+        strokeLinejoin="round"
+      />
+    );
   }
   if (tank.preAddon === "dominator") {
     const points = Array.from({ length: 6 }, (_, i) => {
@@ -291,11 +308,12 @@ export function RenderTank({
       />
     )
   } else {
+    const offset = tank.sides == 4 ? 0.5 : 0
     polygons.push(
       <polygon
         key={tank.id + "-body"}
         points={Array.from({ length: tank.sides }, (_, i) => {
-          const angle = (Math.PI * 2 * (i + 0.5)) / tank.sides + rotation;
+          const angle = (Math.PI * 2 * (i + offset)) / tank.sides + rotation;
           return `${tankSize * Math.SQRT2 * Math.cos(angle)},${tankSize * Math.SQRT2 * Math.sin(angle)}`;
         }).join(" ")}
         fill={renderColor(applyHighlight(color, "body"))}

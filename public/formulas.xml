@@ -1,0 +1,45 @@
+<content>
+    <section name="Tank Size">
+        The base size of a circular tank (level 1) is a <b>diameter of 100 units</b> or 2 grid squares. Square bodied tanks have a width of 65 units.
+        The size of all the elements of a tank and the tank's bullets is multiplied by a Size Factor, which depends on the tank's level.
+        <b>For every level gained, the tank's size is multiplied by 1.01.</b>
+        A level 45 tank for example, has a width of 155 units
+
+        <i>Size Factor = 1.01 ^ (Level - 1)</i>
+        <br/>
+        <i>Tank Size = 100 * 1.01 ^ (Level - 1)</i>
+    </section>
+    <section name="Tank Health">
+        Tanks have a default health of 50. Every level gained adds an extra 2 health and every stat point put in Max Health adds an extra 20 health.
+        The maximum obtainable health is 338 with a level 45 smasher-class tank and 10 Max Health points 
+        Bullets get applied the scale factor of the tank at the moment they are created.
+
+        <i>Max Health = 50 + 2 * (Level - 1) + 20 * Max Health Points</i>
+    </section>
+    <section name="Body Damage">
+        The default body damage per tick is 20. Every point put in Body Damage increases it by 6 damage per tick. The spike tank also gets an extra 12 damage per tick, meaning the maximum damage per tick a tank can deal is 92, with <tank-link tank-id="spike">spike</tank-link> and 10 points in Body Damage
+
+        <i>Body Damage Per Tick = 20 + 6 * Body Damage Points (+12 for the spike tank)</i>
+    </section>
+    <section name="Effective Health">
+        Effective health is a way to measure how strong a tank is. Since, when in contact, entities damage each other until one dies or they are no longer in contact (this includes bullets), a tank's body damage is as important for survival as its health. Effective health can be calculted by multiplying a tank's health with its body damage per tick.
+        The maximum possible effective health is 31,096 with <tank-link tank-id="spike">spike</tank-link> and maxed health and body damage.
+
+        <i>Effective health = Max Health * Body Damage Per Tick</i>
+    </section>
+    <section name="Bullet Damage">
+        The default damage per tick is 7 (basic tank). Every point put in bullet damage increases that by 3 or about 43% (additive). Different cannons have different damage multipliers. Damage per tick by itself means almost nothing, as bullet health changes for how many ticks that damage will be done.
+
+        <i>Bullet Damage per tick = Damage Multiplier * (7 + 3 * Bullet Damage Points)</i>
+    </section>
+    <section name="Bullet Penetration">
+        The default bullet health is 2. For every point put in Bullet Penetration, an extra 1.5 health is added or 75% (additive). Different cannons also have different bullet health multipliers that apply afterwards. The bullet with the highest health is by far the rocketeer bullet, with a multiplier of 5, meaning the maximum possible bullet health is 62.5, with 7 points in Bullet Health
+        
+        <i>Bullet Health = Health Multiplier * (1 + 1.5 * Bullet Penetration Points);
+    </section>
+    <section name="Bullet Effective Damage">
+        To evaluate how strong a bullet is, effective damage can be calculted by multiplying the bullet's health with its damage per tick. The highest effective damage possible is the destroyer, annihalator and hybrid's bullets, with an effective damage of 1764
+        
+        <i>Bullet Health = Health Multiplier * (1 + 1.5 * Bullet Penetration Points);
+    </section>
+</content>

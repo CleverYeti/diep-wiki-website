@@ -8,7 +8,7 @@ export function Navbar() {
             <Link to="/">
                 <img className="logo" src={logo} alt="" />
             </Link>
-            <Link to="/tanks/basic">
+            <Link to="/tanks">
                 <div className="tab">Tanks</div>
             </Link>
             <Link to="/bosses/">
