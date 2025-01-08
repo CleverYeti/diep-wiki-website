@@ -17,13 +17,13 @@
         <i>Max Health = 50 + 2 * (Level - 1) + 20 * Max Health Points</i>
     </section>
     <section name="Body Damage">
-        The default body damage per tick is 20. Every point put in Body Damage increases it by 6 damage per tick. The spike tank also gets an extra 12 damage per tick, meaning the maximum damage per tick a tank can deal is 92, with <tank-link tank-id="spike">spike</tank-link> and 10 points in Body Damage
+        The default body damage per tick is 20. Every point put in Body Damage increases it by 4 damage per tick. The spike tank also gets an extra 8 damage per tick, meaning the maximum damage per tick a tank can deal is 68, with <tank-link tank-id="spike">spike</tank-link> and 10 points in Body Damage
 
-        <i>Body Damage Per Tick = 20 + 6 * Body Damage Points (+12 for the spike tank)</i>
+        <i>Body Damage Per Tick = 20 + 4 * Body Damage Points (+8 for the spike tank)</i>
     </section>
     <section name="Effective Health">
         Effective health is a way to measure how strong a tank is. Since, when in contact, entities damage each other until one dies or they are no longer in contact (this includes bullets), a tank's body damage is as important for survival as its health. Effective health can be calculted by multiplying a tank's health with its body damage per tick.
-        The maximum possible effective health is 31,096 with <tank-link tank-id="spike">spike</tank-link> and maxed health and body damage.
+        The maximum possible effective health is 22,984 with <tank-link tank-id="spike">spike</tank-link> and maxed health and body damage.
 
         <i>Effective health = Max Health * Body Damage Per Tick</i>
     </section>
