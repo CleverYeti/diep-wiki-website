@@ -108,6 +108,7 @@ function RenderXMLElement({element, index = 0, total = 0} : {element: XMLElement
         const wrapperElement = element as XMLWrapperElement
         
         function renderContent() {{
+            if (!wrapperElement.elements) return <></>
             return wrapperElement.elements.map((el, i) => <RenderXMLElement element={el} index={i} total={wrapperElement.elements.length}/>)
         }}
 
@@ -130,6 +131,12 @@ function RenderXMLElement({element, index = 0, total = 0} : {element: XMLElement
                 </div>
             )
         }
+
+        if (wrapperElement.name == "br") return <br key={index}/> // line break
+        if (wrapperElement.name == "i") return <i key={index}>{renderContent()}</i> // italic
+        if (wrapperElement.name == "b") return <b key={index}>{renderContent()}</b> // bold
+        if (wrapperElement.name == "s") return <s key={index}>{renderContent()}</s> // strikethrough
+        if (wrapperElement.name == "u") return <u key={index}>{renderContent()}</u> // underline
 
         return <>{renderContent()}</>
     }

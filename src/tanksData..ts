@@ -2023,7 +2023,7 @@ export const tanksData:TanksData = {
     "id": 16,
     "name": "Arena Closer",
     "upgradeMessage": "",
-    "levelRequirement": 0,
+    "levelRequirement": 127,
     "upgrades": [],
     "flags": {
       "invisibility": false,
@@ -3371,7 +3371,7 @@ export const tanksData:TanksData = {
     "id": 27,
     "name": "Mothership",
     "upgradeMessage": "",
-    "levelRequirement": 0,
+    "levelRequirement": 140,
     "upgrades": [],
     "flags": {
       "invisibility": false,
@@ -5532,7 +5532,7 @@ export const tanksData:TanksData = {
     "id": 45,
     "name": "Destroyer Dominator",
     "upgradeMessage": "",
-    "levelRequirement": 0,
+    "levelRequirement": 75,
     "upgrades": [],
     "flags": {
       "invisibility": false,
@@ -5624,7 +5624,7 @@ export const tanksData:TanksData = {
     "id": 46,
     "name": "Gunner Dominator",
     "upgradeMessage": "",
-    "levelRequirement": 0,
+    "levelRequirement": 75,
     "upgrades": [],
     "flags": {
       "invisibility": false,
@@ -5740,7 +5740,7 @@ export const tanksData:TanksData = {
     "id": 47,
     "name": "Trapper Dominator",
     "upgradeMessage": "",
-    "levelRequirement": 0,
+    "levelRequirement": 75,
     "upgrades": [],
     "flags": {
       "invisibility": false,
@@ -6177,7 +6177,7 @@ export const tanksData:TanksData = {
     "speed": 1,
     "maxHealth": 50,
     "preAddon": null,
-    "postAddon": null,
+    "postAddon": "smasher",
     "sides": 1,
     "borderWidth": 15,
     "barrels": [
