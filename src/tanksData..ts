@@ -5,12 +5,12 @@ export interface Stats {
 
 export interface Bullet {
   type: string;
-  sizeRatio: number;
-  health: number;
-  damage: number;
-  speed: number;
-  scatterRate: number;
-  lifeLength: number;
+  sizeFactor: number;
+  healthFactor: number;
+  damageFactor: number;
+  speedFactor: number;
+  scatterFactor: number;
+  lifeLengthFactor: number;
   absorbtionFactor: number;
 }
 
@@ -39,8 +39,8 @@ export interface Barrel {
 
 export interface BarrelStats {
   name: string;
-  reload: number;
-  recoil: number;
+  reloadFactor: number;
+  recoilFactor: number;
   droneCount?: number;
   canControlDrones?: boolean;
   forceFire?: boolean;
@@ -65,9 +65,6 @@ export interface Tank {
   visibilityRateMoving: number;
   invisibilityRate: number;
   fieldFactor: number;
-  absorbtionFactor: number;
-  speed: number;
-  maxHealth: number;
   preAddon: string | null;
   postAddon: string | null;
   sides: number;
@@ -119,9 +116,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -179,16 +173,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 1,
-        "recoil": 1,
+        "reloadFactor": 1,
+        "recoilFactor": 1,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 1,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 1,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -214,9 +208,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -289,16 +280,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 1,
-        "recoil": 0.75,
+        "reloadFactor": 1,
+        "recoilFactor": 0.75,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 0.9,
-          "damage": 0.65,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 0.9,
+          "damageFactor": 0.65,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -320,9 +311,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -407,16 +395,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 1,
-        "recoil": 0.5,
+        "reloadFactor": 1,
+        "recoilFactor": 0.5,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 0.7,
-          "damage": 0.6,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 0.7,
+          "damageFactor": 0.6,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -442,9 +430,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -529,16 +514,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 1,
-        "recoil": 1,
+        "reloadFactor": 1,
+        "recoilFactor": 1,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.7,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 0.7,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -563,9 +548,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -663,16 +645,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 1,
-        "recoil": 1,
+        "reloadFactor": 1,
+        "recoilFactor": 1,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.75,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 0.75,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -694,9 +676,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -841,16 +820,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Barrels",
-        "reload": 1,
-        "recoil": 1,
+        "reloadFactor": 1,
+        "recoilFactor": 1,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.65,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 0.65,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -877,9 +856,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.9,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -940,16 +916,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 1.5,
-        "recoil": 3,
+        "reloadFactor": 1.5,
+        "recoilFactor": 3,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 1,
-          "speed": 1.5,
-          "scatterRate": 0.3,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 1,
+          "speedFactor": 1.5,
+          "scatterFactor": 0.3,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -975,9 +951,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -1038,16 +1011,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 0.5,
-        "recoil": 1,
+        "reloadFactor": 0.5,
+        "recoilFactor": 1,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.7,
-          "speed": 1,
-          "scatterRate": 3,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 0.7,
+          "speedFactor": 1,
+          "scatterFactor": 3,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -1074,9 +1047,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -1149,16 +1119,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 1,
-        "recoil": 1,
+        "reloadFactor": 1,
+        "recoilFactor": 1,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 1,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 1,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -1183,9 +1153,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -1270,31 +1237,31 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Front Cannon Stats",
-        "reload": 1,
-        "recoil": 0.2,
+        "reloadFactor": 1,
+        "recoilFactor": 0.2,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 1,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 1,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       },
       "back": {
         "name": "Back Cannon Stats",
-        "reload": 1,
-        "recoil": 2.5,
+        "reloadFactor": 1,
+        "recoilFactor": 2.5,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.2,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 0.5,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 0.2,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 0.5,
           "absorbtionFactor": 1
         }
       }
@@ -1321,9 +1288,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -1384,16 +1348,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 4,
-        "recoil": 15,
+        "reloadFactor": 4,
+        "recoilFactor": 15,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 3,
-          "speed": 0.7,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 2,
+          "damageFactor": 3,
+          "speedFactor": 0.7,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 0.1
         }
       }
@@ -1422,9 +1386,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.9,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -1497,16 +1458,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "drones": {
         "name": "Drone Spawner Stats",
-        "reload": 6,
-        "recoil": 1,
+        "reloadFactor": 6,
+        "recoilFactor": 1,
         "bullet": {
           "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.8,
-          "scatterRate": 1,
-          "lifeLength": -1,
+          "sizeFactor": 1,
+          "healthFactor": 2,
+          "damageFactor": 0.7,
+          "speedFactor": 0.8,
+          "scatterFactor": 1,
+          "lifeLengthFactor": -1,
           "absorbtionFactor": 1
         },
         "droneCount": 4,
@@ -1530,9 +1491,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.9,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -1629,16 +1587,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "drones": {
         "name": "Drone Spawner Stats",
-        "reload": 6,
-        "recoil": 1,
+        "reloadFactor": 6,
+        "recoilFactor": 1,
         "bullet": {
           "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.8,
-          "scatterRate": 1,
-          "lifeLength": -1,
+          "sizeFactor": 1,
+          "healthFactor": 2,
+          "damageFactor": 0.7,
+          "speedFactor": 0.8,
+          "scatterFactor": 1,
+          "lifeLengthFactor": -1,
           "absorbtionFactor": 1
         },
         "droneCount": 2,
@@ -1665,9 +1623,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -1765,16 +1720,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 1,
-        "recoil": 1,
+        "reloadFactor": 1,
+        "recoilFactor": 1,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.5,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 0.5,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -1796,9 +1751,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -1907,16 +1859,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 1,
-        "recoil": 0.7,
+        "reloadFactor": 1,
+        "recoilFactor": 0.7,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.55,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 0.55,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -1941,9 +1893,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.8,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -2004,16 +1953,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 2,
-        "recoil": 3,
+        "reloadFactor": 2,
+        "recoilFactor": 3,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 1,
-          "speed": 1.5,
-          "scatterRate": 0.3,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 1,
+          "speedFactor": 1.5,
+          "scatterFactor": 0.3,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -2035,9 +1984,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -2096,16 +2042,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 1,
-        "recoil": 1,
+        "reloadFactor": 1,
+        "recoilFactor": 1,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 300,
-          "damage": 7,
-          "speed": 2,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 300,
+          "damageFactor": 7,
+          "speedFactor": 2,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -2127,9 +2073,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.9,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 4,
@@ -2202,16 +2145,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "drones": {
         "name": "Drone Spawner Stats",
-        "reload": 6,
-        "recoil": 1,
+        "reloadFactor": 6,
+        "recoilFactor": 1,
         "bullet": {
           "type": "necrodrone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.42,
-          "speed": 0.72,
-          "scatterRate": 1,
-          "lifeLength": -1,
+          "sizeFactor": 1,
+          "healthFactor": 2,
+          "damageFactor": 0.42,
+          "speedFactor": 0.72,
+          "scatterFactor": 1,
+          "lifeLengthFactor": -1,
           "absorbtionFactor": 1
         },
         "droneCount": 0,
@@ -2235,9 +2178,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -2358,16 +2298,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 1,
-        "recoil": 1,
+        "reloadFactor": 1,
+        "recoilFactor": 1,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.5,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 0.5,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -2392,9 +2332,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.85,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -2467,16 +2404,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 2.5,
-        "recoil": 0.3,
+        "reloadFactor": 2.5,
+        "recoilFactor": 0.3,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 0.7,
-          "health": 1,
-          "damage": 0.75,
-          "speed": 1.4,
-          "scatterRate": 0.3,
-          "lifeLength": 1,
+          "sizeFactor": 0.7,
+          "healthFactor": 1,
+          "damageFactor": 0.75,
+          "speedFactor": 1.4,
+          "scatterFactor": 0.3,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -2502,9 +2439,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -2601,16 +2535,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 1,
-        "recoil": 0.2,
+        "reloadFactor": 1,
+        "recoilFactor": 0.2,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 0.45,
-          "damage": 0.5,
-          "speed": 1.1,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 0.45,
+          "damageFactor": 0.5,
+          "speedFactor": 1.1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -2632,9 +2566,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.8,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -2695,16 +2626,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 2,
-        "recoil": 3,
+        "reloadFactor": 2,
+        "recoilFactor": 3,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 1,
-          "speed": 1.5,
-          "scatterRate": 0.3,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 1,
+          "speedFactor": 1.5,
+          "scatterFactor": 0.3,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -2726,9 +2657,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.7,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": "ranger",
     "sides": 1,
@@ -2789,16 +2717,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 2,
-        "recoil": 3,
+        "reloadFactor": 2,
+        "recoilFactor": 3,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 1,
-          "speed": 1.5,
-          "scatterRate": 0.3,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 1,
+          "speedFactor": 1.5,
+          "scatterFactor": 0.3,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -2820,9 +2748,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -2931,46 +2856,46 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Front Cannon Stats",
-        "reload": 1,
-        "recoil": 0.2,
+        "reloadFactor": 1,
+        "recoilFactor": 0.2,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 1,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 1,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       },
       "diagonal": {
         "name": "Diagonal Cannon Stats",
-        "reload": 1,
-        "recoil": 0.2,
+        "reloadFactor": 1,
+        "recoilFactor": 0.2,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.2,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 0.5,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 0.2,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 0.5,
           "absorbtionFactor": 1
         }
       },
       "back": {
         "name": "Back Cannon Stats",
-        "reload": 1,
-        "recoil": 2.5,
+        "reloadFactor": 1,
+        "recoilFactor": 2.5,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.2,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 0.5,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 0.2,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 0.5,
           "absorbtionFactor": 1
         }
       }
@@ -2992,9 +2917,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -3103,46 +3025,46 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Front Cannon Stats",
-        "reload": 1,
-        "recoil": 0.2,
+        "reloadFactor": 1,
+        "recoilFactor": 0.2,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 1,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 1,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       },
       "side": {
         "name": "Side Cannon Stats",
-        "reload": 1.5,
-        "recoil": 1,
+        "reloadFactor": 1.5,
+        "recoilFactor": 1,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.8,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 0.8,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       },
       "back": {
         "name": "Back Cannon Stats",
-        "reload": 1,
-        "recoil": 2.5,
+        "reloadFactor": 1,
+        "recoilFactor": 2.5,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.2,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 0.5,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 0.2,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 0.5,
           "absorbtionFactor": 1
         }
       }
@@ -3164,9 +3086,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -3239,31 +3158,31 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 4,
-        "recoil": 15,
+        "reloadFactor": 4,
+        "recoilFactor": 15,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 3,
-          "speed": 0.7,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 2,
+          "damageFactor": 3,
+          "speedFactor": 0.7,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 0.1
         }
       },
       "drones": {
         "name": "Drone Spawner Stats",
-        "reload": 6,
-        "recoil": 1,
+        "reloadFactor": 6,
+        "recoilFactor": 1,
         "bullet": {
           "type": "drone",
-          "sizeRatio": 1,
-          "health": 1.4,
-          "damage": 0.7,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": -1,
+          "sizeFactor": 1,
+          "healthFactor": 1.4,
+          "damageFactor": 0.7,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": -1,
           "absorbtionFactor": 1
         },
         "droneCount": 2,
@@ -3287,9 +3206,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.9,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -3350,16 +3266,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "drones": {
         "name": "Drone Spawner Stats",
-        "reload": 3,
-        "recoil": 1,
+        "reloadFactor": 3,
+        "recoilFactor": 1,
         "bullet": {
           "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.8,
-          "scatterRate": 1,
-          "lifeLength": -1,
+          "sizeFactor": 1,
+          "healthFactor": 2,
+          "damageFactor": 0.7,
+          "speedFactor": 0.8,
+          "scatterFactor": 1,
+          "lifeLengthFactor": -1,
           "absorbtionFactor": 1
         },
         "droneCount": 8,
@@ -3383,9 +3299,7 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 0.01,
-    "speed": 1,
-    "maxHealth": 50,
+    // "absorbtionFactor": 0.01,
     "preAddon": null,
     "postAddon": null,
     "sides": 16,
@@ -3624,16 +3538,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "controllableDrones": {
         "name": "Controllable Drone Spawner Stats",
-        "reload": 6,
-        "recoil": 0,
+        "reloadFactor": 6,
+        "recoilFactor": 0,
         "bullet": {
           "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.48,
-          "scatterRate": 1,
-          "lifeLength": -1,
+          "sizeFactor": 1,
+          "healthFactor": 2,
+          "damageFactor": 0.7,
+          "speedFactor": 0.48,
+          "scatterFactor": 1,
+          "lifeLengthFactor": -1,
           "absorbtionFactor": 1
         },
         "droneCount": 2,
@@ -3641,16 +3555,16 @@ export const tanksData:TanksData = {
       },
       "autoDrones": {
         "name": "Automatic Drone Spawner Stats",
-        "reload": 6,
-        "recoil": 0,
+        "reloadFactor": 6,
+        "recoilFactor": 0,
         "bullet": {
           "type": "drone",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 0.7,
-          "speed": 0.48,
-          "scatterRate": 1,
-          "lifeLength": -1,
+          "sizeFactor": 1,
+          "healthFactor": 2,
+          "damageFactor": 0.7,
+          "speedFactor": 0.48,
+          "scatterFactor": 1,
+          "lifeLengthFactor": -1,
           "absorbtionFactor": 1
         },
         "droneCount": 2,
@@ -3674,9 +3588,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.85,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -3761,16 +3672,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "dc9843d5bb85417dad5dd8a13292868a": {
         "name": "Main",
-        "reload": 3,
-        "recoil": 0.3,
+        "reloadFactor": 3,
+        "recoilFactor": 0.3,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 0.7,
-          "health": 1,
-          "damage": 0.75,
-          "speed": 1.4,
-          "scatterRate": 0.3,
-          "lifeLength": 1,
+          "sizeFactor": 0.7,
+          "healthFactor": 1,
+          "damageFactor": 0.75,
+          "speedFactor": 1.4,
+          "scatterFactor": 0.3,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -3792,9 +3703,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -3867,31 +3775,31 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "small": {
         "name": "Small Cannon Stats",
-        "reload": 1,
-        "recoil": 0,
+        "reloadFactor": 1,
+        "recoilFactor": 0,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 0.7,
-          "health": 1,
-          "damage": 0.1,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 0.7,
+          "healthFactor": 1,
+          "damageFactor": 0.1,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       },
       "main": {
         "name": "Main Cannon Stats",
-        "reload": 0.5,
-        "recoil": 1,
+        "reloadFactor": 0.5,
+        "recoilFactor": 1,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.7,
-          "speed": 1,
-          "scatterRate": 3,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 0.7,
+          "speedFactor": 1,
+          "scatterFactor": 3,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -3919,9 +3827,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.9,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -3982,16 +3887,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "traps": {
         "name": "Trap Launcher Stats",
-        "reload": 1.5,
-        "recoil": 1,
+        "reloadFactor": 1.5,
+        "recoilFactor": 1,
         "bullet": {
           "type": "trap",
-          "sizeRatio": 0.8,
-          "health": 2,
-          "damage": 1,
-          "speed": 2,
-          "scatterRate": 1,
-          "lifeLength": 8,
+          "sizeFactor": 0.8,
+          "healthFactor": 2,
+          "damageFactor": 1,
+          "speedFactor": 2,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 8,
           "absorbtionFactor": 1
         }
       }
@@ -4013,9 +3918,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.9,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -4101,31 +4003,31 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 1,
-        "recoil": 1,
+        "reloadFactor": 1,
+        "recoilFactor": 1,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.5,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 0.5,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       },
       "traps": {
         "name": "Trap Launcher Stats",
-        "reload": 3,
-        "recoil": 1,
+        "reloadFactor": 3,
+        "recoilFactor": 1,
         "bullet": {
           "type": "trap",
-          "sizeRatio": 0.8,
-          "health": 2,
-          "damage": 1,
-          "speed": 2,
-          "scatterRate": 1,
-          "lifeLength": 8,
+          "sizeFactor": 0.8,
+          "healthFactor": 2,
+          "damageFactor": 1,
+          "speedFactor": 2,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 8,
           "absorbtionFactor": 1
         }
       }
@@ -4147,9 +4049,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.9,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -4235,31 +4134,31 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "traps": {
         "name": "Trap Launcher Stats",
-        "reload": 1.5,
-        "recoil": 1,
+        "reloadFactor": 1.5,
+        "recoilFactor": 1,
         "bullet": {
           "type": "trap",
-          "sizeRatio": 0.8,
-          "health": 2,
-          "damage": 1,
-          "speed": 2,
-          "scatterRate": 1,
-          "lifeLength": 8,
+          "sizeFactor": 0.8,
+          "healthFactor": 2,
+          "damageFactor": 1,
+          "speedFactor": 2,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 8,
           "absorbtionFactor": 1
         }
       },
       "drones": {
         "name": "Drone Spawner Stats",
-        "reload": 6,
-        "recoil": 1,
+        "reloadFactor": 6,
+        "recoilFactor": 1,
         "bullet": {
           "type": "drone",
-          "sizeRatio": 1,
-          "health": 1.4,
-          "damage": 0.7,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": -1,
+          "sizeFactor": 1,
+          "healthFactor": 1.4,
+          "damageFactor": 0.7,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": -1,
           "absorbtionFactor": 1
         },
         "droneCount": 1,
@@ -4283,9 +4182,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.9,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -4346,16 +4242,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "traps": {
         "name": "Trap Launcher Stats",
-        "reload": 3.3,
-        "recoil": 1,
+        "reloadFactor": 3.3,
+        "recoilFactor": 1,
         "bullet": {
           "type": "trap",
-          "sizeRatio": 1.28,
-          "health": 3.2,
-          "damage": 1.6,
-          "speed": 2,
-          "scatterRate": 1,
-          "lifeLength": 8,
+          "sizeFactor": 1.28,
+          "healthFactor": 3.2,
+          "damageFactor": 1.6,
+          "speedFactor": 2,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 8,
           "absorbtionFactor": 1
         }
       }
@@ -4377,9 +4273,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.9,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -4464,16 +4357,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "traps": {
         "name": "Trap Launcher Stats",
-        "reload": 1.5,
-        "recoil": 1,
+        "reloadFactor": 1.5,
+        "recoilFactor": 1,
         "bullet": {
           "type": "trap",
-          "sizeRatio": 0.8,
-          "health": 2,
-          "damage": 1,
-          "speed": 2,
-          "scatterRate": 1,
-          "lifeLength": 3.2,
+          "sizeFactor": 0.8,
+          "healthFactor": 2,
+          "damageFactor": 1,
+          "speedFactor": 2,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 3.2,
           "absorbtionFactor": 1
         }
       }
@@ -4499,9 +4392,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.9,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": "smasher",
     "sides": 1,
@@ -4564,9 +4454,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.16,
     "invisibilityRate": 0.003,
     "fieldFactor": 0.9,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": "landmine",
     "sides": 1,
@@ -4629,9 +4516,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -4741,31 +4625,31 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Main Cannon Stats",
-        "reload": 1,
-        "recoil": 0.2,
+        "reloadFactor": 1,
+        "recoilFactor": 0.2,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 0.45,
-          "damage": 0.5,
-          "speed": 1.1,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 0.45,
+          "damageFactor": 0.5,
+          "speedFactor": 1.1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       },
       "autoTurret": {
         "name": "Auto Turret Stats",
-        "recoil": 0.3,
-        "reload": 1,
+        "recoilFactor": 0.3,
+        "reloadFactor": 1,
         "bullet": {
           "type": "bullet",
-          "health": 1,
-          "damage": 0.3,
-          "speed": 1.2,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "sizeRatio": 1,
+          "healthFactor": 1,
+          "damageFactor": 0.3,
+          "speedFactor": 1.2,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
+          "sizeFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -4787,9 +4671,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -4899,16 +4780,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "autoCannons": {
         "name": "Auto Cannon Stats",
-        "recoil": 0.3,
-        "reload": 1,
+        "recoilFactor": 0.3,
+        "reloadFactor": 1,
         "bullet": {
           "type": "bullet",
-          "health": 1,
-          "damage": 0.3,
-          "speed": 1.2,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "sizeRatio": 1,
+          "healthFactor": 1,
+          "damageFactor": 0.3,
+          "speedFactor": 1.2,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
+          "sizeFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -4933,9 +4814,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -5020,16 +4898,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "autoCannons": {
         "name": "Auto Cannon Stats",
-        "recoil": 0.3,
-        "reload": 1,
+        "recoilFactor": 0.3,
+        "reloadFactor": 1,
         "bullet": {
           "type": "bullet",
-          "health": 1,
-          "damage": 0.3,
-          "speed": 1.2,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "sizeRatio": 1,
+          "healthFactor": 1,
+          "damageFactor": 0.3,
+          "speedFactor": 1.2,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
+          "sizeFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -5051,9 +4929,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -5234,31 +5109,31 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "small": {
         "name": "Small Cannon Stats",
-        "reload": 2,
-        "recoil": 0.1,
+        "reloadFactor": 2,
+        "recoilFactor": 0.1,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 0.6,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 0.6,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       },
       "main": {
         "name": "Main Cannon Stats",
-        "reload": 2,
-        "recoil": 0.1,
+        "reloadFactor": 2,
+        "recoilFactor": 0.1,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 1,
-          "damage": 1,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 1,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -5280,9 +5155,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.85,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -5392,16 +5264,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 1,
-        "recoil": 0.2,
+        "reloadFactor": 1,
+        "recoilFactor": 0.2,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 0.7,
-          "health": 1,
-          "damage": 0.2,
-          "speed": 1.1,
-          "scatterRate": 0.3,
-          "lifeLength": 0.8,
+          "sizeFactor": 0.7,
+          "healthFactor": 1,
+          "damageFactor": 0.2,
+          "speedFactor": 1.1,
+          "scatterFactor": 0.3,
+          "lifeLengthFactor": 0.8,
           "absorbtionFactor": 1
         }
       }
@@ -5423,9 +5295,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.9,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -5498,418 +5367,33 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "traps": {
         "name": "Trap Launcher Stats",
-        "reload": 1.5,
-        "recoil": 1,
+        "reloadFactor": 1.5,
+        "recoilFactor": 1,
         "bullet": {
           "type": "trap",
-          "sizeRatio": 0.8,
-          "health": 2,
-          "damage": 1,
-          "speed": 2,
-          "scatterRate": 1,
-          "lifeLength": 8,
+          "sizeFactor": 0.8,
+          "healthFactor": 2,
+          "damageFactor": 1,
+          "speedFactor": 2,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 8,
           "absorbtionFactor": 1
         }
       },
       "autoTurret": {
         "name": "Auto Turret Stats",
-        "recoil": 0.3,
-        "reload": 1,
+        "recoilFactor": 0.3,
+        "reloadFactor": 1,
         "bullet": {
           "type": "bullet",
-          "health": 1,
-          "damage": 0.3,
-          "speed": 1.2,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "sizeRatio": 1,
+          "healthFactor": 1,
+          "damageFactor": 0.3,
+          "speedFactor": 1.2,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
+          "sizeFactor": 1,
           "absorbtionFactor": 1
         }
-      }
-    }
-  },
-  "destroyer-dominator": {
-    "id": 45,
-    "name": "Destroyer Dominator",
-    "upgradeMessage": "",
-    "levelRequirement": 75,
-    "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
-    "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 6000,
-    "preAddon": "dominator",
-    "postAddon": "dominator",
-    "sides": 1,
-    "borderWidth": 15,
-    "barrels": [
-      {
-        "angle": 0,
-        "offset": 0,
-        "size": 80,
-        "width": 0.83,
-        "isTrapezoid": false,
-        "trapezoidDirection": 0,
-        "addon": null,
-        "delay": 0.001,
-        "barrelStats": "main",
-        "type": "normal"
-      }
-    ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 0
-      },
-      {
-        "name": "Reload",
-        "max": 0
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 0
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 0
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 0
-      },
-      {
-        "name": "Body Damage",
-        "max": 0
-      },
-      {
-        "name": "Max Health",
-        "max": 0
-      },
-      {
-        "name": "Health Regen",
-        "max": 0
-      }
-    ],
-    "key": "destroyer-dominator",
-    "upgradesFrom": [],
-    "color": 0,
-    "barrelStats": {
-      "main": {
-        "name": "Cannon Stats",
-        "reload": 3,
-        "recoil": 0,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 1,
-          "health": 100,
-          "damage": 10,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 0.1
-        }
-      }
-    }
-  },
-  "gunner-dominator": {
-    "id": 46,
-    "name": "Gunner Dominator",
-    "upgradeMessage": "",
-    "levelRequirement": 75,
-    "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
-    "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 6000,
-    "preAddon": "dominator",
-    "postAddon": "dominator",
-    "sides": 1,
-    "borderWidth": 15,
-    "barrels": [
-      {
-        "angle": 0,
-        "offset": -6,
-        "size": 75,
-        "width": 0.415,
-        "isTrapezoid": false,
-        "trapezoidDirection": 0,
-        "addon": null,
-        "delay": 0.666,
-        "barrelStats": "main",
-        "type": "normal"
-      },
-      {
-        "angle": 0,
-        "offset": 6,
-        "size": 75,
-        "width": 0.415,
-        "isTrapezoid": false,
-        "trapezoidDirection": 0,
-        "addon": null,
-        "delay": 0.333,
-        "barrelStats": "main",
-        "type": "normal"
-      },
-      {
-        "angle": 0,
-        "offset": 0,
-        "size": 80,
-        "width": 0.415,
-        "isTrapezoid": false,
-        "trapezoidDirection": 0,
-        "addon": null,
-        "delay": 0.001,
-        "barrelStats": "main",
-        "type": "normal"
-      }
-    ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 0
-      },
-      {
-        "name": "Reload",
-        "max": 0
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 0
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 0
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 0
-      },
-      {
-        "name": "Body Damage",
-        "max": 0
-      },
-      {
-        "name": "Max Health",
-        "max": 0
-      },
-      {
-        "name": "Health Regen",
-        "max": 0
-      }
-    ],
-    "key": "gunner-dominator",
-    "upgradesFrom": [],
-    "color": 1,
-    "barrelStats": {
-      "main": {
-        "name": "Cannon Stats",
-        "reload": 0.3,
-        "recoil": 0,
-        "bullet": {
-          "type": "bullet",
-          "sizeRatio": 0.6,
-          "health": 5,
-          "damage": 1,
-          "speed": 1.2,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "absorbtionFactor": 1
-        }
-      }
-    }
-  },
-  "trapper-dominator": {
-    "id": 47,
-    "name": "Trapper Dominator",
-    "upgradeMessage": "",
-    "levelRequirement": 75,
-    "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
-    "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 6000,
-    "preAddon": "dominator",
-    "postAddon": null,
-    "sides": 1,
-    "borderWidth": 15,
-    "barrels": [
-      {
-        "angle": 0,
-        "offset": 0,
-        "size": 60,
-        "width": 0.5,
-        "isTrapezoid": false,
-        "trapezoidDirection": 0,
-        "addon": "trapLauncher",
-        "delay": 0,
-        "barrelStats": "traps",
-        "type": "trapLauncher"
-      },
-      {
-        "angle": 0.7853981633974483,
-        "offset": 0,
-        "size": 60,
-        "width": 0.5,
-        "isTrapezoid": false,
-        "trapezoidDirection": 0,
-        "addon": "trapLauncher",
-        "delay": 0,
-        "barrelStats": "traps",
-        "type": "trapLauncher"
-      },
-      {
-        "angle": 1.5707963267948966,
-        "offset": 0,
-        "size": 60,
-        "width": 0.5,
-        "isTrapezoid": false,
-        "trapezoidDirection": 0,
-        "addon": "trapLauncher",
-        "delay": 0,
-        "barrelStats": "traps",
-        "type": "trapLauncher"
-      },
-      {
-        "angle": 2.356194490192345,
-        "offset": 0,
-        "size": 60,
-        "width": 0.5,
-        "isTrapezoid": false,
-        "trapezoidDirection": 0,
-        "addon": "trapLauncher",
-        "delay": 0,
-        "barrelStats": "traps",
-        "type": "trapLauncher"
-      },
-      {
-        "angle": 3.141592653589793,
-        "offset": 0,
-        "size": 60,
-        "width": 0.5,
-        "isTrapezoid": false,
-        "trapezoidDirection": 0,
-        "addon": "trapLauncher",
-        "delay": 0,
-        "barrelStats": "traps",
-        "type": "trapLauncher"
-      },
-      {
-        "angle": 3.9269908169872414,
-        "offset": 0,
-        "size": 60,
-        "width": 0.5,
-        "isTrapezoid": false,
-        "trapezoidDirection": 0,
-        "addon": "trapLauncher",
-        "delay": 0,
-        "barrelStats": "traps",
-        "type": "trapLauncher"
-      },
-      {
-        "angle": 4.71238898038469,
-        "offset": 0,
-        "size": 60,
-        "width": 0.5,
-        "isTrapezoid": false,
-        "trapezoidDirection": 0,
-        "addon": "trapLauncher",
-        "delay": 0,
-        "barrelStats": "traps",
-        "type": "trapLauncher"
-      },
-      {
-        "angle": 5.497787143782138,
-        "offset": 0,
-        "size": 60,
-        "width": 0.5,
-        "isTrapezoid": false,
-        "trapezoidDirection": 0,
-        "addon": "trapLauncher",
-        "delay": 0,
-        "barrelStats": "traps",
-        "type": "trapLauncher"
-      }
-    ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 0
-      },
-      {
-        "name": "Reload",
-        "max": 0
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 0
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 0
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 0
-      },
-      {
-        "name": "Body Damage",
-        "max": 0
-      },
-      {
-        "name": "Max Health",
-        "max": 0
-      },
-      {
-        "name": "Health Regen",
-        "max": 0
-      }
-    ],
-    "key": "trapper-dominator",
-    "upgradesFrom": [],
-    "color": 2,
-    "barrelStats": {
-      "traps": {
-        "name": "Trap Launcher Stats",
-        "reload": 1.5,
-        "recoil": 0,
-        "bullet": {
-          "type": "trap",
-          "sizeRatio": 0.8,
-          "health": 20,
-          "damage": 3,
-          "speed": 4,
-          "scatterRate": 1,
-          "lifeLength": 3.2,
-          "absorbtionFactor": 1
-        },
-        "forceFire": true
       }
     }
   },
@@ -5929,9 +5413,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.9,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -6029,16 +5510,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "autoDrones": {
         "name": "Automatic Drone Spawner Stats",
-        "reload": 1,
-        "recoil": 1,
+        "reloadFactor": 1,
+        "recoilFactor": 1,
         "bullet": {
           "type": "swarm",
-          "sizeRatio": 0.7,
-          "health": 1,
-          "damage": 0.15,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 0.7,
+          "healthFactor": 1,
+          "damageFactor": 0.15,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         },
         "droneCount": 4294967295,
@@ -6046,16 +5527,16 @@ export const tanksData:TanksData = {
       },
       "controllableDrones": {
         "name": "Controllable Drone Spawner Stats",
-        "reload": 1,
-        "recoil": 1,
+        "reloadFactor": 1,
+        "recoilFactor": 1,
         "bullet": {
           "type": "swarm",
-          "sizeRatio": 0.7,
-          "health": 1,
-          "damage": 0.15,
-          "speed": 1,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 0.7,
+          "healthFactor": 1,
+          "damageFactor": 0.15,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 1
         },
         "droneCount": 4294967295,
@@ -6079,9 +5560,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -6142,16 +5620,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 4,
-        "recoil": 17,
+        "reloadFactor": 4,
+        "recoilFactor": 17,
         "bullet": {
           "type": "bullet",
-          "sizeRatio": 1,
-          "health": 2,
-          "damage": 3,
-          "speed": 0.7,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 2,
+          "damageFactor": 3,
+          "speedFactor": 0.7,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 0.05
         }
       }
@@ -6173,9 +5651,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.9,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": "smasher",
     "sides": 1,
@@ -6236,16 +5711,16 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "autoTurret": {
         "name": "Auto Turret Stats",
-        "recoil": 0.3,
-        "reload": 1,
+        "recoilFactor": 0.3,
+        "reloadFactor": 1,
         "bullet": {
           "type": "bullet",
-          "health": 1,
-          "damage": 0.3,
-          "speed": 1.2,
-          "scatterRate": 1,
-          "lifeLength": 1,
-          "sizeRatio": 1,
+          "healthFactor": 1,
+          "damageFactor": 0.3,
+          "speedFactor": 1.2,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
+          "sizeFactor": 1,
           "absorbtionFactor": 1
         }
       }
@@ -6267,9 +5742,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.9,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": "spike",
     "sides": 1,
@@ -6332,9 +5804,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.9,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 4,
@@ -6395,20 +5864,35 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "drones": {
         "name": "Drone Spawner Stats",
-        "reload": 3,
-        "recoil": 1,
+        "reloadFactor": 3,
+        "recoilFactor": 1,
         "bullet": {
           "type": "minion",
-          "sizeRatio": 1,
-          "health": 4,
-          "damage": 0.7,
-          "speed": 0.56,
-          "scatterRate": 1,
-          "lifeLength": -1,
+          "sizeFactor": 1,
+          "healthFactor": 4,
+          "damageFactor": 0.7,
+          "speedFactor": 0.56,
+          "scatterFactor": 1,
+          "lifeLengthFactor": -1,
           "absorbtionFactor": 1
         },
         "droneCount": 6,
         "canControlDrones": true
+      },
+      "minionMain": {
+        "name": "Minion Cannons",
+        "reloadFactor": 1,
+        "recoilFactor": 1.35,
+        "bullet": {
+          "type": "bullet",
+          "healthFactor": 0.4,
+          "damageFactor": 0.4,
+          "speedFactor": 0.8,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
+          "sizeFactor": 1,
+          "absorbtionFactor": 1
+        }
       }
     }
   },
@@ -6428,9 +5912,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 1,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": null,
     "postAddon": null,
     "sides": 1,
@@ -6491,9 +5972,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.9,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": "skimmer-rocketeer",
     "postAddon": null,
     "sides": 1,
@@ -6554,17 +6032,32 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Main Cannon Stats",
-        "reload": 4,
-        "recoil": 3,
+        "reloadFactor": 4,
+        "recoilFactor": 3,
         "bullet": {
           "type": "skimmer",
-          "sizeRatio": 1,
-          "health": 3,
-          "damage": 1,
-          "speed": 0.5,
-          "scatterRate": 1,
-          "lifeLength": 1.3,
+          "sizeFactor": 1,
+          "healthFactor": 3,
+          "damageFactor": 1,
+          "speedFactor": 0.5,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1.3,
           "absorbtionFactor": 0.1
+        }
+      },
+      "bulletCannons": {
+        "name": "Bullet Cannon Stats",
+        "reloadFactor": 0.35,
+        "recoilFactor": 0,
+        "bullet": {
+          "type": "bullet",
+          "healthFactor": 0.3,
+          "damageFactor": 3 / 5,
+          "speedFactor": 1.1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 0.25,
+          "sizeFactor": 1,
+          "absorbtionFactor": 1
         }
       }
     }
@@ -6585,9 +6078,6 @@ export const tanksData:TanksData = {
     "visibilityRateMoving": 0.08,
     "invisibilityRate": 0.03,
     "fieldFactor": 0.9,
-    "absorbtionFactor": 1,
-    "speed": 1,
-    "maxHealth": 50,
     "preAddon": "skimmer-rocketeer",
     "postAddon": null,
     "sides": 1,
@@ -6648,17 +6138,32 @@ export const tanksData:TanksData = {
     "barrelStats": {
       "main": {
         "name": "Main Cannon Stats",
-        "reload": 4,
-        "recoil": 3,
+        "reloadFactor": 4,
+        "recoilFactor": 3,
         "bullet": {
           "type": "rocket",
-          "sizeRatio": 1,
-          "health": 5,
-          "damage": 1,
-          "speed": 0.3,
-          "scatterRate": 1,
-          "lifeLength": 1,
+          "sizeFactor": 1,
+          "healthFactor": 5,
+          "damageFactor": 1,
+          "speedFactor": 0.3,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "absorbtionFactor": 0.1
+        },
+      },
+      "bulletCannon": {
+        "name": "Bullet Cannon Stats",
+        "reloadFactor": 0.15,
+        "recoilFactor": 3.3,
+        "bullet": {
+          "type": "bullet",
+          "healthFactor": 0.3,
+          "damageFactor": 3 / 5,
+          "speedFactor": 1.5,
+          "scatterFactor": 5,
+          "lifeLengthFactor": 0.1,
+          "sizeFactor": 1,
+          "absorbtionFactor": 1
         }
       }
     }
