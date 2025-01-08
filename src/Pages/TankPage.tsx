@@ -67,7 +67,7 @@ export function TankPage() {
                             <div className="title">Tank Stats</div>
                             <RenderTank tank={tank} highlight={"body"} rotation={Math.PI * 1.75} zoom={1.5}/>
                         </div>
-                        <TankStatsDisplay stats={tank} level={1} points={[0,0,0,0,0,0,0,0]}/>
+                        {/*<TankStatsDisplay stats={tank} level={1} points={[0,0,0,0,0,0,0,0]}/>*/}
                     </div>
                     {
                         Object.entries(tank.barrelStats).map(([key, stats]) => {
