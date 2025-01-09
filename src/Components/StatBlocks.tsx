@@ -81,9 +81,9 @@ export function BarrelStatsDisplay({
   rows.push(["Bullet Effective DMG", `${roundWithDecimals(mainValues.bulletEffectiveDamage)} (${roundWithDecimals(comparisonFactors.bulletEffectiveDamage)}x)`])
   rows.push(["Bullet Life", `${roundWithDecimals(mainValues.bulletLifeLength)}t: ${roundWithDecimals(mainValues.bulletLifeLength / TICK_RATE)}s (${roundWithDecimals(comparisonFactors.bulletLifeLength)}x)`])
   rows.push(["Bullet Absorbtion Factor", `${roundWithDecimals(stats.bullet.absorbtionFactor)}`])
-  rows.push(["Bullet Scatter Rate", `${roundWithDecimals(stats.bullet.scatterFactor)} (±${roundWithDecimals(mainValues.bulletScatterDegrees)}deg)`])
+  rows.push(["Bullet Scatter Rate", `±${roundWithDecimals(mainValues.bulletScatterDegrees)}deg (${roundWithDecimals(stats.bullet.scatterFactor)}x)`])
   rows.push(["Bullet Initial Speed", `${roundWithDecimals(mainValues.bulletInitialSpeed)}/t ±${roundWithDecimals(mainValues.bulletInitialSpeedVariation)}/t`])
-  rows.push(["Bullet Stable Speed", `${roundWithDecimals(mainValues.bulletTargetSpeed)}/t: ${roundWithDecimals(mainValues.bulletTargetSpeed * TICK_RATE)}/s (${comparisonFactors.bulletTargetSpeed}x)`])
+  rows.push(["Bullet Speed", `${roundWithDecimals(mainValues.bulletTargetSpeed)}/t: ${roundWithDecimals(mainValues.bulletTargetSpeed * TICK_RATE)}/s (${comparisonFactors.bulletTargetSpeed}x)`])
   if (stats.droneCount) rows.push(["Drone Limit Per Spawner", `${stats.droneCount}`])
   
   return <StatsBlock rows={rows}/>
