@@ -1,12 +1,12 @@
 
 import { Tank, BarrelTypes} from "../tanksData.";
 import { renderColor } from "../functions/renderColor";
+import { RenderGrid } from "./renderGrid";
+import { rotateVector } from "../functions/rotateVector";
 
 const BORDER_THICKNESS = 7.5;
 const DEFAULT_VIEW_BOUNDARIES = 150
-const GRID_THICKNESS = 2
 const HIGHLIGHT_FACTOR = 0.5
-function GRID_GRADIENT(x: number, y: number) {return 1 - Math.min((x ** 2 + y ** 2) * 0.75, 1)} // 0-1 => 0-1
 
 interface RenderTankProps {
   tank: Tank;
@@ -39,13 +39,6 @@ export function RenderTank({
   gridAlpha = 0,
   highlight = null
 }: RenderTankProps) {
-
-  function rotateVector(vector: [number, number], angle: number): [number, number] {
-    const [x, y] = vector;
-    const cos = Math.cos(angle);
-    const sin = Math.sin(angle);
-    return [x * cos - y * sin, x * sin + y * cos];
-  }
   
   const tankBaseSize =
     tank.sides === 4
@@ -331,41 +324,6 @@ export function RenderTank({
     offsetY = -0.5 * (maxY + minY)
   }
 
-  // grid
-  const gridPolygons: JSX.Element[] = [];
-  if (gridAlpha > 0) {
-    const squareDimensions = 50
-    const gridDimensions = Math.ceil(viewBoundaries * 1.5 / squareDimensions)
-    for (let i = -gridDimensions; i < gridDimensions; i++) {
-      for (let j = -gridDimensions; j < gridDimensions; j++) {
-        const position1 = squareDimensions * i
-        const position2 = squareDimensions * j
-        gridPolygons.push(
-          <line
-            key={`grid-${Math.random()}`}
-            x1={position1}
-            y1={position2}
-            x2={position1}
-            y2={position2 + squareDimensions}
-            stroke={renderColor(gridColor, gridAlpha * GRID_GRADIENT((position2 + 0.5 * squareDimensions) / viewBoundaries, position1 / viewBoundaries))}
-            strokeWidth={GRID_THICKNESS}
-          />
-        )
-        gridPolygons.push(
-          <line
-            key={`grid-${Math.random()}`}
-            x1={position1}
-            y1={position2}
-            x2={position1 + squareDimensions}
-            y2={position2}
-            stroke={renderColor(gridColor, gridAlpha * GRID_GRADIENT((position1 + 0.5 * squareDimensions) / viewBoundaries, position2 / viewBoundaries))}
-            strokeWidth={GRID_THICKNESS}
-          />
-        )
-      }
-    }
-  }
-
   // return svg
   return (
     <svg
@@ -374,7 +332,7 @@ export function RenderTank({
       xmlns="http://www.w3.org/2000/svg"
       data-view-boundaries={viewBoundaries}
     >
-      {gridPolygons}
+      <RenderGrid color={gridColor} alpha={gridAlpha} gridBoundaries={viewBoundaries * 1.5}/>
       {polygons}
       {overlayPolygons}
     </svg>

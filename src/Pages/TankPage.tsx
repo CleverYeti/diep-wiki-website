@@ -9,8 +9,7 @@ import { RenderTank } from "../Components/renderTank"
 import { TankPreview } from "../Components/TankPreview"
 import { BarrelStatsDisplay, TankStatsDisplay } from "../Components/StatBlocks"
 import { PageXMLBody } from "../Components/PageXMLBody"
-
-const basePath = import.meta.env.BASE_URL || '/';
+import { basePath } from "../App"
 
 function TankGrid({tankIds}: {tankIds: Array<string>}) {
     return (

@@ -1,10 +1,11 @@
 import { BarrelStats, Tank, tanksData } from "../tanksData.";
 import "./StatBlocks.css"
 import { formulas, TICK_RATE } from "../formulas";
+import { Shape } from "../shapesData";
 
 const GRID_SIZE = 50
 
-function StatsBlock({rows}: {rows: Array<Array<string>>}) {
+export function StatsBlock({rows}: {rows: Array<Array<string>>}) {
   return (
     <>
       {
@@ -19,6 +20,11 @@ function StatsBlock({rows}: {rows: Array<Array<string>>}) {
     </>
   )
 }
+  
+function roundWithDecimals(value: number, decimals: number = 2) {
+  const factor = 10 ** decimals
+  return Math.round(value * factor) / factor
+}
 
 export function BarrelStatsDisplay({
   stats,
@@ -31,11 +37,6 @@ export function BarrelStatsDisplay({
 }) {
   const content: Array<JSX.Element> = []
   const rows: Array<Array<string>> = []
-  
-  function roundWithDecimals(value: number, decimals: number = 2) {
-    const factor = 10 ** decimals
-    return Math.round(value * factor) / factor
-  }
 
   const comparisonLevel = 1
   const comparisonPoints = [0,0,0,0,0,0,0,0]
@@ -101,11 +102,7 @@ export function TankStatsDisplay({
   points: Array<number>;
 }) {
   const rows: Array<Array<string>> = []
-  
-  function roundWithDecimals(value: number, decimals: number = 2) {
-    const factor = 10 ** decimals
-    return Math.round(value * factor) / factor
-  }
+
 
   const comparisonLevel = 1
   const comparisonPoints = [0,0,0,0,0,0,0,0]
@@ -150,6 +147,16 @@ export function TankStatsDisplay({
     const zoomRange = 1500
     rows.push(["Zoom Range", `${roundWithDecimals(zoomRange)}: ${roundWithDecimals(zoomRange / GRID_SIZE)} grid squares`])
   }
+
+  return <StatsBlock rows={rows}/>
+}
+
+export function ShapeStatsDisplay({shape}: {shape: Shape}) {
+  const rows: Array<Array<string>> = []
+  rows.push(["Health", `${roundWithDecimals(shape.health)}`])
+  rows.push(["DMG Per Tick", `${roundWithDecimals(shape.bodyDamage)}`])
+  rows.push(["Eff. Health", `${roundWithDecimals(shape.bodyDamage * shape.health)}`])
+  rows.push(["Score", `${roundWithDecimals(shape.score)}`])
 
   return <StatsBlock rows={rows}/>
 }

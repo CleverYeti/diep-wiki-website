@@ -1,9 +1,9 @@
-import { Barrel, BarrelStats } from "./tanksData.";
+import { Barrel } from "./tanksData.";
 
 export interface Boss {
   id?: number;
   name: string;
-  level: 0;
+  level?: 0;
   sizeFactor: number;
   health: number;
   preAddon: string | null;
@@ -12,20 +12,84 @@ export interface Boss {
   barrels: Barrel[];  
   bodyColor: Array<number>
   barrelStats: {
-    [key: string]: BarrelStats
+    [key: string]: BossBarrelStats
   }
   key: string;
+}
+
+
+export interface BossBullet {
+  type: string;
+  sizeFactor: number;
+  health: number;
+  damage: number;
+  targetSpeed: number;
+  scatterFactor: number;
+  lifeLengthFactor: number;
+  absorbtionFactor: number;
+}
+
+export interface BossBarrelStats {
+  name: string;
+  reloadTicks: number;
+  recoilFactor: number;
+  droneCount?: number;
+  bullet: BossBullet;
 }
 
 export interface BossesData {
   [key: string]: Boss;
 }
-
+/*
 export const bossesData:BossesData = {
+  "arena-closer": {
+    "id": 16,
+    "sizeFactor": 3.2,
+    "bodyColor": [255,232,105],
+    "health": 0,
+    "name": "Arena Closer",
+    "preAddon": null,
+    "postAddon": null,
+    "sides": 1,
+    "barrels": [
+      {
+        "angle": 0,
+        "offset": 0,
+        "size": 75,
+        "width": 1,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "addon": null,
+        "delay": 0,
+        "barrelStats": "main",
+        "type": "normal"
+      }
+    ],
+    "key": "arena-closer",
+    "barrelStats": {
+      "main": {
+        "name": "Cannon Stats",
+        "reloadTicks": 8,
+        "recoilFactor": 0,
+        "bullet": {
+          "type": "bullet",
+          "sizeFactor": 1,
+          "health": 3750,
+          "damage": 196,
+          "targetSpeed": 61.5,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
+  },
   "destroyer-dominator": {
     "id": 45,
+    "sizeFactor": 1,
+    "bodyColor": [255,232,105],
     "name": "Destroyer Dominator",
-    "health": 6000,
+    "health": 6148,
     "preAddon": "dominator",
     "postAddon": "dominator",
     "sides": 1,
@@ -48,7 +112,7 @@ export const bossesData:BossesData = {
       "main": {
         "name": "Cannon Stats",
         "reload": 3,
-        "recoil": 0,
+        "recoilFactor": 0,
         "bullet": {
           "type": "bullet",
           "sizeFactor": 1,
@@ -64,8 +128,9 @@ export const bossesData:BossesData = {
   },
   "gunner-dominator": {
     "id": 46,
+    "bodyColor": [255,232,105],
     "name": "Gunner Dominator",
-    "health": 6000,
+    "health": 6148,
     "preAddon": "dominator",
     "postAddon": "dominator",
     "sides": 1,
@@ -111,8 +176,8 @@ export const bossesData:BossesData = {
     "barrelStats": {
       "main": {
         "name": "Cannon Stats",
-        "reload": 0.3,
-        "recoil": 0,
+        "reloadFactor": 0.3,
+        "recoilFactor": 0,
         "bullet": {
           "type": "bullet",
           "sizeFactor": 0.6,
@@ -128,8 +193,9 @@ export const bossesData:BossesData = {
   },
   "trapper-dominator": {
     "id": 47,
+    "bodyColor": [255,232,105],
     "name": "Trapper Dominator",
-    "health": 6000,
+    "health": 6148,
     "preAddon": "dominator",
     "postAddon": null,
     "sides": 1,
@@ -235,8 +301,8 @@ export const bossesData:BossesData = {
     "barrelStats": {
       "traps": {
         "name": "Trap Launcher Stats",
-        "reload": 1.5,
-        "recoil": 0,
+        "reloadFactor": 1.5,
+        "recoilFactor": 0,
         "bullet": {
           "type": "trap",
           "sizeFactor": 0.8,
@@ -252,3 +318,4 @@ export const bossesData:BossesData = {
     }
   }
 }
+*/

@@ -3,36 +3,27 @@
 
 
     <section name="Basic info">
-
-        <description>
             N/A
-        </description>
-
     </section>
 
 
 
     <section name="Meta builds">
-        <builds>
-            1. 0/0/0/5/7/7/7/7
-            2. 0/0/0/6/7/7/7/6
-            Alternatives:
-            3. 0/0/0/7/7/7/7/5
-        </builds>
+        1. 0/0/0/5/7/7/7/7
+        2. 0/0/0/6/7/7/7/6
+        Alternatives:
+        3. 0/0/0/7/7/7/7/5
     </section>
 
 
 
     <section name="Strategy">
-        <strategy>
-            N/A
-        </strategy>
+        N/A
     </section>
 
 
 
     <section name="Trivia">
-
         - Sometimes when ignoring its Level 30 upgrades, when the player reached Level 45, no upgrades would appear, and they would be stuck as a Twin. This was fixed shortly after.
             
         - The Twin is the smallest Tier 2 branch, having only 7 total Tier 4 tanks branch from it and its Upgrade choices.
@@ -40,7 +31,6 @@
         - The base shooting speed for the Twin and the Machine Gun are very similar, if not, the same.
         
         - When shooting, you may shoot 2 bullets and once by clicking twice. By clicking twice to shoot, you get a new pattern of shots.
-
     </section>
 
 
