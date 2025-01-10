@@ -1,4 +1,4 @@
-import { Barrel } from "./tanksData.";
+import { Barrel } from "./tanksData";
 
 export interface Boss {
   id?: number;

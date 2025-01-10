@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Tank, tanksData, tankColors} from "../tanksData.";
+import { Tank, tanksData, tankColors} from "../tanksData";
 import { renderColor } from "../functions/renderColor";
 import { RenderTank } from "../Components/renderTank";
 import "./TanksPage.css"

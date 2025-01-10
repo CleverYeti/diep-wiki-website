@@ -1,4 +1,4 @@
-import { BarrelStats, Tank, tanksData } from "../tanksData.";
+import { BarrelStats, Tank, tanksData } from "../tanksData";
 import "./StatBlocks.css"
 import { formulas, TICK_RATE } from "../formulas";
 import { Shape } from "../shapesData";

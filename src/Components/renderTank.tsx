@@ -1,5 +1,5 @@
 
-import { Tank, BarrelTypes} from "../tanksData.";
+import { Tank, BarrelTypes} from "../tanksData";
 import { renderColor } from "../functions/renderColor";
 import { RenderGrid } from "./renderGrid";
 import { rotateVector } from "../functions/rotateVector";

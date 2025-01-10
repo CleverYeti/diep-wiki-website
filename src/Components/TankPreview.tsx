@@ -1,11 +1,11 @@
 import { useState, MutableRefObject, useRef} from "react";
-import { Tank } from "../tanksData.";
+import { Tank } from "../tanksData";
 import { RenderTank } from "./renderTank";
 import "./tankPreview.css"
 import settingsIcon from '/icons/settings.svg'
 import downloadIcon from '/icons/download.svg'
 import { renderColor } from "../functions/renderColor"
-import { tankColors } from "../tanksData.";
+import { tankColors } from "../tanksData";
 import { downloadSVG } from "../functions/downloadSVG";
 
 
