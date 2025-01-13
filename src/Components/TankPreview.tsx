@@ -13,7 +13,7 @@ export function TankPreview({tank}: {tank: Tank}) {
     const [isSettingsOpen, setSettingsOpen] = useState(false)
     const [isDownloadOpen, setDownloadOpen] = useState(false)
 
-    const [rotation, setRotation] = useState(-45)
+    const [rotation, setRotation] = useState(315)
     const [color, setColor] = useState([0, 177, 222])
     const [gridColor, setGridColor] = useState([255,255,255])
     const [gridAlpha, setGridAlpha] = useState(0.1)

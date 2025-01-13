@@ -64,7 +64,7 @@ export interface Tank {
   name: string;
   displayScale?: number;
   sizeFactor?: number;
-  bodyDiameter?: number; // overrides the default 50
+  bodyRadius?: number; // overrides the default 50
   upgradeMessage?: string;
   levelRequirement?: number;
   health?: number; // override
@@ -1940,7 +1940,7 @@ export const tanksData:TanksData = {
   "necromancer": {
     "id": 17,
     "name": "Necromancer",
-    "bodyDiameter": 65,
+    "bodyRadius": 65,
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
@@ -5575,7 +5575,7 @@ export const tanksData:TanksData = {
   "factory": {
     "id": 52,
     "name": "Factory",
-    "bodyDiameter": 65,
+    "bodyRadius": 65,
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],

@@ -40,10 +40,16 @@ export function RenderTank({
   highlight = null
 }: RenderTankProps) {
   
-  const tankBaseRadius = tank.bodyDiameter ?? 50
+  const tankBaseRadius = tank.bodyRadius ?? 50
   const sizeFactor = tank.sizeFactor ?? Math.pow(1.01, level - 1)
   const tankRadius = tankBaseRadius * sizeFactor;
-  const viewBoundaries = DEFAULT_VIEW_BOUNDARIES * tankRadius / 50 / zoom;
+
+  const tankApparentRadius =
+    tank.sides === 3 ? (tankRadius * 0.7) :
+    tank.sides === 4 ? (tankRadius / 65 * 50) :
+    tankRadius
+  
+  const viewBoundaries = DEFAULT_VIEW_BOUNDARIES * tankApparentRadius / 50 / zoom;
   
   let maxX = tankRadius
   let minX = -tankRadius
