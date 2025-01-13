@@ -1940,7 +1940,7 @@ export const tanksData:TanksData = {
   "necromancer": {
     "id": 17,
     "name": "Necromancer",
-    "bodyDiameter": 46,
+    "bodyDiameter": 65,
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
@@ -5575,7 +5575,7 @@ export const tanksData:TanksData = {
   "factory": {
     "id": 52,
     "name": "Factory",
-    "bodyDiameter": 46,
+    "bodyDiameter": 65,
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
@@ -5678,7 +5678,7 @@ export const tanksData:TanksData = {
           "absorbtionFactor": 1
         }
       }
-    }
+    },
   },
   "dev-tank": {
     "id": 53,
