@@ -10,6 +10,9 @@
     grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
     margin: 1rem;
 }
+#tanks-page.bosses-page > #tanks-page-grid {
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+}
 
 #tanks-page-grid > .tank-card {
     position: relative;

@@ -57,7 +57,7 @@ export function TankPreview({tank}: {tank: Tank}) {
     }
     const elementRef = useRef<HTMLDivElement>(null)
     return (
-        <div ref={elementRef} className="tank-preview" style={{"--color": renderColor(tankColors[tank.color])} as React.CSSProperties}>
+        <div ref={elementRef} className="tank-preview" style={{"--color": renderColor(tankColors[tank.color ?? 0])} as React.CSSProperties}>
             <RenderTank
                 tank={tank}
                 rotation={rotation / 180 * Math.PI}
@@ -65,6 +65,7 @@ export function TankPreview({tank}: {tank: Tank}) {
                 gridColor={gridColor}
                 gridAlpha={gridAlpha}
                 level={lastTankFixedLevel == tank.key ? fixedLevel : Math.max(1, tank.levelRequirement ?? 0)}
+                zoom={tank.displayScale ?? 1}
             />
             <div className="toggle-settings corner-button" onClick={() => {setSettingsOpen(!isSettingsOpen); setDownloadOpen(false)}}>
                 <img src={settingsIcon}/>

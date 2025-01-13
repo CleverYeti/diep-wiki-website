@@ -1,0 +1,60 @@
+<!-- copied from the fandom wiki -->
+
+<content>
+
+
+
+    <section name="Basic info">
+        The Guardian of the Pentagons, or simply the Guardian, is an the first AI-controlled Boss to be added to Diep.io. Excluding Maze, it has a 1/5 chance to spawn after every 45 minutes has elapsed since the server's opening if a Boss is not yet present. It creates Drones as its primary form of attack and circles around the Pentagon Nest. It was secretly added on August 18th, 2016.
+    </section>
+
+
+
+    <section name="Behavior">
+        <b>Passive</b>
+        Immediately after spawning, the Guardian will circle around the Pentagon Nest by a predetermined path either clockwise or counterclockwise. It is neutral to all players unless provoked by damage from a player within its FoV, which triggers its aggressive behavior.
+
+        <b>Aggressive</b>
+        When the Guardian is provoked, the player that damaged it will be marked as a target for just a frame for any of its drones currently alive to chase after if not yet already locked on to one.
+    </section>
+
+
+
+    <section name="Strategy">
+        N/A
+    </section>
+
+
+
+    <section name="Trivia">
+        - The Guardian is the first AI-controlled Boss to be added into the game; the next Boss to be added is the Summoner.
+
+        - On release, the Boss for some time had no official name, so fans came up with “Triangle Boss” and later “Crasher Spawner” as a sort of placeholder. Crasher Spawn is its name in the game's code.
+        
+        - An hour after the Summoner was added to the game, the developer created a thread for the community to suggest names for the Summoner and the Guardian as well.
+        
+        - Prominent names that were suggested but didn't make the cut were "UFO", "Swarmer," "Horde" and, jokingly, variations of "Dorito Boss."
+        
+        - It was later named Guardian, and would even be given a full name: "Guardian of the Pentagons."
+        
+        - The names "Guardian" and "Guardian of the Pentagons" are mentioned in-game; displayed above the Boss, upon killing it, and killed by it, the name will be shown as "Guardian", but in the notification that says the Guardian has spawned or who destroyed it, it will be mentioned as "Guardian of the Pentagons."
+        
+        - Although comparisons are made between drones created by The Guardian and Battleship, the Boss predates the tank's release by 10 days, suggesting the battleship's spawners were created later as a differentiator for drones that came in smaller size with limited lifespans.
+        
+        - The drones are as small as the Mothership's and Fallen Overlord's.
+        
+        - The Guardian is the only Boss that carries a single weapon.
+        
+        - In terms of reload, the Guardian's spawner is the single most powerful weapon in the game.
+        
+        - The Guardian's body is slightly smaller than the Defender's.
+        
+        - The 2024/4/6 update changed its path so it now cycles around the Pentagon Nest instead of the edge of the arena; this caused the Pentagon Nest to be much more dangerous when the Guardian exists. An effective but toxic strategy is to pinch Boss hunters and low-level players with a level 45 tank.
+        
+        - It takes the Guardian, on average, roughly 40 seconds to complete a lap around the Pentagon Nest, including the bursts of recoil in some intervals.
+    </section>
+
+
+
+    
+</content>

@@ -40,20 +40,15 @@ export function RenderTank({
   highlight = null
 }: RenderTankProps) {
   
-  const tankBaseSize =
-    tank.sides === 4
-      ? Math.SQRT2 * 32.5
-      : tank.sides === 16
-      ? Math.SQRT2 * 25
-      : 50;
-  const sizeFactor = Math.pow(1.01, level - 1);
-  const tankSize = tankBaseSize * sizeFactor;
-  const viewBoundaries = DEFAULT_VIEW_BOUNDARIES * sizeFactor / zoom;
+  const tankBaseRadius = tank.bodyDiameter ?? 50
+  const sizeFactor = tank.sizeFactor ?? Math.pow(1.01, level - 1)
+  const tankRadius = tankBaseRadius * sizeFactor;
+  const viewBoundaries = DEFAULT_VIEW_BOUNDARIES * tankRadius / 50 / zoom;
   
-  let maxX = 50 * sizeFactor
-  let minX = -50 * sizeFactor
-  let maxY = 50 * sizeFactor
-  let minY = -50 * sizeFactor
+  let maxX = tankRadius
+  let minX = -tankRadius
+  let maxY = tankRadius
+  let minY = -tankRadius
 
   const polygons: JSX.Element[] = [];
   const overlayPolygons: Array<JSX.Element> = []
@@ -83,7 +78,7 @@ export function RenderTank({
   if (tank.postAddon == "spike") {
     const points = Array.from({ length: 24 }, (_, i) => {
       const angle = Math.PI * 2 * i / 24 + rotation
-      const distance = i % 2 == 0 ? tankSize * 1.3 : tankSize * 0.925
+      const distance = i % 2 == 0 ? tankRadius * 1.3 : tankRadius * 0.925
       return `${distance * Math.cos(angle)},${distance * Math.sin(angle)}`;
     }).join(" ");
     polygons.push(
@@ -207,15 +202,19 @@ export function RenderTank({
         [0, barrel.width * 42 * 0.5],
       ];
       points = points.map(([x, y]) =>
-        rotateVector([x, y], autoTurretRotation + Math.PI + barrel.angle)
+        rotateVector([x, y], autoTurretRotation)
+      );
+      points = points.map(([x, y]) => [x + (barrel.basePosition ?? 0), y])
+      points = points.map(([x, y]) =>
+        rotateVector([x, y], barrel.angle)
       );
       overlayPolygons.push(renderBarrelPolygon(points, barrel.barrelStats))
       overlayPolygons.push(
         <circle
           key={tank.id + "-barrel-" + Math.random()}
-          cx="0"
-          cy="0"
-          r={25 * sizeFactor}
+          cx={Math.cos(rotation + barrel.angle) * (barrel.basePosition ?? 0) * sizeFactor}
+          cy={Math.sin(rotation + barrel.angle) * (barrel.basePosition ?? 0) * sizeFactor}
+          r={25 * (barrel.size / 55) * sizeFactor}
           fill={renderColor(applyHighlight(barrelColor, barrel.barrelStats))}
           stroke={renderColor(applyHighlight(barrelColor.map(v => v * (1 - borderOpacity)), barrel.barrelStats))}
           strokeWidth={BORDER_THICKNESS}
@@ -293,7 +292,7 @@ export function RenderTank({
         key={tank.id + "-body"}
         cx="0"
         cy="0"
-        r={tankSize}
+        r={tankRadius}
         fill={renderColor(applyHighlight(color, "body"))}
         stroke={renderColor(applyHighlight(color.map(v => v * (1 - borderOpacity)), "body"))}
         strokeWidth={BORDER_THICKNESS}
@@ -307,7 +306,7 @@ export function RenderTank({
         key={tank.id + "-body"}
         points={Array.from({ length: tank.sides }, (_, i) => {
           const angle = (Math.PI * 2 * (i + offset)) / tank.sides + rotation;
-          return `${tankSize * Math.SQRT2 * Math.cos(angle)},${tankSize * Math.SQRT2 * Math.sin(angle)}`;
+          return `${tankRadius * Math.cos(angle)},${tankRadius * Math.sin(angle)}`;
         }).join(" ")}
         fill={renderColor(applyHighlight(color, "body"))}
         stroke={renderColor(applyHighlight(color.map(v => v * (1 - borderOpacity)), "body"))}

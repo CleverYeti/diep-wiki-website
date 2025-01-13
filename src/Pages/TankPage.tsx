@@ -46,13 +46,13 @@ export function TankPage() {
                 </div>
                 <div id="tank-page-sidebar">
                     <TankPreview tank={tank}/>
-                    {tank.upgradesFrom.length > 0 && (
+                    {tank.upgradesFrom && tank.upgradesFrom.length > 0 && (
                         <div className="section">
                             <div className="title">Upgrades From</div>
                             <TankGrid tankIds={tank.upgradesFrom}/>
                         </div>
                     )}
-                    {tank.upgrades.length > 0 && (
+                    {tank.upgrades && tank.upgrades.length > 0 && (
                         <div className="section">
                             <div className="title">Upgrades Into</div>
                             <TankGrid tankIds={tank.upgrades}/>

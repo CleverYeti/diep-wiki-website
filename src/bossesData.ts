@@ -1,47 +1,460 @@
-import { Barrel } from "./tanksData";
+import { TanksData } from "./tanksData";
+import { formulas } from "./formulas";
+export const bossesData:TanksData = {
+  "defender": {
+    "name": "Defender",
+    "isBoss": true,
+    "displayScale": 1.375,
+    "health": 3000,
+    "bodyDamagePerTick": 60,
+    "absorbtionFactor": 0.05,
+    "preAddon": null,
+    "postAddon": null,
+    "bodyColor": [252, 118, 119],
+    "sizeFactor": 1,
+    "bodyDiameter": 150,
+    "sides": 3,
+    "movementSpeed": 0.35,
+    "barrels": [
+      {
+        "angle": Math.PI * 2 * -1/6,
+        "offset": 0,
+        "size": 120,
+        "width": 1.7,
+        "isTrapezoid": false,
+        "type": "trapLauncher",
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "barrelStats": "traps"
+      },
+      {
+        "angle": Math.PI * 2 * 1/6,
+        "offset": 0,
+        "size": 120,
+        "width": 1.7,
+        "isTrapezoid": false,
+        "type": "trapLauncher",
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "barrelStats": "traps"
+      },
+      {
+        "angle": Math.PI * 2 * -3/6,
+        "offset": 0,
+        "size": 120,
+        "width": 1.7,
+        "isTrapezoid": false,
+        "type": "trapLauncher",
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "barrelStats": "traps"
+      },
+      {
+        "angle": 0,
+        "offset": 0,
+        "basePosition": 60,
+        "size": 55,
+        "width": 0.7,
+        "delay": 0.01,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "barrelStats": "autoTurrets",
+        "type": "autoTurret"
+      },
+      {
+        "angle": Math.PI * 2 / 3,
+        "offset": 0,
+        "basePosition": 60,
+        "size": 55,
+        "width": 0.7,
+        "delay": 0.01,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "barrelStats": "autoTurrets",
+        "type": "autoTurret"
+      },
+      {
+        "angle": Math.PI * 4 / 3,
+        "offset": 0,
+        "basePosition": 60,
+        "size": 55,
+        "width": 0.7,
+        "delay": 0.01,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "barrelStats": "autoTurrets",
+        "type": "autoTurret"
+      }
+    ],
 
-export interface Boss {
-  id?: number;
-  name: string;
-  level?: 0;
-  sizeFactor: number;
-  health: number;
-  preAddon: string | null;
-  postAddon: string | null;
-  sides: number;
-  barrels: Barrel[];  
-  bodyColor: Array<number>
-  barrelStats: {
-    [key: string]: BossBarrelStats
-  }
-  key: string;
-}
+    "barrelStats": {
+      "traps": {
+        "name": "Trap Launcher Stats",
+        "reloadTicks": formulas.barrelReloadTicks(4, 0),
+        "recoilFactor": 2,
+        "bullet": {
+            "type": "trap",
+            "sizeFactor": 0.8,
+            "health": formulas.bulletHealth(12.5, 0),
+            "damagePerTick": formulas.bulletDamagePerTick(4, 0),
+            "targetSpeed": formulas.bulletTargetSpeed(5, 0),
+            "scatterFactor": 1,
+            "lifeLengthFactor": 8,
+            "absorbtionFactor": 1,
+        }
+      },
+      "autoTurrets": {
+        "name": "Auto Turret Stats",
+        "reloadTicks": formulas.barrelReloadTicks(1),
+        "recoilFactor": 0.3,
+        "bullet": {
+          "type": "bullet",
+          "health": formulas.bulletHealth(5.75),
+          "damagePerTick": formulas.bulletDamagePerTick(0.75),
+          "targetSpeed": formulas.bulletTargetSpeed(2.3),
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
+          "sizeFactor": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    },
+    "key": "defender",
+  },
+  "fallen-booster": {
+    "name": "Fallen Booster",
+    "isBoss": true,
+    "health": 3000,
+    "bodyDamagePerTick": 60,
+    "absorbtionFactor": 0.05,
+    "preAddon": null,
+    "postAddon": null,
+    "sizeFactor": Math.pow(1.01, 75 - 1),
+    "bodyColor": [192, 192, 192],
+    "sides": 1,
+    "movementSpeed": 1,
 
+    "barrels": [
+      {
+        "angle": 0,
+        "offset": 0,
+        "size": 95,
+        "width": 1,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "barrelStats": "main",
+        "type": "normal"
+      },
+      {
+        "angle": 3.9269908169872414,
+        "offset": 0,
+        "size": 70,
+        "width": 1,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "delay": 0.66,
+        "barrelStats": "diagonal",
+        "type": "normal"
+      },
+      {
+        "angle": 2.356194490192345,
+        "offset": 0,
+        "size": 70,
+        "width": 1,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "delay": 0.66,
+        "barrelStats": "diagonal",
+        "type": "normal"
+      },
+      {
+        "angle": 3.665191429188092,
+        "offset": 0,
+        "size": 80,
+        "width": 1,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "delay": 0.33,
+        "barrelStats": "back",
+        "type": "normal"
+      },
+      {
+        "angle": 2.6179938779914944,
+        "offset": 0,
+        "size": 80,
+        "width": 1,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "delay": 0.33,
+        "barrelStats": "back",
+        "type": "normal"
+      }
+    ],
 
-export interface BossBullet {
-  type: string;
-  sizeFactor: number;
-  health: number;
-  damage: number;
-  targetSpeed: number;
-  scatterFactor: number;
-  lifeLengthFactor: number;
-  absorbtionFactor: number;
-}
+    "barrelStats": {
+      "main": {
+        "name": "Front Cannon Stats",
+        "reloadTicks": formulas.barrelReloadTicks(1),
+        "recoilFactor": 0.2,
+        "bullet": {
+          "type": "bullet",
+          "sizeFactor": 1,
+          "health": formulas.bulletHealth(6.25, 0),
+          "damagePerTick": formulas.bulletDamagePerTick(1, 0),
+          "targetSpeed": formulas.bulletTargetSpeed(1.7, 0),
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
+          "absorbtionFactor": 1
+        }
+      },
+      "diagonal": {
+        "name": "Diagonal Cannon Stats",
+        "reloadTicks": formulas.barrelReloadTicks(1),
+        "recoilFactor": 0.2,
+        "bullet": {
+          "type": "bullet",
+          "sizeFactor": 1,
+          "health": formulas.bulletHealth(6.25, 0),
+          "damagePerTick": formulas.bulletDamagePerTick(0.2, 0),
+          "targetSpeed": formulas.bulletTargetSpeed(1.7, 0),
+          "scatterFactor": 1,
+          "lifeLengthFactor": 0.5,
+          "absorbtionFactor": 1
+        }
+      },
+      "back": {
+        "name": "Back Cannon Stats",
+        "reloadTicks": formulas.barrelReloadTicks(1),
+        "recoilFactor": 2.5,
+        "bullet": {
+          "type": "bullet",
+          "sizeFactor": 1,
+          "health": formulas.bulletHealth(6.25, 0),
+          "damagePerTick": formulas.bulletDamagePerTick(0.2, 0),
+          "targetSpeed": formulas.bulletTargetSpeed(1.7, 0),
+          "scatterFactor": 1,
+          "lifeLengthFactor": 0.5,
+          "absorbtionFactor": 1
+        }
+      }
+    },
+    "key": "fallen-booster"
+  },
+  "fallen-overlord": {
+    "name": "Fallen Overlord",
+    "isBoss": true,
+    "health": 3000,
+    "bodyDamagePerTick": 60,
+    "absorbtionFactor": 0.05,
+    "preAddon": null,
+    "postAddon": null,
+    "sizeFactor": Math.pow(1.01, 75 - 1),
+    "bodyColor": [192, 192, 192],
+    "sides": 1,
+    "movementSpeed": 0.5,
+    
+    "barrels": [
+      {
+        "angle": -1.5707963267948966,
+        "offset": 0,
+        "size": 70,
+        "width": 1,
+        "isTrapezoid": true,
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "barrelStats": "drones",
+        "type": "droneSpawner"
+      },
+      {
+        "angle": 1.5707963267948966,
+        "offset": 0,
+        "size": 70,
+        "width": 1,
+        "isTrapezoid": true,
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "barrelStats": "drones",
+        "type": "droneSpawner"
+      },
+      {
+        "angle": 0,
+        "offset": 0,
+        "size": 70,
+        "width": 1,
+        "isTrapezoid": true,
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "barrelStats": "drones",
+        "type": "droneSpawner"
+      },
+      {
+        "angle": 3.141592653589793,
+        "offset": 0,
+        "size": 70,
+        "width": 1,
+        "isTrapezoid": true,
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "barrelStats": "drones",
+        "type": "droneSpawner"
+      }
+    ],
 
-export interface BossBarrelStats {
-  name: string;
-  reloadTicks: number;
-  recoilFactor: number;
-  droneCount?: number;
-  bullet: BossBullet;
-}
+    "barrelStats": {
+      "drones": {
+        "name": "Drone Spawner Stats",
+        "reloadTicks": formulas.barrelReloadTicks(0.25, 0),
+        "recoilFactor": 1,
+        "bullet": {
+          "type": "drone",
+          "sizeFactor": 0.5,
+          "health": formulas.bulletHealth(12.5, 0),
+          "damagePerTick": formulas.bulletDamagePerTick(0.5, 0),
+          "targetSpeed": formulas.bulletTargetSpeed(1.7, 0),
+          "scatterFactor": 1,
+          "lifeLengthFactor": -1,
+          "absorbtionFactor": 1
+        },
+        "droneCount": 7,
+      }
+    },
 
-export interface BossesData {
-  [key: string]: Boss;
-}
+    "key": "fallen-overlord"
+  },
+  "guardian": {
+    "name": "Guardian of the Pentagons",
+    "isBoss": true,
+    "displayScale": 1.375,
+    "health": 3000,
+    "bodyDamagePerTick": 60,
+    "absorbtionFactor": 0.05,
+    "preAddon": null,
+    "postAddon": null,
+    "sizeFactor": 1,
+    "bodyDiameter": 135,
+    "bodyColor": [241, 119, 221],
+    "sides": 3,
+    "movementSpeed": 0.5,
+
+    "barrels": [
+      {
+        "angle": Math.PI,
+        "offset": 0,
+        "size": 100,
+        "width": 1.7,
+        "delay": 0,
+        "isTrapezoid": true,
+        "trapezoidDirection": 0,
+        "type": "droneSpawner",
+        "barrelStats": "main"
+      }
+    ],
+
+    "barrelStats": {
+      "main": {
+        "name": "Drone Spawner Stats",
+        "reloadTicks": formulas.barrelReloadTicks(0.25, 0),
+        "recoilFactor": 1,
+        "droneCount": 24,
+        "bullet": {
+          "type": "drone",
+          "sizeFactor": 1 / 1.7,
+          "health": formulas.bulletHealth(12.5, 0),
+          "damagePerTick": formulas.bulletDamagePerTick(0.5, 0),
+          "targetSpeed": formulas.bulletTargetSpeed(1.7, 0),
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1.5,
+          "absorbtionFactor": 1
+        }
+      }
+    },
+    "key": "guardian"
+  },
+  "summoner": {
+    "name": "Summoner",
+    "isBoss": true,
+    "displayScale": 1.25,
+    "health": 3000,
+    "bodyDamagePerTick": 60,
+    "absorbtionFactor": 0.05,
+    "preAddon": null,
+    "postAddon": null,
+    "sizeFactor": 1,
+    "bodyDiameter": 150,
+    "bodyColor": [255, 232, 105],
+    "sides": 4,
+    "movementSpeed": 0.5,
+
+    "barrels": [
+      {
+        "angle": -1.5707963267948966,
+        "offset": 0,
+        "size": 135,
+        "width": 1.7,
+        "isTrapezoid": true,
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "barrelStats": "drones",
+        "type": "droneSpawner"
+      },
+      {
+        "angle": 1.5707963267948966,
+        "offset": 0,
+        "size": 135,
+        "width": 1.7,
+        "isTrapezoid": true,
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "barrelStats": "drones",
+        "type": "droneSpawner"
+      },
+      {
+        "angle": 0,
+        "offset": 0,
+        "size": 135,
+        "width": 1.7,
+        "isTrapezoid": true,
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "barrelStats": "drones",
+        "type": "droneSpawner"
+      },
+      {
+        "angle": 3.141592653589793,
+        "offset": 0,
+        "size": 135,
+        "width": 1.7,
+        "isTrapezoid": true,
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "barrelStats": "drones",
+        "type": "droneSpawner"
+      }
+    ],
+
+    "barrelStats": {
+      "drones": {
+        "name": "Square Spawner Stats",
+        "recoilFactor": 1,
+        "reloadTicks": formulas.barrelReloadTicks(0.25, 0),
+        "droneCount": 7,
+        "bullet": {
+          "type": "necrodrone",
+          "sizeFactor": 55 * Math.SQRT1_2 / (71.4 / 2),
+          "health": formulas.bulletHealth(12.5, 0),
+          "damagePerTick": formulas.bulletDamagePerTick(0.5, 0),
+          "targetSpeed": formulas.bulletTargetSpeed(1.7, 0),
+          "scatterFactor": 1,
+          "lifeLengthFactor": -1,
+          "absorbtionFactor": 1,
+        }
+      }
+    },
+    "key": "summoner"
+  },
+
 /*
-export const bossesData:BossesData = {
   "arena-closer": {
     "id": 16,
     "sizeFactor": 3.2,
@@ -317,5 +730,28 @@ export const bossesData:BossesData = {
       }
     }
   }
+*/
+}
+
+
+// abstractBoss
+// this.physicsData.values.absorbtionFactor = 0.05;
+// this.scoreReward = 30000 * this.game.arena.shapeScoreRewardMultiplier;
+// this.damagePerTick = 60;
+// this.ai.viewRange = 2000;
+// this.physicsData.values.size = 50 * Math.pow(1.01, 75 - 1);
+// this.reloadTime = 15 * Math.pow(0.914, 7);
+// health = 3000
+// this.regenPerTick = this.healthData.values.maxHealth / 25000;
+
+// defender 
+// auto turret bullets
+/*
+bullet: {
+...AutoTurretDefinition.bullet,
+  speed: 2.3,
+  damage: 0.75,
+  health: 5.75,
+  color: Color.Neutral
 }
 */
