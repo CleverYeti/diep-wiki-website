@@ -73,6 +73,7 @@ export function TankPreview({tank}: {tank: Tank}) {
             <div className="toggle-download corner-button" onClick={() => {setDownloadOpen(!isDownloadOpen); setSettingsOpen(false)}}>
                 <img src={downloadIcon} alt="" />
             </div>
+            <div className="tank-name">{tank.name}</div>
             <div className="preview-download" data-active={isDownloadOpen}>
                 <a className="option" onClick={() => {
                     if (!elementRef.current) return
