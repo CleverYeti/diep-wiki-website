@@ -1,13 +1,13 @@
 <content>
     <section name="Score Gain">
         In Survival and Tag game modes, polygons give 3x score to allow players to get back in the fight quickly. In Domination, polygons give 2x score.
-        While in base in team modes and above 50k in score, you will only get 10% of the usual sore from shapes. This is to prevent base farming to get high scores.
+        While in base in team modes and above 50k in score, you will only get 10% of the usual score from shapes. This is to prevent base farming to get high scores.
     </section>
 
     <section name="Behavior">
-        Squares, Triangles, (and Crashers, when they are idle) drift around in a fixed circular path. However, Pentagons can move in either a fixed circular path OR a fixed elliptical path.
+        Squares, Triangles (and Crashers when they are idle) drift around in a fixed circular path. However, Pentagons can move in either a fixed circular path OR a fixed elliptical path.
         
-        Shapes slowly rotate around themselves. Squares, Triangles and both Crasher types complete a full rotation every 25 seconds. Pentagons rotate at half the speed, taking 50 seconds to complete a full rotation.
+        Shapes slowly rotate around themselves. Squares, Triangles and Crashers complete a full rotation every 25 seconds. Pentagons rotate at half the speed, taking 50 seconds to complete a full rotation.
         
         Shapes start regenerating health if they are left unharmed for at least 30 seconds.
     </section>

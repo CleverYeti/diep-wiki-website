@@ -1,7 +1,7 @@
 <content>
     <section name="Score Gain">
         In Survival and Tag game modes, polygons give 3x score to allow players to get back in the fight quickly. In Domination, polygons give 2x score.
-        While in base in team modes and above 50k in score, you will only get 10% of the usual sore from shapes. This is to prevent base farming to get high scores.
+        While in base in team modes and above 50k in score, you will only get 10% of the usual score from shapes. This is to prevent base farming to get high scores.
     </section>
 
     <section name="Behavior">
