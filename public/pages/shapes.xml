@@ -5,9 +5,9 @@
     </section>
 
     <section name="Behavior">
-        Squares, Triangles, (even Crashers, assuming they aren't targeting a player) drift around in a fixed circular path. However, Pentagons can move in either a fixed circular path OR a fixed elliptical path.
+        Squares, Triangles (and Crashers when they are idle) drift around in a fixed circular path. However, Pentagons can move in either a fixed circular path OR a fixed elliptical path.
         
-        Shapes slowly rotate around themselves. Squares, Triangles and both Crasher types complete a full rotation every 25 seconds. Pentagons rotate at half the speed, taking 50 seconds to complete a full rotation.
+        Shapes slowly rotate around themselves. Squares, Triangles and Crashers complete a full rotation every 25 seconds. Pentagons rotate at half the speed, taking 50 seconds to complete a full rotation.
         
         Shapes start regenerating health if they are left unharmed for at least 30 seconds.
     </section>

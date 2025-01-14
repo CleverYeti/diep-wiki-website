@@ -1,3 +1,22 @@
 <content>
+    <section name="Score Gain">
+        In Survival and Tag game modes, polygons give 3x score to allow players to get back in the fight quickly. In Domination, polygons give 2x score.
+        While in base in team modes and above 50k in score, you will only get 10% of the usual sore from shapes. This is to prevent base farming to get high scores.
+    </section>
 
+    <section name="Behavior">
+        Squares, Triangles, (and Crashers, when they are idle) drift around in a fixed circular path. However, Pentagons can move in either a fixed circular path OR a fixed elliptical path.
+        
+        Shapes slowly rotate around themselves. Squares, Triangles and both Crasher types complete a full rotation every 25 seconds. Pentagons rotate at half the speed, taking 50 seconds to complete a full rotation.
+        
+        Shapes start regenerating health if they are left unharmed for at least 30 seconds.
+    </section>
+
+    <section name="Spawning">
+        In the Pentagon Nest ([N/A] unit radius circle at the center of the map), only crashers, big crashers pentagons and alpha pentagons can spawn. These can only spawn there except for Pentagons who have massively increased spawn rates compared to the rest of the map.
+
+        Polygons serve as spawn points for when other polygons die, harmlessly repelling each other as they divide.
+
+        The number of Polygons available in an arena is directly related to how many players are currently connected to it. In Sandbox mode, the arena gains 12.5 polygons for every player that is connected, number which is then rounded down to the nearest natural number. In rooms with fewer than ten players (meaning the Leaderboard isn't filled), Polygons are very scarce, since they can spawn anywhere inside of the arena, and the overall number will be low due to the low amount of players.
+    </section>
 </content>
