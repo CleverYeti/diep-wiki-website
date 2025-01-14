@@ -1,6 +1,6 @@
 
 import { renderColor } from "../functions/renderColor";
-import { Shape } from "../shapesData";
+import { Shape, shinyColor } from "../shapesData";
 import { RenderGrid } from "./renderGrid";
 import { rotateVector } from "../functions/rotateVector";
 
@@ -10,6 +10,7 @@ const HIGHLIGHT_FACTOR = 0.5
 
 interface RenderShapeProps {
   shape: Shape;
+  isShiny?: boolean;
   gridAlpha?: number;
   borderOpacity?: number;
   gridColor?: Array<number>;
@@ -18,6 +19,7 @@ interface RenderShapeProps {
 
 export function RenderShape({
   shape,
+  isShiny = false,
   gridAlpha = 0.1,
   borderOpacity = 0.25,
   gridColor = [255,255,255],
@@ -42,8 +44,8 @@ export function RenderShape({
       <RenderGrid color={gridColor} alpha={gridAlpha} gridBoundaries={viewBoundaries * 1.5}/>
       <polygon
           points={points}
-          fill={renderColor(shape.color)}
-          stroke={renderColor(shape.color.map(v => v * (1 - borderOpacity)))}
+          fill={renderColor(isShiny ? shinyColor : shape.color)}
+          stroke={renderColor((isShiny ? shinyColor : shape.color).map(v => v * (1 - borderOpacity)))}
           strokeWidth={BORDER_THICKNESS}
           strokeLinejoin="round"
         />

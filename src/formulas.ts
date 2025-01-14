@@ -2,7 +2,7 @@ export const TICK_RATE = 25
 export const swarmLifeLength = 88
 export const formulas = {
     tankHealth: (tankLevel = 1, maxHealthPoints = 0) => 50 + 2 * (tankLevel - 1) + maxHealthPoints * 20,
-    tankDamagePerTick: (bodyDamagePoints = 0, isSpike = false) => 20 + bodyDamagePoints,
+    tankDamagePerTick: (bodyDamagePoints = 0, isSpike = false) => 20 + 4 * bodyDamagePoints + (isSpike ? 8 : 0),
     tankRegenPerTick: (tankHealth = 50, healthRegenPoints = 0) => tankHealth * (1 + 4 * healthRegenPoints) / 25000,
     tankEffectiveHealth: (tankHealth = 50, tankDamagePerTick = 20) => tankHealth * tankDamagePerTick,
     tankFovFactor: (tankLevel = 1, tankFieldFactorStat = 1) => 1.01 ** (0.5 * (tankLevel - 1)) / tankFieldFactorStat,

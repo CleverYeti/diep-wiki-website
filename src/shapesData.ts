@@ -7,15 +7,16 @@ export interface Shape {
   color: Array<number>;
   score: number
   key: string;
+  speed?: number;
 }
 
 export interface ShapesData {
   [key: string]: Shape;
 }
 
-export const shinyColor: Array<Number> = [138,255,105]
+export const shinyColor: Array<number> = [138,255,105]
 export const shinyHealthFactor = 10
-export const shinyXPFactor = 100
+export const shinyScoreFactor = 100
 
 export const shapesData:ShapesData = {
   "square": {
@@ -66,7 +67,8 @@ export const shapesData:ShapesData = {
     "score": 15,
     "color": [237,118,221],
     "vertices": 3,
-    "key": "crasher"
+    "key": "crasher",
+    "speed": 20
   },
   "large-crasher": {
     "name": "Large Crasher",
@@ -76,6 +78,7 @@ export const shapesData:ShapesData = {
     "score": 25,
     "color": [237,118,221],
     "vertices": 3,
-    "key": "large-crasher"
+    "key": "large-crasher",
+    "speed": 20
   }
 }

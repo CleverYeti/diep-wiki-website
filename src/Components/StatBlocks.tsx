@@ -1,7 +1,7 @@
 import { BarrelStats, Tank, tanksData } from "../tanksData";
 import "./StatBlocks.css"
 import { formulas, TICK_RATE } from "../formulas";
-import { Shape } from "../shapesData";
+import { Shape, shinyHealthFactor, shinyScoreFactor } from "../shapesData";
 
 const GRID_SIZE = 50
 
@@ -159,12 +159,13 @@ export function TankStatsDisplay({
   return <StatsBlock rows={rows}/>
 }
 
-export function ShapeStatsDisplay({shape}: {shape: Shape}) {
+export function ShapeStatsDisplay({shape, isShiny = false}: {shape: Shape; isShiny?: boolean}) {
   const rows: Array<Array<string>> = []
-  rows.push(["Health", `${roundWithDecimals(shape.health)}`])
+  rows.push(["Health", `${roundWithDecimals(isShiny ? shinyHealthFactor * shape.health : shape.health)}`])
   rows.push(["DMG Per Tick", `${roundWithDecimals(shape.bodyDamage)}`])
-  rows.push(["Eff. Health", `${roundWithDecimals(shape.bodyDamage * shape.health)}`])
-  rows.push(["Score", `${roundWithDecimals(shape.score)}`])
+  rows.push(["Eff. Health", `${roundWithDecimals(shape.bodyDamage * (isShiny ? shape.health : shinyHealthFactor * shape.health))}`])
+  rows.push(["Score", `${roundWithDecimals(isShiny ? shinyScoreFactor * shape.score : shape.score)}`])
+  if (shape.speed) rows.push(["Speed", `${roundWithDecimals(shape.speed)}/t: ${roundWithDecimals(shape.speed * TICK_RATE)}/s`])
 
   return <StatsBlock rows={rows}/>
 }

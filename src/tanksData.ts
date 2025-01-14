@@ -52,10 +52,10 @@ export interface BarrelStats {
 }
 
 export interface Flags {
-  invisibility: boolean;
-  zoomAbility: boolean;
-  canClaimSquares: boolean;
-  devOnly: boolean;
+  invisibility?: boolean;
+  zoomAbility?: boolean;
+  canClaimSquares?: boolean;
+  devOnly?: boolean;
 }
 
 export interface Tank {
@@ -120,15 +120,7 @@ export const tanksData:TanksData = {
       "flank-guard",
       "smasher"
     ],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -211,15 +203,7 @@ export const tanksData:TanksData = {
       "quad-tank",
       "twin-flank"
     ],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -312,15 +296,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -428,15 +404,7 @@ export const tanksData:TanksData = {
       "penta-shot",
       "spread-shot"
     ],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -543,15 +511,7 @@ export const tanksData:TanksData = {
       "octo-tank",
       "auto-5"
     ],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -667,15 +627,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -839,15 +791,7 @@ export const tanksData:TanksData = {
       "hunter",
       "trapper"
     ],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 0.9,
     "preAddon": null,
     "postAddon": null,
@@ -933,15 +877,7 @@ export const tanksData:TanksData = {
       "gunner",
       "sprayer"
     ],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -1028,15 +964,7 @@ export const tanksData:TanksData = {
       "twin-flank",
       "auto-3"
     ],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -1132,15 +1060,7 @@ export const tanksData:TanksData = {
       "booster",
       "fighter"
     ],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -1264,15 +1184,7 @@ export const tanksData:TanksData = {
       "skimmer",
       "rocketeer"
     ],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -1361,15 +1273,7 @@ export const tanksData:TanksData = {
       "battleship",
       "factory"
     ],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 0.9,
     "preAddon": null,
     "postAddon": null,
@@ -1464,15 +1368,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 0.9,
     "preAddon": null,
     "postAddon": null,
@@ -1592,15 +1488,7 @@ export const tanksData:TanksData = {
       "triple-twin",
       "battleship"
     ],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -1716,15 +1604,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -1853,15 +1733,7 @@ export const tanksData:TanksData = {
       "ranger",
       "stalker"
     ],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 0.8,
     "preAddon": null,
     "postAddon": null,
@@ -1945,14 +1817,8 @@ export const tanksData:TanksData = {
     "levelRequirement": 45,
     "upgrades": [],
     "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
       "canClaimSquares": true,
-      "devOnly": false
     },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
     "fieldFactor": 0.9,
     "preAddon": null,
     "postAddon": null,
@@ -2047,15 +1913,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -2195,15 +2053,7 @@ export const tanksData:TanksData = {
       "predator",
       "streamliner"
     ],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 0.85,
     "preAddon": null,
     "postAddon": null,
@@ -2300,15 +2150,7 @@ export const tanksData:TanksData = {
       "gunner-trapper",
       "streamliner"
     ],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -2425,13 +2267,7 @@ export const tanksData:TanksData = {
     "upgrades": [],
     "flags": {
       "invisibility": true,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
     },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
     "fieldFactor": 0.8,
     "preAddon": null,
     "postAddon": null,
@@ -2513,15 +2349,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 0.7,
     "preAddon": null,
     "postAddon": "ranger",
@@ -2603,15 +2431,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -2767,15 +2587,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -2931,15 +2743,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -3051,9 +2855,6 @@ export const tanksData:TanksData = {
     "upgrades": [],
     "flags": {
       "invisibility": true,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
     },
     "visibilityRateShooting": 0,
     "visibilityRateMoving": 0.08,
@@ -3141,15 +2942,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 140,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     // "absorbtionFactor": 0.01,
     "preAddon": null,
@@ -3415,14 +3208,8 @@ export const tanksData:TanksData = {
     "levelRequirement": 45,
     "upgrades": [],
     "flags": {
-      "invisibility": false,
       "zoomAbility": true,
-      "canClaimSquares": false,
-      "devOnly": false
     },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
     "fieldFactor": 0.85,
     "preAddon": null,
     "postAddon": null,
@@ -3526,15 +3313,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -3648,15 +3427,7 @@ export const tanksData:TanksData = {
       "mega-trapper",
       "auto-trapper"
     ],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 0.9,
     "preAddon": null,
     "postAddon": null,
@@ -3738,15 +3509,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 0.9,
     "preAddon": null,
     "postAddon": null,
@@ -3866,15 +3629,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 0.9,
     "preAddon": null,
     "postAddon": null,
@@ -3996,15 +3751,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 0.9,
     "preAddon": null,
     "postAddon": null,
@@ -4086,15 +3833,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 0.9,
     "preAddon": null,
     "postAddon": null,
@@ -4202,15 +3941,7 @@ export const tanksData:TanksData = {
       "auto-smasher",
       "spike"
     ],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 0.9,
     "preAddon": null,
     "postAddon": "smasher",
@@ -4266,9 +3997,6 @@ export const tanksData:TanksData = {
     "upgrades": [],
     "flags": {
       "invisibility": true,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
     },
     "visibilityRateShooting": 0,
     "visibilityRateMoving": 0.16,
@@ -4326,15 +4054,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -4477,15 +4197,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -4615,15 +4327,7 @@ export const tanksData:TanksData = {
       "auto-5",
       "auto-gunner"
     ],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -4727,15 +4431,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -4942,15 +4638,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 0.85,
     "preAddon": null,
     "postAddon": null,
@@ -5077,15 +4765,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 0.9,
     "preAddon": null,
     "postAddon": null,
@@ -5193,15 +4873,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 0.9,
     "preAddon": null,
     "postAddon": null,
@@ -5336,15 +5008,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -5426,15 +5090,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 0.9,
     "preAddon": null,
     "postAddon": "smasher",
@@ -5516,15 +5172,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 0.9,
     "preAddon": null,
     "postAddon": "spike",
@@ -5579,15 +5227,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 0.9,
     "preAddon": null,
     "postAddon": null,
@@ -5687,14 +5327,8 @@ export const tanksData:TanksData = {
     "levelRequirement": 0,
     "upgrades": [],
     "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
       "devOnly": true
     },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
     "fieldFactor": 1,
     "preAddon": null,
     "postAddon": null,
@@ -5746,15 +5380,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 0.9,
     "preAddon": "skimmer-rocketeer",
     "postAddon": null,
@@ -5851,15 +5477,7 @@ export const tanksData:TanksData = {
     "upgradeMessage": "",
     "levelRequirement": 45,
     "upgrades": [],
-    "flags": {
-      "invisibility": false,
-      "zoomAbility": false,
-      "canClaimSquares": false,
-      "devOnly": false
-    },
-    "visibilityRateShooting": 0.23,
-    "visibilityRateMoving": 0.08,
-    "invisibilityRate": 0.03,
+    "flags": {},
     "fieldFactor": 0.9,
     "preAddon": "skimmer-rocketeer",
     "postAddon": null,

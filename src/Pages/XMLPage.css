@@ -1,0 +1,5 @@
+#XML-page {
+    margin: 0 auto;
+    width: calc(100% - 2rem);
+    max-width: 60rem;
+}

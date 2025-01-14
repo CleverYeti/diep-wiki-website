@@ -17,6 +17,9 @@ export function Navbar() {
             <Link to="/shapes/">
                 <div className="tab">Shapes</div>
             </Link>
+            <Link to="/formulas/">
+                <div className="tab">Formulas</div>
+            </Link>
         </nav>
     )
 }
