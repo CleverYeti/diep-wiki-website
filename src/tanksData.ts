@@ -1,8 +1,3 @@
-export interface Stats {
-  name: string;
-  max: number;
-}
-
 export interface Bullet {
   type: string;
   sizeFactor?: number;
@@ -82,7 +77,7 @@ export interface Tank {
   sides: number;
   borderWidth?: number;
   barrels: Barrel[];
-  stats?: Stats[];
+  statPointSetup?: string;
   key: string;
   upgradesFrom?: string[];
   color?: number;
@@ -106,6 +101,90 @@ export const tankColors: Array<Array<number>> = [
   [142, 178, 254], // blue
   [181, 142, 255], // purple
 ]
+
+export interface StatPointSetup {
+  names: Array<string>;
+  limits: Array<number>;
+}
+export const statPointColors: Array<Array<number>> = [
+  [252, 173, 118],
+  [249, 67, 255],
+  [133, 67, 255],
+  [67, 127, 255],
+  [255, 222, 67],
+  [255, 67, 67],
+  [130, 255, 67],
+  [67, 255, 249]
+]
+export const statPointSetups: {
+  [key: string]: StatPointSetup
+} = {
+  "normal": {
+    names: [
+      "Health Regen",
+      "Max Health",
+      "Body Damage",
+      "Bullet Speed",
+      "Bullet Penetration",
+      "Bullet Damage",
+      "Reload",
+      "Movement Speed"
+    ],
+    limits: [7,7,7,7,7,7,7,7]
+  },
+  "drone-class": {
+    names: [
+      "Health Regen",
+      "Max Health",
+      "Body Damage",
+      "Drone Speed",
+      "Drone Penetration",
+      "Drone Damage",
+      "Reload",
+      "Movement Speed"
+    ],
+    limits: [7,7,7,7,7,7,7,7]
+  },
+  "necromancer": {
+    names: [
+      "Health Regen",
+      "Max Health",
+      "Body Damage",
+      "Drone Speed",
+      "Drone Penetration",
+      "Drone Damage",
+      "Drone Count",
+      "Movement Speed"
+    ],
+    limits: [7,7,7,7,7,7,7,7]
+  },
+  "smasher-class": {
+    names: [
+      "Health Regen",
+      "Max Health",
+      "Body Damage",
+      "",
+      "",
+      "",
+      "",
+      "Movement Speed"
+    ],
+    limits: [10,10,10,0,0,0,0,10]
+  },
+  "auto-smasher": {
+    names: [
+      "Health Regen",
+      "Max Health",
+      "Body Damage",
+      "Bullet Speed",
+      "Bullet Penetration",
+      "Bullet Damage",
+      "Reload",
+      "Movement Speed"
+    ],
+    limits: [10,10,10,10,10,10,10,10]
+  }
+}
 
 export const tanksData:TanksData = {
   "basic": {
@@ -140,40 +219,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "basic",
     "upgradesFrom": [],
     "barrelStats": {
@@ -234,40 +280,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "twin",
     "upgradesFrom": [
       "basic"
@@ -338,40 +351,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "triplet",
     "upgradesFrom": [
       "triple-shot"
@@ -446,40 +426,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "triple-shot",
     "upgradesFrom": [
       "twin"
@@ -564,40 +511,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "quad-tank",
     "upgradesFrom": [
       "twin",
@@ -724,40 +638,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "octo-tank",
     "upgradesFrom": [
       "quad-tank"
@@ -811,40 +692,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "sniper",
     "upgradesFrom": [
       "basic"
@@ -897,40 +745,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "machine-gun",
     "upgradesFrom": [
       "basic"
@@ -995,40 +810,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "flank-guard",
     "upgradesFrom": [
       "basic"
@@ -1102,40 +884,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "tri-angle",
     "upgradesFrom": [
       "flank-guard"
@@ -1204,40 +953,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "destroyer",
     "upgradesFrom": [
       "machine-gun"
@@ -1304,40 +1020,7 @@ export const tanksData:TanksData = {
         "type": "droneSpawner"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Drone Damage",
-        "max": 7
-      },
-      {
-        "name": "Drone Health",
-        "max": 7
-      },
-      {
-        "name": "Drone Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "drone-class",
     "key": "overseer",
     "upgradesFrom": [
       "sniper"
@@ -1421,40 +1104,7 @@ export const tanksData:TanksData = {
         "type": "droneSpawner"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Drone Damage",
-        "max": 7
-      },
-      {
-        "name": "Drone Health",
-        "max": 7
-      },
-      {
-        "name": "Drone Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "drone-class",
     "key": "overlord",
     "upgradesFrom": [
       "overseer"
@@ -1541,40 +1191,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "twin-flank",
     "upgradesFrom": [
       "twin",
@@ -1668,40 +1285,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "penta-shot",
     "upgradesFrom": [
       "triple-shot"
@@ -1753,40 +1337,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "assassin",
     "upgradesFrom": [
       "sniper"
@@ -1849,40 +1400,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Drone Count",
-        "max": 7
-      },
-      {
-        "name": "Drone Damage",
-        "max": 7
-      },
-      {
-        "name": "Drone Health",
-        "max": 7
-      },
-      {
-        "name": "Drone Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "necromancer",
     "key": "necromancer",
     "upgradesFrom": [
       "overseer"
@@ -1988,40 +1506,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "triple-twin",
     "upgradesFrom": [
       "twin-flank"
@@ -2084,40 +1569,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "hunter",
     "upgradesFrom": [
       "sniper"
@@ -2203,40 +1655,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "gunner",
     "upgradesFrom": [
       "machine-gun"
@@ -2287,40 +1706,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "stalker",
     "upgradesFrom": [
       "assassin"
@@ -2369,40 +1755,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "ranger",
     "upgradesFrom": [
       "assassin"
@@ -2495,40 +1848,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "booster",
     "upgradesFrom": [
       "tri-angle"
@@ -2651,40 +1971,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "fighter",
     "upgradesFrom": [
       "tri-angle"
@@ -2774,40 +2061,7 @@ export const tanksData:TanksData = {
         "type": "droneSpawner"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "hybrid",
     "upgradesFrom": [
       "destroyer"
@@ -2878,40 +2132,7 @@ export const tanksData:TanksData = {
         "type": "droneSpawner"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Drone Damage",
-        "max": 7
-      },
-      {
-        "name": "Drone Health",
-        "max": 7
-      },
-      {
-        "name": "Drone Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "drone-class",
     "key": "manager",
     "upgradesFrom": [
       "overseer"
@@ -3128,40 +2349,7 @@ export const tanksData:TanksData = {
         "type": "droneSpawner"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Drone Damage",
-        "max": 7
-      },
-      {
-        "name": "Drone Health",
-        "max": 7
-      },
-      {
-        "name": "Drone Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "drone-class",
     "key": "mothership",
     "color": 4,
     "upgradesFrom": [],
@@ -3251,40 +2439,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "predator",
     "upgradesFrom": [
       "hunter"
@@ -3344,40 +2499,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "sprayer",
     "upgradesFrom": [
       "machine-gun"
@@ -3447,40 +2569,7 @@ export const tanksData:TanksData = {
         "type": "trapLauncher"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "trapper",
     "upgradesFrom": [
       "sniper"
@@ -3551,40 +2640,7 @@ export const tanksData:TanksData = {
         "type": "trapLauncher"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "gunner-trapper",
     "upgradesFrom": [
       "gunner",
@@ -3671,40 +2727,7 @@ export const tanksData:TanksData = {
         "type": "droneSpawner"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "overtrapper",
     "upgradesFrom": [
       "overseer",
@@ -3771,40 +2794,7 @@ export const tanksData:TanksData = {
         "type": "trapLauncher"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "mega-trapper",
     "upgradesFrom": [
       "trapper"
@@ -3875,40 +2865,7 @@ export const tanksData:TanksData = {
         "type": "trapLauncher"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "tri-trapper",
     "upgradesFrom": [
       "trapper"
@@ -3949,40 +2906,7 @@ export const tanksData:TanksData = {
     "sides": 1,
     "borderWidth": 15,
     "barrels": [],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 10
-      },
-      {
-        "name": "Reload",
-        "max": 0
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 0
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 0
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 0
-      },
-      {
-        "name": "Body Damage",
-        "max": 10
-      },
-      {
-        "name": "Max Health",
-        "max": 10
-      },
-      {
-        "name": "Health Regen",
-        "max": 10
-      }
-    ],
+    "statPointSetup": "smasher-class",
     "key": "smasher",
     "upgradesFrom": [
       "basic"
@@ -4008,40 +2932,7 @@ export const tanksData:TanksData = {
     "sides": 1,
     "borderWidth": 15,
     "barrels": [],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 10
-      },
-      {
-        "name": "Reload",
-        "max": 0
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 0
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 0
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 0
-      },
-      {
-        "name": "Body Damage",
-        "max": 10
-      },
-      {
-        "name": "Max Health",
-        "max": 10
-      },
-      {
-        "name": "Health Regen",
-        "max": 10
-      }
-    ],
+    "statPointSetup": "smasher-class",
     "key": "landmine",
     "upgradesFrom": [
       "smasher"
@@ -4119,40 +3010,7 @@ export const tanksData:TanksData = {
         "type": "autoTurret"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "auto-gunner",
     "upgradesFrom": [
       "gunner",
@@ -4261,40 +3119,7 @@ export const tanksData:TanksData = {
         "type": "autoCannon"
       },
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "auto-5",
     "upgradesFrom": [
       "quad-tank",
@@ -4369,40 +3194,7 @@ export const tanksData:TanksData = {
         "type": "autoCannon"
       },
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "auto-3",
     "upgradesFrom": [
       "flank-guard"
@@ -4561,40 +3353,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "spread-shot",
     "upgradesFrom": [
       "triple-shot"
@@ -4702,40 +3461,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "streamliner",
     "upgradesFrom": [
       "hunter",
@@ -4796,40 +3522,7 @@ export const tanksData:TanksData = {
         "type": "autoTurret"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "auto-trapper",
     "upgradesFrom": [
       "trapper"
@@ -4926,40 +3619,7 @@ export const tanksData:TanksData = {
         "type": "swarmSpawner"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "battleship",
     "upgradesFrom": [
       "overseer",
@@ -5028,40 +3688,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "annihilator",
     "upgradesFrom": [
       "destroyer"
@@ -5110,40 +3737,7 @@ export const tanksData:TanksData = {
         "type": "autoTurret"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 10
-      },
-      {
-        "name": "Reload",
-        "max": 10
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 10
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 10
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 10
-      },
-      {
-        "name": "Body Damage",
-        "max": 10
-      },
-      {
-        "name": "Max Health",
-        "max": 10
-      },
-      {
-        "name": "Health Regen",
-        "max": 10
-      }
-    ],
+    "statPointSetup": "auto-smasher",
     "key": "auto-smasher",
     "upgradesFrom": [
       "smasher"
@@ -5180,40 +3774,7 @@ export const tanksData:TanksData = {
     "sides": 1,
     "borderWidth": 15,
     "barrels": [],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 10
-      },
-      {
-        "name": "Reload",
-        "max": 0
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 0
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 0
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 0
-      },
-      {
-        "name": "Body Damage",
-        "max": 10
-      },
-      {
-        "name": "Max Health",
-        "max": 10
-      },
-      {
-        "name": "Health Regen",
-        "max": 10
-      }
-    ],
+    "statPointSetup": "smasher-class",
     "key": "spike",
     "upgradesFrom": [
       "smasher"
@@ -5247,40 +3808,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Drone Damage",
-        "max": 7
-      },
-      {
-        "name": "Drone Health",
-        "max": 7
-      },
-      {
-        "name": "Drone Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "drone-class",
     "key": "factory",
     "upgradesFrom": [
       "overseer"
@@ -5336,40 +3864,7 @@ export const tanksData:TanksData = {
     "sides": 1,
     "borderWidth": 15,
     "barrels": [],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "dev-tank",
     "upgradesFrom": [],
     "color": 2,
@@ -5400,40 +3895,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "skimmer",
     "upgradesFrom": [
       "destroyer"
@@ -5497,40 +3959,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       }
     ],
-    "stats": [
-      {
-        "name": "Movement Speed",
-        "max": 7
-      },
-      {
-        "name": "Reload",
-        "max": 7
-      },
-      {
-        "name": "Bullet Damage",
-        "max": 7
-      },
-      {
-        "name": "Bullet Penetration",
-        "max": 7
-      },
-      {
-        "name": "Bullet Speed",
-        "max": 7
-      },
-      {
-        "name": "Body Damage",
-        "max": 7
-      },
-      {
-        "name": "Max Health",
-        "max": 7
-      },
-      {
-        "name": "Health Regen",
-        "max": 7
-      }
-    ],
+    "statPointSetup": "normal",
     "key": "rocketeer",
     "upgradesFrom": [
       "destroyer"
