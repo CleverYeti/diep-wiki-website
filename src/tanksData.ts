@@ -4106,7 +4106,7 @@ export const tanksData:TanksData = {
         "type": "normal"
       },
       {
-        "angle": 0,
+        "angle": Math.PI,
         "offset": 0,
         "basePosition": 0,
         "size": 55,
@@ -4784,7 +4784,7 @@ export const tanksData:TanksData = {
         "type": "trapLauncher"
       },
       {
-        "angle": 0,
+        "angle": Math.PI,
         "offset": 0,
         "size": 55,
         "width": 0.7,
@@ -5098,7 +5098,7 @@ export const tanksData:TanksData = {
     "borderWidth": 15,
     "barrels": [
       {
-        "angle": 0,
+        "angle": Math.PI,
         "offset": 0,
         "size": 55,
         "width": 0.7,
