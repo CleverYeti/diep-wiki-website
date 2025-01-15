@@ -5,7 +5,7 @@
     <section name="Basic info">
 
         <description>
-            Auto 3 is a nice lv 30 tank that doesn't require that much skill or micro to use effectively, however you should note that it has lots of bad matchups against various tanks
+            Destroyer is a great level 30 tank with lots of kill potential, it does struggle when dealing with sniper branch tanks though.
         </description>
 
     </section>
@@ -14,10 +14,11 @@
 
     <section name="Meta builds">
         <builds>
-            1. 0/0/0/5/7/7/7/7
+            1. 0/0/0/7/6/6/7/7
+            2. 0/2/3/7/7/7/0/7
             Alternatives:
-            2. 0/0/0/6/7/7/7/6
-            3. 0/0/0/6/7/6/7/7
+            3. 0/0/0/7/7/7/6/6
+            4. 0/0/0/7/7/7/7/5
         </builds>
     </section>
 
