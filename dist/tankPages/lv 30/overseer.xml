@@ -5,7 +5,7 @@
     <section name="Basic info">
 
         <description>
-            Basic tank is the first tank you spawn in, there's not much to the tank other than it being a decent focused dps option.
+            Overseer is one of the stronger level 30 tanks in the game that does great on it's own but suffers against hunters with bullet spam tanks and triangle branch tanks.
         </description>
 
     </section>
@@ -14,10 +14,11 @@
 
     <section name="Meta builds">
         <builds>
-            1. 0/0/0/5/7/7/7/7
+            1. 0/2/3/7/7/7/0/7
+            2. 0/0/0/7/7/7/5/7
             Alternatives:
-            2. 0/0/0/6/7/7/7/6
-            3. 0/0/0/6/7/6/7/7
+            3. 0/0/2/7/7/7/3/7
+            4. 0/0/0/7/7/7/7/5
         </builds>
     </section>
 
