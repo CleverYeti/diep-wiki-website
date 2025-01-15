@@ -1,12 +1,12 @@
 
-import { Tank, BarrelTypes} from "../tanksData.";
+import { Tank, BarrelTypes} from "../tanksData";
 import { renderColor } from "../functions/renderColor";
+import { RenderGrid } from "./renderGrid";
+import { rotateVector } from "../functions/rotateVector";
 
 const BORDER_THICKNESS = 7.5;
 const DEFAULT_VIEW_BOUNDARIES = 150
-const GRID_THICKNESS = 2
 const HIGHLIGHT_FACTOR = 0.5
-function GRID_GRADIENT(x: number, y: number) {return 1 - Math.min((x ** 2 + y ** 2) * 0.75, 1)} // 0-1 => 0-1
 
 interface RenderTankProps {
   tank: Tank;
@@ -39,28 +39,22 @@ export function RenderTank({
   gridAlpha = 0,
   highlight = null
 }: RenderTankProps) {
+  
+  const tankBaseRadius = tank.bodyRadius ?? 50
+  const sizeFactor = tank.sizeFactor ?? Math.pow(1.01, level - 1)
+  const tankRadius = tankBaseRadius * sizeFactor;
 
-  function rotateVector(vector: [number, number], angle: number): [number, number] {
-    const [x, y] = vector;
-    const cos = Math.cos(angle);
-    const sin = Math.sin(angle);
-    return [x * cos - y * sin, x * sin + y * cos];
-  }
+  const tankApparentRadius =
+    tank.sides === 3 ? (tankRadius * 0.7) :
+    tank.sides === 4 ? (tankRadius / 65 * 50) :
+    tankRadius
   
-  const tankBaseSize =
-    tank.sides === 4
-      ? Math.SQRT2 * 32.5
-      : tank.sides === 16
-      ? Math.SQRT2 * 25
-      : 50;
-  const sizeFactor = Math.pow(1.01, level - 1);
-  const tankSize = tankBaseSize * sizeFactor;
-  const viewBoundaries = DEFAULT_VIEW_BOUNDARIES * sizeFactor / zoom;
+  const viewBoundaries = DEFAULT_VIEW_BOUNDARIES * tankApparentRadius / 50 / zoom;
   
-  let maxX = 50 * sizeFactor
-  let minX = -50 * sizeFactor
-  let maxY = 50 * sizeFactor
-  let minY = -50 * sizeFactor
+  let maxX = tankRadius
+  let minX = -tankRadius
+  let maxY = tankRadius
+  let minY = -tankRadius
 
   const polygons: JSX.Element[] = [];
   const overlayPolygons: Array<JSX.Element> = []
@@ -90,7 +84,7 @@ export function RenderTank({
   if (tank.postAddon == "spike") {
     const points = Array.from({ length: 24 }, (_, i) => {
       const angle = Math.PI * 2 * i / 24 + rotation
-      const distance = i % 2 == 0 ? tankSize * 1.3 : tankSize * 0.925
+      const distance = i % 2 == 0 ? tankRadius * 1.3 : tankRadius * 0.925
       return `${distance * Math.cos(angle)},${distance * Math.sin(angle)}`;
     }).join(" ");
     polygons.push(
@@ -214,15 +208,19 @@ export function RenderTank({
         [0, barrel.width * 42 * 0.5],
       ];
       points = points.map(([x, y]) =>
-        rotateVector([x, y], autoTurretRotation + Math.PI + barrel.angle)
+        rotateVector([x, y], autoTurretRotation)
+      );
+      points = points.map(([x, y]) => [x + (barrel.basePosition ?? 0), y])
+      points = points.map(([x, y]) =>
+        rotateVector([x, y], barrel.angle)
       );
       overlayPolygons.push(renderBarrelPolygon(points, barrel.barrelStats))
       overlayPolygons.push(
         <circle
           key={tank.id + "-barrel-" + Math.random()}
-          cx="0"
-          cy="0"
-          r={25 * sizeFactor}
+          cx={Math.cos(rotation + barrel.angle) * (barrel.basePosition ?? 0) * sizeFactor}
+          cy={Math.sin(rotation + barrel.angle) * (barrel.basePosition ?? 0) * sizeFactor}
+          r={25 * (barrel.size / 55) * sizeFactor}
           fill={renderColor(applyHighlight(barrelColor, barrel.barrelStats))}
           stroke={renderColor(applyHighlight(barrelColor.map(v => v * (1 - borderOpacity)), barrel.barrelStats))}
           strokeWidth={BORDER_THICKNESS}
@@ -300,7 +298,7 @@ export function RenderTank({
         key={tank.id + "-body"}
         cx="0"
         cy="0"
-        r={tankSize}
+        r={tankRadius}
         fill={renderColor(applyHighlight(color, "body"))}
         stroke={renderColor(applyHighlight(color.map(v => v * (1 - borderOpacity)), "body"))}
         strokeWidth={BORDER_THICKNESS}
@@ -314,7 +312,7 @@ export function RenderTank({
         key={tank.id + "-body"}
         points={Array.from({ length: tank.sides }, (_, i) => {
           const angle = (Math.PI * 2 * (i + offset)) / tank.sides + rotation;
-          return `${tankSize * Math.SQRT2 * Math.cos(angle)},${tankSize * Math.SQRT2 * Math.sin(angle)}`;
+          return `${tankRadius * Math.cos(angle)},${tankRadius * Math.sin(angle)}`;
         }).join(" ")}
         fill={renderColor(applyHighlight(color, "body"))}
         stroke={renderColor(applyHighlight(color.map(v => v * (1 - borderOpacity)), "body"))}
@@ -331,41 +329,6 @@ export function RenderTank({
     offsetY = -0.5 * (maxY + minY)
   }
 
-  // grid
-  const gridPolygons: JSX.Element[] = [];
-  if (gridAlpha > 0) {
-    const squareDimensions = 50
-    const gridDimensions = Math.ceil(viewBoundaries * 1.5 / squareDimensions)
-    for (let i = -gridDimensions; i < gridDimensions; i++) {
-      for (let j = -gridDimensions; j < gridDimensions; j++) {
-        const position1 = squareDimensions * i
-        const position2 = squareDimensions * j
-        gridPolygons.push(
-          <line
-            key={`grid-${Math.random()}`}
-            x1={position1}
-            y1={position2}
-            x2={position1}
-            y2={position2 + squareDimensions}
-            stroke={renderColor(gridColor, gridAlpha * GRID_GRADIENT((position2 + 0.5 * squareDimensions) / viewBoundaries, position1 / viewBoundaries))}
-            strokeWidth={GRID_THICKNESS}
-          />
-        )
-        gridPolygons.push(
-          <line
-            key={`grid-${Math.random()}`}
-            x1={position1}
-            y1={position2}
-            x2={position1 + squareDimensions}
-            y2={position2}
-            stroke={renderColor(gridColor, gridAlpha * GRID_GRADIENT((position1 + 0.5 * squareDimensions) / viewBoundaries, position2 / viewBoundaries))}
-            strokeWidth={GRID_THICKNESS}
-          />
-        )
-      }
-    }
-  }
-
   // return svg
   return (
     <svg
@@ -374,7 +337,7 @@ export function RenderTank({
       xmlns="http://www.w3.org/2000/svg"
       data-view-boundaries={viewBoundaries}
     >
-      {gridPolygons}
+      <RenderGrid color={gridColor} alpha={gridAlpha} gridBoundaries={viewBoundaries * 1.5}/>
       {polygons}
       {overlayPolygons}
     </svg>

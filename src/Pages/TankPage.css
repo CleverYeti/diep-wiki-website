@@ -7,14 +7,6 @@
     gap: 1rem;
 }
 
-#tank-page-main-content {
-    
-}
-
-#tank-page-sidebar {
-    
-}
-
 #tank-page-sidebar > .tank-preview {
     width: 100%;
     aspect-ratio: 1/1;
@@ -85,15 +77,15 @@
     height: 5rem;
     display: flex;
     margin-bottom: 0.5rem;
+    align-items: center;
+    width: 100%;
 }
 #tank-page-sidebar > .section > .stats-header > .title {
     flex-grow: 1;
-    text-align: center;
+    flex-shrink: 1;
     padding: 0 1rem;
     font-size: 1.125rem;
     font-weight: 500;
-    display: flex;
-    align-items: center;
 }
 
 #tank-page-sidebar > .section > .stats-header > svg {

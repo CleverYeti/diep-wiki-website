@@ -3,22 +3,16 @@
 
 
     <section name="Basic info">
-
-        <description>
             N/A
-        </description>
-
     </section>
 
 
 
     <section name="Meta builds">
-        <builds>
-            1. 0/0/0/5/7/7/7/7
-            Alternatives:
-            2. 0/0/0/6/7/7/7/6
-            3. 0/0/0/6/7/6/7/7
-        </builds>
+        1. 0/0/0/5/7/7/7/7
+        Alternatives:
+        2. 0/0/0/6/7/7/7/6
+        3. 0/0/0/6/7/6/7/7
     </section>
 
 
@@ -32,7 +26,6 @@
 
 
     <section name="Trivia">
-
         - Machine Gun and Sniper are the only two tanks that, at some point, could upgrade into themselves.
 
         - The Sniper and its upgrades’ Bullets do not slow down when traveling through obstacles (enemy Bullets, Polygons), which may be helpful for farming. From another side, a very high Bullet Speed might be the reason the Bullet will fail to output the max amount of damage to small and strong Polygons like the Pentagon.
@@ -44,7 +37,6 @@
         - A Sniper can become one of 14 distinct Tier 4 Classes, as well as an additional 4 Tier 3 Classes.
         
         - It also has three other Tier 4 Classes that can be accessed without using Sniper. These are the Battleship, Gunner Trapper, and Streamliner.
-
     </section>
 
 

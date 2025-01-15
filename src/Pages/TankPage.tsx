@@ -1,16 +1,15 @@
 import { useParams } from "react-router-dom"
 import "./TankPage.css"
-import { tanksData, Tank } from "../tanksData."
+import { tanksData, Tank } from "../tanksData"
 import { Page404 } from "./Page404"
-import { tankColors } from "../tanksData."
+import { tankColors } from "../tanksData"
 import { Link } from "react-router-dom"
 import { renderColor } from "../functions/renderColor"
 import { RenderTank } from "../Components/renderTank"
 import { TankPreview } from "../Components/TankPreview"
 import { BarrelStatsDisplay, TankStatsDisplay } from "../Components/StatBlocks"
 import { PageXMLBody } from "../Components/PageXMLBody"
-
-const basePath = import.meta.env.BASE_URL || '/';
+import { basePath } from "../App"
 
 function TankGrid({tankIds}: {tankIds: Array<string>}) {
     return (
@@ -47,13 +46,13 @@ export function TankPage() {
                 </div>
                 <div id="tank-page-sidebar">
                     <TankPreview tank={tank}/>
-                    {tank.upgradesFrom.length > 0 && (
+                    {tank.upgradesFrom && tank.upgradesFrom.length > 0 && (
                         <div className="section">
                             <div className="title">Upgrades From</div>
                             <TankGrid tankIds={tank.upgradesFrom}/>
                         </div>
                     )}
-                    {tank.upgrades.length > 0 && (
+                    {tank.upgrades && tank.upgrades.length > 0 && (
                         <div className="section">
                             <div className="title">Upgrades Into</div>
                             <TankGrid tankIds={tank.upgrades}/>
@@ -67,7 +66,7 @@ export function TankPage() {
                             <div className="title">Tank Stats</div>
                             <RenderTank tank={tank} highlight={"body"} rotation={Math.PI * 1.75} zoom={1.5}/>
                         </div>
-                        {/*<TankStatsDisplay stats={tank} level={1} points={[0,0,0,0,0,0,0,0]}/>*/}
+                        <TankStatsDisplay tank={tank} level={1} points={[0,0,0,0,0,0,0,0]}/>
                     </div>
                     {
                         Object.entries(tank.barrelStats).map(([key, stats]) => {

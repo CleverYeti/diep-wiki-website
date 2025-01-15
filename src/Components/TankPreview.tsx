@@ -1,11 +1,11 @@
 import { useState, MutableRefObject, useRef} from "react";
-import { Tank } from "../tanksData.";
+import { BarrelTypes, Tank } from "../tanksData";
 import { RenderTank } from "./renderTank";
 import "./tankPreview.css"
 import settingsIcon from '/icons/settings.svg'
 import downloadIcon from '/icons/download.svg'
 import { renderColor } from "../functions/renderColor"
-import { tankColors } from "../tanksData.";
+import { tankColors } from "../tanksData";
 import { downloadSVG } from "../functions/downloadSVG";
 
 
@@ -13,7 +13,15 @@ export function TankPreview({tank}: {tank: Tank}) {
     const [isSettingsOpen, setSettingsOpen] = useState(false)
     const [isDownloadOpen, setDownloadOpen] = useState(false)
 
-    const [rotation, setRotation] = useState(-45)
+    let hasAutoTurret = false
+    let hasAutoCannons = false
+    for (let barrel of tank.barrels) {
+        if (barrel.type == BarrelTypes.autoTurret) hasAutoTurret = true
+        if (barrel.type == BarrelTypes.autoCannon) hasAutoCannons = true
+    }
+
+    const [rotation, setRotation] = useState(315)
+    const [autoTurretRotation, setAutoTurretRotation] = useState(0)
     const [color, setColor] = useState([0, 177, 222])
     const [gridColor, setGridColor] = useState([255,255,255])
     const [gridAlpha, setGridAlpha] = useState(0.1)
@@ -57,14 +65,16 @@ export function TankPreview({tank}: {tank: Tank}) {
     }
     const elementRef = useRef<HTMLDivElement>(null)
     return (
-        <div ref={elementRef} className="tank-preview" style={{"--color": renderColor(tankColors[tank.color])} as React.CSSProperties}>
+        <div ref={elementRef} className="tank-preview" style={{"--color": renderColor(tankColors[tank.color ?? 0])} as React.CSSProperties}>
             <RenderTank
                 tank={tank}
                 rotation={rotation / 180 * Math.PI}
                 color={color}
                 gridColor={gridColor}
                 gridAlpha={gridAlpha}
+                autoTurretRotation={autoTurretRotation / 180 * Math.PI}
                 level={lastTankFixedLevel == tank.key ? fixedLevel : Math.max(1, tank.levelRequirement ?? 0)}
+                zoom={tank.displayScale ?? 1}
             />
             <div className="toggle-settings corner-button" onClick={() => {setSettingsOpen(!isSettingsOpen); setDownloadOpen(false)}}>
                 <img src={settingsIcon}/>
@@ -72,6 +82,7 @@ export function TankPreview({tank}: {tank: Tank}) {
             <div className="toggle-download corner-button" onClick={() => {setDownloadOpen(!isDownloadOpen); setSettingsOpen(false)}}>
                 <img src={downloadIcon} alt="" />
             </div>
+            <div className="tank-name">{tank.name}</div>
             <div className="preview-download" data-active={isDownloadOpen}>
                 <a className="option" onClick={() => {
                     if (!elementRef.current) return
@@ -107,6 +118,21 @@ export function TankPreview({tank}: {tank: Tank}) {
                         onChange={event => setLevel(parseInt(event.target.value))}
                     />
                 </div>
+                {
+                    hasAutoTurret? <>
+                        <div className="setting-row">
+                            <div className="name">Turret^</div>
+                            <input type="number" name="" id="" min={0} max={360} value={autoTurretRotation} onChange={event => setAutoTurretRotation(parseInt(event.target.value))}/>
+                            <input type="range" name="" id="" min={0} max={360} value={autoTurretRotation} onChange={event => setAutoTurretRotation(parseInt(event.target.value))}/>
+                        </div>
+                    </> : hasAutoCannons ? <>
+                        <div className="setting-row">
+                            <div className="name">Turret^</div>
+                            <input type="number" name="" id="" min={-90} max={90} value={autoTurretRotation} onChange={event => setAutoTurretRotation(parseInt(event.target.value))}/>
+                            <input type="range" name="" id="" min={-90} max={90} value={autoTurretRotation} onChange={event => setAutoTurretRotation(parseInt(event.target.value))}/>
+                        </div>
+                    </> : <></>
+                }
                 <div className="setting-row">
                     <div className="name">Rotation</div>
                     <input type="number" name="" id="" min={0} max={360} value={rotation} onChange={event => setRotation(parseInt(event.target.value))}/>
