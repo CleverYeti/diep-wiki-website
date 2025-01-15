@@ -35,11 +35,11 @@
     <section name="Bullet Penetration">
         The default bullet health is 2. For every point put in Bullet Penetration, an extra 1.5 health is added or 75% (additive). Different cannons also have different bullet health multipliers that apply afterwards. The bullet with the highest health is by far the rocketeer bullet, with a multiplier of 5, meaning the maximum possible bullet health is 62.5, with 7 points in Bullet Health
         
-        <i>Bullet Health = Health Multiplier * (1 + 1.5 * Bullet Penetration Points);</i>
+        <i>Bullet Health = Health Multiplier * (1 + 1.5 * Bullet Penetration Points);
     </section>
     <section name="Bullet Effective Damage">
         To evaluate how strong a bullet is, effective damage can be calculted by multiplying the bullet's health with its damage per tick. The highest effective damage possible is the destroyer, annihalator and hybrid's bullets, with an effective damage of 1764
         
-        <i>Bullet Health = Health Multiplier * (1 + 1.5 * Bullet Penetration Points);</i>
+        <i>Bullet Health = Health Multiplier * (1 + 1.5 * Bullet Penetration Points);
     </section>
 </content>
