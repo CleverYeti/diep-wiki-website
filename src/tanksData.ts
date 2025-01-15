@@ -5,9 +5,10 @@ export interface Stats {
 
 export interface Bullet {
   type: string;
-  sizeFactor: number;
+  sizeFactor?: number;
+  size?: number; // overrides sizeFactor
   healthFactor?: number;
-  health?: number; // overrides health
+  health?: number; // overrides healthFactor
   damageFactor?: number;
   damagePerTick?: number; // overrides damageFactor
   speedFactor?: number;
@@ -43,7 +44,7 @@ export interface Barrel {
 export interface BarrelStats {
   name: string;
   reloadFactor?: number;
-  reloadTicks?: number; // overrides factor
+  reloadTicks?: number; // overrides reloadFactor
   recoilFactor: number;
   droneCount?: number;
   canControlDrones?: boolean;
