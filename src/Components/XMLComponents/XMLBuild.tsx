@@ -12,7 +12,10 @@ export function XMLBuild({el}: {el: XMLWrapperElement}) {
     if (buildPoints.length == 4) buildPoints = [buildPoints[0], buildPoints[1], buildPoints[2], 0, 0, 0, 0, buildPoints[3]]
     if (buildPoints.length != 8) throw new Error("invalid <build> points parameter")
     return (
-        <div className="xml-build">
+        <div className="xml-build"
+            onMouseEnter={() => setIsOpen(true)}
+            onMouseLeave={() => setIsOpen(false)}
+        >
             {
                 statPointSetup.limits.map((limit, i) => {
                     if (limit == 0) return <></>
@@ -21,6 +24,9 @@ export function XMLBuild({el}: {el: XMLWrapperElement}) {
                     )
                 })
             }
+            <div className="better-preview">
+
+            </div>
         </div>
     )
 }
