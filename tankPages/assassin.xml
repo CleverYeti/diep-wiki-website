@@ -5,7 +5,7 @@
     <section name="Basic info">
 
         <description>
-            Auto 3 is a nice lv 30 tank that doesn't require that much skill or micro to use effectively, however you should note that it has lots of bad matchups against various tanks
+            Assassin is widely considered to be one of the worst tanks in the game by the community. It has weaker firepower than sniper and doesn't get enough FoV to compensate for it unlike ranger. You're usually better off just not upgrading to this tank at level 30.
         </description>
 
     </section>
@@ -16,8 +16,8 @@
         <builds>
             1. 0/0/0/5/7/7/7/7
             Alternatives:
-            2. 0/0/0/6/7/7/7/6
-            3. 0/0/0/6/7/6/7/7
+            3. 0/0/0/7/7/7/6/6
+            4. 0/0/0/7/7/7/7/5
         </builds>
     </section>
 
