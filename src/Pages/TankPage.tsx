@@ -52,6 +52,11 @@ export function TankPage() {
     }
     const [statsBuild, setStatsBuild] = useState([0,0,0,0,0,0,0,0])
     const [buildInputValue, setBuildInputValue] = useState("0/0/0/0/0/0/0/0")
+
+    const [statsCompareCopyLevel, setStatsCopyLevel] = useState(true)
+    const [statsCompareCopyBuild, setStatsCopyBuild] = useState(false)
+    const [statsCompareCopyTank, setStatsCopyTank] = useState(false)
+
     function attemptSettingStatsBuild(inputValue: string) {
         let statPointSetup = statPointSetups[tank.statPointSetup ?? "normal"] ?? statPointSetups["normal"]
         
@@ -135,13 +140,44 @@ export function TankPage() {
                             </div>
                         </div>
                         
+                        <div className="row">
+                            <div className="name">vs</div>
+                        </div>
+
+                        <div className="row">
+                            <div className="selector">
+                                <div className="option" data-active={!statsCompareCopyLevel} onClick={() => setStatsCopyLevel(false)}>Level 1</div>
+                                <div className="option" data-active={statsCompareCopyLevel} onClick={() => setStatsCopyLevel(true)}>Same level</div>
+                            </div>
+                        </div>
+                        
+                        <div className="row">
+                            <div className="selector">
+                                <div className="option" data-active={!statsCompareCopyTank} onClick={() => setStatsCopyTank(false)}>Basic Tank</div>
+                                <div className="option" data-active={statsCompareCopyTank} onClick={() => setStatsCopyTank(true)}>Same Tank</div>
+                            </div>
+                        </div>
+                        
+                        <div className="row">
+                            <div className="selector">
+                                <div className="option" data-active={!statsCompareCopyBuild} onClick={() => setStatsCopyBuild(false)}>No build</div>
+                                <div className="option" data-active={statsCompareCopyBuild}  onClick={() => setStatsCopyBuild(true)}>Same build</div>
+                            </div>
+                        </div>
                     </div>
                     <div className="section stats">
                         <div className="stats-header">
                             <div className="title">Tank Stats</div>
                             <RenderTank tank={tank} highlight={"body"} rotation={Math.PI * 1.75} zoom={1.5} level={statsLevel}/>
                         </div>
-                        <TankStatsDisplay tank={tank} level={statsLevel} points={statsBuild}/>
+                        <TankStatsDisplay
+                            tank={tank}
+                            level={statsLevel}
+                            points={statsBuild}
+                            comparisonTank={statsCompareCopyTank ? tank : tanksData["basic"]}
+                            comparisonLevel={statsCompareCopyLevel ? statsLevel : 1}
+                            comparisonPoints={statsCompareCopyBuild ? statsBuild : [0,0,0,0,0,0,0,0]}
+                        />
                     </div>
                     {
                         Object.entries(tank.barrelStats).map(([key, stats]) => {
@@ -151,7 +187,13 @@ export function TankPage() {
                                         <div className="title">{stats.name}</div>
                                         <RenderTank tank={tank} highlight={key} rotation={Math.PI * 1.75} zoom={1.5} level={statsLevel}/>
                                     </div>
-                                    <BarrelStatsDisplay stats={stats} level={statsLevel} points={statsBuild}/>
+                                    <BarrelStatsDisplay
+                                        stats={stats}
+                                        level={statsLevel}
+                                        points={statsBuild}
+                                        comparisonStats={statsCompareCopyTank ? stats : tanksData["basic"].barrelStats["main"]}
+                                        comparisonLevel={statsCompareCopyLevel ? statsLevel : 1}
+                                        comparisonPoints={statsCompareCopyBuild ? statsBuild : [0,0,0,0,0,0,0,0]}/>
                                 </div>
                             )
                         })

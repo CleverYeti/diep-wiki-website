@@ -30,18 +30,20 @@ function roundWithDecimals(value: number, decimals: number = 2) {
 export function BarrelStatsDisplay({
   stats,
   level = 1,
-  points = [0,0,0,0,0,0,0,0]
+  points = [0,0,0,0,0,0,0,0],
+  comparisonStats = tanksData["basic"].barrelStats["main"],
+  comparisonLevel = 1,
+  comparisonPoints = [0,0,0,0,0,0,0,0]
 }: {
   stats: BarrelStats;
   level: number;
   points: Array<number>;
+  comparisonStats?: BarrelStats;
+  comparisonLevel?: number;
+  comparisonPoints?: Array<number>;
 }) {
   const content: Array<JSX.Element> = []
   const rows: Array<Array<string>> = []
-
-  const comparisonLevel = 1
-  const comparisonPoints = [0,0,0,0,0,0,0,0]
-  const comparisonStats = tanksData["basic"].barrelStats["main"]
 
   interface Values {
     [key: string]: number
@@ -105,18 +107,19 @@ export function BarrelStatsDisplay({
 export function TankStatsDisplay({
   tank,
   level = 1,
-  points = [0,0,0,0,0,0,0,0]
+  points = [0,0,0,0,0,0,0,0],
+  comparisonTank = tanksData["basic"],
+  comparisonLevel = 1,
+  comparisonPoints = [0,0,0,0,0,0,0,0]
 }: {
   tank: Tank;
   level: number;
   points: Array<number>;
+  comparisonTank?: Tank;
+  comparisonLevel?: number;
+  comparisonPoints?: Array<number>;
 }) {
   const rows: Array<Array<string>> = []
-
-
-  const comparisonLevel = 1
-  const comparisonPoints = [0,0,0,0,0,0,0,0]
-  const comparisonTank = tanksData["basic"]
 
   interface Values {
     [key: string]: number

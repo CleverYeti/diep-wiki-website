@@ -100,7 +100,6 @@
 
 #tank-page-sidebar > .stats-settings {
     margin-top: 0.75rem;
-    margin-bottom: -0.25rem;
 }
 
 #tank-page-sidebar > .stats-settings > .row {
@@ -109,6 +108,7 @@
     gap: 0.5rem;
     margin: 0.25rem;
     align-items: center;
+    height: 1.5rem;
 }
 #tank-page-sidebar > .stats-settings > .row > .name {
     display: flex;
@@ -198,4 +198,28 @@
     clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
     right: auto;
     border-radius: 0 5rem 5rem 0;
+}
+
+
+
+#tank-page-sidebar > .stats-settings > .row > .selector {
+    display: flex;
+    height: 100%;
+}
+
+#tank-page-sidebar > .stats-settings > .row > .selector > .option {
+    height: 100%;
+    display: grid;
+    place-content: center;
+    padding: 0 0.5rem;
+    border-radius: 0.25rem;
+    color: var(--text-3);
+    cursor: pointer;
+    user-select: none;
+}
+
+#tank-page-sidebar > .stats-settings > .row > .selector > .option[data-active="true"] {
+    background: var(--light-section-bg);
+    color: var(--text-1);
+    cursor: auto;
 }
