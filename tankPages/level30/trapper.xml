@@ -5,7 +5,7 @@
     <section name="Basic info">
 
         <description>
-            Auto 3 is a nice lv 30 tank that doesn't require that much skill or micro to use effectively, however you should note that it has lots of bad matchups against various tanks
+            Trapper is widely considered to be the worst tank in the game due to it's inability to kill or farm for points. Do not use unless you're going for some sort of challenge run.
         </description>
 
     </section>
@@ -14,10 +14,10 @@
 
     <section name="Meta builds">
         <builds>
-            1. 0/0/0/5/7/7/7/7
+            1. <build points="0/0/0/5/7/7/7/7"/>
             Alternatives:
-            2. 0/0/0/6/7/7/7/6
-            3. 0/0/0/6/7/6/7/7
+            2. <build points="0/0/0/7/7/7/5/7"/>
+            3. <build points="5/0/0/0/7/7/7/7"/>
         </builds>
     </section>
 

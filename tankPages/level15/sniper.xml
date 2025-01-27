@@ -9,10 +9,10 @@
 
 
     <section name="Meta builds">
-        1. 0/0/0/5/7/7/7/7
+        1. <build points="0/0/0/5/7/7/7/7"/>
         Alternatives:
-        2. 0/0/0/6/7/7/7/6
-        3. 0/0/0/6/7/6/7/7
+        2. <build points="0/0/0/6/7/7/7/6"/>
+        3. <build points="0/0/0/6/7/6/7/7"/>
     </section>
 
 

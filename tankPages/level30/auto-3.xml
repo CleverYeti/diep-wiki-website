@@ -5,7 +5,7 @@
     <section name="Basic info">
 
         <description>
-            Hunter is a generally weak sniper branch tank that isn't especially recommended but can do alright on it's own.
+            Auto 3 is a nice lv 30 tank that doesn't require that much skill or micro to use effectively, however you should note that it has lots of bad matchups against various tanks
         </description>
 
     </section>
@@ -14,10 +14,10 @@
 
     <section name="Meta builds">
         <builds>
-            1. 0/0/0/5/7/7/7/7
+            1. <build points="0/0/0/5/7/7/7/7"/>
             Alternatives:
-            3. 0/0/0/7/7/7/6/6
-            4. 0/0/0/7/7/7/7/5
+            2. <build points="0/0/0/6/7/7/7/6"/>
+            3. <build points="0/0/0/6/7/6/7/7"/>
         </builds>
     </section>
 
