@@ -13,20 +13,43 @@ export function XMLBuild({el}: {el: XMLWrapperElement}) {
     if (buildPoints.length != 8) throw new Error("invalid <build> points parameter")
     return (
         <div className="xml-build"
-            onMouseEnter={() => setIsOpen(true)}
-            onMouseLeave={() => setIsOpen(false)}
+            
         >
-            {
-                statPointSetup.limits.map((limit, i) => {
-                    if (limit == 0) return <></>
-                    return (
-                        <div className="point-count" style={{"--color": renderColor(statPointColors[i])} as React.CSSProperties}>{buildPoints[i]}</div>
-                    )
-                })
-            }
-            <div className="better-preview">
-
+            <div className="preview"
+                onMouseEnter={() => setIsOpen(true)}
+                onMouseLeave={() => setIsOpen(false)}
+            >
+                {
+                    statPointSetup.limits.map((limit, i) => {
+                        if (limit == 0) return <></>
+                        return (
+                            <div className="point-count" style={{"--color": renderColor(statPointColors[i])} as React.CSSProperties}>{buildPoints[i]}</div>
+                        )
+                    })
+                }
             </div>
+            {
+                isOpen && (
+                    <div className="detailed-view">
+                        {
+                            statPointSetup.limits.map((limit, i) => {
+                                if (limit == 0) return <></>
+                                return (
+                                    <div className="point-row" style={{"--color": renderColor(statPointColors[i]), "--row": i} as React.CSSProperties}>
+                                        <div className="count">{buildPoints[i]}</div>
+                                        <div className="point-bar">
+                                            {
+                                                Array(limit).fill(0).map((_, j) => <div className="dot" data-is-colored={j < buildPoints[i]}></div>)
+                                            }
+                                            <div className="name">{statPointSetup.names[i]}</div>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                )
+            }
         </div>
     )
 }

@@ -8,6 +8,7 @@
   --text-2: #cccccc;
   --text-3: #aaaaaa;
   --section-bg: #232323;
+  --light-section-bg: #343434;
   --dark-section-bg: #1c1c1c;
   --main-bg: #171718;
   color: var(--text-1);
