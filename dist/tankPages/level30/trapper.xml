@@ -1,0 +1,43 @@
+<content>
+
+
+
+    <section name="Basic info">
+
+        <description>
+            Trapper is widely considered to be the worst tank in the game due to it's inability to kill or farm for points. Do not use unless you're going for some sort of challenge run.
+        </description>
+
+    </section>
+
+
+
+    <section name="Meta builds">
+        <builds>
+            1. <build points="0/0/0/5/7/7/7/7"/>
+            Alternatives:
+            2. <build points="0/0/0/7/7/7/5/7"/>
+            3. <build points="5/0/0/0/7/7/7/7"/>
+        </builds>
+    </section>
+
+
+
+    <section name="Strategy">
+        <strategy>
+            N/A
+        </strategy>
+    </section>
+
+
+
+    <section name="Trivia">
+
+        N/A
+
+    </section>
+
+
+
+
+</content>

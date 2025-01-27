@@ -1,0 +1,43 @@
+<content>
+
+
+
+    <section name="Basic info">
+
+        <description>
+            Hunter is a generally weak sniper branch tank that isn't especially recommended but can do alright on it's own.
+        </description>
+
+    </section>
+
+
+
+    <section name="Meta builds">
+        <builds>
+            1. <build points="0/0/0/5/7/7/7/7"/>
+            Alternatives:
+            3. <build points="0/0/0/7/7/7/6/6"/>
+            4. <build points="0/0/0/7/7/7/7/5"/>
+        </builds>
+    </section>
+
+
+
+    <section name="Strategy">
+        <strategy>
+            N/A
+        </strategy>
+    </section>
+
+
+
+    <section name="Trivia">
+
+        N/A
+
+    </section>
+
+
+
+
+</content>

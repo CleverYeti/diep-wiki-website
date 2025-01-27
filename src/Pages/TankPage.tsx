@@ -78,7 +78,7 @@ export function TankPage() {
         <>
              <div id="tank-page">
                 <div id="tank-page-main-content">
-                    <PageXMLBody url={`${basePath}tankPages/${tank.key}.xml`}/>
+                    <PageXMLBody url={`${basePath}tankPages${tank.levelRequirement ? "/level" + tank.levelRequirement : "/other"}/${tank.key}.xml`}/>
                 </div>
                 <div id="tank-page-sidebar">
                     <TankPreview tank={tank}/>

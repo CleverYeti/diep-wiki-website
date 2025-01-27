@@ -192,7 +192,6 @@ export const tanksData:TanksData = {
     "name": "Tank",
     "color": 0,
     "upgradeMessage": "",
-    "levelRequirement": 0,
     "upgrades": [
       "twin",
       "sniper",
