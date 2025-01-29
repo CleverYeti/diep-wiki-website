@@ -18,12 +18,14 @@
     </section>
     <section name="Body Damage">
         The default body damage per tick is 20. Every point put in Body Damage increases it by 4 damage per tick. The spike tank also gets an extra 8 damage per tick, meaning the maximum damage per tick a tank can deal is 68, with <tank-link tank-id="spike">spike</tank-link> and 10 points in Body Damage
+        <b>However, tanks deal a fourth of the damage to bullets and drones.</b> They also deal 1.5x damage to other tank bodies, but since this happens both ways it doesnt affet the outcome, it just makes it happen faster (unless the collision stops before a tank dies).
 
         <i>Body Damage Per Tick = 20 + 4 * Body Damage Points (+8 for the spike tank)</i>
     </section>
     <section name="Effective Health">
         Effective health is a way to measure how strong a tank is. Since, when in contact, entities damage each other until one dies or they are no longer in contact (this includes bullets), a tank's body damage is as important for survival as its health. Effective health can be calculted by multiplying a tank's health with its body damage per tick.
         The maximum possible effective health is 22,984 with <tank-link tank-id="spike">spike</tank-link> and maxed health and body damage.
+        <b>However when calculating the damage taken from bullets or drones, the effective health is a fourth, since tank bodies deal a fourth of the damage per tick to these</b>
 
         <i>Effective health = Max Health * Body Damage Per Tick</i>
     </section>
@@ -32,14 +34,14 @@
 
         <i>Bullet Damage per tick = Damage Multiplier * (7 + 3 * Bullet Damage Points)</i>
     </section>
-    <section name="Bullet Penetration">
+    <section name="Bullet Penetration / Health">
         The default bullet health is 2. For every point put in Bullet Penetration, an extra 1.5 health is added or 75% (additive). Different cannons also have different bullet health multipliers that apply afterwards. The bullet with the highest health is by far the rocketeer bullet, with a multiplier of 5, meaning the maximum possible bullet health is 62.5, with 7 points in Bullet Health
         
-        <i>Bullet Health = Health Multiplier * (1 + 1.5 * Bullet Penetration Points);</i>
+        <i>Bullet Health = Health Multiplier * (2 + 1.5 * Bullet Penetration Points)</i>
     </section>
     <section name="Bullet Effective Damage">
-        To evaluate how strong a bullet is, effective damage can be calculted by multiplying the bullet's health with its damage per tick. The highest effective damage possible is the destroyer, annihalator and hybrid's bullets, with an effective damage of 1764
+        To evaluate how strong a bullet is, effective damage can be calculted by multiplying the bullet's health with its damage per tick. The highest effective damage possible is the destroyer, annihalator and hybrid's bullets, with an effective damage of 2100 when their bullet stats are maxed.
         
-        <i>Bullet Health = Health Multiplier * (1 + 1.5 * Bullet Penetration Points);</i>
+        <i>Bullet Effective Damage = Bullet Damage per Tick * Bullet Penetration</i>
     </section>
 </content>
