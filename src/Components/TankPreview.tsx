@@ -71,7 +71,7 @@ export function TankPreview({tank}: {tank: Tank}) {
                 rotation={rotation / 180 * Math.PI}
                 color={color}
                 gridColor={gridColor}
-                gridAlpha={gridAlpha}
+                gridAlpha={isDownloadOpen ? 0 : gridAlpha}
                 autoTurretRotation={autoTurretRotation / 180 * Math.PI}
                 level={lastTankFixedLevel == tank.key ? fixedLevel : Math.max(1, tank.levelRequirement ?? 0)}
                 zoom={tank.displayScale ?? 1}

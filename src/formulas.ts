@@ -21,7 +21,7 @@ export const formulas = {
     },
     barrelAverageRecoilSpeed: (barrelPeakRecoilSpeed = 2, barrelReloadTicks = 15) => barrelPeakRecoilSpeed * (1 - FRICTION_FACTOR ** barrelReloadTicks) / (1 - FRICTION_FACTOR) / barrelReloadTicks,
     bulletDamagePerTick: (bulletDamageFactor = 1, bulletDamagePoints = 0) => bulletDamageFactor * (7 + 3 * bulletDamagePoints),
-    bulletHealth: (bulletHealthFactor = 1, bulletPenetrationPoints = 0) => bulletHealthFactor * (1.5 + 2 * bulletPenetrationPoints),
+    bulletHealth: (bulletHealthFactor = 1, bulletPenetrationPoints = 0) => bulletHealthFactor * (2 + 1.5 * bulletPenetrationPoints),
     bulletEffectiveDamage: (bulletDamagePerTick = 7, bulletHealth = 1.5) => bulletDamagePerTick * bulletHealth,
     bulletLifeLength: (bulletLifeLengthFactor = 1) => bulletLifeLengthFactor * 72,
     bulletTargetSpeed: (bulletSpeedFactor = 1, bulletSpeedPoints = 0) => bulletSpeedFactor * (20 + 3 * bulletSpeedPoints),
