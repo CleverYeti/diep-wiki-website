@@ -1,0 +1,45 @@
+<content>
+
+
+
+    <section name="Basic info">
+            N/A
+    </section>
+
+
+
+    <section name="Meta builds">
+        1. <build points="0/0/0/5/7/7/7/7"/>
+        Alternatives:
+        2. <build points="0/0/0/6/7/7/7/6"/>
+        3. <build points="0/0/0/6/7/6/7/7"/>
+    </section>
+
+
+
+    <section name="Strategy">
+        <strategy>
+            You can sometimes utilise your increased FoV and see a sliver of a tank at the edge of your field of view and set up an ambush because of it, other than that though there really isn't much to the tank.
+        </strategy>
+    </section>
+
+
+
+    <section name="Trivia">
+        - Machine Gun and Sniper are the only two tanks that, at some point, could upgrade into themselves.
+
+        - The Sniper and its upgrades’ Bullets do not slow down when traveling through obstacles (enemy Bullets, Polygons), which may be helpful for farming. From another side, a very high Bullet Speed might be the reason the Bullet will fail to output the max amount of damage to small and strong Polygons like the Pentagon.
+        
+        - A Sniper, alongside a Machine Gun, with maxed out reload and movement speed at level 15 is the fastest tank in the game outside of Sandbox.
+        
+        - The Sniper branch of the Class tree is the largest of the Tier 2 branches.
+        
+        - A Sniper can become one of 14 distinct Tier 4 Classes, as well as an additional 4 Tier 3 Classes.
+        
+        - It also has three other Tier 4 Classes that can be accessed without using Sniper. These are the Battleship, Gunner Trapper, and Streamliner.
+    </section>
+
+
+
+
+</content>

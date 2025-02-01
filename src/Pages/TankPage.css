@@ -96,3 +96,130 @@
 #tank-page-sidebar > .section.stats {
     padding-bottom: 0.25rem;
 }
+
+
+#tank-page-sidebar > .stats-settings {
+    margin-top: 0.75rem;
+}
+
+#tank-page-sidebar > .stats-settings > .row {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0.25rem;
+    align-items: center;
+    height: 1.5rem;
+}
+#tank-page-sidebar > .stats-settings > .row > .name {
+    display: flex;
+    align-items: center;
+}
+
+
+
+#tank-page-sidebar > .stats-settings > .row > input,
+#tank-page-sidebar > .stats-settings > .row > .build-input > input {
+    height: 1.5rem;
+    border: none;
+    background: var(--section-bg);
+    border-radius: 0.25rem;
+    text-align: center;
+    color: white;
+    font-family: monospace;
+    font-size: 1rem;
+    width: 3rem;
+    outline: none;
+    padding-bottom: 0.125rem;
+}
+#tank-page-sidebar > .stats-settings > .row > input:focus,
+#tank-page-sidebar > .stats-settings > .row > .build-input > input:focus {
+    box-shadow: inset 0 0 0 0.125rem #ffffff44;
+    background: var(--light-section-bg)
+}
+
+#tank-page-sidebar > .stats-settings > .row > input::-webkit-outer-spin-button,
+#tank-page-sidebar > .stats-settings > .row > .build-input > input::-webkit-outer-spin-button,
+#tank-page-sidebar > .stats-settings > .row > input::-webkit-inner-spin-button,
+#tank-page-sidebar > .stats-settings > .row > .build-input > input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+#tank-page-sidebar > .stats-settings > .row > .build-input {
+    position: relative;
+    height: 1.5rem;
+}
+#tank-page-sidebar > .stats-settings > .row > .build-input > input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    width: 100%;
+}
+#tank-page-sidebar > .stats-settings > .row > .build-input > input:focus {
+    opacity: 1;
+}
+
+
+#tank-page-sidebar > .stats-settings > .row > .build-input > .preview {
+    display: flex;
+    gap: 0.125rem;
+    padding: 0.125rem 0.25rem;
+    user-select: none;
+    height: 1.5rem;
+}
+#tank-page-sidebar > .stats-settings > .row > .build-input > .preview > .point-count {
+    position: relative;
+    height: 100%;
+    width: 1rem;
+    display: grid;
+    place-content: center;
+    font-size: 0.875rem;
+    isolation: isolate;
+    color: var(--text-1);
+    padding-bottom: 0.125rem;
+}
+#tank-page-sidebar > .stats-settings > .row > .build-input > .preview > .point-count:after {
+    position: absolute;
+    content: "";
+    inset: 0 -10%;
+    background: color-mix(in srgb, rgb(80,80,80), var(--color) 35%) ;
+    z-index: -1;
+    clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+}
+#tank-page-sidebar > .stats-settings > .row > .build-input > .preview > .point-count:first-child::after {
+    width: 1.25rem;
+    clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 0% 100%);
+    left: auto;
+    border-radius: 5rem 0 0 5rem;
+}
+#tank-page-sidebar > .stats-settings > .row > .build-input > .preview > .point-count:last-child::after {
+    width: 1.25rem;
+    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+    right: auto;
+    border-radius: 0 5rem 5rem 0;
+}
+
+
+
+#tank-page-sidebar > .stats-settings > .row > .selector {
+    display: flex;
+    height: 100%;
+}
+
+#tank-page-sidebar > .stats-settings > .row > .selector > .option {
+    height: 100%;
+    display: grid;
+    place-content: center;
+    padding: 0 0.5rem;
+    border-radius: 0.25rem;
+    color: var(--text-3);
+    cursor: pointer;
+    user-select: none;
+}
+
+#tank-page-sidebar > .stats-settings > .row > .selector > .option[data-active="true"] {
+    background: var(--light-section-bg);
+    color: var(--text-1);
+    cursor: auto;
+}

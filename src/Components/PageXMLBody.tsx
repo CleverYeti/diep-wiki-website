@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { ElementCompact, xml2js } from "xml-js";
-import collapseIcon from '/icons/chevron-down.svg'
 import "./pageXMLBody.css"
+import { XMLSection } from "./XMLComponents/XMLSection";
+import { XMLPage } from "../Pages/XMLPage";
+import { XMLBuild } from "./XMLComponents/XMLBuild";
 
 interface XMLFile {
     declaration: {
@@ -11,7 +13,7 @@ interface XMLFile {
     };
     elements: Array<XMLElement>;
 }
-interface XMLElement {
+export interface XMLElement {
     type: string;
     name?: string;
     text?: string;
@@ -21,7 +23,7 @@ interface XMLElement {
     elements?: Array<XMLElement>
 }
 
-interface XMLWrapperElement {
+export interface XMLWrapperElement {
     type: string;
     name: string;
     attributes: {
@@ -29,12 +31,14 @@ interface XMLWrapperElement {
     }
     elements: Array<XMLElement>
 }
-interface XMLTextElement {
+export interface XMLTextElement {
     type: "text";
     text: string
 }
 
-
+export function RenderXMLElementArray({elements}: {elements: Array<XMLElement>}) {
+    return <>{elements.map((el, i) => <RenderXMLElement element={el} index={i} total={elements.length}/>)}</>
+}
 
 export function PageXMLBody({url} : {url: string}) {
     const [parsedXML, setParsedXML] = useState(null as XMLFile | null)
@@ -97,53 +101,30 @@ export function PageXMLBody({url} : {url: string}) {
 }
 
 function RenderXMLElement({element, index = 0, total = 0} : {element: XMLElement; index: number; total: number}): JSX.Element {
-    if (element.type == "text") {
-        const textElement = element as XMLTextElement
-        let lines = textElement.text.split(/\r?\n|\r|\n/g)
-        //lines = lines.map(line => line.trim())
-        if (index == 0 && lines[0] == "") {lines.shift()}
-        if (index == total - 1 && lines[lines.length - 1] == "") {lines.pop()}
-        return <>{lines.map((text, i) => i > 0 ? [<br/>, text] : text)}</>
-    } else {
-        const wrapperElement = element as XMLWrapperElement
-        
-        function renderContent() {{
-            if (!wrapperElement.elements) return <></>
-            return wrapperElement.elements.map((el, i) => <RenderXMLElement element={el} index={i} total={wrapperElement.elements.length}/>)
-        }}
-
-        // define custom elements here
-
-        if (wrapperElement.name == "section") {
-            const [isCollapsed, setIsCollapsed] = useState(false)
-            wrapperElement.attributes.name
-            return (
-                <div className="xml-section" key={wrapperElement.attributes.name} data-is-collapsed={isCollapsed}>
-                    <div className="title-bar">
-                        <div className="title">{wrapperElement.attributes.name}</div>
-                        <div className="arrow" onClick={() => {setIsCollapsed(!isCollapsed)}}>
-                            <img src={collapseIcon} alt="" />
-                        </div>
-                    </div>
-                    <div className="content">
-                        {renderContent()}
-                    </div>
-                </div>
-            )
+    try {
+        if (element.type == "text") {
+            const textElement = element as XMLTextElement
+            let lines = textElement.text.split(/\r?\n|\r|\n/g)
+            //lines = lines.map(line => line.trim())
+            if (index == 0 && lines[0] == "") {lines.shift()}
+            if (index == total - 1 && lines[lines.length - 1] == "") {lines.pop()}
+            return <>{lines.map((text, i) => i > 0 ? [<br/>, text] : text)}</>
+        } else {
+            const wrapperElement = element as XMLWrapperElement
+            
+            // define custom elements here
+            if (wrapperElement.name == "section") return <XMLSection el={wrapperElement}/>
+            if (wrapperElement.name == "build") return <XMLBuild el={wrapperElement}/>
+    
+            if (wrapperElement.name == "br") return <br key={index}/> // line break
+            if (wrapperElement.name == "i") return <i key={index}><RenderXMLElementArray elements={wrapperElement.elements ?? []}/></i> // italic
+            if (wrapperElement.name == "b") return <b key={index}><RenderXMLElementArray elements={wrapperElement.elements ?? []}/></b> // bold
+            if (wrapperElement.name == "s") return <s key={index}><RenderXMLElementArray elements={wrapperElement.elements ?? []}/></s> // strikethrough
+            if (wrapperElement.name == "u") return <u key={index}><RenderXMLElementArray elements={wrapperElement.elements ?? []}/></u> // underline
+    
+            return <RenderXMLElementArray elements={wrapperElement.elements ?? []}/>
         }
-
-        if (wrapperElement.name == "br") return <br key={index}/> // line break
-        if (wrapperElement.name == "i") return <i key={index}>{renderContent()}</i> // italic
-        if (wrapperElement.name == "b") return <b key={index}>{renderContent()}</b> // bold
-        if (wrapperElement.name == "s") return <s key={index}>{renderContent()}</s> // strikethrough
-        if (wrapperElement.name == "u") return <u key={index}>{renderContent()}</u> // underline
-
-        return <>{renderContent()}</>
+    } catch (error) {
+        return (<>Failed to render XML element: <br/>{"" + error}</>)
     }
-    return <></>
-}
-
-
-function XMLSection({element}: {element: XMLElement}) {
-
 }

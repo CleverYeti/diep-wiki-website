@@ -30,18 +30,20 @@ function roundWithDecimals(value: number, decimals: number = 2) {
 export function BarrelStatsDisplay({
   stats,
   level = 1,
-  points = [0,0,0,0,0,0,0,0]
+  points = [0,0,0,0,0,0,0,0],
+  comparisonStats = tanksData["basic"].barrelStats["main"],
+  comparisonLevel = 1,
+  comparisonPoints = [0,0,0,0,0,0,0,0]
 }: {
   stats: BarrelStats;
   level: number;
   points: Array<number>;
+  comparisonStats?: BarrelStats;
+  comparisonLevel?: number;
+  comparisonPoints?: Array<number>;
 }) {
   const content: Array<JSX.Element> = []
   const rows: Array<Array<string>> = []
-
-  const comparisonLevel = 1
-  const comparisonPoints = [0,0,0,0,0,0,0,0]
-  const comparisonStats = tanksData["basic"].barrelStats["main"]
 
   interface Values {
     [key: string]: number
@@ -52,7 +54,7 @@ export function BarrelStatsDisplay({
     returnValues.reloadTicks = stats.reloadTicks ?? formulas.barrelReloadTicks(stats.reloadFactor, points[6])
     returnValues.reloadSecs = returnValues.reloadTicks / TICK_RATE
     returnValues.fireRate = 1 / returnValues.reloadSecs
-    returnValues.recoil = formulas.barrelRecoilVelocity(stats.recoilFactor)
+    returnValues.instantRecoilSpeed = formulas.barrelInstantRecoilSpeed(stats.recoilFactor)
     returnValues.bulletDamagePerTick = stats.bullet.damagePerTick ?? formulas.bulletDamagePerTick(stats.bullet.damageFactor, points[5])
     returnValues.bulletHealth = stats.bullet.health ?? formulas.bulletHealth(stats.bullet.healthFactor, points[4])
     returnValues.bulletEffectiveDamage = formulas.bulletEffectiveDamage(returnValues.bulletDamagePerTick, returnValues.bulletHealth)
@@ -62,6 +64,8 @@ export function BarrelStatsDisplay({
     returnValues.bulletInitialSpeed = 0.5 * (formulas.bulletInitialSpeedMin(returnValues.bulletTargetSpeed) + formulas.bulletInitialSpeedMax(returnValues.bulletTargetSpeed))
     returnValues.bulletInitialSpeedVariation = 0.5 * (formulas.bulletInitialSpeedMax(returnValues.bulletTargetSpeed) - formulas.bulletInitialSpeedMin(returnValues.bulletTargetSpeed))
     returnValues.bulletScatterDegrees = formulas.bulletScatterDegrees(stats.bullet.scatterFactor)
+    returnValues.peakRecoilSpeed = formulas.barrelPeakRecoilSpeed(returnValues.reloadTicks, returnValues.instantRecoilSpeed, 0, returnValues.bulletScatterDegrees)
+    returnValues.averageRecoilSpeed = formulas.barrelAverageRecoilSpeed(returnValues.peakRecoilSpeed, returnValues.reloadTicks)
     return returnValues
   }
 
@@ -78,7 +82,9 @@ export function BarrelStatsDisplay({
 
   rows.push(["Reload Time", `${roundWithDecimals(mainValues.reloadTicks)}t: ${roundWithDecimals(mainValues.reloadSecs)}s`])
   rows.push(["Fire Rate", `${roundWithDecimals(mainValues.fireRate)}/s (${roundWithDecimals(comparisonFactors.fireRate)}x)`])
-  rows.push(["Recoil", `${roundWithDecimals(mainValues.recoil)} (${roundWithDecimals(comparisonFactors.recoil)}x)`])
+  rows.push(["Instant Recoil Speed", `${roundWithDecimals(mainValues.instantRecoilSpeed)} (${roundWithDecimals(comparisonFactors.instantRecoilSpeed)}x)`])
+  rows.push(["Peak Recoil Speed", `${roundWithDecimals(mainValues.peakRecoilSpeed)} (${roundWithDecimals(comparisonFactors.peakRecoilSpeed)}x)`])
+  rows.push(["Average Recoil Speed", `${roundWithDecimals(mainValues.averageRecoilSpeed)} (${roundWithDecimals(comparisonFactors.averageRecoilSpeed)}x)`])
   rows.push(["Bullet Damage per tick", `${roundWithDecimals(mainValues.bulletDamagePerTick)} (${roundWithDecimals(comparisonFactors.bulletDamagePerTick)}x)`])
   rows.push(["Bullet Health", `${roundWithDecimals(mainValues.bulletHealth)} (${roundWithDecimals(comparisonFactors.bulletHealth)}x)`])
   rows.push(["Bullet Effective DMG", `${roundWithDecimals(mainValues.bulletEffectiveDamage)} (${roundWithDecimals(comparisonFactors.bulletEffectiveDamage)}x)`])
@@ -101,18 +107,19 @@ export function BarrelStatsDisplay({
 export function TankStatsDisplay({
   tank,
   level = 1,
-  points = [0,0,0,0,0,0,0,0]
+  points = [0,0,0,0,0,0,0,0],
+  comparisonTank = tanksData["basic"],
+  comparisonLevel = 1,
+  comparisonPoints = [0,0,0,0,0,0,0,0]
 }: {
   tank: Tank;
   level: number;
   points: Array<number>;
+  comparisonTank?: Tank;
+  comparisonLevel?: number;
+  comparisonPoints?: Array<number>;
 }) {
   const rows: Array<Array<string>> = []
-
-
-  const comparisonLevel = 1
-  const comparisonPoints = [0,0,0,0,0,0,0,0]
-  const comparisonTank = tanksData["basic"]
 
   interface Values {
     [key: string]: number
@@ -120,11 +127,25 @@ export function TankStatsDisplay({
 
   function getValues(tank: Tank, level: number, points: Array<number>) {
     const returnValues: Values = {}
+
+    let averageRecoilSpeed = 0
+    for (let barrel of tank.barrels) {
+      const barrelStats = tank.barrelStats[barrel.barrelStats]
+      const reloadTicks = formulas.barrelReloadTicks(barrelStats.reloadFactor, points[6])
+      const instantRecoilSpeed = formulas.barrelInstantRecoilSpeed(barrelStats.recoilFactor)
+      const scatterDegrees = formulas.bulletScatterDegrees(barrelStats.bullet.scatterFactor)
+      const peakRecoilSpeed = formulas.barrelPeakRecoilSpeed(reloadTicks, instantRecoilSpeed, barrel.angle, scatterDegrees)
+      console.log(barrel, reloadTicks, instantRecoilSpeed, scatterDegrees, peakRecoilSpeed)
+      averageRecoilSpeed += formulas.barrelAverageRecoilSpeed(peakRecoilSpeed, reloadTicks)
+    }
+
+    
     returnValues.health = tank.health ?? formulas.tankHealth(level, points[1])
     returnValues.damagePerTick = tank.bodyDamagePerTick ?? formulas.tankDamagePerTick(points[2], tank.key == "spike")
     returnValues.effectiveHealth = formulas.tankEffectiveHealth(returnValues.health, returnValues.damagePerTick)
     returnValues.regenPerTick = tank.regenPerTick ?? formulas.tankRegenPerTick(returnValues.health, points[0])
     returnValues.movementSpeed = formulas.tankMovementSpeed(level, points[7])
+    returnValues.averageRecoilSpeed = returnValues.movementSpeed + Math.abs(averageRecoilSpeed)
     if (!tank.isBoss) {
       returnValues.fovFactor = formulas.tankFovFactor(level, tank.fieldFactor)
       returnValues.viewWidth = formulas.tankViewWidth(returnValues.fovFactor)
@@ -146,6 +167,7 @@ export function TankStatsDisplay({
   rows.push(["Effective Health", `${roundWithDecimals(mainValues.effectiveHealth)} (${roundWithDecimals(comparisonFactors.effectiveHealth)}x)`])
   rows.push(["Health Regen", `${roundWithDecimals(mainValues.regenPerTick, 5)}/t (${roundWithDecimals(comparisonFactors.regenPerTick)}x)`])
   rows.push(["Speed", `${roundWithDecimals(mainValues.movementSpeed)}/t: ${roundWithDecimals(mainValues.movementSpeed * TICK_RATE, 0)}/s (${roundWithDecimals(comparisonFactors.movementSpeed)}x)`])
+  rows.push(["Speed w/ recoil", `${roundWithDecimals(mainValues.averageRecoilSpeed)}/t (${roundWithDecimals(comparisonFactors.averageRecoilSpeed)}x)`])
   if (mainValues.fovFactor) rows.push(["Fov", `${roundWithDecimals(mainValues.viewWidth, 0)} x ${roundWithDecimals(mainValues.viewHeight, 0)} (${roundWithDecimals(comparisonFactors.fovFactor)}x)`])
   
   if (tank.flags && tank.flags.invisibility) {

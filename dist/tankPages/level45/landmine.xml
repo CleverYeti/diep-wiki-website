@@ -1,0 +1,33 @@
+<content>
+
+
+
+    <section name="Basic info">
+        Although it has it's niche use cases landmine is just overall not a very good tank. Spike is usually just a better alternative.
+    </section>
+
+
+
+    <section name="Meta builds">
+        1. <build statPointSetupKey="smasher-class" points="3/10/10/10"/>
+        Alternatives:
+        3. <build statPointSetupKey="smasher-class" points="4/10/9/10"/>
+        4. <build statPointSetupKey="smasher-class" points="5/9/9/10"/>
+    </section>
+
+
+
+    <section name="Strategy">
+        N/A
+    </section>
+
+
+
+    <section name="Trivia">
+        N/A
+    </section>
+
+
+
+
+</content>
