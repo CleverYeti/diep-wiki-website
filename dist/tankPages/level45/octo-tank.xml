@@ -1,0 +1,42 @@
+<content>
+
+
+
+    <section name="Basic info">
+
+        <description>
+            Octo tank is a decent tank that doesn't require much micromanagement to work effectively. It has great survivability but lacks in kill potential.
+        </description>
+
+    </section>
+
+
+
+    <section name="Meta builds">
+        <builds>
+            1. <build points="0/0/0/5/7/7/7/7">
+            Alternatives:
+            1. <build points="0/2/3/0/7/7/7/7">
+        </builds>
+    </section>
+
+
+
+    <section name="Strategy">
+        <strategy>
+            N/A
+        </strategy>
+    </section>
+
+
+
+    <section name="Trivia">
+
+        N/A
+
+    </section>
+
+
+
+
+</content>
