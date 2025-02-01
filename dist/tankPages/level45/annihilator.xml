@@ -14,9 +14,9 @@
 
     <section name="Meta builds">
         <builds>
-            1. <build points="0/0/0/7/7/7/5/7">
-            2. <build points="0/2/3/7/7/7/0/7">
-            3. <build points="5/7/7/0/0/0/7/7">
+            1. <build points="0/0/0/7/7/7/5/7"/>
+            2. <build points="0/2/3/7/7/7/0/7"/>
+            3. <build points="5/7/7/0/0/0/7/7"/>
         </builds>
     </section>
 
