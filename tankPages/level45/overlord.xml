@@ -1,0 +1,43 @@
+<content>
+
+
+
+    <section name="Basic info">
+
+        <description>
+            Overlord is one of the best tanks in the game and can kill basically every tank in the game relatively painlessly but suffers against triangle branch tanks
+        </description>
+
+    </section>
+
+
+
+    <section name="Meta builds">
+        <builds>
+            1. <build points="0/2/3/7/7/7/0/7">
+            Alternatives:
+            2. <build points="0/0/0/7/7/7/5/7">
+            3. <build points="0/1/2/7/7/7/2/7">
+        </builds>
+    </section>
+
+
+
+    <section name="Strategy">
+        <strategy>
+            N/A
+        </strategy>
+    </section>
+
+
+
+    <section name="Trivia">
+
+        N/A
+
+    </section>
+
+
+
+
+</content>
