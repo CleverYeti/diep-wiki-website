@@ -4047,15 +4047,15 @@ export const tanksData:TanksData = {
       },
       "bulletCannons": {
         "name": "Bullet Cannon Stats",
-        "reloadFactor": 0.35,
-        "recoilFactor": 0,
+        "reloadFactor": 0.7,
+        "recoilFactor": 3.8,
         "bullet": {
           "type": "bullet",
-          "healthFactor": 0.3,
+          "healthFactor": 0.6,
           "damageFactor": 3 / 5,
-          "speedFactor": 1.1,
+          "speedFactor": 0.5,
           "scatterFactor": 1,
-          "lifeLengthFactor": 0.25,
+          "lifeLengthFactor": 0.5,
           "sizeFactor": 1,
           "absorbtionFactor": 1
         }
