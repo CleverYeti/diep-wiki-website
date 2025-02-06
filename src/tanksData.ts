@@ -931,7 +931,8 @@ export const tanksData:TanksData = {
       "hybrid",
       "annihilator",
       "skimmer",
-      "rocketeer"
+      "rocketeer",
+      "glider"
     ],
     "flags": {},
     "fieldFactor": 1,
@@ -3996,5 +3997,69 @@ export const tanksData:TanksData = {
         }
       }
     }
-  }
+  },
+  "glider": {
+    "id": 56,
+    "name": "Glider",
+    "upgradeMessage": "",
+    "levelRequirement": 45,
+    "upgrades": [],
+    "flags": {},
+    "fieldFactor": 0.9,
+    "preAddon": "glider",
+    "postAddon": null,
+    "sides": 1,
+    "borderWidth": 15,
+    "barrels": [
+      {
+        "angle": 0,
+        "offset": 0,
+        "size": 80,
+        "width": 1.35,
+        "isTrapezoid": true,
+        "trapezoidDirection": 3.141592653589793,
+        "delay": 0,
+        "barrelStats": "main",
+        "type": "normal"
+      }
+    ],
+    "statPointSetup": "normal",
+    "key": "glider",
+    "upgradesFrom": [
+      "destroyer"
+    ],
+    "color": 4,
+    "barrelStats": {
+      "main": {
+        "name": "Main Cannon Stats",
+        "reloadFactor": 4,
+        "recoilFactor": 3,
+        "bullet": {
+          "type": "glider",
+          "sizeFactor": 1,
+          "healthFactor": 3,
+          "damageFactor": 1,
+          "speedFactor": 0.3,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1.3,
+          "absorbtionFactor": 0.1
+        }
+      },
+      "bulletCannons": {
+        "name": "Bullet Cannon Stats",
+        "reloadFactor": 0.35,
+        "recoilFactor": 0,
+        "bullet": {
+          "type": "bullet",
+          "healthFactor": 0.3,
+          "damageFactor": 3 / 5,
+          "speedFactor": 1.1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 0.25,
+          "sizeFactor": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
+  },
 }
