@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css"
-import logo from "/diep docs logo.png"
+import logo from "/modernised diep wiki logo.png"
 
 export function Navbar() {
     return (
