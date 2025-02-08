@@ -29,6 +29,7 @@ export const formulas = {
     bulletInitialSpeedMin: (bulletScatterFactor = 1, bulletTargetSpeed = 20) => bulletTargetSpeed + 30 - bulletScatterFactor,
     bulletScatterDegrees: (bulletScatterFactor = 1) => bulletScatterFactor * 5,
     bulletRange: (bulletInitialSpeedAverage = 50, bulletTargetSpeed = 20, bulletLifeLength = 72) => {
+        if (bulletLifeLength == Infinity) return Infinity;
         let distanceTravelled = 0;
         let speed = 0
         for (let i = 0; i < bulletLifeLength; i++) {
