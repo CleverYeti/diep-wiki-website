@@ -28,6 +28,19 @@ export const formulas = {
     bulletInitialSpeedMax: (bulletTargetSpeed = 20) => bulletTargetSpeed + 30,
     bulletInitialSpeedMin: (bulletScatterFactor = 1, bulletTargetSpeed = 20) => bulletTargetSpeed + 30 - bulletScatterFactor,
     bulletScatterDegrees: (bulletScatterFactor = 1) => bulletScatterFactor * 5,
+    bulletRange: (bulletInitialSpeedAverage = 50, bulletTargetSpeed = 20, bulletLifeLength = 72) => {
+        let distanceTravelled = 0;
+        let speed = 0
+        for (let i = 0; i < bulletLifeLength; i++) {
+            speed *= FRICTION_FACTOR;
+            speed += (1-FRICTION_FACTOR) * bulletTargetSpeed
+            if (i == 0) {
+                speed = bulletInitialSpeedAverage;
+            }
+            distanceTravelled += speed
+        }
+        return distanceTravelled
+    },
 
     droneInitialSpeedMax: (bulletTargetSpeed = 20) => bulletTargetSpeed / 3 + 10,
     droneInitialSpeedMin: (bulletScatterFactor = 1, bulletTargetSpeed = 20) => (bulletTargetSpeed - bulletScatterFactor) / 3 + 10,

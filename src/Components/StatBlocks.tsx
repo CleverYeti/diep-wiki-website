@@ -66,6 +66,7 @@ export function BarrelStatsDisplay({
     returnValues.bulletScatterDegrees = formulas.bulletScatterDegrees(stats.bullet.scatterFactor)
     returnValues.peakRecoilSpeed = formulas.barrelPeakRecoilSpeed(returnValues.reloadTicks, returnValues.instantRecoilSpeed, 0, returnValues.bulletScatterDegrees)
     returnValues.averageRecoilSpeed = formulas.barrelAverageRecoilSpeed(returnValues.peakRecoilSpeed, returnValues.reloadTicks)
+    returnValues.bulletRange = formulas.bulletRange(returnValues.bulletInitialSpeed, returnValues.bulletTargetSpeed, returnValues.bulletLifeLength);
     return returnValues
   }
 
@@ -90,6 +91,7 @@ export function BarrelStatsDisplay({
   rows.push(["Bullet Effective DMG", `${roundWithDecimals(mainValues.bulletEffectiveDamage)} (${roundWithDecimals(comparisonFactors.bulletEffectiveDamage)}x)`])
   if (isFinite(mainValues.bulletLifeLength)) {
     rows.push(["Bullet Life", `${roundWithDecimals(mainValues.bulletLifeLength)}t: ${roundWithDecimals(mainValues.bulletLifeLength / TICK_RATE)}s (${roundWithDecimals(comparisonFactors.bulletLifeLength)}x)`])
+    rows.push(["Bullet Range", `${roundWithDecimals(mainValues.bulletRange)} (${roundWithDecimals(comparisonFactors.bulletRange)}x)`])
   } else {
     rows.push(["Bullet Life", `Infinite`])
   }
