@@ -1415,7 +1415,7 @@ export const tanksData:TanksData = {
           "type": "necrodrone",
           "sizeFactor": 1,
           "healthFactor": 2,
-          "damageFactor": 0.42,
+          "damageFactor": 1.68,
           "speedFactor": 0.72,
           "scatterFactor": 1,
           "lifeLengthFactor": -1,
