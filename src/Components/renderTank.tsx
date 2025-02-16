@@ -8,18 +8,20 @@ const BORDER_THICKNESS = 7.5;
 const DEFAULT_VIEW_BOUNDARIES = 150
 const HIGHLIGHT_FACTOR = 0.5
 
+type Color = Array<number>
+
 interface RenderTankProps {
   tank: Tank;
   level?: number;
   rotation?: number;
   autoTurretRotation?: number;
-  color?: Array<number>;
+  color?: Color;
   borderOpacity?: number;
-  barrelColor?: Array<number>;
-  smasherColor?: Array<number>;
+  barrelColor?: Color;
+  smasherColor?: Color;
   reCenter?: boolean;
   zoom?: number;
-  gridColor?: Array<number>;
+  gridColor?: Color;
   gridAlpha?: number;
   highlight?: string | null;
 }
@@ -116,7 +118,7 @@ export function RenderTank({
     );
   }
 
-  function applyHighlight(color: Array<number>, highlightGroup: string) {
+  function applyHighlight(color: Color, highlightGroup: string) {
     if (highlight == null) return color
     if (highlight == highlightGroup) return color
     return color.map(v => v * HIGHLIGHT_FACTOR)

@@ -1,0 +1,34 @@
+import { ReactElement } from "react";
+import { AbstractRenderingObject } from "./AbstractRenderingShape";
+import { Color, multiplyColor, renderColorToCss } from "./Color";
+import { Point } from "./Vector";
+import { RenderingSettings } from "./RenderingSettings";
+
+export class RenderingPolygon extends AbstractRenderingObject {
+  points: Array<Point>
+  constructor(points: Array<Point>, color: Color, zIndex = 1) {
+    super(color, zIndex);
+    this.points = points
+  }
+  renderToSVG(renderingSettings: RenderingSettings): ReactElement {
+    return <polygon
+      key={"polygon-" + Math.random()}
+      points={this.points.map(([x,y]) => x + "," + y).join(" ")}
+      fill={renderColorToCss(this.color)}
+      stroke={renderColorToCss(multiplyColor(this.color, 1 - renderingSettings.borderOpacity))}
+      strokeWidth={renderingSettings.borderThickness}
+      strokeLinejoin="round"
+    />
+  }
+  renderToCanvas(ctx: CanvasRenderingContext2D, renderingSettings: RenderingSettings) {
+    super.renderToCanvas(ctx, renderingSettings);
+    ctx.beginPath();
+    for (let i = 0; i < this.points.length; i++) {
+      (i == 0 ? ctx.moveTo : ctx.lineTo)(...this.points[i]);
+    }
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+  }
+}
+  
