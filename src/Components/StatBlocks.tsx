@@ -187,7 +187,7 @@ export function ShapeStatsDisplay({shape, isShiny = false}: {shape: Shape; isShi
   const rows: Array<Array<string>> = []
   rows.push(["Health", `${roundWithDecimals(isShiny ? shinyHealthFactor * shape.health : shape.health)}`])
   rows.push(["DMG Per Tick", `${roundWithDecimals(shape.bodyDamage)}`])
-  rows.push(["Eff. Health", `${roundWithDecimals(shape.bodyDamage * (isShiny ? shape.health : shinyHealthFactor * shape.health))}`])
+  rows.push(["Eff. Health", `${roundWithDecimals(shape.bodyDamage * (isShiny ? shinyHealthFactor * shape.health : shape.health))}`])
   rows.push(["Score", `${roundWithDecimals(isShiny ? shinyScoreFactor * shape.score : shape.score)}`])
   if (shape.speed) rows.push(["Speed", `${roundWithDecimals(shape.speed)}/t: ${roundWithDecimals(shape.speed * TICK_RATE)}/s`])
 
