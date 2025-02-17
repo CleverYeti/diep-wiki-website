@@ -197,7 +197,8 @@ export const tanksData:TanksData = {
       "sniper",
       "machine-gun",
       "flank-guard",
-      "smasher"
+      "smasher",
+      "auto-tank"
     ],
     "flags": {},
     "fieldFactor": 1,
@@ -4056,6 +4057,80 @@ export const tanksData:TanksData = {
           "speedFactor": 0.5,
           "scatterFactor": 1,
           "lifeLengthFactor": 0.5,
+          "sizeFactor": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
+  },
+  "auto-tank": {
+    "id": 57,
+    "name": "Auto-Tank",
+    "color": 5,
+    "upgradeMessage": "",
+    "levelRequirement": 45,
+    "upgrades": [],
+    "flags": {},
+    "fieldFactor": 1,
+    "preAddon": null,
+    "postAddon": null,
+    "sides": 1,
+    "borderWidth": 15,
+    "barrels": [
+      {
+        "angle": 0,
+        "offset": 0,
+        "size": 95,
+        "width": 1,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "barrelStats": "main",
+        "type": "normal"
+      },
+      {
+        "angle": Math.PI,
+        "offset": 0,
+        "basePosition": 0,
+        "size": 55,
+        "width": 0.7,
+        "delay": 0.01,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "barrelStats": "autoTurret",
+        "type": "autoTurret"
+      }
+    ],
+    "statPointSetup": "normal",
+    "key": "auto-tank",
+    "upgradesFrom": ["basic"],
+    "barrelStats": {
+      "main": {
+        "name": "Cannon Stats",
+        "reloadFactor": 1,
+        "recoilFactor": 1,
+        "bullet": {
+          "type": "bullet",
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 1,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
+          "absorbtionFactor": 1
+        }
+      },
+      "autoTurret": {
+        "name": "Auto Turret Stats",
+        "recoilFactor": 0.3,
+        "reloadFactor": 1,
+        "bullet": {
+          "type": "bullet",
+          "healthFactor": 1,
+          "damageFactor": 0.3,
+          "speedFactor": 1.2,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
           "sizeFactor": 1,
           "absorbtionFactor": 1
         }
