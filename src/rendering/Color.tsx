@@ -1,6 +1,6 @@
 export {}
 export type Color = [number, number, number]
-export function renderColorToCss(color: Color, opacity = 1) {
+export function formatColorToCss(color: Color, opacity = 1) {
     return "rgb(" + color.map(v => Math.round(v)).join(",") + "," + opacity + ")"
 }
 export function multiplyColor(color: Color, factor: number): Color {
