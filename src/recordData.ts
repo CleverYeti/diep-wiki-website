@@ -13,25 +13,25 @@ export const recordData: {
 } = {
     "basic": {
         "ffa": {
-            "score": 0,
+            "score": 1080000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "JB columbia"
         },
         "2tdm": {
-            "score": 0,
+            "score": 1410000,
             "duration": 0,
             "formattedDuration": "",
             "scorer": ""
         },
         "4tdm": {
-            "score": 0,
+            "score": 1360000,
             "duration": 0,
             "formattedDuration": "",
             "scorer": ""
         },
         "maze": {
-            "score": 0,
+            "score": 701000,
             "duration": 0,
             "formattedDuration": "",
             "scorer": ""
