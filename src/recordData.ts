@@ -663,158 +663,132 @@ export const recordData: {
     },
     "manager": {
         "ffa": {
-            "score": 0,
+            "score": 2260000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "JB Columbia"
         },
         "2tdm": {
-            "score": 0,
+            "score": 5940000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "T.wS"
         },
         "4tdm": {
-            "score": 0,
+            "score": 4430000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Mohsen"
         },
         "maze": {
-            "score": 0,
+            "score": 2180000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
-        }
-    },
-    "mothership": {
-        "ffa": {
-            "score": 0,
-            "duration": 0,
-            "formattedDuration": "",
-            "scorer": ""
-        },
-        "2tdm": {
-            "score": 0,
-            "duration": 0,
-            "formattedDuration": "",
-            "scorer": ""
-        },
-        "4tdm": {
-            "score": 0,
-            "duration": 0,
-            "formattedDuration": "",
-            "scorer": ""
-        },
-        "maze": {
-            "score": 0,
-            "duration": 0,
-            "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Mipha"
         }
     },
     "predator": {
         "ffa": {
-            "score": 0,
+            "score": 2250000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Unnamed sniper"
         },
         "2tdm": {
-            "score": 0,
+            "score": 3780000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "GLITCHER TM"
         },
         "4tdm": {
-            "score": 0,
+            "score": 4300000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "potatotomato"
         },
         "maze": {
-            "score": 0,
+            "score": 1040000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Astral"
         }
     },
     "sprayer": {
         "ffa": {
-            "score": 0,
+            "score": 3940000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "exo"
         },
         "2tdm": {
-            "score": 0,
+            "score": 1790000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Fallen"
         },
         "4tdm": {
-            "score": 0,
+            "score": 1950000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "NoName"
         },
         "maze": {
-            "score": 0,
+            "score": 1510000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Dragonis"
         }
     },
     "trapper": {
         "ffa": {
-            "score": 0,
+            "score": 441000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "RYS"
         },
         "2tdm": {
-            "score": 0,
+            "score": 1060000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Denied"
         },
         "4tdm": {
-            "score": 0,
+            "score": 618000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "EF 40"
         },
         "maze": {
-            "score": 0,
+            "score": 404000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Kratos"
         }
     },
     "gunner-trapper": {
         "ffa": {
-            "score": 0,
+            "score": 2160000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Oblivion"
         },
         "2tdm": {
-            "score": 0,
+            "score": 1640000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Snapwing"
         },
         "4tdm": {
-            "score": 0,
+            "score": 1630000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Pekmen"
         },
         "maze": {
-            "score": 0,
+            "score": 1200000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "JB Columbia"
         }
     },
     "overtrapper": {
