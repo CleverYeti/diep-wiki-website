@@ -22,305 +22,305 @@ export const recordData: {
             "score": 1410000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Quarks"
         },
         "4tdm": {
             "score": 1360000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Mr Cheeky"
         },
         "maze": {
             "score": 701000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Baller"
         }
     },
     "twin": {
         "ffa": {
-            "score": 0,
+            "score": 1970000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "☢"
         },
         "2tdm": {
-            "score": 0,
+            "score": 1530000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Deniz"
         },
         "4tdm": {
-            "score": 0,
+            "score": 1710000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "☢"
         },
         "maze": {
-            "score": 0,
+            "score": 1420000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Kesler"
         }
     },
     "triplet": {
         "ffa": {
-            "score": 0,
+            "score": 2680000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Deniz"
         },
         "2tdm": {
-            "score": 0,
+            "score": 2330000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Ricardo"
         },
         "4tdm": {
-            "score": 0,
+            "score": 2000000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "RipDreams"
         },
         "maze": {
-            "score": 0,
+            "score": 1720000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Kyo"
         }
     },
     "triple-shot": {
         "ffa": {
-            "score": 0,
+            "score": 1390000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "RYS"
         },
         "2tdm": {
-            "score": 0,
+            "score": 1960000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "i'm back"
         },
         "4tdm": {
-            "score": 0,
+            "score": 1480000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "MG PRO"
         },
         "maze": {
-            "score": 0,
+            "score": 699000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "xTriangleSquare"
         }
     },
     "quad-tank": {
         "ffa": {
-            "score": 0,
+            "score": 1240000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Alberich"
         },
         "2tdm": {
-            "score": 0,
+            "score": 1590000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Fallen"
         },
         "4tdm": {
-            "score": 0,
+            "score": 1580000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Fallen"
         },
         "maze": {
-            "score": 0,
+            "score": 818000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Astral"
         }
     },
     "octo-tank": {
         "ffa": {
-            "score": 0,
+            "score": 2620000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Fallen"
         },
         "2tdm": {
-            "score": 0,
+            "score": 3010000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Boner Alert"
         },
         "4tdm": {
-            "score": 0,
+            "score": 2610000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "UltraXile"
         },
         "maze": {
-            "score": 0,
+            "score": 1380000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "JB Columbia"
         }
     },
     "sniper": {
         "ffa": {
-            "score": 0,
+            "score": 1990000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Akraisa"
         },
         "2tdm": {
-            "score": 0,
+            "score": 2140000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "exo"
         },
         "4tdm": {
-            "score": 0,
+            "score": 1970000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Werewolf"
         },
         "maze": {
-            "score": 0,
+            "score": 625000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Diamind"
         }
     },
     "machine-gun": {
         "ffa": {
-            "score": 0,
+            "score": 2120000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "JB Columbia"
         },
         "2tdm": {
-            "score": 0,
+            "score": 1500000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "dragos"
         },
         "4tdm": {
-            "score": 0,
+            "score": 2500000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "dragos"
         },
         "maze": {
-            "score": 0,
+            "score": 1400000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "JB Columbia"
         }
     },
     "flank-guard": {
         "ffa": {
-            "score": 0,
+            "score": 1520000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Deimos"
         },
         "2tdm": {
-            "score": 0,
+            "score": 1340000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Legit Developer"
         },
         "4tdm": {
-            "score": 0,
+            "score": 2050000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Slade"
         },
         "maze": {
-            "score": 0,
+            "score": 719000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Deimos"
         }
     },
     "tri-angle": {
         "ffa": {
-            "score": 0,
+            "score": 2150000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "RYS"
         },
         "2tdm": {
-            "score": 0,
+            "score": 2080000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Minty"
         },
         "4tdm": {
-            "score": 0,
+            "score": 1910000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "RYS"
         },
         "maze": {
-            "score": 0,
+            "score": 1250000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "RYS"
         }
     },
     "destroyer": {
         "ffa": {
-            "score": 0,
+            "score": 1450000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Wadjet"
         },
         "2tdm": {
-            "score": 0,
+            "score": 2450000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "T.wS"
         },
         "4tdm": {
-            "score": 0,
+            "score": 2960000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Tri-Trapper"
         },
         "maze": {
-            "score": 0,
+            "score": 1040000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "JB Columbia"
         }
     },
     "overseer": {
         "ffa": {
-            "score": 0,
+            "score": 3070000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "JB Columbia"
         },
         "2tdm": {
-            "score": 0,
+            "score": 4960000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "T.wS"
         },
         "4tdm": {
-            "score": 0,
+            "score": 4080000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "Anti"
         },
         "maze": {
-            "score": 0,
+            "score": 2110000,
             "duration": 0,
             "formattedDuration": "",
-            "scorer": ""
+            "scorer": "JB Columbia"
         }
     },
     "overlord": {
