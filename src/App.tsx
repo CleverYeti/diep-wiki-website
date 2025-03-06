@@ -9,6 +9,7 @@ import { BossesPage } from './Pages/BossesPage'
 import { BossPage } from './Pages/BossPage'
 import { PageXMLBody } from './Components/PageXMLBody'
 import { XMLPage } from './Pages/XMLPage'
+import { RecordsPage } from './Pages/RecordsPage'
 
 export const basePath = import.meta.env.BASE_URL || '/';
 
@@ -19,6 +20,7 @@ function App() {
         <Route element={<Layout/>}>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/tanks/" element={<TanksPage/>}/>
+          <Route path="/records/" element={<RecordsPage/>}/>
           <Route path="/tanks/:tankId" element={<TankPage/>}/>
           <Route path="/shapes/" element={<ShapesPage/>}/>
           <Route path="/bosses/" element={<BossesPage/>}/>

@@ -20,6 +20,9 @@ export function Navbar() {
             <Link to="/formulas/">
                 <div className="tab">Formulas</div>
             </Link>
+            <Link to="/records">
+                <div className="tab">World Records</div>
+            </Link>
         </nav>
     )
 }

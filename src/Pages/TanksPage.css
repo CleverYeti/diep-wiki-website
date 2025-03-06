@@ -164,12 +164,18 @@
     font-size: 1.125rem;
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
+#tanks-page-table > * > .column > .record-name {
+    font-size: 0.875rem;
+}
+
 #tanks-page-table > * > .name {width: 15rem; padding-left: 0.5rem;}
 #tanks-page-table > * > .id {width: 5rem; justify-content: center;}
 #tanks-page-table > * > .tier {width: 5rem; justify-content: center;}
 #tanks-page-table > * > .level {width: 5rem; justify-content: center;}
+#tanks-page-table > * > .gamemode {width: 8rem; justify-content: center;}
 
 #tanks-page-table > * > .column > img {
     width: 1.5rem;

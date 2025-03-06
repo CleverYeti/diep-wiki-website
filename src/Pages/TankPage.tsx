@@ -7,10 +7,11 @@ import { Link } from "react-router-dom"
 import { renderColor } from "../functions/renderColor"
 import { RenderTank } from "../Components/renderTank"
 import { TankPreview } from "../Components/TankPreview"
-import { BarrelStatsDisplay, TankStatsDisplay } from "../Components/StatBlocks"
+import { BarrelStatsDisplay, StatsBlock, TankStatsDisplay } from "../Components/StatBlocks"
 import { PageXMLBody } from "../Components/PageXMLBody"
 import { basePath } from "../App"
 import { useState } from "react"
+import { recordData } from "../recordData"
 
 function TankGrid({tankIds}: {tankIds: Array<string>}) {
     return (
@@ -95,6 +96,16 @@ export function TankPage() {
                         </div>
                     )}
                     
+                    <div className="section stats">
+                        <div className="title">World Records</div>
+                        <StatsBlock rows={Object.entries(recordData[tank.key]).map(([gamemode, record]) => (
+                            [
+                                ({"ffa": "FFA", "2tdm": "2 Teams", "4tdm": "4 Teams", "maze": "Maze"}[gamemode]) ?? "",
+                                record.score.toLocaleString("en-US") + " by " + record.scorer
+                            ]
+                        ))}/>
+                    </div>
+
                     <div className="title">Stats</div>
                     <div className="stats-settings">
                         <div className="row">
