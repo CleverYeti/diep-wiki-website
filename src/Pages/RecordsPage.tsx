@@ -7,9 +7,13 @@ import { useState } from "react";
 import gridViewIcon from '/icons/grid-view.svg'
 import tableViewIcon from '/icons/table-view.svg'
 import chevronIcon from '/icons/chevron-down.svg'
-import { recordData } from "../recordData";
+import { RecordData } from "../recordData";
 
-export function RecordsPage() {
+export function RecordsPage({
+    recordData
+}: {
+    recordData: RecordData|null
+}) {
     const [sort, setSort] = useState("id")
     const [sortDirection, setSortDirection] = useState(1)
 
@@ -48,7 +52,7 @@ export function RecordsPage() {
                     <ColumnButton id="maze" name="Maze"/>
                 </div>
                 {
-                    Object.entries(tanksData).sort((a: [string, Tank], b:[string, Tank]) => {
+                    recordData != null && Object.entries(tanksData).sort((a: [string, Tank], b:[string, Tank]) => {
                         if (sort == "name") {
                             if (a[1].name < b[1].name) {
                                 return -sortDirection;

@@ -11,7 +11,7 @@ import { BarrelStatsDisplay, StatsBlock, TankStatsDisplay } from "../Components/
 import { PageXMLBody } from "../Components/PageXMLBody"
 import { basePath } from "../App"
 import { useState } from "react"
-import { recordData } from "../recordData"
+import { RecordData } from "../recordData"
 
 function TankGrid({tankIds}: {tankIds: Array<string>}) {
     return (
@@ -30,7 +30,11 @@ function TankGrid({tankIds}: {tankIds: Array<string>}) {
     )
 }
 
-export function TankPage() {
+export function TankPage({
+    recordData
+}:{
+    recordData: RecordData|null
+}) {
     let { tankId } = useParams()
     if (!(tankId ?? "" in tanksData)) {
         return (<Page404/>)
@@ -51,6 +55,7 @@ export function TankPage() {
             // nothing
         }
     }
+
     const [statsBuild, setStatsBuild] = useState([0,0,0,0,0,0,0,0])
     const [buildInputValue, setBuildInputValue] = useState("0/0/0/0/0/0/0/0")
 
@@ -98,12 +103,14 @@ export function TankPage() {
                     
                     <div className="section stats">
                         <div className="title">World Records</div>
-                        <StatsBlock rows={Object.entries(recordData[tank.key]).map(([gamemode, record]) => (
-                            [
-                                ({"ffa": "FFA", "2tdm": "2 Teams", "4tdm": "4 Teams", "maze": "Maze"}[gamemode]) ?? "",
-                                record.score.toLocaleString("en-US") + " by " + record.scorer
-                            ]
-                        ))}/>
+                        {recordData != null && (
+                            <StatsBlock rows={Object.entries(recordData[tank.key]).map(([gamemode, record]) => (
+                                [
+                                    ({"ffa": "FFA", "2tdm": "2 Teams", "4tdm": "4 Teams", "maze": "Maze"}[gamemode]) ?? "",
+                                    record.score.toLocaleString("en-US") + " by " + record.scorer
+                                ]
+                            ))}/>
+                        )}
                     </div>
 
                     <div className="title">Stats</div>
