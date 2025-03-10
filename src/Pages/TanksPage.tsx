@@ -22,7 +22,7 @@ export function TanksPage() {
         }
     }
 
-    function ColumnButton({id, name}: {id:string; name:string;}) {
+    function columnButton(id:string, name:string) {
         return (
             <div
                 className={"column " + id}
@@ -54,10 +54,10 @@ export function TanksPage() {
                 isTableView ? <>
                     <div id="tanks-page-table">
                         <div className="header-row">
-                            <ColumnButton id="name" name="Name"/>
-                            <ColumnButton id="id" name="Id"/>
-                            <ColumnButton id="tier" name="Tier"/>
-                            <ColumnButton id="level" name="Level"/>
+                            {columnButton("name", "Name")}
+                            {columnButton("id", "Id")}
+                            {columnButton("tier", "Tier")}
+                            {columnButton("level", "Level")}
                         </div>
                         {
                             Object.entries(tanksData).sort((a: [string, Tank], b:[string, Tank]) => {

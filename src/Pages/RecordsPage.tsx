@@ -8,6 +8,7 @@ import gridViewIcon from '/icons/grid-view.svg'
 import tableViewIcon from '/icons/table-view.svg'
 import chevronIcon from '/icons/chevron-down.svg'
 import { RecordData } from "../recordData";
+import { formatScore } from "../functions/formatScore";
 
 export function RecordsPage({
     recordData
@@ -26,7 +27,7 @@ export function RecordsPage({
         }
     }
 
-    function ColumnButton({id, name}: {id:string; name:string;}) {
+    function columnButton(id: string, name: string) {
         return (
             <div
                 className={"column " + (id == "name" ? "name" : "gamemode")}
@@ -45,11 +46,11 @@ export function RecordsPage({
         <div id="tanks-page">
             <div id="tanks-page-table" className="records-page-table">
                 <div className="header-row">
-                    <ColumnButton id="name" name="Name"/>
-                    <ColumnButton id="ffa" name="FFA"/>
-                    <ColumnButton id="2tdm" name="2 Teams"/>
-                    <ColumnButton id="4tdm" name="4 Teams"/>
-                    <ColumnButton id="maze" name="Maze"/>
+                    {columnButton("name", "Name")}
+                    {columnButton("ffa", "FFA")}
+                    {columnButton("2tdm", "2 Teams")}
+                    {columnButton("4tdm", "4 Teams")}
+                    {columnButton("maze", "Maze")}
                 </div>
                 {
                     recordData != null && Object.entries(tanksData).sort((a: [string, Tank], b:[string, Tank]) => {
@@ -76,7 +77,7 @@ export function RecordsPage({
                                 <div className="column name">{tank.name}</div>
                                 {["ffa", "2tdm", "4tdm", "maze"].map(gamemode => (
                                     <div className="column gamemode">
-                                        {(recordData[tankKey]?.[gamemode]?.score ?? 0).toLocaleString("en-US")}
+                                        {formatScore(recordData[tankKey]?.[gamemode]?.score ?? 0)}
                                         <div className="record-name">
                                             {recordData[tankKey]?.[gamemode].scorer ?? ""}
                                         </div>

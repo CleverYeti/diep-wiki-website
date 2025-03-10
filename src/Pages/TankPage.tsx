@@ -12,6 +12,7 @@ import { PageXMLBody } from "../Components/PageXMLBody"
 import { basePath } from "../App"
 import { useState } from "react"
 import { RecordData } from "../recordData"
+import { formatScore } from "../functions/formatScore"
 
 function TankGrid({tankIds}: {tankIds: Array<string>}) {
     return (
@@ -107,7 +108,7 @@ export function TankPage({
                             <StatsBlock rows={Object.entries(recordData[tank.key]).map(([gamemode, record]) => (
                                 [
                                     ({"ffa": "FFA", "2tdm": "2 Teams", "4tdm": "4 Teams", "maze": "Maze"}[gamemode]) ?? "",
-                                    record.score.toLocaleString("en-US") + " by " + record.scorer
+                                    formatScore(record.score) + " by " + record.scorer
                                 ]
                             ))}/>
                         )}
