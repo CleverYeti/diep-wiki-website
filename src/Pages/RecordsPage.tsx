@@ -68,7 +68,7 @@ export function RecordsPage({
                             return sortDirection * ((recordData[a[0]]?.[sort]?.score ?? 0) - (recordData[b[0]]?.[sort]?.score ?? 0))
                         }
                         return 0
-                    }).map(([tankKey, tank]) => {
+                    }).filter(([tankKey, tank]) => recordData[tankKey] != undefined).map(([tankKey, tank]) => {
                         return (
                             <Link className="tank-row" key={tank.key} to={"/tanks/" + tank.key} style={{"--color": renderColor(tankColors[tank.color ?? 0])} as React.CSSProperties}>
                                 <div className="image">
