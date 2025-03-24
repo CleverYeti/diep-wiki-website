@@ -104,7 +104,7 @@ export function TankPage({
                     
                     <div className="section stats">
                         <div className="title">World Records</div>
-                        {recordData != null && (
+                        {recordData != null && recordData[tank.key] != null &&(
                             <StatsBlock rows={Object.entries(recordData[tank.key]).map(([gamemode, record]) => (
                                 [
                                     ({"ffa": "FFA", "2tdm": "2 Teams", "4tdm": "4 Teams", "maze": "Maze"}[gamemode]) ?? "",
