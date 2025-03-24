@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Tank, tanksData, tankColors} from "../tanksData";
 import { renderColor } from "../functions/renderColor";
 import { RenderTank } from "../Components/renderTank";
-import "./TanksPage.css"
+import "./RecordsPage.css"
 import { useState } from "react";
 import gridViewIcon from '/icons/grid-view.svg'
 import tableViewIcon from '/icons/table-view.svg'
@@ -75,14 +75,37 @@ export function RecordsPage({
                                     <RenderTank tank={tank} level={Math.max(tank.levelRequirement ?? 0, 1)} rotation={-Math.PI / 4} zoom={1.25}/>
                                 </div>
                                 <div className="column name">{tank.name}</div>
-                                {["ffa", "2tdm", "4tdm", "maze"].map(gamemode => (
-                                    <div className="column gamemode">
-                                        {formatScore(recordData[tankKey]?.[gamemode]?.score ?? 0)}
-                                        <div className="record-name">
-                                            {recordData[tankKey]?.[gamemode].scorer ?? ""}
+                                {["ffa", "2tdm", "4tdm", "maze"].map(gamemode => {
+                                    const entry = recordData[tankKey]?.[gamemode]
+                                    if (entry == null) return  (
+                                        <div className="column gamemode">
+                                            0
                                         </div>
-                                    </div>
-                                ))}
+                                    )
+                                    return (
+                                        <div className="column gamemode">
+                                            {formatScore(entry.score)}
+                                            <div className="record-name">
+                                                {entry.scorer}
+                                            </div>
+                                            <div className="record-proof">
+                                                {entry.proofImages == null && entry.proofVideo == null && <>No proof in the database</>}
+                                                {entry.proofVideo != null && <>
+                                                    <a href={recordData[tankKey]?.[gamemode]?.proofVideo}>{recordData[tankKey]?.[gamemode]?.proofVideo}</a>
+                                                    {entry.proofVideo.includes("youtu.be") &&
+                                                        <iframe width="560" height="315" src={"https://www.youtube.com/embed/" + (entry.proofVideo.split("youtu.be/")[1]?.split("?")[0])} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin"></iframe>
+                                                    }
+                                                    {entry.proofVideo.includes("youtube.com") && (new URL(entry.proofVideo)).searchParams.get("v") != null && (
+                                                        <iframe width="560" height="315" src={"https://www.youtube.com/embed/" + (new URL(entry.proofVideo)).searchParams.get("v")} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin"></iframe>
+                                                    )}
+                                                </>}
+                                                {entry.proofImages != null && entry.proofImages.map(imageURL => (
+                                                    <a href={imageURL} key={imageURL}>{imageURL}</a>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )
+                                })}
                             </Link>
                         )
                     })

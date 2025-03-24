@@ -4137,4 +4137,106 @@ export const tanksData:TanksData = {
       }
     }
   },
+  /*
+  "testing": {
+    "id": 9,
+    "name": "Auto-Booster",
+    "upgradeMessage": "",
+    "levelRequirement": 45,
+    "upgrades": [
+      "booster",
+      "fighter"
+    ],
+    "flags": {},
+    "fieldFactor": 1,
+    "preAddon": null,
+    "postAddon": null,
+    "sides": 1,
+    "borderWidth": 15,
+    "barrels": [
+      {
+        "angle": 0,
+        "offset": 0,
+        "size": 95,
+        "width": 1,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "barrelStats": "main",
+        "type": "normal"
+      },
+      {
+        "angle": 3.665191429188092,
+        "offset": 0,
+        "size": 55,
+        "width": 0.7,
+        "delay": 0.01,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "barrelStats": "back",
+        "type": "autoCannon"
+      },
+      {
+        "angle": 2.6179938779914944,
+        "offset": 0,
+        "size": 55,
+        "width": 0.7,
+        "delay": 0.01,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "barrelStats": "back",
+        "type": "autoCannon"
+      },
+      {
+        "angle": 3.141592,
+        "offset": 0,
+        "size": 55,
+        "width": 0.7,
+        "delay": 0.01,
+        "isTrapezoid": false,
+        "trapezoidDirection": 0,
+        "barrelStats": "back",
+        "type": "autoCannon"
+      }
+    ],
+    "statPointSetup": "normal",
+    "key": "testing",
+    "upgradesFrom": [
+      "flank-guard"
+    ],
+    "color": 5,
+    "barrelStats": {
+      "main": {
+        "name": "Front Cannon Stats",
+        "reloadFactor": 1,
+        "recoilFactor": 0.2,
+        "bullet": {
+          "type": "bullet",
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 1,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1,
+          "absorbtionFactor": 1
+        }
+      },
+      "back": {
+        "name": "Back Cannon Stats",
+        "reloadFactor": 1,
+        "recoilFactor": 2.5,
+        "bullet": {
+          "type": "bullet",
+          "sizeFactor": 1,
+          "healthFactor": 1,
+          "damageFactor": 0.2,
+          "speedFactor": 1,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 0.5,
+          "absorbtionFactor": 1
+        }
+      }
+    }
+  },
+  */
 }
