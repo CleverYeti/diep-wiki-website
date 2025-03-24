@@ -88,10 +88,10 @@ export function RecordsPage({
                                             <div className="record-name">
                                                 {entry.scorer}
                                             </div>
-                                            <div className="record-proof">
+                                            <div className="record-proof" onClick={(event) => {event.stopPropagation()}}>
                                                 {entry.proofImages == null && entry.proofVideo == null && <>No proof in the database</>}
                                                 {entry.proofVideo != null && <>
-                                                    <a href={recordData[tankKey]?.[gamemode]?.proofVideo}>{recordData[tankKey]?.[gamemode]?.proofVideo}</a>
+                                                    <a target="_blank" href={recordData[tankKey]?.[gamemode]?.proofVideo}>{recordData[tankKey]?.[gamemode]?.proofVideo}</a>
                                                     {entry.proofVideo.includes("youtu.be") &&
                                                         <iframe width="560" height="315" src={"https://www.youtube.com/embed/" + (entry.proofVideo.split("youtu.be/")[1]?.split("?")[0])} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin"></iframe>
                                                     }
@@ -100,7 +100,7 @@ export function RecordsPage({
                                                     )}
                                                 </>}
                                                 {entry.proofImages != null && entry.proofImages.map(imageURL => (
-                                                    <a href={imageURL} key={imageURL}>{imageURL}</a>
+                                                    <a target="_blank" href={imageURL} key={imageURL}>{imageURL}</a>
                                                 ))}
                                             </div>
                                         </div>

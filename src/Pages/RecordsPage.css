@@ -8,15 +8,26 @@
     transform: translateX(-50%);
     width: max-content;
     
-    margin-top: 0.5rem;
     padding: 0.25rem 0.5rem;
     background: var(--light-section-bg);
     border-radius: 0.5rem;
     font-size: 1rem;
     font-weight: 400;
     box-shadow: var(--shadow);
+    flex-direction: column;
+    gap: 0.5rem
 }
 
 .column:hover > .record-proof {
-    display: block;
+    display: flex;
+}
+
+.column:hover > .record-proof > a {
+    color: white
+}
+
+.record-proof > iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
 }
