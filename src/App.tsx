@@ -28,6 +28,18 @@ function App() {
       setRecordData(json)
     })();
   })
+  const [mobileRecordData, setMobileRecordData] = useState<RecordData|null>(null)
+  useEffect(() => {
+    ;(async () => {
+      // in the real fetch, include filters
+      const response = await fetch("https://raw.githubusercontent.com/Tinjy0/diepRecords/refs/heads/main/mobileRecordsData.json")
+      if (!response.ok) {
+        return
+      }
+      const json = await response.json()
+      setMobileRecordData(json)
+    })();
+  })
   return (
     <Router>
       <Routes>
@@ -35,6 +47,7 @@ function App() {
           <Route path="/" element={<HomePage/>}/>
           <Route path="/tanks/" element={<TanksPage/>}/>
           <Route path="/records/" element={<RecordsPage recordData={recordData}/>}/>
+          <Route path="/mobile-records/" element={<RecordsPage recordData={mobileRecordData}/>}/>
           <Route path="/tanks/:tankId" element={<TankPage recordData={recordData}/>}/>
           <Route path="/shapes/" element={<ShapesPage/>}/>
           <Route path="/bosses/" element={<BossesPage/>}/>

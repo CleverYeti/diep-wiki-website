@@ -1,6 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css"
 import logo from "/modernised diep wiki logo.png"
+import { ReactNode } from "react";
+
+function Tab({
+    link,
+    name,
+}: {
+    link: string,
+    name: string,
+}) {
+    const location = useLocation()
+    return (
+        <Link to={link}>
+            <div className="tab" data-is-active={link == location.pathname}>{name}</div>
+        </Link>
+    )
+}
 
 export function Navbar() {
     return (
@@ -8,21 +24,12 @@ export function Navbar() {
             <Link to="/">
                 <img className="logo" src={logo} alt="" />
             </Link>
-            <Link to="/tanks">
-                <div className="tab">Tanks</div>
-            </Link>
-            <Link to="/bosses/">
-                <div className="tab">Bosses</div>
-            </Link>
-            <Link to="/shapes/">
-                <div className="tab">Shapes</div>
-            </Link>
-            <Link to="/formulas/">
-                <div className="tab">Formulas</div>
-            </Link>
-            <Link to="/records">
-                <div className="tab">World Records</div>
-            </Link>
+            <Tab link="/tanks" name="Tanks"/>
+            <Tab link="/bosses/" name="Bosses"/>
+            <Tab link="/shapes/" name="Shapes"/>
+            <Tab link="/formulas/" name="Formulas"/>
+            <Tab link="/records" name="PC Records"/>
+            <Tab link="/mobile-records" name="Mobile Records"/>
         </nav>
     )
 }
