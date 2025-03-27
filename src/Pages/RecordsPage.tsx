@@ -88,6 +88,11 @@ export function RecordsPage({
                                             <div className="record-name">
                                                 {entry.scorer}
                                             </div>
+                                            {entry.year != null && (
+                                                <div className="record-year">
+                                                    ({entry.year})
+                                                </div>
+                                            )}
                                             <div className="record-proof" onClick={(event) => {event.stopPropagation()}}>
                                                 {entry.proofImages == null && entry.proofVideo == null && <>No proof in the database</>}
                                                 {entry.proofVideo != null && <>

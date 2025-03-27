@@ -4,6 +4,7 @@ export interface WorldRecord {
     scorer: string // name of the scorer
     proofImages?: Array<string>,
     proofVideo?: string,
+    year?: number
 }
 
 export interface RecordData {

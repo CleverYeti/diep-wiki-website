@@ -175,6 +175,10 @@
 #tanks-page-table > * > .column > .record-name {
     font-size: 0.875rem;
 }
+#tanks-page-table > * > .column > .record-year {
+    font-size: 0.875rem;
+}
+
 
 #tanks-page-table > * > .name {width: 15rem; padding-left: 0.5rem;}
 #tanks-page-table > * > .id {width: 5rem; justify-content: center;}
