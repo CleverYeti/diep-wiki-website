@@ -32,9 +32,11 @@ function TankGrid({tankIds}: {tankIds: Array<string>}) {
 }
 
 export function TankPage({
-    recordData
+    recordData,
+    mobileRecordData
 }:{
-    recordData: RecordData|null
+    recordData: RecordData|null,
+    mobileRecordData: RecordData|null,
 }) {
     let { tankId } = useParams()
     if (!(tankId ?? "" in tanksData)) {
@@ -103,9 +105,18 @@ export function TankPage({
                     )}
                     
                     <div className="section stats">
-                        <div className="title">World Records</div>
+                        <div className="title">PC World Records</div>
                         {recordData != null && recordData[tank.key] != null &&(
                             <StatsBlock rows={Object.entries(recordData[tank.key]).map(([gamemode, record]) => (
+                                [
+                                    ({"ffa": "FFA", "2tdm": "2 Teams", "4tdm": "4 Teams", "maze": "Maze"}[gamemode]) ?? "",
+                                    formatScore(record.score) + " by " + record.scorer
+                                ]
+                            ))}/>
+                        )}
+                        <div className="title">Mobile World Records</div>
+                        {mobileRecordData != null && mobileRecordData[tank.key] != null &&(
+                            <StatsBlock rows={Object.entries(mobileRecordData[tank.key]).map(([gamemode, record]) => (
                                 [
                                     ({"ffa": "FFA", "2tdm": "2 Teams", "4tdm": "4 Teams", "maze": "Maze"}[gamemode]) ?? "",
                                     formatScore(record.score) + " by " + record.scorer

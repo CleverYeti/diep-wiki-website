@@ -11,9 +11,11 @@ import { RecordData } from "../recordData";
 import { formatScore } from "../functions/formatScore";
 
 export function RecordsPage({
-    recordData
+    pcRecordData,
+    mobileRecordData,
 }: {
-    recordData: RecordData|null
+    pcRecordData: RecordData|null
+    mobileRecordData: RecordData|null
 }) {
     const [sort, setSort] = useState("id")
     const [sortDirection, setSortDirection] = useState(1)
@@ -42,8 +44,22 @@ export function RecordsPage({
         )
     }
 
+    const [isShowingMobile, setIsShowingMobile] = useState(false)
+
+    const recordData = isShowingMobile ? mobileRecordData : pcRecordData
     return (
         <div id="tanks-page">
+            <div id="tanks-page-settings">
+                <div className="platform-selector">
+                    <div className="platform" onClick={() => setIsShowingMobile(false)} data-is-active={!isShowingMobile}>
+                        PC Records
+                    </div>
+                    <div className="platform" onClick={() => setIsShowingMobile(true)} data-is-active={isShowingMobile}>
+                        Mobile Records
+                    </div>
+                </div>
+                <div className="space"></div>
+            </div>
             <div id="tanks-page-table" className="records-page-table">
                 <div className="header-row">
                     {columnButton("name", "Name")}

@@ -46,9 +46,8 @@ function App() {
         <Route element={<Layout/>}>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/tanks/" element={<TanksPage/>}/>
-          <Route path="/records/" element={<RecordsPage recordData={recordData}/>}/>
-          <Route path="/mobile-records/" element={<RecordsPage recordData={mobileRecordData}/>}/>
-          <Route path="/tanks/:tankId" element={<TankPage recordData={recordData}/>}/>
+          <Route path="/records/" element={<RecordsPage pcRecordData={recordData} mobileRecordData={mobileRecordData}/>}/>
+          <Route path="/tanks/:tankId" element={<TankPage recordData={recordData} mobileRecordData={mobileRecordData}/>}/>
           <Route path="/shapes/" element={<ShapesPage/>}/>
           <Route path="/bosses/" element={<BossesPage/>}/>
           <Route path="/bosses/:bossId" element={<BossPage/>}/>

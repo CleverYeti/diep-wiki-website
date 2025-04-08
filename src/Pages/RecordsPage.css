@@ -31,3 +31,23 @@
     height: auto;
     aspect-ratio: 16 / 9;
 }
+
+
+
+#tanks-page-settings > .platform-selector {
+    display: flex;
+}
+#tanks-page-settings > .platform-selector > .platform {
+    border-radius: 0.5rem;
+    height: 2.5rem;
+    padding: 0 1rem;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    color: var(--text-2);
+}
+#tanks-page-settings > .platform-selector > .platform[data-is-active="true"] {
+    background: var(--section-bg);
+    font-weight: 600;
+    color: var(--text-1);
+}

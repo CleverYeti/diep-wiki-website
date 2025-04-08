@@ -28,8 +28,7 @@ export function Navbar() {
             <Tab link="/bosses/" name="Bosses"/>
             <Tab link="/shapes/" name="Shapes"/>
             <Tab link="/formulas/" name="Formulas"/>
-            <Tab link="/records" name="PC Records"/>
-            <Tab link="/mobile-records" name="Mobile Records"/>
+            <Tab link="/records" name="World Records"/>
         </nav>
     )
 }
