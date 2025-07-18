@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ElementCompact, xml2js } from "xml-js";
-import "./pageXMLBody.css"
+import "./PageXMLBody.css"
 import { XMLSection } from "./XMLComponents/XMLSection";
 import { XMLPage } from "../Pages/XMLPage";
 import { XMLBuild } from "./XMLComponents/XMLBuild";
