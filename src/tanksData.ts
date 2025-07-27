@@ -3135,7 +3135,7 @@ export const tanksData:TanksData = {
         "bullet": {
           "type": "bullet",
           "healthFactor": 1,
-          "damageFactor": 0.3,
+          "damageFactor": 0.4,
           "speedFactor": 1.2,
           "scatterFactor": 1,
           "lifeLengthFactor": 1,
@@ -3209,7 +3209,7 @@ export const tanksData:TanksData = {
         "bullet": {
           "type": "bullet",
           "healthFactor": 1,
-          "damageFactor": 0.3,
+          "damageFactor": 0.4,
           "speedFactor": 1.2,
           "scatterFactor": 1,
           "lifeLengthFactor": 1,
