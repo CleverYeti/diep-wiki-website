@@ -5,7 +5,7 @@ import { RenderTank } from "../../Components/RenderedComponents/renderTank"
 import { BarrelStatsDisplay, TankStatsDisplay } from "../../Components/StatBlocks/StatBlocks"
 import { PageXMLBody } from "../../Components/XML/PageXMLBody"
 import { basePath } from "../../App"
-import { bossesData } from "../../bossesData"
+import { bossesData } from "../../Data/bossesData"
 import { Tank } from "../../Data/tanksData"
 import { BossPreview } from "../../Components/TankPreview/BossPreview"
 

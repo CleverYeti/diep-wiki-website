@@ -3,7 +3,7 @@ import { Tank, tankColors} from "../../Data/tanksData";
 import { renderColor } from "../../functions/renderColor";
 import { RenderTank } from "../../Components/RenderedComponents/renderTank";
 import "../Tanks/TanksPage.css"
-import { bossesData } from "../../bossesData";
+import { bossesData } from "../../Data/bossesData";
 
 export function BossesPage() {
     return (
