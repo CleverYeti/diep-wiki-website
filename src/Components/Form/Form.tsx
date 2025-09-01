@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import { CSSProperties, useEffect, useState } from "react"
+import "./Form.css"
 
 export enum FormFieldTypes {
   textLine,
@@ -6,7 +7,8 @@ export enum FormFieldTypes {
   discordUserID,
   url,
   image,
-
+  boolean,
+  multipleChoices
 }
 
 interface FormFieldInfo {
@@ -16,18 +18,28 @@ interface FormFieldInfo {
   isList?: boolean,
   isRequired?: boolean
   defaultValue: any,
-  defaultListEntryValue?: any,
+  placeHolder?: string,
 
+  defaultListEntryValue?: any,
   textAreaHeight?: number,
+  multipleChoiceChoices?: Array<{
+    key: string,
+    name: string,
+  }>
+  multipleChoiceCanPickMultiple?: boolean,
 }
 
 export function Form({
   fields,
-  sendCallback
+  submitButtonText = "Submit",
+  submitCallback
 }: {
   fields: Array<FormFieldInfo>
-  sendCallback: (values: Array<any>) => void
+  submitButtonText?: string,
+  submitCallback: (values: Record<string, any>, errorCallback: () => void, successCallback: () => void) => void
 }) {
+  const [submissionStatus, setSubmissionStatus] = useState<"none"|"submitting"|"error"|"submitted">("none")
+
   const [values, setValues] = useState<Record<string, any>>(() => (
     Object.fromEntries(fields.map(field => [field.key, field.defaultValue]))
   ))
@@ -37,6 +49,11 @@ export function Form({
     return <></>
   }
 
+  if (submissionStatus == "submitted") return (
+    <div className="form">
+      Form submitted, you can close this tab now
+    </div>
+  )
 
   return (
     <div className="form">
@@ -63,6 +80,7 @@ export function Form({
                 </div>
               ))}
               <button className="add-entry" onClick={() => {
+                if (field.defaultListEntryValue == null) throw new Error("cannot add to list when field.defaultListEntryValue is null")
                 setValues({
                   ...values,
                   [field.key]: [...values[field.key], field.defaultListEntryValue]
@@ -74,20 +92,33 @@ export function Form({
         return <>
           <div className="form-field" key={field.key}>
             <div className="field-title">{field.title}</div>
-            <FormField
-              key={field.key}
-              fieldInfo={field}
-              value={values[field.key]}
-              setValue={(newValue: string) => {
-                setValues({
-                  ...values,
-                  [field.key]: newValue
-                })
-              }}
-            />
+            <div className="field-row">
+              <FormField
+                key={field.key}
+                fieldInfo={field}
+                value={values[field.key]}
+                setValue={(newValue: string) => {
+                  setValues({
+                    ...values,
+                    [field.key]: newValue
+                  })
+                }}
+              />
+            </div>
           </div>
         </>
       })}
+
+      <button className="submit" onClick={() => {
+        if (submissionStatus == "none" || submissionStatus == "error") {
+          setSubmissionStatus("submitting")
+          submitCallback(values, () => setSubmissionStatus("error"), () => setSubmissionStatus("submitted"));
+        }
+      }}>
+        {submissionStatus == "none" && submitButtonText}
+        {submissionStatus == "error" && submitButtonText + " - An Error Occured"}
+        {submissionStatus == "submitting" && "Submitting..."}
+      </button>
     </div>
   )
 }
@@ -103,10 +134,47 @@ function FormField({
 }) {
   switch (fieldInfo.type) {
     case FormFieldTypes.textLine:
+      return (
+        <input
+          type="text"
+          className="text-line-input"
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
+          placeholder={fieldInfo.placeHolder ?? ""}
+        />
+      )
     case FormFieldTypes.textArea:
+      return (
+        <textarea
+          className="text-area-input"
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
+          style={{["--height" as any]: (fieldInfo.textAreaHeight ?? 6) + "rem"}}
+          placeholder={fieldInfo.placeHolder ?? ""}
+        />
+      )
     case FormFieldTypes.discordUserID:
+      return (
+        <input
+          type="text"
+          className="discord-user-id-input"
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
+          placeholder={fieldInfo.placeHolder ?? ""}
+        />
+      )
     case FormFieldTypes.url:
+      return (
+        <input
+          type="text"
+          className="url-input"
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
+          placeholder={fieldInfo.placeHolder ?? ""}
+        />
+      )
     case FormFieldTypes.image:
+      throw new Error("image inputs not supported yet");
     default:
       return <></>
   }
