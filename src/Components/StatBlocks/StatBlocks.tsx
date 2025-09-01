@@ -1,7 +1,7 @@
-import { BarrelStats, Tank, tanksData } from "../tanksData";
+import { BarrelStats, Tank, tanksData } from "../../Data/tanksData";
 import "./StatBlocks.css"
-import { formulas, TICK_RATE } from "../formulas";
-import { Shape, shinyHealthFactor, shinyScoreFactor } from "../shapesData";
+import { formulas, TICK_RATE } from "../../formulas";
+import { Shape, shinyHealthFactor, shinyScoreFactor } from "../../Data/shapesData";
 
 const GRID_SIZE = 50
 

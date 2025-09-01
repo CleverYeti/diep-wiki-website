@@ -1,14 +1,13 @@
 import { useParams } from "react-router-dom"
-import "./TankPage.css"
-import { Page404 } from "./Page404"
-import { RenderTank } from "../Components/renderTank"
-import { TankPreview } from "../Components/TankPreview"
-import { BarrelStatsDisplay, TankStatsDisplay } from "../Components/StatBlocks"
-import { PageXMLBody } from "../Components/PageXMLBody"
-import { basePath } from "../App"
-import { bossesData } from "../bossesData"
-import { Tank } from "../tanksData"
-import { BossPreview } from "../Components/BossPreview"
+import "../Tanks/TankPage.css"
+import { Page404 } from "../Page404"
+import { RenderTank } from "../../Components/RenderedComponents/renderTank"
+import { BarrelStatsDisplay, TankStatsDisplay } from "../../Components/StatBlocks/StatBlocks"
+import { PageXMLBody } from "../../Components/XML/PageXMLBody"
+import { basePath } from "../../App"
+import { bossesData } from "../../bossesData"
+import { Tank } from "../../Data/tanksData"
+import { BossPreview } from "../../Components/TankPreview/BossPreview"
 
 export function BossPage() {
     let { bossId } = useParams()

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { RenderXMLElementArray, XMLWrapperElement } from "../PageXMLBody";
+import { RenderXMLElementArray, XMLWrapperElement } from "./PageXMLBody";
 import collapseIcon from '/icons/chevron-down.svg'
 
 export function XMLSection({el}: {el: XMLWrapperElement}) {

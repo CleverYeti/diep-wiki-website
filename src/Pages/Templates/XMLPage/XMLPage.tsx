@@ -1,5 +1,5 @@
-import { basePath } from "../App";
-import { PageXMLBody } from "../Components/PageXMLBody";
+import { basePath } from "../../../App";
+import { PageXMLBody } from "../../../Components/XML/PageXMLBody";
 import "./XMLPage.css"
 
 export function XMLPage({path}: {path:string}) {

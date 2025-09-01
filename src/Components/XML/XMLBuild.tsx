@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { XMLWrapperElement } from "../PageXMLBody";
-import { statPointColors, statPointSetups } from "../../tanksData";
+import { XMLWrapperElement } from "./PageXMLBody";
+import { statPointColors, statPointSetups } from "../../Data/tanksData";
 import { renderColor } from "../../functions/renderColor";
 import "./XMLBuild.css"
 

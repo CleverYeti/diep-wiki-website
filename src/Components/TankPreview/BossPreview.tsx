@@ -1,12 +1,12 @@
 import { useState, MutableRefObject, useRef} from "react";
-import { Tank } from "../tanksData";
-import { RenderTank } from "./renderTank";
+import { Tank } from "../../Data/tanksData";
 import "./tankPreview.css"
 import settingsIcon from '/icons/settings.svg'
 import downloadIcon from '/icons/download.svg'
-import { renderColor } from "../functions/renderColor"
-import { tankColors } from "../tanksData";
-import { downloadSVG } from "../functions/downloadSVG";
+import { renderColor } from "../../functions/renderColor"
+import { tankColors } from "../../Data/tanksData";
+import { downloadSVG } from "../../functions/downloadSVG";
+import { RenderTank } from "../RenderedComponents/renderTank";
 
 
 export function BossPreview({tank}: {tank: Tank}) {

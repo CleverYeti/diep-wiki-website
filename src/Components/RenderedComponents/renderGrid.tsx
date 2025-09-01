@@ -1,4 +1,4 @@
-import { renderColor } from "../functions/renderColor";
+import { renderColor } from "../../functions/renderColor";
 
 const GRID_THICKNESS = 2
 function GRID_GRADIENT(x: number, y: number) {return 1 - Math.min((x ** 2 + y ** 2) * 0.75, 1)} // 0-1 => 0-1

@@ -1,4 +1,4 @@
-import { Tank, BarrelTypes} from "../tanksData";
+import { Tank, BarrelTypes} from "../Data/tanksData";
 import { Color, multiplyColor } from "./Color";
 import { DEFAULT_RENDERING_SETTINGS, RenderingSettings } from "./RenderingSettings";
 import { Point, scalePoint, rotatePoint, AddPoints } from "./Vector";

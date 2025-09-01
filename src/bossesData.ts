@@ -1,4 +1,4 @@
-import { TanksData } from "./tanksData";
+import { TanksData } from "./Data/tanksData";
 import { formulas } from "./formulas";
 export const bossesData:TanksData = {
   "defender": {

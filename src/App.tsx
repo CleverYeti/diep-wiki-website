@@ -1,17 +1,17 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
-import { HomePage } from './Pages/HomePage'
+import { HomePage } from './Pages/Home/HomePage'
 import { Layout } from './Layout'
-import { TanksPage } from './Pages/TanksPage'
-import { TankPage } from './Pages/TankPage'
+import { TanksPage } from './Pages/Tanks/TanksPage'
+import { TankPage } from './Pages/Tanks/TankPage'
 import { Page404 } from './Pages/Page404'
-import { ShapesPage } from './Pages/ShapesPage'
-import { BossesPage } from './Pages/BossesPage'
-import { BossPage } from './Pages/BossPage'
-import { PageXMLBody } from './Components/PageXMLBody'
-import { XMLPage } from './Pages/XMLPage'
-import { RecordsPage } from './Pages/RecordsPage'
+import { BossesPage } from './Pages/Bosses/BossesPage'
+import { BossPage } from './Pages/Bosses/BossPage'
+import { PageXMLBody } from './Components/XML/PageXMLBody'
+import { XMLPage } from './Pages/Templates/XMLPage/XMLPage'
 import { useEffect, useState } from 'react'
-import { RecordData } from './recordData'
+import { RecordData } from './Data/recordData'
+import { ShapesPage } from './Pages/Shapes/ShapesPage'
+import { RecordsPage } from './Pages/Records/RecordsPage'
 
 export const basePath = import.meta.env.BASE_URL || '/';
 
@@ -51,7 +51,8 @@ function App() {
           <Route path="/shapes/" element={<ShapesPage/>}/>
           <Route path="/bosses/" element={<BossesPage/>}/>
           <Route path="/bosses/:bossId" element={<BossPage/>}/>
-          <Route path="/formulas/" element={<XMLPage path={"/pages/formulas.xml"}/>}/>
+          <Route path="/formulas/" element={<XMLPage path={"pages/formulas.xml"}/>}/>
+          <Route path="/hazycord/staff-applications/" element={<XMLPage path={"pages/formulas.xml"}/>}/>
           <Route path="*" element={<Page404/>}/>
         </Route>
       </Routes>

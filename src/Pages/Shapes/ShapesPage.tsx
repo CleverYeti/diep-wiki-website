@@ -1,9 +1,9 @@
-import { basePath } from "../App";
-import { PageXMLBody } from "../Components/PageXMLBody";
-import { RenderShape } from "../Components/renderShape";
-import { ShapeStatsDisplay } from "../Components/StatBlocks";
-import { renderColor } from "../functions/renderColor";
-import { shapesData, shinyColor } from "../shapesData";
+import { basePath } from "../../App";
+import { PageXMLBody } from "../../Components/XML/PageXMLBody";
+import { RenderShape } from "../../Components/RenderedComponents/renderShape";
+import { ShapeStatsDisplay } from "../../Components/StatBlocks/StatBlocks";
+import { renderColor } from "../../functions/renderColor";
+import { shapesData, shinyColor } from "../../Data/shapesData";
 import "./ShapesPage.css"
 
 export function ShapesPage() {

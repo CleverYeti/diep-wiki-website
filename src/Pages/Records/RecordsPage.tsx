@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
-import { Tank, tanksData, tankColors} from "../tanksData";
-import { renderColor } from "../functions/renderColor";
-import { RenderTank } from "../Components/renderTank";
+import { Tank, tanksData, tankColors} from "../../Data/tanksData";
+import { renderColor } from "../../functions/renderColor";
+import { RenderTank } from "../../Components/RenderedComponents/renderTank";
 import "./RecordsPage.css"
 import { useState } from "react";
 import gridViewIcon from '/icons/grid-view.svg'
 import tableViewIcon from '/icons/table-view.svg'
 import chevronIcon from '/icons/chevron-down.svg'
-import { RecordData } from "../recordData";
-import { formatScore } from "../functions/formatScore";
+import { RecordData } from "../../Data/recordData";
+import { formatScore } from "../../functions/formatScore";
 
 export function RecordsPage({
     pcRecordData,

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { ElementCompact, xml2js } from "xml-js";
 import "./PageXMLBody.css"
-import { XMLSection } from "./XMLComponents/XMLSection";
-import { XMLPage } from "../Pages/XMLPage";
-import { XMLBuild } from "./XMLComponents/XMLBuild";
+import { XMLSection } from "./XMLSection";
+import { XMLPage } from "../../Pages/Templates/XMLPage/XMLPage";
+import { XMLBuild } from "./XMLBuild";
 
 interface XMLFile {
     declaration: {

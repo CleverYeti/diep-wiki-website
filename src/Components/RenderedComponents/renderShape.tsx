@@ -1,8 +1,8 @@
 
-import { renderColor } from "../functions/renderColor";
-import { Shape, shinyColor } from "../shapesData";
+import { renderColor } from "../../functions/renderColor";
+import { Shape, shinyColor } from "../../Data/shapesData";
 import { RenderGrid } from "./renderGrid";
-import { rotateVector } from "../functions/rotateVector";
+import { rotateVector } from "../../functions/rotateVector";
 
 const BORDER_THICKNESS = 7.5;
 const DEFAULT_VIEW_BOUNDARIES = 150
