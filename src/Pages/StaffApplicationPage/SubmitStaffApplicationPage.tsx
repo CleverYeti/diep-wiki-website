@@ -44,7 +44,7 @@ export function SubmitStaffApplicationPage() {
   return (
     <div id="submit-staff-application-page">
       <div className="banner"></div>
-      <div className="title">Hazycord Staff Applications</div>
+      <div className="title">Hazycord Staff Application Submission</div>
       <Form
         submitButtonText="Submit Application"
         fields={staffApplicationFormFields}
