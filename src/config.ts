@@ -1,0 +1,4 @@
+export const SUPABASE_PUBLIC_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind4bHdieGNucnd6amhlYWxhbnlpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY3Mzg3MTAsImV4cCI6MjA3MjMxNDcxMH0.Py8EVdB0Hkw5EosnVA7jhxDrLR_pbqZsYB5kQYJANQw"
+export const SUPABASE_URL = "https://wxlwbxcnrwzjhealanyi.supabase.co"
+
+export const APIBaseURL = "https://srv852039.hstgr.cloud/hazycordapi"

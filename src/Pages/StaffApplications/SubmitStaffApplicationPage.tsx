@@ -1,4 +1,5 @@
 import { Form, FormFieldInfo, FormFieldTypes } from "../../Components/Form/Form";
+import { APIBaseURL } from "../../config";
 import { supabase } from "../../supabase";
 import "./SubmitStaffApplicationPage.css"
 
@@ -34,6 +35,13 @@ export const staffApplicationFormFields: Array<FormFieldInfo> = [
   },
   {
     type: FormFieldTypes.textArea,
+    key: "thoughtsOnMistik",
+    title: "What are your thoughts on Mistik?",
+    defaultValue: "",
+    textAreaHeight: 20
+  },
+  {
+    type: FormFieldTypes.textArea,
     key: "experience",
     title: "Do you have any experience moderating other discord servers?",
     defaultValue: "",
@@ -49,15 +57,19 @@ export function SubmitStaffApplicationPage() {
         submitButtonText="Submit Application"
         fields={staffApplicationFormFields}
         submitCallback={async (values, errorCallback, successCallback) => {
-          console.log("sending", values)
-
-          const { error } = await supabase
-            .from("staff submissions")
-            .insert({
-              submission_content: values
-            })
-
-          if (error) return errorCallback()
+          try {
+            const response = await fetch(`${APIBaseURL}/submit-staff-application`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(values)
+            });
+            if (!response.ok) return errorCallback();
+          } catch (error) {
+            errorCallback()
+            return;
+          }
           successCallback();
         }}
       />

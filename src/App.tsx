@@ -12,9 +12,9 @@ import { useEffect, useState } from 'react'
 import { RecordData } from './Data/recordData'
 import { ShapesPage } from './Pages/Shapes/ShapesPage'
 import { RecordsPage } from './Pages/Records/RecordsPage'
-import { SubmitStaffApplicationPage } from './Pages/StaffApplicationPage/SubmitStaffApplicationPage'
-import { StaffApplicationListPage } from './Pages/StaffApplicationPage/StaffApplicationListPage'
-import { ViewStaffApplicationPage } from './Pages/StaffApplicationPage/ViewStaffApplicationPage'
+import { SubmitStaffApplicationPage } from './Pages/StaffApplications/SubmitStaffApplicationPage'
+import { StaffApplicationListPage } from './Pages/StaffApplications/StaffApplicationListPage'
+import { ViewStaffApplicationPage } from './Pages/StaffApplications/ViewStaffApplicationPage'
 
 export const basePath = import.meta.env.BASE_URL || '/';
 
@@ -30,7 +30,7 @@ function App() {
       const json = await response.json()
       setRecordData(json)
     })();
-  })
+  }, [])
   const [mobileRecordData, setMobileRecordData] = useState<RecordData|null>(null)
   useEffect(() => {
     ;(async () => {
@@ -42,7 +42,7 @@ function App() {
       const json = await response.json()
       setMobileRecordData(json)
     })();
-  })
+  }, [])
   return (
     <Router>
       <Routes>
