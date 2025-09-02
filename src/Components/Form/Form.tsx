@@ -11,22 +11,81 @@ export enum FormFieldTypes {
   multipleChoices
 }
 
-interface FormFieldInfo {
-  type: FormFieldTypes,
+type FormFieldValue = number | string | Array<string|null> | boolean | null
+
+type FormFieldInfo = {
   key: string
   title: string,
-  isList?: boolean,
-  isRequired?: boolean
-  defaultValue: any,
-  placeHolder?: string,
-
-  defaultListEntryValue?: any,
-  textAreaHeight?: number,
-  multipleChoiceChoices?: Array<{
-    key: string,
-    name: string,
-  }>
-  multipleChoiceCanPickMultiple?: boolean,
+} & (
+  {
+    type: FormFieldTypes.textLine,
+    defaultValue: string
+    isRequired?: boolean
+    isList?: boolean,
+    placeHolder?: string,
+  } | {
+    type: FormFieldTypes.textArea,
+    defaultValue: string
+    textAreaHeight?: number,
+    isRequired?: boolean
+    placeHolder?: string,
+  } | {
+    type: FormFieldTypes.discordUserID
+    isRequired?: boolean
+    isList?: boolean,
+    placeHolder?: string,
+  } | {
+    type: FormFieldTypes.url
+    isRequired?: boolean
+    isList?: boolean,
+    placeHolder?: string,
+  } | {
+    type: FormFieldTypes.image
+    isRequired?: boolean
+    isList?: boolean,
+  } | {
+    type: FormFieldTypes.boolean,
+    defaultValue: boolean
+  } | {
+    type: FormFieldTypes.multipleChoices,
+    defaultValue: string,
+    options: Array<{
+      key: string,
+      name: string,
+    }>,
+    canPickMultiple: boolean,
+  }
+)
+function getFieldDefaultValue(fieldInfo: FormFieldInfo) {
+  switch (fieldInfo.type) {
+    case FormFieldTypes.textLine:
+      return fieldInfo.defaultValue
+    case FormFieldTypes.textArea:
+      return fieldInfo.defaultValue
+    case FormFieldTypes.discordUserID:
+      return ""
+    case FormFieldTypes.url:
+      return ""
+    case FormFieldTypes.image:
+      return null
+    case FormFieldTypes.boolean:
+      return fieldInfo.defaultValue
+    case FormFieldTypes.multipleChoices:
+      return fieldInfo.defaultValue
+  }
+}
+function getFieldListEntryDefaultValue(fieldInfo: FormFieldInfo) {
+  switch (fieldInfo.type) {
+    case FormFieldTypes.textLine:
+      return ""
+    case FormFieldTypes.discordUserID:
+      return ""
+    case FormFieldTypes.url:
+      return ""
+    case FormFieldTypes.image:
+      return null
+  }
+  throw new Error("type is incompatible with list")
 }
 
 export function Form({
@@ -41,11 +100,11 @@ export function Form({
   const [submissionStatus, setSubmissionStatus] = useState<"none"|"submitting"|"error"|"submitted">("none")
 
   const [values, setValues] = useState<Record<string, any>>(() => (
-    Object.fromEntries(fields.map(field => [field.key, field.defaultValue]))
+    Object.fromEntries(fields.map(field => [field.key, getFieldDefaultValue(field)]))
   ))
 
   if (Object.keys(values).join(",") != fields.map(field => field.key).join(",")) {
-    setValues(Object.fromEntries(fields.map(field => [field.key, field.defaultValue])));
+    setValues(Object.fromEntries(fields.map(field => [field.key, getFieldDefaultValue(field)])));
     return <></>
   }
 
@@ -58,7 +117,7 @@ export function Form({
   return (
     <div className="form">
       {fields.map(field => {
-        if (field.isList) {
+        if ((field as any).isList) {
           return <>
             <div className="form-field" key={field.key}>
               <div className="field-title">{field.title}</div>
@@ -80,10 +139,9 @@ export function Form({
                 </div>
               ))}
               <button className="add-entry" onClick={() => {
-                if (field.defaultListEntryValue == null) throw new Error("cannot add to list when field.defaultListEntryValue is null")
                 setValues({
                   ...values,
-                  [field.key]: [...values[field.key], field.defaultListEntryValue]
+                  [field.key]: [...values[field.key], getFieldListEntryDefaultValue(field)]
                 })
               }}>Add Entry</button>
             </div>
@@ -171,6 +229,26 @@ function FormField({
           value={value}
           onChange={(event) => setValue(event.target.value)}
           placeholder={fieldInfo.placeHolder ?? ""}
+        />
+      )
+    case FormFieldTypes.multipleChoices:
+      return (
+        <select
+          className="multiple-choice-input"
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
+        >
+          {value.multipleChoiceChoices?.map(({key, name} : {key: string, name: string}) => (
+            <option value={key}>{name}</option>
+          ))}
+        </select>
+      )
+    case FormFieldTypes.boolean:
+      return (
+        <input
+          type="checkbox"
+          checked={value}
+          onChange={(event) => setValue(event.target.checked)}
         />
       )
     case FormFieldTypes.image:

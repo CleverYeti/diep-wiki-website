@@ -14,7 +14,6 @@ export function StaffApplicationPage() {
             type: FormFieldTypes.discordUserID,
             key: "discordUserID",
             title: "Your discord user id",
-            defaultValue: "",
             isRequired: true,
             placeHolder: "Ex: 123456789012345678"
           },
