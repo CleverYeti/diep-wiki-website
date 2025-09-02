@@ -27,7 +27,7 @@ export function ViewStaffApplicationPage() {
       setApplication(data)
     })()
     return () => {ignore = true}
-  }, [])
+  }, [applicationID])
 
   return (
     <div id="submit-staff-application-page">
