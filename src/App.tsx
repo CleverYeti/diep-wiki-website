@@ -12,7 +12,9 @@ import { useEffect, useState } from 'react'
 import { RecordData } from './Data/recordData'
 import { ShapesPage } from './Pages/Shapes/ShapesPage'
 import { RecordsPage } from './Pages/Records/RecordsPage'
-import { StaffApplicationPage } from './Pages/StaffApplicationPage/StaffApplicationPage'
+import { SubmitStaffApplicationPage } from './Pages/StaffApplicationPage/SubmitStaffApplicationPage'
+import { StaffApplicationListPage } from './Pages/StaffApplicationPage/StaffApplicationListPage'
+import { ViewStaffApplicationPage } from './Pages/StaffApplicationPage/ViewStaffApplicationPage'
 
 export const basePath = import.meta.env.BASE_URL || '/';
 
@@ -53,7 +55,9 @@ function App() {
           <Route path="/bosses/" element={<BossesPage/>}/>
           <Route path="/bosses/:bossId" element={<BossPage/>}/>
           <Route path="/formulas/" element={<XMLPage path={"pages/formulas.xml"}/>}/>
-          <Route path="/hazycord/staff-applications/" element={<StaffApplicationPage/>}/>
+          <Route path="/hazycord/submit-staff-application/" element={<SubmitStaffApplicationPage/>}/>
+          <Route path="/hazycord/staff-application-list/" element={<StaffApplicationListPage/>}/>
+          <Route path="/hazycord/staff-application/:applicationID" element={<ViewStaffApplicationPage/>}/>
           <Route path="*" element={<Page404/>}/>
         </Route>
       </Routes>

@@ -11,9 +11,10 @@ export enum FormFieldTypes {
   multipleChoices
 }
 
-type FormFieldValue = number | string | Array<string|null> | boolean | null
+export type FormFieldValue = number | string | Array<string|null> | boolean | null
+export type FormValues = Record<string, FormFieldValue>
 
-type FormFieldInfo = {
+export type FormFieldInfo = {
   key: string
   title: string,
 } & (
@@ -59,14 +60,18 @@ type FormFieldInfo = {
 function getFieldDefaultValue(fieldInfo: FormFieldInfo) {
   switch (fieldInfo.type) {
     case FormFieldTypes.textLine:
+      if (fieldInfo.isList) return []
       return fieldInfo.defaultValue
     case FormFieldTypes.textArea:
       return fieldInfo.defaultValue
     case FormFieldTypes.discordUserID:
+      if (fieldInfo.isList) return []
       return ""
     case FormFieldTypes.url:
+      if (fieldInfo.isList) return []
       return ""
     case FormFieldTypes.image:
+      if (fieldInfo.isList) return []
       return null
     case FormFieldTypes.boolean:
       return fieldInfo.defaultValue
@@ -95,11 +100,11 @@ export function Form({
 }: {
   fields: Array<FormFieldInfo>
   submitButtonText?: string,
-  submitCallback: (values: Record<string, any>, errorCallback: () => void, successCallback: () => void) => void
+  submitCallback: (values: FormValues, errorCallback: () => void, successCallback: () => void) => void
 }) {
   const [submissionStatus, setSubmissionStatus] = useState<"none"|"submitting"|"error"|"submitted">("none")
 
-  const [values, setValues] = useState<Record<string, any>>(() => (
+  const [values, setValues] = useState<FormValues>(() => (
     Object.fromEntries(fields.map(field => [field.key, getFieldDefaultValue(field)]))
   ))
 
@@ -118,17 +123,19 @@ export function Form({
     <div className="form">
       {fields.map(field => {
         if ((field as any).isList) {
+          if (!Array.isArray(values[field.key])) throw new Error("list-type field value isnt an array")
+          let entries = values[field.key] as Array<string|null>
           return <>
             <div className="form-field" key={field.key}>
               <div className="field-title">{field.title}</div>
-              {values[field.key].map((entry: any, index: number) => (
+              {entries.map((entry: any, index: number) => (
                 <div className="field-row">
                   <FormField
                     key={index}
                     fieldInfo={field}
                     value={entry}
                     setValue={(newValue: string) => {
-                      const newEntries = [...values[field.key]]
+                      const newEntries = [...entries]
                       newEntries[index] = newValue;
                       setValues({
                         ...values,
@@ -141,7 +148,7 @@ export function Form({
               <button className="add-entry" onClick={() => {
                 setValues({
                   ...values,
-                  [field.key]: [...values[field.key], getFieldListEntryDefaultValue(field)]
+                  [field.key]: [...entries, getFieldListEntryDefaultValue(field)]
                 })
               }}>Add Entry</button>
             </div>
@@ -181,19 +188,22 @@ export function Form({
   )
 }
 
-function FormField({
+export function FormField({
   fieldInfo,
   value,
-  setValue
+  setValue,
+  isReadOnly
 }: {
   fieldInfo: FormFieldInfo,
   value: any,
-  setValue: (newValue: any) => void
+  setValue: (newValue: any) => void,
+  isReadOnly?: boolean
 }) {
   switch (fieldInfo.type) {
     case FormFieldTypes.textLine:
       return (
         <input
+          readOnly={isReadOnly}
           type="text"
           className="text-line-input"
           value={value}
@@ -204,6 +214,7 @@ function FormField({
     case FormFieldTypes.textArea:
       return (
         <textarea
+          readOnly={isReadOnly}
           className="text-area-input"
           value={value}
           onChange={(event) => setValue(event.target.value)}
@@ -214,6 +225,7 @@ function FormField({
     case FormFieldTypes.discordUserID:
       return (
         <input
+          readOnly={isReadOnly}
           type="text"
           className="discord-user-id-input"
           value={value}
@@ -224,6 +236,7 @@ function FormField({
     case FormFieldTypes.url:
       return (
         <input
+          readOnly={isReadOnly}
           type="text"
           className="url-input"
           value={value}
@@ -234,6 +247,7 @@ function FormField({
     case FormFieldTypes.multipleChoices:
       return (
         <select
+          disabled={isReadOnly}
           className="multiple-choice-input"
           value={value}
           onChange={(event) => setValue(event.target.value)}
@@ -246,6 +260,7 @@ function FormField({
     case FormFieldTypes.boolean:
       return (
         <input
+          readOnly={isReadOnly}
           type="checkbox"
           checked={value}
           onChange={(event) => setValue(event.target.checked)}

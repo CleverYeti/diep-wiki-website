@@ -50,9 +50,9 @@
   color: black;
 }
 
-.form > .form-field > .field-row > input:focus,
-.form > .form-field > .field-row > textarea:focus,
-.form > .form-field > .field-row > select:focus {
+.form > .form-field > .field-row > input:focus:not(:read-only),
+.form > .form-field > .field-row > textarea:focus:not(:read-only),
+.form > .form-field > .field-row > select:focus:not(:read-only) {
   background: #ffffff22;
 }
 .form > .form-field > .field-row > .color-input-wrapper {

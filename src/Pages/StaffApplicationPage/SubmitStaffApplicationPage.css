@@ -1,10 +1,10 @@
-.staff-application-page {
+#submit-staff-application-page {
   margin: 0 auto;
   width: calc(100% - 2rem);
   max-width: 35rem;
   padding-bottom: 4rem;
 }
-.staff-application-page > .title {
+#submit-staff-application-page > .title {
   position: relative;
   font-size: 1.5rem;
   font-weight: 500;
@@ -14,7 +14,7 @@
   margin-bottom: 1rem;
 }
 
-.staff-application-page > .title:after {
+#submit-staff-application-page > .title:after {
     position: absolute;
     content: "";
     inset: 100% -0.375rem auto -0.375rem;
