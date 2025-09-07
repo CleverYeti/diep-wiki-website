@@ -35,11 +35,11 @@
 }
 
 #home-page > .banner > .text {
-  transform: scale(1.05) translate(calc(var(--parallax-x) * 1rem), calc(var(--parallax-y) * 1rem));
+  transform: scale(1.05) translate(calc(var(--parallax-x) * 1rem), calc(var(--parallax-y) * 0.75rem));
 }
 #home-page > .banner > .background,
 #home-page > .banner > .overlay {
-  transform: scale(1.05) translate(calc(var(--parallax-x) * 0.5rem), calc(var(--parallax-y) * 0.5rem));
+  transform: scale(1.05) translate(calc(var(--parallax-x) * 0.5rem), calc(var(--parallax-y) * 0.375rem));
 }
 
 
