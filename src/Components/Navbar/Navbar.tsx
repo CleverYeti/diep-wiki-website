@@ -22,7 +22,9 @@ export function Navbar() {
     return (
         <nav id="main-nav">
             <Link to="/">
-                <img className="logo" src={logo} alt="" />
+                <div className="logo">
+                    <img className="logo" src="/diepWikiLogo.png" alt="" />
+                </div>
             </Link>
             <Tab link="/tanks" name="Tanks"/>
             <Tab link="/bosses/" name="Bosses"/>
