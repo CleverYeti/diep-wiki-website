@@ -14,7 +14,7 @@ export function HomePage() {
                 <a className="partner-banner" href="https://diepeditor.io" target="_blank">
                     <img src="/partners/diepEditorBanner.png" alt="" />
                 </a>
-                <a className="partner-banner" href="https://diepeditor.io" target="_blank">
+                <a className="partner-banner" href="https://dieplobbypicker.io" target="_blank">
                     <img src="/partners/diepLobbyPickerBanner.png" alt="" />
                 </a>
                 <div className="partner-banner">
