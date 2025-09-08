@@ -5,44 +5,53 @@ import "./StaffApplicationListPage.css"
 import { Link } from "react-router-dom";
 import { APIBaseURL } from "../../config";
 
-export interface SupabaseStaffApplicationRow {
+export interface SupabaseApplicationRow {
   id: number,
   created_at: string,
   submission_content: FormValues
 }
 
-export function StaffApplicationListPage() {
-  const [applications, setApplications] = useState<Array<SupabaseStaffApplicationRow>|"loading"|"error"|"invalidPassword"|"unauthenticated"|"submittingPassword">("loading")
-  const [password, setPassword] = useState<string>(() => localStorage.getItem("staff-application-password") ?? "")
+export function ApplicationListPage({
+  formKey,
+  title
+}: {
+  formKey: string // ex: staff-applications
+  title: string,
+}) {
+  const [applications, setApplications] = useState<Array<SupabaseApplicationRow>|"loading"|"error"|"invalidPassword"|"unauthenticated"|"submittingPassword">("loading")
+  const [password, setPassword] = useState<string>(() => localStorage.getItem(formKey + "-password") ?? "")
   const [refreshKey, setRefreshKey] = useState(0)
   const [passwordInputContent, setPasswordInputContent] = useState("")
-  useEffect(() => localStorage.setItem("staff-application-password", password), [password])
+  useEffect(() => localStorage.setItem(formKey + "-password", password), [password])
   useEffect(() => {
     if (password == "" || password == null) return setApplications("unauthenticated");
     let ignore = false;
     ;(async () => {
       try {
-        const response = await fetch(`${APIBaseURL}/get-staff-applications/?password=${encodeURIComponent(password)}`);
+        const response = await fetch(`${APIBaseURL}/get-${formKey}/?password=${encodeURIComponent(password)}`);
         if (ignore) return
+        if (response.status == 401) {
+          if (applications == "submittingPassword") {
+            setApplications("invalidPassword")
+            console.log("invalid")
+          } else {
+            setApplications("unauthenticated")
+          };
+          return
+        }
         if (!response.ok) throw new Error("not ok");
         const data = await response.json()
         if (ignore) return
         setApplications(data)
       } catch (error) {
-        setApplications(applications)
-        if (applications == "submittingPassword") {
-          setApplications("invalidPassword")
-          console.log("invalid")
-        } else {
-          setApplications("unauthenticated")
-        };
+        setApplications("error")
       }
     })()
     return () => {ignore = true}
   }, [password, refreshKey])
   return (
     <div id="staff-application-list-page">
-      <div className="title">Hazycord Staff Applications</div>
+      <div className="title">{title}</div>
       {(() => {
         if (applications == "loading") return (
           <div className="loading-text">Loading...</div>
@@ -56,7 +65,7 @@ export function StaffApplicationListPage() {
         if (applications == "invalidPassword" || applications == "unauthenticated") return (
           <div className="form" style={{padding: "0 1rem", maxWidth: "30rem", margin: "0 auto"}}>
             <div className="form-field">
-              <div className="field-title">Enter staff password: {(applications == "invalidPassword") && "- Invalid password, try again"}</div>
+              <div className="field-title">Enter password: {(applications == "invalidPassword") && "- Invalid password, try again"}</div>
               <div className="field-row">
                 <input type="text" placeholder="Password" value={passwordInputContent} onChange={(event) => setPasswordInputContent(event.target.value)}/>
               </div>
@@ -81,7 +90,7 @@ export function StaffApplicationListPage() {
               </div>
             </div>
             {applications.map(application => (
-              <Link className="entry-row" to={`/hazycord/staff-application/${application.id}`}>
+              <Link className="entry-row" to={`/diepverse/${formKey}/${application.id}`}>
                 <div className="id-column">{application.id}</div>
                 <div className="user-column">
                   <div className="username">{application.submission_content["discordUsername"]}</div>

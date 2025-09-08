@@ -1,49 +1,61 @@
 import { useParams } from "react-router-dom"
 import { Page404 } from "../Page404";
 import { useEffect, useState } from "react";
-import { SupabaseStaffApplicationRow } from "./StaffApplicationListPage";
+import { SupabaseApplicationRow } from "./StaffApplicationListPage";
 import { supabase } from "../../supabase";
 import { FormView } from "../../Components/Form/FormView";
-import { staffApplicationFormFields } from "./SubmitStaffApplicationPage";
 import "./SubmitStaffApplicationPage"
 import { APIBaseURL } from "../../config";
+import { FormFieldInfo } from "../../Components/Form/Form";
 
-export function ViewStaffApplicationPage() {
+export function ViewApplicationPage({
+  formKey,
+  title,
+  fields
+}: {
+  formKey: string // ex: staff-applications
+  title: string,
+  fields: Array<FormFieldInfo>
+}) {
   let { applicationID: strApplicationID } = useParams()
   const applicationID = parseInt(strApplicationID ?? "");
   if (isNaN(applicationID)) return <Page404/>;
 
-  const [application, setApplication] = useState<SupabaseStaffApplicationRow|"loading"|"error"|"invalidPassword"|"unauthenticated"|"submittingPassword">("loading")
-  const [password, setPassword] = useState<string>(() => localStorage.getItem("staff-application-password") ?? "")
+  const [application, setApplication] = useState<SupabaseApplicationRow|"loading"|"error"|"invalidPassword"|"unauthenticated"|"submittingPassword">("loading")
+  const [password, setPassword] = useState<string>(() => localStorage.getItem(formKey + "-password") ?? "")
   const [refreshKey, setRefreshKey] = useState(0)
   const [passwordInputContent, setPasswordInputContent] = useState("")
-  useEffect(() => localStorage.setItem("staff-application-password", password), [password])
+  useEffect(() => localStorage.setItem(formKey + "-password", password), [password])
   useEffect(() => {
     if (password == "" || password == null) return setApplication("unauthenticated");
     let ignore = false;
     ;(async () => {
       try {
-        const response = await fetch(`${APIBaseURL}/get-staff-application/?password=${encodeURIComponent(password)}&id=${applicationID}`);
+        const response = await fetch(`${APIBaseURL}/get-${formKey}-single/?password=${encodeURIComponent(password)}&id=${applicationID}`);
         if (ignore) return
+        if (response.status == 401) {
+          if (application == "submittingPassword") {
+            setApplication("invalidPassword")
+            console.log("invalid")
+          } else {
+            setApplication("unauthenticated")
+          };
+          return
+        }
         if (!response.ok) throw new Error("not ok");
+
         const data = await response.json()
         if (ignore) return
         setApplication(data)
       } catch (error) {
-        setApplication(application)
-        if (application == "submittingPassword") {
-          setApplication("invalidPassword")
-          console.log("invalid")
-        } else {
-          setApplication("unauthenticated")
-        };
+        setApplication("error")
       }
     })()
     return () => {ignore = true}
-  }, [password, refreshKey])
+  }, [password, refreshKey, applicationID])
   return (
     <div id="submit-staff-application-page">
-      <div className="title">Staff Application #{applicationID}</div>
+      <div className="title">{title} #{applicationID}</div>
       {(() => {
         if (application == "loading") return (
           <div className="loading-text">Loading...</div>
@@ -57,7 +69,7 @@ export function ViewStaffApplicationPage() {
         if (application == "invalidPassword" || application == "unauthenticated") return (
           <div className="form" style={{padding: "0 1rem", maxWidth: "30rem", margin: "0 auto"}}>
             <div className="form-field">
-              <div className="field-title">Enter staff password: {(application == "invalidPassword") && "- Invalid password, try again"}</div>
+              <div className="field-title">Enter password: {(application == "invalidPassword") && "- Invalid password, try again"}</div>
               <div className="field-row">
                 <input type="text" placeholder="Password" value={passwordInputContent} onChange={(event) => setPasswordInputContent(event.target.value)}/>
               </div>
@@ -72,7 +84,7 @@ export function ViewStaffApplicationPage() {
         )
         return (
           <FormView
-            fields={staffApplicationFormFields}
+            fields={fields}
             values={application.submission_content}
           />
         )
