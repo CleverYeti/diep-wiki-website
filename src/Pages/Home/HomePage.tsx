@@ -17,9 +17,14 @@ export function HomePage() {
                 <a className="partner-banner" href="https://dieplobbypicker.io" target="_blank">
                     <img src="/partners/diepLobbyPickerBanner.png" alt="" />
                 </a>
+                <div className="partner-banner">
+                    <div className="placeholder">Coming soon!</div>
+                </div>
+                {/*
                 <a className="partner-banner" href="" target="_blank">
                     <img src="/partners/diepVerseBanner.png" alt="" />
                 </a>
+                */}
             </div>
         </div>
     )
