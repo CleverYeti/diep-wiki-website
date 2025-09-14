@@ -1,41 +1,27 @@
 <content>
 
-
-
-    <section name="Basic info">
-            Twin is a decent all-rounder of a tank overall, it has no real notable features or interactions.
+    <section name="Twin Info">
+        Twin tank is a tier 2 tank that can be selected upon reaching level 15, and at tier 3, can be upgraded into "Triple Shot", "Quad Tank" or "Twin Flank". It features 2 barrels side by side at the front of the tank body, doubling its firepower. The bullet damage is however nerfed compared to Basic Tank. It is a strong tank to use up to level 45 as it is often a much better option than the level 30 upgrades.
     </section>
 
-
-
-    <section name="Meta builds">
+    <section name="Meta Builds">
         1. <build points="0/0/0/5/7/7/7/7"/>
         2. <build points="0/0/0/6/7/7/7/6"/>
         Alternatives:
-        3. <build points="0/0/0/7/7/7/7/5"/>
+        3. <build points="0/0/0/7/7/7/6/6"/>
+        4. <build points="2/2/0/7/7/7/5/3"/>
     </section>
-
-
 
     <section name="Strategy">
-        <strategy>
-            There's nothing you can really do as twin to gain any obvious advantage with twin although stacking your bullets is an option to make each volley more punishing.
-        </strategy>
+        - Due to the addition of a second barrel, Twin has increased recoil, you can use this to your advantage by shooting in the opposite direction of your movement to increase your movement speed. Useful for getting out of tricky situations.
     </section>
-
-
 
     <section name="Trivia">
-        - Sometimes when ignoring its Level 30 upgrades, when the player reached Level 45, no upgrades would appear, and they would be stuck as a Twin. This was fixed shortly after.
-            
-        - The Twin is the smallest Tier 2 branch, having only 7 total Tier 4 tanks branch from it and its Upgrade choices.
-        
-        - The base shooting speed for the Twin and the Machine Gun are very similar, if not, the same.
-        
-        - When shooting, you may shoot 2 bullets and once by clicking twice. By clicking twice to shoot, you get a new pattern of shots.
+        - The Twin tank has the smallest tier 2 branch out of the 4, with only 7 possible level 45 upgrades.
+        - You can stack the bullets to form a wall by manipulating the barrels to fire at the same time. 
+        - The achievement for upgrading to Twin is "Fire Power".
+        - Twin tank was the second tank to be added to the game, after Basic Tank; with its ID being '1'.
+        - In one of the oldest versions, Twin used to upgrade directly into "Triplet" at level 30, however this was changed due to it being overpowered, with Triple Shot taking its place.
     </section>
-
-
-
-
+    
 </content>

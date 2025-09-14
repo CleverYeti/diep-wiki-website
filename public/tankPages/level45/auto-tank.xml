@@ -1,41 +1,23 @@
 <content>
 
-
-
-    <section name="Basic info">
-
-        <description>
-            Auto tank is currently one of the best focused spam tanks in the game, it has the highest front dps of any bullet tank and excels in practically any matchup, overall a great tank.
-        </description>
-
+    <section name="Auto Tank Info">
+       Auto Tank (or Auto Basic) is a tier 4 tank that can be selected upon reaching level 45 with "Basic Tank". It features 1 barrel at the front of the tank body, and an auto turret in the middle.
     </section>
 
-
-
-    <section name="Meta builds">
-        <builds>
-            1. <build points="0/0/0/6/7/6/7/7"/>
-            2. <build points="0/0/0/5/7/7/7/7"/>
-        </builds>
+    <section name="Meta Builds">
+        1. <build points="0/0/0/6/7/6/7/7"/>
+        2. <build points="0/0/0/5/7/7/7/7"/>
+        3. <build points="0/0/0/7/7/7/6/6"/>
     </section>
-
-
 
     <section name="Strategy">
-        <strategy>
-            N/A
-        </strategy>
+        - You can utilise the auto turret to predict where your enemy may be moving. There is a chance however that it is just shooting at a shape.
     </section>
-
-
 
     <section name="Trivia">
-
-        N/A
-
+        - Auto Tank is one of two tanks that is a sixth upgrade option, the other being the factory.
+        - Auto Tank is the latest edition to the game, added in 2025, and released 2 years after Glider.
+        - Auto Tank was the fiftieth tank to be added to the game, not counting removed tanks, with its ID being '57'.
     </section>
-
-
-
-
+    
 </content>

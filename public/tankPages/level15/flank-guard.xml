@@ -1,43 +1,25 @@
 <content>
 
-
-
-    <section name="Basic info">
-
-        <description>
-            Flankguard is a decent level 15 tank that trades defense for offense in the form of reduced recoil. It's a good tank overall with no real notable weaknesses.
-        </description>
-
+    <section name="Flank Guard Info">
+        Flank Guard is a tier 2 tank that can be selected upon reaching level 15, and at tier 3, can be upgraded into "Tri-Angle", "Quad Tank", "Twin Flank" and "Auto 3". It features 2 barrels at the opposite ends of the tank body; the back barrel being shorter than the front. 
     </section>
 
-
-
-    <section name="Meta builds">
-        <builds>
-            1. <build points="0/0/0/5/7/7/7/7"/>
-            Alternatives:
-            2. <build points="0/0/0/6/7/7/7/6"/>
-            3. <build points="0/1/2/2/7/7/7/7"/>
-        </builds>
+    <section name="Meta Builds">
+        1. <build points="0/0/0/5/7/7/7/7"/>
+        Alternatives:
+        2. <build points="0/0/0/6/7/7/6/6"/>
+        3. <build points="0/1/2/2/7/7/7/7"/>
     </section>
-
-
 
     <section name="Strategy">
-        <strategy>
-            Due to not having any recoil flank guard is less reliant on positioning skills and aim - having a much easier time just purely building up a bullet wall, bomb rushing tanks and getting kills that way.
-        </strategy>
+        - Flank Guard has no recoil, making it less reliant on positioning skills and aim - having a much easier time building up a bullet wall and bomb rushing tanks.
     </section>
-
-
 
     <section name="Trivia">
-
-        N/A
-
+        - The Flank Guard has the 2nd smallest tier 2 branch out of the 4, with 8 possible level 45 upgrades.
+        - The achievement for upgrading to Flank Guard is "Ain't no one sneaking up on ME".
+        - Flank Guard was the ninth tank to be added to the game, after Machine Gun; with its ID being '8'.
+        - In one of the oldest versions, the barrels of the Flank Guard would fire at alternating times. People created spin bots to abuse this mechanic, which started the first ever form of flip fire.
     </section>
-
-
-
-
+    
 </content>

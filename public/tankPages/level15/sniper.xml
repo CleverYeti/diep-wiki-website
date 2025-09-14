@@ -1,45 +1,30 @@
 <content>
 
-
-
-    <section name="Basic info">
-            Sniper is a great low-level tank that can effectively hunt and kill most tanks in the game. Becomes very toxic at higher levels.
+    <section name="Sniper Info">
+        Sniper is a tier 2 tank that can be selected upon reaching level 15, and at tier 3, can be upgraded into "Assassin", "Overseer", "Hunter" or "Trapper". It features 1 barrel, slightly longer than Basic Tank's, at the front of the tank body. The base speed of the tank's bullet is increased, while the reload is reduced. The main gimmick surrounding Sniper is that its 'Field Of View' (FOV) is increased, so it can see a further distance than most tanks.
     </section>
 
-
-
-    <section name="Meta builds">
-        1. <build points="0/0/0/5/7/7/7/7"/>
-        Alternatives:
-        2. <build points="0/0/0/6/7/7/7/6"/>
-        3. <build points="0/0/0/6/7/6/7/7"/>
+    <section name="Meta Builds">
+        1. <build points="0/0/0/6/7/7/7/6"/>
+        2. <build points="0/0/0/7/7/7/7/5"/>
+        Alternative:
+        3. <build points="0/0/0/7/7/7/6/6"/>
+        At level 22, the best build for this tank is:
+           <build points="0/0/0/6/5/5/0/5"/>
     </section>
-
-
 
     <section name="Strategy">
-        <strategy>
-            You can sometimes utilise your increased FoV and see a sliver of a tank at the edge of your field of view and set up an ambush because of it, other than that though there really isn't much to the tank.
-        </strategy>
+        - Sniper's increased FOV means it can hide just outside the FOV of some other tanks while still keeping them visible. Utilising this is useful for ambushing/catching your opponent off guard.
     </section>
-
-
 
     <section name="Trivia">
-        - Machine Gun and Sniper are the only two tanks that, at some point, could upgrade into themselves.
-
-        - The Sniper and its upgrades’ Bullets do not slow down when traveling through obstacles (enemy Bullets, Polygons), which may be helpful for farming. From another side, a very high Bullet Speed might be the reason the Bullet will fail to output the max amount of damage to small and strong Polygons like the Pentagon.
-        
-        - A Sniper, alongside a Machine Gun, with maxed out reload and movement speed at level 15 is the fastest tank in the game outside of Sandbox.
-        
-        - The Sniper branch of the Class tree is the largest of the Tier 2 branches.
-        
-        - A Sniper can become one of 14 distinct Tier 4 Classes, as well as an additional 4 Tier 3 Classes.
-        
-        - It also has three other Tier 4 Classes that can be accessed without using Sniper. These are the Battleship, Gunner Trapper, and Streamliner.
+        - The Sniper has the largest tier 2 branch out of the 4, with 14 possible unique level 45 upgrades.
+        - The Sniper's bullet speed remains the same even after piercing an object.
+        - There are 2 achievements associated with this tank:
+            - for upgrading to Sniper, the achievement "Snipin'" is unlocked.
+            - for upgrading to Sniper 100 times, the achievement "Try some other                    classes too" is unlocked.
+        - Sniper was the seventh tank to be added to the game, after Octo Tank; with its ID being '6'.
+        - In one of the oldest versions, sniper used to be able to upgrade into itself, this however had no added benefits.
     </section>
-
-
-
-
+    
 </content>

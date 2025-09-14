@@ -1,33 +1,24 @@
 <content>
 
-
-
-    <section name="Basic info">
-        Level 30 Smasher is one of the best ram tanks in the game, however it quickly loses its kill potential when leveling up.
+    <section name="Smasher Info">
+        Smasher is a tier 3 tank that can be selected upon reaching level 30 with "Basic Tank", and at tier 4, can be upgraded into "Landmine", "Auto Smasher", and "Spike". It has no barrels but instead a spinning black hexagonal shell. This tank can only deal damage by ramming other shapes and tanks.
     </section>
 
-
-
-    <section name="Meta builds">
-        1. <build statPointSetupKey="smasher-class" points="3/10/10/10"/>
+    <section name="Meta Builds">
+        1. <build points="3/10/10/10"/>
         Alternatives:
-        3. <build statPointSetupKey="smasher-class" points="4/10/9/10"/>
-        4. <build statPointSetupKey="smasher-class" points="5/9/9/10"/>
+        2. <build points="4/10/9/10"/>
+        3. <build points="5/9/9/10"/>
     </section>
-
-
 
     <section name="Strategy">
-        N/A
+        - Smasher is best used as soon as you upgrade into it at level 30 as it is at its smallest, meaning it will be faster. You can then utilise this to bomb unsuspecting players.
     </section>
-
-
 
     <section name="Trivia">
-        N/A
+        - The achievement for upgrading to Smasher is "Where did my cannon go?".
+        - Smasher was the thirty seventh tank to be added to the game, after Tri-Trapper; with its ID being '36'.
+        - Mega Smasher is a now removed tank that used to upgrade from Smasher at level 45. It had higher knockback resistance than Smasher, but was removed after all smasher classes had their knockback resistance removed.
     </section>
-
-
-
-
+    
 </content>

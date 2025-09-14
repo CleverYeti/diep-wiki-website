@@ -1,41 +1,28 @@
 <content>
 
-
-
-    <section name="Basic info">
-        Machinegun is a good defensive tank with okayish offense.
+    <section name="Machine Gun Info">
+        Machine Gun is a tier 2 tank that can be selected upon reaching level 15, and at tier 3, can be upgraded into "Destroyer" or "Gunner". At level 45 it can upgrade straight into "Sprayer". It features 1 trapezoid barrel  at the front of the tank body. The bullet damage of Machine Gun is nerfed compared to Basic Tank, but is stronger than twin's bullets. It has a high reload increase and a large spread. Much like the Twin, it is a strong tank to use up to level 45.
     </section>
 
-
-
-    <section name="Meta builds">
+    <section name="Meta Builds">
         1. <build points="0/0/0/5/7/7/7/7"/>
-        2. <build points="0/0/0/6/7/7/7/6"/>
+        2. <build points="5/7/7/0/0/0/7/7"/>
         Alternatives:
-        4. <build points="0/0/0/7/7/7/7/5"/>
+        3. <build points="0/0/0/7/7/7/6/6"/>
+        4. <build points="0/0/0/6/7/7/6/7"/>
     </section>
-
-
 
     <section name="Strategy">
-        <strategy>
-            Machinegun doesn't really have that many gimmicks but you can use it's recoil to run away and escape effectively any tank in the game. Do note though that it's raw bullet defense leaves much to be desired though because of its semi-random bullet pattern.
-        </strategy>
+        - The high reload and spread of this tank is useful for overwhelming opponents with lower reload. By jittering your cursor (or shoooting wheel in mobile) slightly in front of the tank you can further increase the spread, minimising your opponents options for escape.
+        - The high reload also serves as good recoil, allowing this class to be used as a rammer.
     </section>
-
-
 
     <section name="Trivia">
-        - The initial community nicknamed the this tank "Cone Gun" due to the Machine Gun having a cone-like cannon.
-        
-        - Sometimes, when you upgrade from Tank to Machine Gun (With Auto Fire on), 2 bullets will fire at the same time, with the exact opposite spread.
-        
-        - A Machine Gun, alongside a Sniper, with maxed out reload and movement speed at level 15 is the fastest tank in the game outside of Sandbox.
-        
-        - Machine Gun and Sniper are the only two tanks that, at some point, could upgrade into themselves.
+        - The Machine Gun has the 2nd largest tier 2 branch out of the 4, with 9 possible level 45 upgrades.
+        - The achievement for upgrading to Machine Gun is "Eat those bullets".
+        - Machine Gun was the eighth tank to be added to the game, after Sniper; with its ID being '7'.
+        - In one of the oldest versions, Machin Gun used to upgrade into itself at level 30, and again at level 45. This however had no added benefits.
+        - The Machine Gun was nerfed after the Sprayer was released.
     </section>
-
-
-
-
+    
 </content>
