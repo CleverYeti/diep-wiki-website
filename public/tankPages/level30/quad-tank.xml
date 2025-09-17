@@ -1,42 +1,27 @@
 <content>
 
-
-
-    <section name="Basic info">
-
-        <description>
-            Quad tank is a nice lv 30 tank that doesn't require that much skill or micro to use effectively, however you should note that it has lots of bad matchups against various tanks
-        </description>
-
+    <section name="Quad Tank Info">
+        Quad Tank is a tier 3 tank that can be selected upon reaching level 30 using "Twin" or "Flank Guard", and at level 45, can be upgraded into "Octo Tank" or "Auto 5". It features 4 barrels each perpendicular to each other. This tank is often skipped when upgrading due to it having less focused power in one direction than Twin, however when pressing C + E (auto spin and auto fire), it upgrades very fast as it covers a wide area of shapes.
     </section>
 
-
-
-    <section name="Meta builds">
-        <builds>
-            1. <build points="0/0/0/5/7/7/7/7"/>
-            Alternatives:
-            2. <build points="0/0/1/4/7/7/7/7"/>
-        </builds>
+    <section name="Meta Builds">
+        1. <build points="0/0/0/5/7/7/7/7"/>
+        2. <build points="0/2/3/7/7/7/7/0"/>
+        Alternatives:
+        3. <build points="0/2/3/0/7/7/7/7"/>
+        4. <build points="7/7/7/0/0/0/5/7"/>
     </section>
-
-
 
     <section name="Strategy">
-        <strategy>
-            N/A
-        </strategy>
+        - C + E.
+       
     </section>
-
-
 
     <section name="Trivia">
-
-        N/A
-
+        - The Quad Tank, alongside "Twin Flank", are the only two tanks to upgrade from two different tier 2 tanks.
+        - The achievement for upgrading to Quad Tank is "C + E".
+        - Quad Tank was the fifth tank to be added to the game, after Triple Shot; with its ID being '4'.
+        - In one of the oldest versions, Quad Tank used to upgrade into Triple Shot at level 45, which subsequently upgraded into Octo Tank at level 60.
     </section>
-
-
-
-
+    
 </content>

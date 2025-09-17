@@ -1,44 +1,30 @@
 <content>
 
-
-
-    <section name="Basic info">
-
-        <description>
-            Destroyer is a great level 30 tank with lots of kill potential, it does struggle when dealing with sniper branch tanks though.
-        </description>
-
+    <section name="Destroyer Info">
+        Destroyer is a tier 3 tank that can be selected upon reaching level 30 using "Machine Gun", and at level 45, can be upgraded into "Hybrid", "Annihilator", "Skimmer", "Rocketeer" and "Glider". It features 1 cannon (wide barrel) at the front of the tank. This tank shoots large bullet, (roughly the size of a level 1 tank, when at level 30). It can 1 shot any tank that has no health or body upgrades. The cannon also has very large recoil making this tank a popular rammer option.
     </section>
 
-
-
-    <section name="Meta builds">
-        <builds>
-            1. <build points="0/0/0/7/6/6/7/7"/>
-            2. <build points="0/2/3/7/7/7/0/7"/>
-            Alternatives:
-            3. <build points="0/0/0/7/7/7/6/6"/>
-            4. <build points="0/0/0/7/7/7/7/5"/>
-        </builds>
+    <section name="Meta Builds">
+        1. <build points="0/0/0/7/7/7/5/7"/>
+        2. <build points="5/7/7/0/0/0/7/7"/>
+        Alternatives:
+        3. <build points="0/0/0/7/7/7/6/6"/>
+        4. <build points="0/0/0/7/6/6/7/7"/>
+   
     </section>
-
-
 
     <section name="Strategy">
-        <strategy>
-            N/A
-        </strategy>
+        - Due to the high recoil, this tank is great for ambushing; shoot a bullet in the opposite direction of the player you want to attack to get close to them, then shot another bullet to 1 shot them
+                o or alternatively, ram them if you have rammer points.
+       
     </section>
-
-
 
     <section name="Trivia">
-
-        N/A
+        - In older versions, Destroyer was able to upgrade into itself at level 45. This however had no added benefits.
+                o At the same point, Machine Gun II (a level 30 upgrade from Machine Gun, with no added benefits) was also able to upgrade directly to Destroyer at 45.
+        - The achievement for upgrading to Destroyer is "BOOM you're dead".
+        - Destroyer was the eleventh tank to be added to the game, after Tri-Angle; with its ID being '10'.
 
     </section>
-
-
-
-
+    
 </content>

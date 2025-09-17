@@ -1,43 +1,26 @@
 <content>
 
-
-
-    <section name="Basic info">
-
-        <description>
-            Twin flank is a decent midrange tank that struggles against drones but otherwise has no real notable weaknesses or strengths
-        </description>
-
+    <section name="Twin Flank info">
+        Twin Flank is a tier 3 tank that can be selected upon reaching level 30 using "Twin" or "Flank Guard", and at level 45, can be upgraded into "Triple Twin" or "Battleship". It features 4 barrels; 2 side by side at the front of the tank, and 2 side by side at the back. As the name suggests, it is a Twin and Flank Guard combo. This tank is often skipped when upgrading due to it being vulnerable on the sides and that it lacks any recoil, making it difficult to escape tricky situations quickly like you would be able to with Twin.
     </section>
-
-
 
     <section name="Meta builds">
-        <builds>
-            1. <build points="0/0/0/5/7/7/7/7"/>
-            Alternatives:
-            2. <build points="0/0/0/6/7/7/7/6"/>
-            3. <build points="0/0/0/7/7/7/7/5"/>
-        </builds>
+        1. <build points="0/0/0/5/7/7/7/7"/>
+        2. <build points="0/2/3/7/7/7/7/0"/>
+   
     </section>
-
-
 
     <section name="Strategy">
-        <strategy>
-            N/A
-        </strategy>
+        - Due to this being one of the least used tanks in the game, there is no real viable strategy for this tank, however the writer is welcoming suggestions!
+       
     </section>
-
-
 
     <section name="Trivia">
-
-        N/A
-
+        - The Twin Flank, alongside "Quad Tank", are the only two tanks to upgrade from two different tier 2 tanks.
+        - The achievement for upgrading to Twin Flank is "Now you REALLY aint sneakin' up on me".
+        - Twin Flank was the fourteenth tank to be added to the game, after Overlord; with its ID being '13'.
+        - In one of the oldest versions, Twin Flank used to upgrade into Octo Tank at level 45 Shot at level 45.
+        - Twin Flank is the only class outside of Overseer that upgrades into a controllable drone tank.
     </section>
-
-
-
-
+    
 </content>
