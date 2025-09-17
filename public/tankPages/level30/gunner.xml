@@ -1,43 +1,26 @@
 <content>
 
-
-
-    <section name="Basic info">
-
-        <description>
-            Gunner is a decent midrange tank often underestimated or deemed much weaker than it actually is. Gunner struggles against drone tanks but otherwise does fine on its own.
-        </description>
-
+    <section name="Gunner Info">
+        Gunner is a tier 3 tank that can be selected upon reaching level 30 using "Machine Gun", and at level 45, can be upgraded into "Auto Gunner", "Gunner Trapper" and "Streamliner". It features 4 thin barrels at the front of the tank. This tank shoots tiny pellet-like bullets, which individually do minimal damage. This tank is often skipped due to being largely weaker than it's predecessor Machine Gun. Despite it's high reload, it has very weak recoil.
     </section>
 
-
-
-    <section name="Meta builds">
-        <builds>
-            1. <build points="0/0/0/5/7/7/7/7"/>
-            Alternatives:
-            2. <build points="0/0/0/6/7/7/7/6"/>
-            3. <build points="0/0/0/7/7/7/7/5"/>
-        </builds>
+    <section name="Meta Builds">
+        1. <build points="0/0/0/7/7/7/5/7"/>
+        2. <build points="0/0/0/7/7/7/6/6"/>
+   
     </section>
-
-
 
     <section name="Strategy">
-        <strategy>
-            N/A
-        </strategy>
+        - Circling your cursor in front of this tank allows you to increase the spread of it, covering more area and minimising your opponent's ability to escape unharmed.
+       
     </section>
-
-
 
     <section name="Trivia">
-
-        N/A
+        - In older versions, Gunner used to be able to upgrade into the old removed Auto Tank, and then Auto 5 when it was replaced.
+        - All Gunner upgrades are not unique to it, as they can be selected from other tanks.
+        - The achievement for upgrading to Gunner is "Eat those pellets".
+        - Gunner was the Twentieth tank to be added to the game, after Hunter; with its ID being '20', not counting removed tanks.
 
     </section>
-
-
-
-
+    
 </content>
