@@ -1,43 +1,30 @@
 <content>
 
-
-
-    <section name="Basic info">
-
-        <description>
-            Triangle is one of if not the best level 30 tank in the game due to it's high speed and kill potential.
-        </description>
-
+    <section name="Tri-Angle Info">
+        Tri-Angle (or Tri Angle) is a tier 3 tank that can be selected upon reaching level 30 using "Flank Guard", and at level 45, can be upgraded into "Booster" and "Fighter". It features 1 barrel at the front of the tank, and 2 boosters at the back. This tank's whole gimmick is about fast movement. The front barrel does the same damage as a basic tank, but the boosters at the back have higher recoil, designed to boost the tank in speed. They do minimal damage.
     </section>
 
-
-
-    <section name="Meta builds">
-        <builds>
-            1. <build points="0/0/0/5/7/7/7/7"/>
-            2. <build points="0/2/3/0/7/7/7/7"/>
-            Alternatives:
-            3. <build points="0/1/2/2/7/7/7/7"/>
-        </builds>
+    <section name="Meta Builds">
+        1. <build points="0/0/0/5/7/7/7/7"/>
+        2. <build points="5/7/7/0/0/0/7/7"/>
+        Alternatives:
+        3. <build points="0/2/3/0/7/7/7/7"/>
+        4. <build points="0/5/0/0/7/7/7/7"/>
+   
     </section>
-
-
 
     <section name="Strategy">
-        <strategy>
-            N/A
-        </strategy>
+        - This tank is often used both as a bullet spammer, and a rammer.
+        - The high recoil can be used for bombing players, catching them before they can react, or by ramming into them, easily passing by drones and Snipers.
+       
     </section>
-
-
 
     <section name="Trivia">
-
-        N/A
+        - At level 30, Tri-Angle is the fastest tank in the game, if both reload and movement speed are maxed out.
+        - Up until May of 2025, the Tri-Angle and its upgrades had desynced front and booster barrels; so with the use of fast movement (...or scripts), the tank could further increase its DPS (Damage Per Second) by flipping back and forth and stacking all their bullets. This was removed due to being too overpowered.
+        - The achievement for upgrading to Tri-Angle is "I've got places to be".
+        - Tri-Angle was the Tenth tank to be added to the game, after Flank Guard; with its ID being '9'.
 
     </section>
-
-
-
-
+    
 </content>
