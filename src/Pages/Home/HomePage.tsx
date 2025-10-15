@@ -11,8 +11,8 @@ export function HomePage() {
             </div>
             <div className="partners-title">Check out our other projects:</div>
             <div className="partner-links">
-                <a className="partner-banner" href="https://diepeditor.io" target="_blank">
-                    <img src="/partners/diepEditorBanner.png" alt="" />
+                <a className="partner-banner" href="https://tankeditor.io" target="_blank">
+                    <img src="/partners/tankEditorBanner.png" alt="" />
                 </a>
                 <a className="partner-banner" href="https://dieplobbypicker.io" target="_blank">
                     <img src="/partners/diepLobbyPickerBanner.png" alt="" />
