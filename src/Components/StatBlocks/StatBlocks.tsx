@@ -132,7 +132,8 @@ export function TankStatsDisplay({
 
     let averageRecoilSpeed = 0
     for (let barrel of tank.barrels) {
-      const barrelStats = tank.barrelStats[barrel.barrelStats]
+      const barrelStats = tank.barrelStats[barrel.barrelStats ?? ""];
+      if (barrelStats == null) continue;
       const reloadTicks = formulas.barrelReloadTicks(barrelStats.reloadFactor, points[6])
       const instantRecoilSpeed = formulas.barrelInstantRecoilSpeed(barrelStats.recoilFactor)
       const scatterDegrees = formulas.bulletScatterDegrees(barrelStats.bullet.scatterFactor)

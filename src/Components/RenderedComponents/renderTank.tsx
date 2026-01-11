@@ -186,7 +186,7 @@ export function RenderTank({
       points = points.map(([x, y]) =>
         rotateVector([x, y], barrel.angle)
       );
-      polygons.push(renderBarrelPolygon(points, barrel.barrelStats))
+      polygons.push(renderBarrelPolygon(points, barrel.barrelStats ?? ""))
       
       polygons.push(
         <circle
@@ -194,8 +194,8 @@ export function RenderTank({
           cx={Math.cos(rotation + barrel.angle) * 40 * sizeFactor}
           cy={Math.sin(rotation + barrel.angle) * 40 * sizeFactor}
           r={25 * sizeFactor}
-          fill={renderColor(applyHighlight(barrelColor, barrel.barrelStats))}
-          stroke={renderColor(applyHighlight(barrelColor.map(v => v * (1 - borderOpacity)), barrel.barrelStats))}
+          fill={renderColor(applyHighlight(barrelColor, barrel.barrelStats ?? ""))}
+          stroke={renderColor(applyHighlight(barrelColor.map(v => v * (1 - borderOpacity)), barrel.barrelStats ?? ""))}
           strokeWidth={BORDER_THICKNESS}
           strokeLinejoin="round"
         />
@@ -216,15 +216,15 @@ export function RenderTank({
       points = points.map(([x, y]) =>
         rotateVector([x, y], barrel.angle)
       );
-      overlayPolygons.push(renderBarrelPolygon(points, barrel.barrelStats))
+      overlayPolygons.push(renderBarrelPolygon(points, barrel.barrelStats ?? ""))
       overlayPolygons.push(
         <circle
           key={tank.id + "-barrel-" + Math.random()}
           cx={Math.cos(rotation + barrel.angle) * (barrel.basePosition ?? 0) * sizeFactor}
           cy={Math.sin(rotation + barrel.angle) * (barrel.basePosition ?? 0) * sizeFactor}
           r={25 * (barrel.size / 55) * sizeFactor}
-          fill={renderColor(applyHighlight(barrelColor, barrel.barrelStats))}
-          stroke={renderColor(applyHighlight(barrelColor.map(v => v * (1 - borderOpacity)), barrel.barrelStats))}
+          fill={renderColor(applyHighlight(barrelColor, barrel.barrelStats ?? ""))}
+          stroke={renderColor(applyHighlight(barrelColor.map(v => v * (1 - borderOpacity)), barrel.barrelStats ?? ""))}
           strokeWidth={BORDER_THICKNESS}
           strokeLinejoin="round"
         />
@@ -240,7 +240,7 @@ export function RenderTank({
       ];
       points = points.map(([x, y]) => [x, y + barrel.offset]);
       points = points.map(([x, y]) => rotateVector([x, y], barrel.angle));
-      polygons.push(renderBarrelPolygon(points, barrel.barrelStats))
+      polygons.push(renderBarrelPolygon(points, barrel.barrelStats ?? ""))
     }
 
     if (([
@@ -257,7 +257,10 @@ export function RenderTank({
         [0, barrel.width * 42 * 0.5],
       ]
       if (barrel.isTrapezoid) {
-        if (barrel.trapezoidDirection === 0) {
+        if (barrel.trapezoidDirection === -1) {
+          points[2][1] *= 1.5
+          points[3][1] *= 1.5
+        } else if (barrel.trapezoidDirection === 0) {
           points[0][1] *= 1.75
           points[1][1] *= 1.75
         } else {
@@ -267,7 +270,7 @@ export function RenderTank({
       }
       points = points.map(([x, y]) => [x, y + barrel.offset]);
       points = points.map(([x, y]) => rotateVector([x, y], barrel.angle));
-      polygons.push(renderBarrelPolygon(points, barrel.barrelStats))
+      polygons.push(renderBarrelPolygon(points, barrel.barrelStats ?? ""))
     }
   }
 

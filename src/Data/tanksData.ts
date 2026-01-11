@@ -32,7 +32,7 @@ export interface Barrel {
   type?: BarrelTypes | string;
   trapezoidDirection: number;
   delay: number;
-  barrelStats: string;
+  barrelStats?: string;
   basePosition?: number;
 }
 
@@ -724,7 +724,8 @@ export const tanksData:TanksData = {
     "upgrades": [
       "destroyer",
       "gunner",
-      "sprayer"
+      "sprayer",
+      "shotgun"
     ],
     "flags": {},
     "fieldFactor": 1,
@@ -933,7 +934,8 @@ export const tanksData:TanksData = {
       "annihilator",
       "skimmer",
       "rocketeer",
-      "glider"
+      "glider",
+      "firework"
     ],
     "flags": {},
     "fieldFactor": 1,
@@ -3999,72 +4001,8 @@ export const tanksData:TanksData = {
       }
     }
   },
-  "glider": {
-    "id": 56,
-    "name": "Glider",
-    "upgradeMessage": "",
-    "levelRequirement": 45,
-    "upgrades": [],
-    "flags": {},
-    "fieldFactor": 0.9,
-    "preAddon": "glider",
-    "postAddon": null,
-    "sides": 1,
-    "borderWidth": 15,
-    "barrels": [
-      {
-        "angle": 0,
-        "offset": 0,
-        "size": 80,
-        "width": 1.35,
-        "isTrapezoid": true,
-        "trapezoidDirection": 3.141592653589793,
-        "delay": 0,
-        "barrelStats": "main",
-        "type": "normal"
-      }
-    ],
-    "statPointSetup": "normal",
-    "key": "glider",
-    "upgradesFrom": [
-      "destroyer"
-    ],
-    "color": 4,
-    "barrelStats": {
-      "main": {
-        "name": "Main Cannon Stats",
-        "reloadFactor": 4,
-        "recoilFactor": 3,
-        "bullet": {
-          "type": "glider",
-          "sizeFactor": 1,
-          "healthFactor": 3,
-          "damageFactor": 1,
-          "speedFactor": 0.3,
-          "scatterFactor": 1,
-          "lifeLengthFactor": 1.3,
-          "absorbtionFactor": 0.1
-        }
-      },
-      "bulletCannons": {
-        "name": "Bullet Cannon Stats",
-        "reloadFactor": 0.7,
-        "recoilFactor": 3.8,
-        "bullet": {
-          "type": "bullet",
-          "healthFactor": 0.6,
-          "damageFactor": 3 / 5,
-          "speedFactor": 0.5,
-          "scatterFactor": 1,
-          "lifeLengthFactor": 0.5,
-          "sizeFactor": 1,
-          "absorbtionFactor": 1
-        }
-      }
-    }
-  },
   "auto-tank": {
-    "id": 57,
+    "id": 56,
     "name": "Auto-Tank",
     "color": 5,
     "upgradeMessage": "",
@@ -4136,6 +4074,260 @@ export const tanksData:TanksData = {
         }
       }
     }
+  },
+  "dual-barrel": {
+    "id": 57,
+    "name": "Dual-barrel",
+    "color": 1,
+    "upgradeMessage": "",
+    "levelRequirement": 45,
+    "upgrades": [],
+    "flags": {},
+    "fieldFactor": 1,
+    "preAddon": null,
+    "postAddon": null,
+    "sides": 1,
+    "borderWidth": 15,
+    "barrels": [
+      {
+        "angle": 0,
+        "offset": -18,
+        "size": 95,
+        "width": 0.5,
+        "isTrapezoid": true,
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "type": "normal"
+      },
+      {
+        "angle": 0,
+        "offset": 18,
+        "size": 95,
+        "width": 0.5,
+        "isTrapezoid": true,
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "type": "normal"
+      },
+      {
+        "angle": 0,
+        "offset": 0,
+        "size": 77.5,
+        "width": 1.25,
+        "isTrapezoid": true,
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "type": "normal"
+      },
+    ],
+    "statPointSetup": "normal",
+    "key": "dual-barrel",
+    "upgradesFrom": ["shotgun"],
+    "barrelStats": {}
+  },
+  "pellet-shot": {
+    "id": 58,
+    "name": "Pellet Shot",
+    "color": 0,
+    "upgradeMessage": "",
+    "levelRequirement": 45,
+    "upgrades": [],
+    "flags": {},
+    "fieldFactor": 0.9,
+    "preAddon": null,
+    "postAddon": null,
+    "sides": 1,
+    "borderWidth": 15,
+    "barrels": [
+      {
+        "angle": 0,
+        "offset": 0,
+        "size": 100,
+        "width": 0.75,
+        "isTrapezoid": true,
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "type": "normal"
+      },
+      {
+        "angle": 0,
+        "offset": 0,
+        "size": 85,
+        "width": 1,
+        "isTrapezoid": true,
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "type": "normal"
+      },
+      {
+        "angle": 0,
+        "offset": 0,
+        "size": 70,
+        "width": 1.25,
+        "isTrapezoid": true,
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "type": "normal"
+      },
+    ],
+    "statPointSetup": "normal",
+    "key": "pellet-shot",
+    "upgradesFrom": ["shotgun"],
+    "barrelStats": {}
+  },
+  "shotgun": {
+    "id": 59,
+    "name": "Shotgun",
+    "color": 3,
+    "upgradeMessage": "",
+    "levelRequirement": 30,
+    "flags": {},
+    "fieldFactor": 1,
+    "preAddon": null,
+    "postAddon": null,
+    "sides": 1,
+    "borderWidth": 15,
+    "barrels": [
+      {
+        "angle": 0,
+        "offset": 0,
+        "size": 90,
+        "width": 1,
+        "isTrapezoid": true,
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "type": "normal"
+      },
+      {
+        "angle": 0,
+        "offset": 0,
+        "size": 75,
+        "width": 1.25,
+        "isTrapezoid": true,
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "type": "normal"
+      },
+    ],
+    "statPointSetup": "normal",
+    "key": "shotgun",
+    "upgradesFrom": ["machine-gun"],
+    "upgrades": ["pellet-shot", "dual-barrel"],
+    "barrelStats": {}
+  },
+  "glider": {
+    "id": 60,
+    "name": "Glider",
+    "upgradeMessage": "",
+    "levelRequirement": 45,
+    "upgrades": [],
+    "flags": {},
+    "fieldFactor": 0.9,
+    "preAddon": "glider",
+    "postAddon": null,
+    "sides": 1,
+    "borderWidth": 15,
+    "barrels": [
+      {
+        "angle": 0,
+        "offset": 0,
+        "size": 80,
+        "width": 1.35,
+        "isTrapezoid": true,
+        "trapezoidDirection": 3.141592653589793,
+        "delay": 0,
+        "barrelStats": "main",
+        "type": "normal"
+      }
+    ],
+    "statPointSetup": "normal",
+    "key": "glider",
+    "upgradesFrom": [
+      "destroyer"
+    ],
+    "color": 4,
+    "barrelStats": {
+      "main": {
+        "name": "Main Cannon Stats",
+        "reloadFactor": 4,
+        "recoilFactor": 3,
+        "bullet": {
+          "type": "glider",
+          "sizeFactor": 1,
+          "healthFactor": 3,
+          "damageFactor": 1,
+          "speedFactor": 0.3,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 1.3,
+          "absorbtionFactor": 0.1
+        }
+      },
+      "bulletCannons": {
+        "name": "Bullet Cannon Stats",
+        "reloadFactor": 0.7,
+        "recoilFactor": 3.8,
+        "bullet": {
+          "type": "bullet",
+          "healthFactor": 0.6,
+          "damageFactor": 3 / 5,
+          "speedFactor": 0.5,
+          "scatterFactor": 1,
+          "lifeLengthFactor": 0.5,
+          "sizeFactor": 1,
+          "absorbtionFactor": 1
+        }
+      }
+    }
+  },
+  "firework": {
+    "id": 61,
+    "name": "Firework",
+    "color": 5,
+    "upgradeMessage": "",
+    "levelRequirement": 45,
+    "upgrades": [],
+    "flags": {},
+    "fieldFactor": 0.9,
+    "preAddon": null,
+    "postAddon": null,
+    "sides": 1,
+    "borderWidth": 15,
+    "barrels": [
+      {
+        "angle": 0,
+        "offset": 0,
+        "size": 95,
+        "width": 0.775,
+        "isTrapezoid": true,
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "type": "normal"
+      },
+      {
+        "angle": 0,
+        "offset": 0,
+        "size": 80,
+        "width": 1,
+        "isTrapezoid": true,
+        "trapezoidDirection": 0,
+        "delay": 0,
+        "type": "normal"
+      },
+      {
+        "angle": 0,
+        "offset": 0,
+        "size": 60,
+        "width": 1.6,
+        "isTrapezoid": true,
+        "trapezoidDirection": -1,
+        "delay": 0,
+        "type": "normal"
+      },
+    ],
+    "statPointSetup": "normal",
+    "key": "firework",
+    "upgradesFrom": ["destroyer"],
+    "barrelStats": {}
   },
   /*
   "testing": {

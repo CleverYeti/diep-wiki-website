@@ -120,8 +120,8 @@ export function RecordsPage({
                                                         <iframe width="560" height="315" src={"https://www.youtube.com/embed/" + (new URL(entry.proofVideo)).searchParams.get("v")} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin"></iframe>
                                                     )}
                                                 </>}
-                                                {entry.proofImages != null && entry.proofImages.map(imageURL => (
-                                                    <a target="_blank" href={imageURL} key={imageURL}>{imageURL}</a>
+                                                {entry.proofImages != null && entry.proofImages.map((imageURL, i) => (
+                                                    <a target="_blank" href={imageURL} key={i}>{imageURL}</a>
                                                 ))}
                                             </div>
                                         </div>
