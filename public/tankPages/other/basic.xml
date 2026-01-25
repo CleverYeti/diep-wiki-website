@@ -20,7 +20,6 @@
             
             Weak Against: Bullet Spammers, Overlords, highly upgraded tanks, high-level tanks, Bosses, Sniper tanks if caught off guard, Crashers (swarming).
 
-
             
             Upon starting the game, it is advised for players to attempt to find and kill any Pentagons near their spawn point because Pentagons are most effective and critical for leveling up. If there are none close by, it is best to destroy any nearby Squares or Triangles instead.
 
@@ -87,9 +86,6 @@
 
     <section name="Test">
         <description>
-
-            The Tank, usually called the Basic Tank or simply Basic, is the tank the player spawns as. It is equipped with one Cannon which shoots one Bullet at a time in a straight path, with slight recoil. At Level 1, with no upgrades, it has 50 HP. At Level 15, four upgrade choices will be given to the player: Twin (adding an extra cannon next to the existent cannon, both larger than the starter Tank's) Sniper (turning the normal cannon into a sniper cannon), Machine Gun (turning the normal cannon into a machine gun cannon) and Flank Guard (Like the Twin, but instead adding a shorter cannon to the back of the tank). At Level 30, the choice for the Smasher upgrade will be available. Level 30 and 45 will once again prompt the player with options of other “sub-categories” of tanks. For information on these other tanks, go to the Tiers page. 
-
             The stats of a Tank are as follow:
 
             - Regen: 1x Tank
@@ -103,8 +99,6 @@
             - Bullet Damage: 7 (+3 for each point in Bullet Damage)
             - Reload time: 15t (-1t for each point in Reload)
             - Movement Speed: 1x Tank
-
-
         </description>
     </section>
 
