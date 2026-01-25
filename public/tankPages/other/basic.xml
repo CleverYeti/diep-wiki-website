@@ -44,18 +44,20 @@
     <section name="Test">
         <description>
 The Tank, usually called the Basic Tank or simply Basic, is the tank the player spawns as. It is equipped with one Cannon which shoots one Bullet at a time in a straight path, with slight recoil. At Level 1, with no upgrades, it has 50 HP. At Level 15, four upgrade choices will be given to the player: Twin (adding an extra cannon next to the existent cannon, both larger than the starter Tank's) Sniper (turning the normal cannon into a sniper cannon), Machine Gun (turning the normal cannon into a machine gun cannon) and Flank Guard (Like the Twin, but instead adding a shorter cannon to the back of the tank). At Level 30, the choice for the Smasher upgrade will be available. Level 30 and 45 will once again prompt the player with options of other “sub-categories” of tanks. For information on these other tanks, go to the Tiers page. 
-The stats of a Tank are as follow:
-Regen: 1x Tank
-Health: 50 (+20 for each point in Max Health, +2 for each extra level)
-Body Damage:
-Against shapes: 20 (+4 for each point in Body Damage)
-Against tanks: 30 (+ 6 for each point in Body Damage)
-Against bullets: 5 (+1 for each point in Body Damage)
-Bullet Speed: x1 Tank
-Bullet Penetration: 2 (+1.5 for each point in Bullet Penetration)
-Bullet Damage: 7 (+3 for each point in Bullet Damage)
-Reload time: 15t (-1t for each point in Reload)
-Movement Speed: 1x Tank
+
+            The stats of a Tank are as follow:
+
+            - Regen: 1x Tank
+            - Health: 50 (+20 for each point in Max Health, +2 for each extra level)
+            - Body Damage:
+            - Against shapes: 20 (+4 for each point in Body Damage)
+            - Against tanks: 30 (+ 6 for each point in Body Damage)
+            - Against bullets: 5 (+1 for each point in Body Damage)
+            - Bullet Speed: x1 Tank
+            - Bullet Penetration: 2 (+1.5 for each point in Bullet Penetration)
+            - Bullet Damage: 7 (+3 for each point in Bullet Damage)
+            - Reload time: 15t (-1t for each point in Reload)
+            - Movement Speed: 1x Tank
 
 Strong Against: Low upgraded tanks (as the tank levels up, the list grows exponentially due to the high bullet stats), bullet-shooting tanks with lower frontal DPS if the player is maxed out in bullet power and Reload.
 Weak Against: Bullet Spammers, Overlords, highly upgraded tanks, high-level tanks, Bosses, Sniper tanks if caught off guard, Crashers (swarming).
