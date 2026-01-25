@@ -8,59 +8,13 @@
     <section name="Meta builds">
         <builds>
             1. <build points="0/0/0/5/7/7/7/7"/>
-            2. <build points="0/0/0/6/7/7/7/6"/>
             Alternatives:
-            3. <build points="0/0/0/6/7/6/7/7"/>
-            4. <build points="0/0/0/7/7/7/7/5"/>
+            2. <build points="0/0/0/7/7/6/6/7"/>
         </builds>
     </section>
 
     <section name="Strategy">
         <strategy>
-            Basic is well, basic. There really isn't much to the tank, just point and shoot at the things you want to kill.
-        </strategy>
-    </section>
-
-    <section name="Trivia">
-        - The Tank is one of two Classes that has an upgrade directly branching from it that is two tiers higher than itself, the Smasher (Tier 3). The other tank with this quality is the Machine Gun, branching to the Sprayer (Tier 4).
-        
-        - This Tank, along with the Twin, Triplet, Triple Shot, Quad Tank and Octo Tank, were the first tanks ever added to the game (before its public release). 
-        
-        - At level 45, 6 of this tank's bullets deal as much damage as the Destroyer Branch's. It can kill a level 45 tank in 2 shots if fully upgraded in Bullet Speed, Penetration and Damage.
-
-        - Oddly enough, the Tank’s Bullets are actually the nineth most powerful in the game, tied with the Flank Guard, only under the Skimmer, Rocketeer, Glider, Destroyer, Annihilator, Arena Closer, Dominator (mainly destroyer dominator) and Hybrid’s bullets.
-        
-        - This is because most tanks will add barrels but reduce the power of each, to balance out the extra firepower. In addition, some stronger tanks, most notably the Overseer branch, uses other types of ammunition, such as Drones, or Traps in case of the Trapper branch.
-        
-        - The Tank is the only Tier 1 tank in the game.
-        
-        - The Tank is one of two Classes that has an upgrade directly branching from it that is two tiers higher than itself, the Smasher (Tier 3). The other tank with this quality is the Machine Gun, branching to the Sprayer (Tier 4). The tank is the only class that has an upgrade directly branching from it that is three tiers higher than itself.
-        
-        - This Tank, along with the Twin, Triplet, Triple Shot, Quad Tank and Octo Tank, were the first tanks ever added to the game (before its public release).
-        
-        - At level 45, 6 of this tank's bullets deal as much damage as the Destroyer Branch's. It can kill a level 45 tank in 2 shots if fully upgraded in Bullet Speed, Penetration and Damage.
-    </section>
-
-    <section name="Test">
-        <description>
-
-            The Tank, usually called the Basic Tank or simply Basic, is the tank the player spawns as. It is equipped with one Cannon which shoots one Bullet at a time in a straight path, with slight recoil. At Level 1, with no upgrades, it has 50 HP. At Level 15, four upgrade choices will be given to the player: Twin (adding an extra cannon next to the existent cannon, both larger than the starter Tank's) Sniper (turning the normal cannon into a sniper cannon), Machine Gun (turning the normal cannon into a machine gun cannon) and Flank Guard (Like the Twin, but instead adding a shorter cannon to the back of the tank). At Level 30, the choice for the Smasher upgrade will be available. Level 30 and 45 will once again prompt the player with options of other “sub-categories” of tanks. For information on these other tanks, go to the Tiers page. 
-
-            The stats of a Tank are as follow:
-
-            - Regen: 1x Tank
-            - Health: 50 (+20 for each point in Max Health, +2 for each extra level)
-            - Body Damage:
-            - Against shapes: 20 (+4 for each point in Body Damage)
-            - Against tanks: 30 (+ 6 for each point in Body Damage)
-            - Against bullets: 5 (+1 for each point in Body Damage)
-            - Bullet Speed: x1 Tank
-            - Bullet Penetration: 2 (+1.5 for each point in Bullet Penetration)
-            - Bullet Damage: 7 (+3 for each point in Bullet Damage)
-            - Reload time: 15t (-1t for each point in Reload)
-            - Movement Speed: 1x Tank
-
-
             Strong Against: Low upgraded tanks (as the tank levels up, the list grows exponentially due to the high bullet stats), bullet-shooting tanks with lower frontal DPS if the player is maxed out in bullet power and Reload.
 
             
@@ -108,6 +62,49 @@
 
             
             The bullets of a basic are, to say the least, basic. Dodging their bullets all depends on the bullet’s speed and the basic’s Movement. Estimating the trajectory of the tanks Bullets to the cannon direction is the main way to dodge their bullets, or just plain dodging is another way.
+        </strategy>
+    </section>
+
+    <section name="Trivia">
+        - The Tank is one of two Classes that has an upgrade directly branching from it that is two tiers higher than itself, the Smasher (Tier 3). The other tank with this quality is the Machine Gun, branching to the Sprayer (Tier 4).
+        
+        - This Tank, along with the Twin, Triplet, Triple Shot, Quad Tank and Octo Tank, were the first tanks ever added to the game (before its public release). 
+        
+        - At level 45, 6 of this tank's bullets deal as much damage as the Destroyer Branch's. It can kill a level 45 tank in 2 shots if fully upgraded in Bullet Speed, Penetration and Damage.
+
+        - Oddly enough, the Tank’s Bullets are actually the nineth most powerful in the game, tied with the Flank Guard, only under the Skimmer, Rocketeer, Glider, Destroyer, Annihilator, Arena Closer, Dominator (mainly destroyer dominator) and Hybrid’s bullets.
+        
+        - This is because most tanks will add barrels but reduce the power of each, to balance out the extra firepower. In addition, some stronger tanks, most notably the Overseer branch, uses other types of ammunition, such as Drones, or Traps in case of the Trapper branch.
+        
+        - The Tank is the only Tier 1 tank in the game.
+        
+        - The Tank is one of two Classes that has an upgrade directly branching from it that is two tiers higher than itself, the Smasher (Tier 3). The other tank with this quality is the Machine Gun, branching to the Sprayer (Tier 4). The tank is the only class that has an upgrade directly branching from it that is three tiers higher than itself.
+        
+        - This Tank, along with the Twin, Triplet, Triple Shot, Quad Tank and Octo Tank, were the first tanks ever added to the game (before its public release).
+        
+        - At level 45, 6 of this tank's bullets deal as much damage as the Destroyer Branch's. It can kill a level 45 tank in 2 shots if fully upgraded in Bullet Speed, Penetration and Damage.
+    </section>
+
+    <section name="Test">
+        <description>
+
+            The Tank, usually called the Basic Tank or simply Basic, is the tank the player spawns as. It is equipped with one Cannon which shoots one Bullet at a time in a straight path, with slight recoil. At Level 1, with no upgrades, it has 50 HP. At Level 15, four upgrade choices will be given to the player: Twin (adding an extra cannon next to the existent cannon, both larger than the starter Tank's) Sniper (turning the normal cannon into a sniper cannon), Machine Gun (turning the normal cannon into a machine gun cannon) and Flank Guard (Like the Twin, but instead adding a shorter cannon to the back of the tank). At Level 30, the choice for the Smasher upgrade will be available. Level 30 and 45 will once again prompt the player with options of other “sub-categories” of tanks. For information on these other tanks, go to the Tiers page. 
+
+            The stats of a Tank are as follow:
+
+            - Regen: 1x Tank
+            - Health: 50 (+20 for each point in Max Health, +2 for each extra level)
+            - Body Damage:
+            - Against shapes: 20 (+4 for each point in Body Damage)
+            - Against tanks: 30 (+ 6 for each point in Body Damage)
+            - Against bullets: 5 (+1 for each point in Body Damage)
+            - Bullet Speed: x1 Tank
+            - Bullet Penetration: 2 (+1.5 for each point in Bullet Penetration)
+            - Bullet Damage: 7 (+3 for each point in Bullet Damage)
+            - Reload time: 15t (-1t for each point in Reload)
+            - Movement Speed: 1x Tank
+
+
         </description>
     </section>
 
