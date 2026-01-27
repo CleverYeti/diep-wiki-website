@@ -7,8 +7,8 @@ export const formulas = {
     tankRegenPerTick: (tankHealth = 50, healthRegenPoints = 0) => tankHealth * (0.001 + 0.004 * healthRegenPoints) / TICK_RATE,
     tankEffectiveHealth: (tankHealth = 50, tankDamagePerTick = 20) => tankHealth * tankDamagePerTick,
     tankFovFactor: (tankLevel = 1, tankFieldFactorStat = 1) => 1.01 ** (0.5 * (tankLevel - 1)) / tankFieldFactorStat,
-    tankViewWidth: (tankFovFactor = 1) => 1920 * tankFovFactor / 0.825,
-    tankViewHeight: (tankFovFactor = 1) => 1080 * tankFovFactor / 0.825,
+    tankViewWidth: (tankFovFactor = 1) => 1920 * tankFovFactor / 0.55,
+    tankViewHeight: (tankFovFactor = 1) => 1080 * tankFovFactor / 0.55,
     tankMovementSpeed: (tankLevel = 1, movementSpeedPoints = 0) => 25.5 * 1.07 ** movementSpeedPoints / 1.015 ** (tankLevel - 1),
     ticksToGoInvisible: (tankInvisibilityRate = 1) => 1 / tankInvisibilityRate,
 
