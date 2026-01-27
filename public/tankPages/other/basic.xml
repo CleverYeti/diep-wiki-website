@@ -65,9 +65,9 @@
     </section>
 
     <section name="Trivia">
-        - This Tank, along with the Twin, Triplet, Triple Shot, Quad Tank and Octo Tank, were the first tanks ever added to the game (before its public release). 
-        
-        - At level 45, 6 of this tank's bullets deal as much damage as the Destroyer Branch's. It can kill a level 45 tank in 2 shots if fully upgraded in Bullet Speed, Penetration and Damage.
+        - Basic, Twin, Triple Shot, Quad Tank, Triplet and Octo Tank were the first tanks that were added to Diep.io before the public release.
+
+        - 6 max Penetration and Damage bullets of Basic Tank deals as much damage as Destroyer and can 2 shot a max level glass tank.
     </section>
 
     <section name="Stats">
@@ -87,4 +87,6 @@
             - Movement Speed: 1x Tank
         </description>
     </section>
+
+
 </content>
