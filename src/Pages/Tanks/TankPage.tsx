@@ -108,19 +108,21 @@ export function TankPage({
                         <div className="title">PC World Records</div>
                         {recordData != null && recordData[tank.key] != null &&(
                             <StatsBlock rows={Object.entries(recordData[tank.key]).map(([gamemode, record]) => (
-                                [
-                                    ({"ffa": "FFA", "2tdm": "2 Teams", "4tdm": "4 Teams", "maze": "Maze"}[gamemode]) ?? "",
-                                    formatScore(record.score) + " by " + record.scorer
-                                ]
+                                {
+                                    name: ({"ffa": "FFA", "2tdm": "2 Teams", "4tdm": "4 Teams", "maze": "Maze"}[gamemode]) ?? "",
+                                    value: formatScore(record.score) + " by " + record.scorer,
+                                    consoleValue: record.score + " by " + record.scorer,
+                                }
                             ))}/>
                         )}
                         <div className="title">Mobile World Records</div>
                         {mobileRecordData != null && mobileRecordData[tank.key] != null &&(
                             <StatsBlock rows={Object.entries(mobileRecordData[tank.key]).map(([gamemode, record]) => (
-                                [
-                                    ({"ffa": "FFA", "2tdm": "2 Teams", "4tdm": "4 Teams", "maze": "Maze"}[gamemode]) ?? "",
-                                    formatScore(record.score) + " by " + record.scorer
-                                ]
+                                {
+                                    name: ({"ffa": "FFA", "2tdm": "2 Teams", "4tdm": "4 Teams", "maze": "Maze"}[gamemode]) ?? "",
+                                    value: formatScore(record.score) + " by " + record.scorer,
+                                    consoleValue: record.score + " by " + record.scorer,
+                                }
                             ))}/>
                         )}
                     </div>

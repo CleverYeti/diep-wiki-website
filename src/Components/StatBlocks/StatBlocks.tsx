@@ -5,15 +5,19 @@ import { Shape, shinyHealthFactor, shinyScoreFactor } from "../../Data/shapesDat
 
 const GRID_SIZE = 50
 
-export function StatsBlock({rows}: {rows: Array<Array<string>>}) {
+export function StatsBlock({rows}: {rows: Array<{
+  name: string,
+  value: string,
+  consoleValue: string,
+}>}) {
   return (
     <>
       {
-        rows.map(row => (
-          <div className="stat-row">
-            <div className="name">{row[0]}:</div>
+        rows.map((row, i) => (
+          <div className="stat-row" onClick={() => console.log("exact value:", row.consoleValue)} key={i}>
+            <div className="name">{row.name}:</div>
             <div className="line"></div>
-            <div className="value">{row[1]}</div>
+            <div className="value">{row.value}</div>
           </div>
         ))
       }
@@ -43,7 +47,11 @@ export function BarrelStatsDisplay({
   comparisonPoints?: Array<number>;
 }) {
   const content: Array<JSX.Element> = []
-  const rows: Array<Array<string>> = []
+  const rows: Array<{
+    name: string,
+    value: string,
+    consoleValue: string
+  }> = []
 
   interface Values {
     [key: string]: number
@@ -81,25 +89,27 @@ export function BarrelStatsDisplay({
   // damage reduction 0.25 ???
   // only valid for normal bullets
 
-  rows.push(["Reload Time", `${roundWithDecimals(mainValues.reloadTicks)}t: ${roundWithDecimals(mainValues.reloadSecs)}s`])
-  rows.push(["Fire Rate", `${roundWithDecimals(mainValues.fireRate)}/s (${roundWithDecimals(comparisonFactors.fireRate)}x)`])
-  rows.push(["Instant Recoil Speed", `${roundWithDecimals(mainValues.instantRecoilSpeed)} (${roundWithDecimals(comparisonFactors.instantRecoilSpeed)}x)`])
-  rows.push(["Peak Recoil Speed", `${roundWithDecimals(mainValues.peakRecoilSpeed)} (${roundWithDecimals(comparisonFactors.peakRecoilSpeed)}x)`])
-  rows.push(["Average Recoil Speed", `${roundWithDecimals(mainValues.averageRecoilSpeed)} (${roundWithDecimals(comparisonFactors.averageRecoilSpeed)}x)`])
-  rows.push(["Bullet Damage per tick", `${roundWithDecimals(mainValues.bulletDamagePerTick)} (${roundWithDecimals(comparisonFactors.bulletDamagePerTick)}x)`])
-  rows.push(["Bullet Health", `${roundWithDecimals(mainValues.bulletHealth)} (${roundWithDecimals(comparisonFactors.bulletHealth)}x)`])
-  rows.push(["Bullet Effective DMG", `${roundWithDecimals(mainValues.bulletEffectiveDamage)} (${roundWithDecimals(comparisonFactors.bulletEffectiveDamage)}x)`])
+  rows.push({name: "Reload Time",             value: `${roundWithDecimals(mainValues.reloadTicks)}t: ${roundWithDecimals(mainValues.reloadSecs)}s`,                             consoleValue: `${mainValues.reloadTicks}t: ${mainValues.reloadSecs}s`})
+  rows.push({name: "Fire Rate",               value: `${roundWithDecimals(mainValues.fireRate)}/s (${roundWithDecimals(comparisonFactors.fireRate)}x)`,                         consoleValue: `${mainValues.fireRate}/s (${comparisonFactors.fireRate}x)`});
+  rows.push({name: "Instant Recoil Speed",    value: `${roundWithDecimals(mainValues.instantRecoilSpeed)} (${roundWithDecimals(comparisonFactors.instantRecoilSpeed)}x)`,       consoleValue: `${mainValues.instantRecoilSpeed} (${comparisonFactors.instantRecoilSpeed}x)`})
+  rows.push({name: "Peak Recoil Speed",       value: `${roundWithDecimals(mainValues.peakRecoilSpeed)} (${roundWithDecimals(comparisonFactors.peakRecoilSpeed)}x)`,             consoleValue: `${mainValues.peakRecoilSpeed} (${comparisonFactors.peakRecoilSpeed}x)`})
+  rows.push({name: "Average Recoil Speed",    value: `${roundWithDecimals(mainValues.averageRecoilSpeed)} (${roundWithDecimals(comparisonFactors.averageRecoilSpeed)}x)`,       consoleValue: `${mainValues.averageRecoilSpeed} (${comparisonFactors.averageRecoilSpeed}x)`})
+  rows.push({name: "Bullet Damage per tick",  value: `${roundWithDecimals(mainValues.bulletDamagePerTick)} (${roundWithDecimals(comparisonFactors.bulletDamagePerTick)}x)`,     consoleValue: `${mainValues.bulletDamagePerTick} (${comparisonFactors.bulletDamagePerTick}x)`})
+  rows.push({name: "Bullet Health",           value: `${roundWithDecimals(mainValues.bulletHealth)} (${roundWithDecimals(comparisonFactors.bulletHealth)}x)`,                   consoleValue: `${mainValues.bulletHealth} (${comparisonFactors.bulletHealth}x)`})
+  rows.push({name: "Bullet Effective DMG",    value: `${roundWithDecimals(mainValues.bulletEffectiveDamage)} (${roundWithDecimals(comparisonFactors.bulletEffectiveDamage)}x)`, consoleValue: `${mainValues.bulletEffectiveDamage} (${comparisonFactors.bulletEffectiveDamage}x)`})
   if (isFinite(mainValues.bulletLifeLength)) {
-    rows.push(["Bullet Life", `${roundWithDecimals(mainValues.bulletLifeLength)}t: ${roundWithDecimals(mainValues.bulletLifeLength / TICK_RATE)}s (${roundWithDecimals(comparisonFactors.bulletLifeLength)}x)`])
-    rows.push(["Bullet Range", `${roundWithDecimals(mainValues.bulletRange)} (${roundWithDecimals(comparisonFactors.bulletRange)}x)`])
+    rows.push({name: "Bullet Life",           value: `${roundWithDecimals(mainValues.bulletLifeLength)}t: ${roundWithDecimals(mainValues.bulletLifeLength / TICK_RATE)}s (${roundWithDecimals(comparisonFactors.bulletLifeLength)}x)`, consoleValue: `${mainValues.bulletLifeLength}t: ${mainValues.bulletLifeLength / TICK_RATE}s (${comparisonFactors.bulletLifeLength}x)`})
+    rows.push({name: "Bullet Range",          value: `${roundWithDecimals(mainValues.bulletRange)} (${roundWithDecimals(comparisonFactors.bulletRange)}x)`,                     consoleValue: `${mainValues.bulletRange} (${comparisonFactors.bulletRange}x)`})
   } else {
-    rows.push(["Bullet Life", `Infinite`])
+    rows.push({name: "Bullet Life", value: `Infinite`, consoleValue: "Infinite"})
   }
-  rows.push(["Bullet Absorbtion Factor", `${roundWithDecimals(stats.bullet.absorbtionFactor)}`])
-  rows.push(["Bullet Scatter Rate", `±${roundWithDecimals(mainValues.bulletScatterDegrees)}deg (${roundWithDecimals(stats.bullet.scatterFactor)}x)`])
-  rows.push(["Bullet Initial Speed", `${roundWithDecimals(mainValues.bulletInitialSpeed)}/t ±${roundWithDecimals(mainValues.bulletInitialSpeedVariation)}/t`])
-  rows.push(["Bullet Speed", `${roundWithDecimals(mainValues.bulletTargetSpeed)}/t: ${roundWithDecimals(mainValues.bulletTargetSpeed * TICK_RATE)}/s (${comparisonFactors.bulletTargetSpeed}x)`])
-  if (stats.droneCount) rows.push(["Drone Limit Per Spawner", `${stats.droneCount}`])
+  rows.push({name: "Bullet Absorbtion Factor",  value: `${roundWithDecimals(stats.bullet.absorbtionFactor)}`,                                                                   consoleValue: `${stats.bullet.absorbtionFactor}`})
+  rows.push({name: "Bullet Scatter Rate",       value: `±${roundWithDecimals(mainValues.bulletScatterDegrees)}deg (${roundWithDecimals(stats.bullet.scatterFactor)}x)`,         consoleValue: `±${mainValues.bulletScatterDegrees}deg (${stats.bullet.scatterFactor}x)`})
+  rows.push({name: "Bullet Initial Speed",      value: `${roundWithDecimals(mainValues.bulletInitialSpeed)}/t ±${roundWithDecimals(mainValues.bulletInitialSpeedVariation)}/t`, consoleValue: `${mainValues.bulletInitialSpeed}/t ±${mainValues.bulletInitialSpeedVariation}/t`})
+  rows.push({name: "Bullet Speed",              value: `${roundWithDecimals(mainValues.bulletTargetSpeed)}/t: ${roundWithDecimals(mainValues.bulletTargetSpeed * TICK_RATE)}/s (${roundWithDecimals(comparisonFactors.bulletTargetSpeed)}x)`, consoleValue: `${mainValues.bulletTargetSpeed}/t: ${mainValues.bulletTargetSpeed * TICK_RATE}/s (${comparisonFactors.bulletTargetSpeed}x)`})
+  if (stats.droneCount != null) {
+    rows.push({name: "Drone Limit Per Spawner", value: `${stats.droneCount}`, consoleValue: `${stats.droneCount}`})
+  }
   
   return <StatsBlock rows={rows}/>
 }
@@ -121,7 +131,11 @@ export function TankStatsDisplay({
   comparisonLevel?: number;
   comparisonPoints?: Array<number>;
 }) {
-  const rows: Array<Array<string>> = []
+  const rows: Array<{
+    name: string,
+    value: string,
+    consoleValue: string
+  }> = []
 
   interface Values {
     [key: string]: number
@@ -165,32 +179,36 @@ export function TankStatsDisplay({
     if (comparisonValues[key]) comparisonFactors[key] = mainValues[key] / (comparisonValues[key] ?? 0)
   }
 
-  rows.push(["Max Health", `${roundWithDecimals(mainValues.health)} (${roundWithDecimals(comparisonFactors.health)}x)`])
-  rows.push(["Body Damage", `${roundWithDecimals(mainValues.damagePerTick)}/t (${roundWithDecimals(comparisonFactors.damagePerTick)}x)`])
-  rows.push(["Effective Health", `${roundWithDecimals(mainValues.effectiveHealth)} (${roundWithDecimals(comparisonFactors.effectiveHealth)}x)`])
-  rows.push(["Health Regen", `${roundWithDecimals(mainValues.regenPerTick, 5)}/t (${roundWithDecimals(comparisonFactors.regenPerTick)}x)`])
-  rows.push(["Speed", `${roundWithDecimals(mainValues.movementSpeed)}/t: ${roundWithDecimals(mainValues.movementSpeed * TICK_RATE, 0)}/s (${roundWithDecimals(comparisonFactors.movementSpeed)}x)`])
-  rows.push(["Speed w/ recoil", `${roundWithDecimals(mainValues.averageRecoilSpeed)}/t (${roundWithDecimals(comparisonFactors.averageRecoilSpeed)}x)`])
-  if (mainValues.fovFactor) rows.push(["Fov", `${roundWithDecimals(mainValues.viewWidth, 0)} x ${roundWithDecimals(mainValues.viewHeight, 0)} (${roundWithDecimals(comparisonFactors.fovFactor)}x)`])
+  rows.push({name: "Max Health",                    value: `${roundWithDecimals(mainValues.health)} (${roundWithDecimals(comparisonFactors.health)}x)`,                                                           consoleValue: `${mainValues.health} (${comparisonFactors.health}x)`})
+  rows.push({name: "Body Damage",                   value: `${roundWithDecimals(mainValues.damagePerTick)}/t (${roundWithDecimals(comparisonFactors.damagePerTick)}x)`,                                           consoleValue: `${mainValues.damagePerTick}/t (${comparisonFactors.damagePerTick}x)`})
+  rows.push({name: "Effective Health",              value: `${roundWithDecimals(mainValues.effectiveHealth)} (${roundWithDecimals(comparisonFactors.effectiveHealth)}x)`,                                         consoleValue: `${mainValues.effectiveHealth} (${comparisonFactors.effectiveHealth}x)`})
+  rows.push({name: "Health Regen",                  value: `${roundWithDecimals(mainValues.regenPerTick, 5)}/t (${roundWithDecimals(comparisonFactors.regenPerTick)}x)`,                                          consoleValue: `${mainValues.regenPerTick}/t (${comparisonFactors.regenPerTick}x)`})
+  rows.push({name: "Speed",                         value: `${roundWithDecimals(mainValues.movementSpeed)}/t: ${roundWithDecimals(mainValues.movementSpeed * TICK_RATE, 0)}/s (${roundWithDecimals(comparisonFactors.movementSpeed)}x)`, consoleValue:  `${mainValues.movementSpeed}/t: ${mainValues.movementSpeed * TICK_RATE}/s (${comparisonFactors.movementSpeed}x)`})
+  rows.push({name: "Speed w/ recoil",               value: `${roundWithDecimals(mainValues.averageRecoilSpeed)}/t (${roundWithDecimals(comparisonFactors.averageRecoilSpeed)}x)`,                                 consoleValue: `${mainValues.averageRecoilSpeed}/t (${comparisonFactors.averageRecoilSpeed}x)`})
+  if (mainValues.fovFactor) rows.push({name: "Fov", value: `${roundWithDecimals(mainValues.viewWidth, 0)} x ${roundWithDecimals(mainValues.viewHeight, 0)} (${roundWithDecimals(comparisonFactors.fovFactor)}x)`, consoleValue: `${mainValues.viewWidth} x ${mainValues.viewHeight} (${comparisonFactors.fovFactor}x)`})
   
   if (tank.flags && tank.flags.invisibility) {
-    rows.push(["Time To Go Invisible", `${roundWithDecimals(mainValues.timeToGoInvisible)}t: ${roundWithDecimals(mainValues.timeToGoInvisible / TICK_RATE)}s`])
+    rows.push({name: "Time To Go Invisible",        value: `${roundWithDecimals(mainValues.timeToGoInvisible)}t: ${roundWithDecimals(mainValues.timeToGoInvisible / TICK_RATE)}s`,                                consoleValue: `${mainValues.timeToGoInvisible}t: ${mainValues.timeToGoInvisible / TICK_RATE}s`})
   }
   if (tank.flags && tank.flags.zoomAbility) {
     const zoomRange = 1500
-    rows.push(["Zoom Range", `${roundWithDecimals(zoomRange)}: ${roundWithDecimals(zoomRange / GRID_SIZE)} grid squares`])
+    rows.push({name: "Zoom Range",                  value: `${roundWithDecimals(zoomRange)}: ${roundWithDecimals(zoomRange / GRID_SIZE)} grid squares`,                                                           consoleValue: `${zoomRange}: ${zoomRange / GRID_SIZE} grid squares`})
   }
 
   return <StatsBlock rows={rows}/>
 }
 
 export function ShapeStatsDisplay({shape, isShiny = false}: {shape: Shape; isShiny?: boolean}) {
-  const rows: Array<Array<string>> = []
-  rows.push(["Health", `${roundWithDecimals(isShiny ? shinyHealthFactor * shape.health : shape.health)}`])
-  rows.push(["DMG Per Tick", `${roundWithDecimals(shape.bodyDamage)}`])
-  rows.push(["Eff. Health", `${roundWithDecimals(shape.bodyDamage * (isShiny ? shinyHealthFactor * shape.health : shape.health))}`])
-  rows.push(["Score", `${roundWithDecimals(isShiny ? shinyScoreFactor * shape.score : shape.score)}`])
-  if (shape.speed) rows.push(["Speed", `${roundWithDecimals(shape.speed)}/t: ${roundWithDecimals(shape.speed * TICK_RATE)}/s`])
+  const rows: Array<{
+    name: string,
+    value: string,
+    consoleValue: string
+  }> = []
+  rows.push({name: "Health",                  value: `${roundWithDecimals(isShiny ? shinyHealthFactor * shape.health : shape.health)}`,                       consoleValue: `${isShiny ? shinyHealthFactor * shape.health : shape.health}`})
+  rows.push({name: "DMG Per Tick",            value: `${roundWithDecimals(shape.bodyDamage)}`,                                                                consoleValue: `${shape.bodyDamage}`})
+  rows.push({name: "Eff. Health",             value: `${roundWithDecimals(shape.bodyDamage * (isShiny ? shinyHealthFactor * shape.health : shape.health))}`,  consoleValue: `${shape.bodyDamage * (isShiny ? shinyHealthFactor * shape.health : shape.health)}`})
+  rows.push({name: "Score",                   value: `${roundWithDecimals(isShiny ? shinyScoreFactor * shape.score : shape.score)}`,                          consoleValue: `${isShiny ? shinyScoreFactor * shape.score : shape.score}`})
+  if (shape.speed) rows.push({name: "Speed",  value: `${roundWithDecimals(shape.speed)}/t: ${roundWithDecimals(shape.speed * TICK_RATE)}/s`,                  consoleValue: `${shape.speed}/t: ${shape.speed * TICK_RATE}/s`})
 
   return <StatsBlock rows={rows}/>
 }

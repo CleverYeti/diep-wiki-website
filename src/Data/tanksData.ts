@@ -1740,7 +1740,7 @@ export const tanksData:TanksData = {
     "levelRequirement": 45,
     "upgrades": [],
     "flags": {},
-    "fieldFactor": 0.7,
+    "fieldFactor": 0.64,
     "preAddon": null,
     "postAddon": "ranger",
     "sides": 1,
