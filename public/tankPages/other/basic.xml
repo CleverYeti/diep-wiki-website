@@ -1,7 +1,7 @@
 <content>
     <section name="Basic info">
         <description>
-            Basic tank is the first tank you spawn in, there's not much to the tank other than it being a decent focused dps option.
+            Basic tank is the first tank you spawn in as.
         </description>
     </section>
 
@@ -15,10 +15,10 @@
 
     <section name="Strategy">
         <strategy>
-            Strong Against: Low upgraded tanks (as the tank levels up, the list grows exponentially due to the high bullet stats), bullet-shooting tanks with lower frontal DPS if the player is maxed out in bullet power and Reload.
+            Strong Against: Low upgraded tanks, bullet-shooting tanks with lower frontal DPS if the player is maxed out in bullet power and Reload.
 
             
-            Weak Against: Bullet Spammers, Overlords, highly upgraded tanks, high-level tanks, Bosses, Sniper tanks if caught off guard, Crashers (swarming).
+            Weak Against: Bullet Spammers, Overlords, highly upgraded tanks, high-level tanks, Bosses, Sniper tanks if caught off guard.
 
             
             Upon starting the game, it is advised for players to attempt to find and kill any Pentagons near their spawn point because Pentagons are most effective and critical for leveling up. If there are none close by, it is best to destroy any nearby Squares or Triangles instead.
@@ -27,7 +27,7 @@
             Though strategies differ between players, it is often advisable for novices to upgrade Max Health and Health Regeneration once or twice.
 
             
-            While playing 2 Teams or 4 Teams, players should stay close to the Base and take out Polygons nearby when they are at a lower level. If the enemy team’s players are taking up most of the Leaderboard and/or are spawn-camping the player’s team, consider going to a different area of the spawn camp. Again, players should upgrade Max Health or Movement Speed.
+            While playing teams modes, players should stay close to the Base and take out Polygons nearby when they are at a lower level. If the enemy team’s players are taking up most of the Leaderboard and/or are spawn-camping the player’s team, consider going to a different area of the spawn camp. Again, players should upgrade Max Health or Movement Speed.
 
             
             As a low-level tank with maxed out Max Health and Body Damage, players can surprise Bullet build players by making themselves seem harmless. This is a good way to quickly reach Smasher or Booster.
@@ -65,24 +65,12 @@
     </section>
 
     <section name="Trivia">
-        - The Tank is one of two Classes that has an upgrade directly branching from it that is two tiers higher than itself, the Smasher (Tier 3). The other tank with this quality is the Machine Gun, branching to the Sprayer (Tier 4).
-        
         - This Tank, along with the Twin, Triplet, Triple Shot, Quad Tank and Octo Tank, were the first tanks ever added to the game (before its public release). 
-        
-        - At level 45, 6 of this tank's bullets deal as much damage as the Destroyer Branch's. It can kill a level 45 tank in 2 shots if fully upgraded in Bullet Speed, Penetration and Damage.
-
-        - Oddly enough, the Tank’s Bullets are actually the nineth most powerful in the game, tied with the Flank Guard, only under the Skimmer, Rocketeer, Glider, Destroyer, Annihilator, Arena Closer, Dominator (mainly destroyer dominator) and Hybrid’s bullets.
-        
-        - This is because most tanks will add barrels but reduce the power of each, to balance out the extra firepower. In addition, some stronger tanks, most notably the Overseer branch, uses other types of ammunition, such as Drones, or Traps in case of the Trapper branch.
-        
-        - The Tank is one of two Classes that has an upgrade directly branching from it that is two tiers higher than itself, the Smasher (Tier 3). The other tank with this quality is the Machine Gun, branching to the Sprayer (Tier 4). The tank is the only class that has an upgrade directly branching from it that is three tiers higher than itself.
-        
-        - This Tank, along with the Twin, Triplet, Triple Shot, Quad Tank and Octo Tank, were the first tanks ever added to the game (before its public release).
         
         - At level 45, 6 of this tank's bullets deal as much damage as the Destroyer Branch's. It can kill a level 45 tank in 2 shots if fully upgraded in Bullet Speed, Penetration and Damage.
     </section>
 
-    <section name="Test">
+    <section name="Stats">
         <description>
             The stats of a Tank are as follow:
 
