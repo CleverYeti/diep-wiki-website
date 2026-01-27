@@ -1209,9 +1209,9 @@ export const tanksData:TanksData = {
         "bullet": {
           "type": "bullet",
           "sizeFactor": 1,
-          "healthFactor": 1,
+          "healthFactor": 0.9,
           "damageFactor": 0.6,
-          "speedFactor": 0.9,
+          "speedFactor": 1,
           "scatterFactor": 1,
           "lifeLengthFactor": 1,
           "absorbtionFactor": 1
@@ -1523,9 +1523,9 @@ export const tanksData:TanksData = {
         "bullet": {
           "type": "bullet",
           "sizeFactor": 1,
-          "healthFactor": 1,
+          "healthFactor": 0.9,
           "damageFactor": 0.6,
-          "speedFactor": 0.9,
+          "speedFactor": 1,
           "scatterFactor": 1,
           "lifeLengthFactor": 1,
           "absorbtionFactor": 1
@@ -4432,3 +4432,4 @@ export const tanksData:TanksData = {
   },
   */
 }
+
