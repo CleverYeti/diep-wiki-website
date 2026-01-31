@@ -6,22 +6,37 @@
 
     <section name="Meta Builds">
         1. <build points="0/0/0/5/7/7/7/7"/>
-        2. <build points="0/0/0/6/7/7/7/6"/>
         Alternatives:
-        3. <build points="0/0/0/7/7/7/6/6"/>
-        4. <build points="2/2/0/7/7/7/5/3"/>
+        2. <build points="0/0/0/7/6/6/7/7"/>
     </section>
 
     <section name="Strategy">
         - Due to the addition of a second barrel, Twin has increased recoil, you can use this to your advantage by shooting in the opposite direction of your movement to increase your movement speed. Useful for getting out of tricky situations.
+        Strategy
+Strong Against: Tanks with low Reload and Penetration, non-focused spammers, Drone tanks with lower skill.
+Weak Against: Skilled Drone users, focus spammers with higher DPS, skilled Destroyer/Hybrid/Annihilator users, Assassin branch at long range.
+As the Twin
+The Twin is similar to the Machine Gun. It has the advantage of a very quick default Reload speed. Twin players are capable of fighting certain Tier 3 tanks with relative ease due to its double fire-rate compared to most other tanks, but one difference between the Machine Gun and the Twin is that the Twin’s Bullets are more focused.
+The Twin has high DPS (Damage Per Second), but unlike the Quad Tank or Twin Flank upgrades, it only shoots in one direction, making it vulnerable to Bullets or other threats from behind. With its good default Bullet Penetration, it can be used as a counter to the Sniper. The Flank Guard is considered weaker than the Twin. The Twin’s effectiveness compared to the Machine Gun is debatable.
+It is advised for players to invest points in Bullet Penetration as this makes a large number of Bullets form a barrier against other incoming Bullets. However, stronger Bullets will still pass through the shield, making Twins somewhat vulnerable to other Twins, Triplets or Machine Guns. Twins and other Bullet Spammers that do not have spread out bullets like the Machine Gun, the Sprayer, the Spread Shot or the Penta Shot can shake their mouse to spread the bullets out, making them harder to dodge. The Twin can use this in a Twin vs Twin battle to hit the other Twin more and therefore gain the upper hand in the battle. This can be used against various tanks.
+Should the player be forced to retreat, they can turn so that the Cannons are away from the direction they wish to go and use their recoil to propel themselves away.
+Against the Twin
+Having a tank with a high Bullet Penetration, such as the Destroyer, can make an encounter with a Twin much easier to handle. Being able to shoot through the Twin’s Bullets is vital to winning the fight, as it will be tough to combat its stream of Bullets head-on; this may give ramming classes a hard time with this class.
+As firing through its stream of Bullets is often not an option, flanking can be an effective maneuver against this tank. High movement speed can allow the player to avoid its Bullets and hit it from the side or behind. A ranged class such as the Assassin or Ranger can Flank the Twin by going behind it and shooting, getting the first shot. When a ranged class fires, its bullets have a high Bullet Speed, and it is recommended to max out this stat point so the Ranger/Assassin’s bullet can “ghost” through their bullets.
+As the Twin's fire rate is doubled, a more focused stream of bullets projects from it, therefore allowing more gracious spread. When approaching a Twin, be aware of this fact and try to circle it, keeping ahead or behind the stream of bullets. High penetration/damage tanks will work as the bullets can effectively penetrate that of the Twin’s.
     </section>
 
     <section name="Trivia">
+        - It used to have only one firing pattern, in which the Cannons shoot alternatively. It now has two different firing patterns, accessible by firing and stopping repeatedly.
+        - During the pre release no other upgrade choices, and they would automatically upgrade from the basic Tank into a Twin at Level 15.
         - The Twin tank has the smallest tier 2 branch out of the 4, with only 7 possible level 45 upgrades.
         - You can stack the bullets to form a wall by manipulating the barrels to fire at the same time. 
         - The achievement for upgrading to Twin is "Fire Power".
         - Twin tank was the second tank to be added to the game, after Basic Tank; with its ID being '1'.
         - In one of the oldest versions, Twin used to upgrade directly into "Triplet" at level 30, however this was changed due to it being overpowered, with Triple Shot taking its place.
+        - The Twin is the smallest Tier 2 branch, having only 7 total Tier 4 tanks branch from it and its Upgrade choices.
+        - When shooting, you may shoot 2 bullets and once by clicking twice. By clicking twice to shoot, you get a new pattern of shots.
     </section>
     
+
 </content>
