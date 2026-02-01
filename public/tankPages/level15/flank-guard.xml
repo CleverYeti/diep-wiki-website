@@ -1,25 +1,33 @@
 <content>
 
     <section name="Flank Guard Info">
-        Flank Guard is a tier 2 tank that can be selected upon reaching level 15, and at tier 3, can be upgraded into "Tri-Angle", "Quad Tank", "Twin Flank" and "Auto 3". It features 2 barrels at the opposite ends of the tank body; the back barrel being shorter than the front. 
+        Flank Guard is a tier 2 tank that can be selected upon reaching level 15, and at tier 3, can be upgraded into "Tri-Angle", "Quad Tank", "Twin Flank" and "Auto 3". It has a second barrel being shorter than the main. 
     </section>
 
     <section name="Meta Builds">
         1. <build points="0/0/0/5/7/7/7/7"/>
         Alternatives:
-        2. <build points="0/0/0/6/7/7/6/6"/>
-        3. <build points="0/1/2/2/7/7/7/7"/>
+        2. <build points="0/0/0/7/7/6/6/7"/>
     </section>
 
     <section name="Strategy">
-        - Flank Guard has no recoil, making it less reliant on positioning skills and aim - having a much easier time building up a bullet wall and bomb rushing tanks.
+        - Avoid drone tanks, high frontal DPS tanks and good Sniper players.
+
+        - Attack Trappers, bullet spammers and rammers.
+
+        - Flank Guard doesn't have recoil while attacking, use this to rush players while being slowed.
+
+        - Flank Guard cant defend well due to this lack of movement speed, so using both barrels to your advantage is important.
+
+        - Position yourself well to aim with both barrels similtainiously but also know what position isn't and try to just escape.
     </section>
 
     <section name="Trivia">
-        - The Flank Guard has the 2nd smallest tier 2 branch out of the 4, with 8 possible level 45 upgrades.
-        - The achievement for upgrading to Flank Guard is "Ain't no one sneaking up on ME".
-        - Flank Guard was the ninth tank to be added to the game, after Machine Gun; with its ID being '8'.
         - In one of the oldest versions, the barrels of the Flank Guard would fire at alternating times. People created spin bots to abuse this mechanic, which started the first ever form of flip fire.
+        
+        - Flank Guard only has two unique Tier 4 upgrades that only it can upgrade to, being Booster and Fighter. All other Tier 4 tanks are upgradable from other Tier 2 tanks.
+
+        - Flank Guard’s back barrel is shorter than its main barrel, but they both have the same amount of penetration, damage, reload, and recoil.
     </section>
     
 </content>
