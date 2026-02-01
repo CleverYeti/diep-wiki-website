@@ -1,30 +1,35 @@
 <content>
 
     <section name="Sniper Info">
-        Sniper is a tier 2 tank that can be selected upon reaching level 15, and at tier 3, can be upgraded into "Assassin", "Overseer", "Hunter" or "Trapper". It features 1 barrel, slightly longer than Basic Tank's, at the front of the tank body. The base speed of the tank's bullet is increased, while the reload is reduced. The main gimmick surrounding Sniper is that its 'Field Of View' (FOV) is increased, so it can see a further distance than most tanks.
+        Sniper is a tier 2 tank that can be selected upon reaching level 15, and at tier 3, can be upgraded into "Assassin", "Overseer", "Hunter" or "Trapper".
     </section>
 
     <section name="Meta Builds">
-        1. <build points="0/0/0/6/7/7/7/6"/>
-        2. <build points="0/0/0/7/7/7/7/5"/>
+        1. <build points="0/0/0/7/7/7/5/7"/>
         Alternative:
-        3. <build points="0/0/0/7/7/7/6/6"/>
-        At level 22, the best build for this tank is:
-           <build points="0/0/0/6/5/5/0/5"/>
+        2. <build points="0/0/0/7/7/7/7/5"/>
     </section>
 
     <section name="Strategy">
-        - Sniper's increased FOV means it can hide just outside the FOV of some other tanks while still keeping them visible. Utilising this is useful for ambushing/catching your opponent off guard.
+        - Avoid drone tanks, rammers and high frontal DPS tanks.
+
+        - Attack low health tanks, Destroyer classes and some bullet spammers.
+
+        - Utilising the larger Field of View to their advantage to keep players in the top or bottom of their screen as other players have the least amount of time to react to Sniper's fast bullets.
+        
+        - Keep your distance between players as the low rate of fire isn't good for close quarters, and the high bullet speed can hit from afar.
+
+        - Only shoot bullets that are needed, bullets fired can attract attention reducing its stealthiness.
+        
+        - A swarm of Crashers is able to drain the health and stop the regen of Sniper due to Sniper's low rate of fire, stay at the edge and shoot inwards to kill distracted players farming pentagons.
     </section>
 
     <section name="Trivia">
-        - The Sniper has the largest tier 2 branch out of the 4, with 14 possible unique level 45 upgrades.
-        - The Sniper's bullet speed remains the same even after piercing an object.
-        - There are 2 achievements associated with this tank:
-            - for upgrading to Sniper, the achievement "Snipin'" is unlocked.
-            - for upgrading to Sniper 100 times, the achievement "Try some other                    classes too" is unlocked.
-        - Sniper was the seventh tank to be added to the game, after Octo Tank; with its ID being '6'.
-        - In one of the oldest versions, sniper used to be able to upgrade into itself, this however had no added benefits.
+        - There are 2 achievements associated with this tank.
+
+        - In one of the oldest versions, Sniper and Machine Gun were the only tanks that used to be able to upgrade into themselves, this however had no added benefits.
+
+        - The Sniper branch of the Class tree is the largest of the Tier 2 branches. A Sniper can become one of 14 Tier 4 Classes, as well as an additional 4 Tier 3 Classes.
     </section>
     
 </content>
