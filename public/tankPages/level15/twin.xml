@@ -1,7 +1,7 @@
 <content>
 
     <section name="Twin Info">
-        Twin tank is a tier 2 tank that can be selected upon reaching level 15, and at tier 3, can be upgraded into "Triple Shot", "Quad Tank" or "Twin Flank". It is a strong tank to use up to level 45 as it is often a much better option than the level 30 upgrades.
+        Twin tank is a tier 2 tank that can be selected upon reaching level 15, and at tier 3, can be upgraded into "Triple Shot", "Quad Tank" or "Twin Flank".
     </section>
 
     <section name="Meta Builds">
@@ -11,18 +11,23 @@
     </section>
 
     <section name="Strategy">
-        - Strong Against: Tanks with low Reload and Penetration, non-focused spammers, Drone tanks with lower skill.
-        - Weak Against: Skilled Drone users, focus spammers with higher DPS, skilled Destroyer/Hybrid/Annihilator users, Assassin branch at long range.
-        - The Twin has high DPS (Damage Per Second), but unlike the Quad Tank or Twin Flank upgrades, it only shoots in one direction, making it vulnerable to Bullets or other threats from behind.
-        - can shake their mouse to spread the bullets out, making them harder to dodge.
+        - Avoid Destroyer classes, good drone players and higher frontal DPS tanks.
+
+        - Attack lower DPS tanks, Snipers, Trappers, rammers and bullet spammers.
+
+        - Jittering your cursor slightly to where you're aiming spreads the bullets more, making them harder to dodge.
+
+        - Use your recoil to boost towards tanks to attack and away from attacking tanks as Movement Speed is necessary, be careful when doing this as they are vulnerable to the defender and other attackers.
     </section>
 
     <section name="Trivia">
-        - It used to have only one firing pattern, in which the Cannons shoot alternatively. It now has two different firing patterns, accessible by firing and stopping repeatedly.
         - During the pre release no other upgrade choices, and they would automatically upgrade from the basic Tank into a Twin at Level 15.
-        - The Twin tank has the smallest tier 2 branch out of the 4, with only 7 possible level 45 upgrades.
-        - You can stack the bullets to form a wall by manipulating the barrels to fire at the same time.
-        - In one of the oldest versions, Twin used to upgrade directly into "Triplet" at level 30, however this was changed due to it being overpowered, with Triple Shot taking its place.
+
+        - In one of the oldest versions, Twin used to upgrade directly into "Triplet" at level 30, however this was changed due to it being overpowered, with Triple Shot taking its place. This makes the Twin the only tank to have one of its Upgrades changed to an Upgrade of its Upgrade.
+
+        - It used to have only one firing pattern, in which the Cannons shoot alternatively. You can now manipulate how the barrels fire by shooting at random intervals.
+
+        - The Twin class has the smallest tier 2 branch out of the 4, with only 7 possible level 45 upgrades.
     </section>
     
 </content>
