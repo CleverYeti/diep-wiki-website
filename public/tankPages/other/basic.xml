@@ -1,7 +1,7 @@
 <content>
     <section name="Basic info">
         <description>
-            Basic tank is the first tank you spawn in as.
+            Basic tank is the tank you spawn as and can upgrade into "Twin", "Sniper", "Machine-Gun", "Flank Guard", "Smasher" and "Auto-Basic".
         </description>
     </section>
 
