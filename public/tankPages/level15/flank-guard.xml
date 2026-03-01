@@ -7,7 +7,7 @@
     <section name="Meta Builds">
         1. <build points="0/0/0/5/7/7/7/7"/>
         Alternatives:
-        2. <build points="0/0/0/7/7/6/6/7"/>
+        2. <build points="0/0/0/7/7/7/7/5"/>
     </section>
 
     <section name="Strategy">
@@ -28,6 +28,9 @@
         - Flank Guard only has two unique Tier 4 upgrades that only it can upgrade to, being Booster and Fighter. All other Tier 4 tanks are upgradable from other Tier 2 tanks.
 
         - Flank Guard’s back barrel is shorter than its main barrel, but they both have the same amount of penetration, damage, reload, and recoil.
+
+        - There was a recent bug where the achievements you got the for upgrading into Flank Guard and Tri-Angle were switched. This was because their ID numbers were switched to patch "Triflank" in sandbox, however the achievements were still attached to the original ID.
     </section>
     
 </content>
+
