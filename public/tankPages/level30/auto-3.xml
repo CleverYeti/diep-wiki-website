@@ -1,43 +1,39 @@
 <content>
 
-
-
-    <section name="Basic info">
+    <section name="Auto-3 info">
 
         <description>
-            Auto 3 is a nice lv 30 tank that doesn't require that much skill or micro to use effectively, however you should note that it has lots of bad matchups against various tanks
+            Auto-3 is a tier 3 tank that can be selected upon reaching level 30 using "Flank Guard", and at level 45, can be upgraded into "Auto-5" or "Auto-Gunner".
         </description>
 
     </section>
-
-
-
     <section name="Meta builds">
         <builds>
             1. <build points="0/0/0/5/7/7/7/7"/>
             Alternatives:
-            2. <build points="0/0/0/6/7/7/7/6"/>
-            3. <build points="0/0/0/6/7/6/7/7"/>
+            2. <build points="0/0/0/7/7/7/7/5"/>
+            3. <build points="0/0/0/7/7/7/5/7"/>
         </builds>
     </section>
-
-
-
     <section name="Strategy">
         <strategy>
-            N/A
+            - Use auto fire off to an advantage, the turrets have a larger FOV than the player.
+
+            - Aim with two of your turrets more then one, this is to gain extra DPS and recoil, aiming accurately isnt as important as the total directional DPS.
+
+            - Its minimal dps makes it bad at close range, keep your distance from players.
         </strategy>
     </section>
-
-
-
-    <section name="Trivia">
-
-        N/A
-
+    <section name="Trivia">     
+        - Auto 3 came from the Auto 4, a tank that existed for a short time and was then split into the Auto 3 and the Auto 5.
+        
+        - Previously, the Auto 3's AI could not attack Polygons or Drones.
+        
+        - This is one of the 2 classes that automatically have auto-spin activated other then Smasher class.
+        
+        - If you enable the Auto Spin function, it won’t affect the base Auto Spin speed. However, the tank will spin on the minimap faster than it does for real in the game.
+        
+        - Auto 3 on the upgrade button is not centered.
     </section>
-
-
-
 
 </content>
