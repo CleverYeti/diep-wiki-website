@@ -1,44 +1,48 @@
 <content>
 
-
-
-    <section name="Basic info">
+    <section name="Overseer info">
 
         <description>
-            Overseer is one of the stronger level 30 tanks in the game that does great on it's own but suffers against hunters with bullet spam tanks and triangle branch tanks.
+            Overseer is a tier 3 tank that can be selected upon reaching level 30 using "Sniper", and at level 45, can be upgraded into "Overlord" and "Necromancer", "Manager", "Overtrapper", "Battleship" and "Factory".
         </description>
 
     </section>
 
-
-
     <section name="Meta builds">
         <builds>
             1. <build points="0/2/3/7/7/7/0/7"/>
-            2. <build points="0/0/0/7/7/7/5/7"/>
             Alternatives:
-            3. <build points="0/0/2/7/7/7/3/7"/>
-            4. <build points="0/0/0/7/7/7/7/5"/>
+            2. <build points="0/0/0/7/7/7/5/7"/>
+            3. <build points="0/1/2/7/7/7/2/7"/>
         </builds>
     </section>
 
-
-
     <section name="Strategy">
         <strategy>
-            N/A
+        - If the enemy can only attack in one direction, surround them with your drones so they can't defend against all of them.
+
+        - Due to this tank having one of the lowest DPS in the game and being very vulnerable without defense keep your drones near you so they don't take unnecersary damage and neither do you.
+
+        - When in "bullet hell" keep your drones on you to take the least amount of damage possible till you're safe.
+
+        - Move into open spaces to minimise unnecersary damage.
+
+        - Don't send your drones into bullets, try to avoid bullets and go straight for the player.
+
+        - Keep chacking on yourself while attacking as most players only look where their drones are, and obliviously run into shapes and other bullets.
+
+        - Keep you're HP high, don't take unnecersary damage wait for regen when low HP before attacking.
+
+        - Keep distance from players and attack from afar, if being pursued send your drone clump towards the player avoiding the bullets to keep that distance.
         </strategy>
     </section>
 
-
-
     <section name="Trivia">
-
-        N/A
-
+        - Overseer is one of three tanks that have the highest number of upgrades alongside Tank and Destroyer, being 6.
+        
+        - Overseer’s upgrade button is green. If its upgrade button was the colour corresponding to the order that it was added in, like other tanks, then its upgrade button would be blue, as this tank was added before the Assassin.
+        
+        - On the old version, Overseer has 6 drones only.
     </section>
-
-
-
 
 </content>
