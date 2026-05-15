@@ -1,26 +1,28 @@
 <content>
 
-    <section name="Gunner Info">
-        Gunner is a tier 3 tank that can be selected upon reaching level 30 using "Machine Gun", and at level 45, can be upgraded into "Auto Gunner", "Gunner Trapper" and "Streamliner". It features 4 thin barrels at the front of the tank. This tank shoots tiny pellet-like bullets, which individually do minimal damage. This tank is often skipped due to being largely weaker than it's predecessor Machine Gun. Despite it's high reload, it has very weak recoil.
+    <section name="Destroyer Info">
+        Destroyer is a tier 3 tank that can be selected upon reaching level 30 using "Machine Gun", and at level 45, can be upgraded into "Hybrid", "Annihilator", "Skimmer", "Rocketeer", "Glider" and "Firework".
     </section>
 
     <section name="Meta Builds">
-        1. <build points="0/0/0/7/7/7/5/7"/>
-        2. <build points="0/0/0/7/7/7/6/6"/>
-   
+        1. <build points="0/0/0/7/6/6/7/7"/>
+        2. <build points="0/2/3/7/7/7/0/7"/>
+        Alternatives:
+        3. <build points="0/0/1/7/6/5/7/7"/>
     </section>
 
     <section name="Strategy">
-        - Circling your cursor in front of this tank allows you to increase the spread of it, covering more area and minimising your opponent's ability to escape unharmed.
+        - Use the high recoil to your advantage to dodge attacks and retreat quickly if needed.
        
+        - Using the "flicking" technique makes it hard for other players to know where you're aiming.
+
+        - Move vertically so ememies have less time to react.
+
+        - Get close to enemies before you shoot for a greater chance of killing, then retreat out of their fov to ambush again if they survived.
     </section>
 
     <section name="Trivia">
-        - In older versions, Gunner used to be able to upgrade into the old removed Auto Tank, and then Auto 5 when it was replaced.
-        - All Gunner upgrades are not unique to it, as they can be selected from other tanks.
-        - The achievement for upgrading to Gunner is "Eat those pellets".
-        - Gunner was the Twentieth tank to be added to the game, after Hunter; with its ID being '20', not counting removed tanks.
-
+        - Back in the early days of Diep.io, there was a bug that allowed the Machine Gun to upgrade into itself. The higher tiered versions of Machine Gun were referred to as Machine Gun II and Machine Gun III at tiers 3 and 4 respectively. These versions of Machine Gun had not changed from their original tank in terms of design whatsoever. Since at the time, the Machine Gun could upgrade into both itself and Destroyer, the tier 3 variant of Machine Gun could also upgrade into a variant of Destroyer. This Level 45 version was given the name "Mega Destroyer" by players, but was entirely identical to Destroyer. Machine Gun II was removed on May 24th 2016, taking Machine Gun III and Mega Destroyer along with it.
     </section>
     
 </content>
