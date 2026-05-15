@@ -1,27 +1,31 @@
 <content>
 
     <section name="Assassin info">
-        Assassin is a tier 3 tank that can be selected upon reaching level 30 using "Sniper", and at level 45, can be upgraded into "Ranger" or "Stalker". It features 1 barrel, slightly longer than the Sniper barrel. This tank has further reduced reload compared to Sniper, and further increased bullet speed and penetration, and FOV. This tank is often skipped due to its lower reload.
+        Assassin is a tier 3 tank that can be selected upon reaching level 30 using "Sniper", and at level 45, can be upgraded into "Ranger" or "Stalker".
     </section>
 
     <section name="Meta builds">
         1. <build points="0/0/0/5/7/7/7/7"/>
-        2. <build points="0/0/0/7/7/7/7/5"/>
+        2. <build points="0/0/0/7/7/7/5/7"/>
         Alternatives:
-        3. <build points="0/0/0/7/7/7/6/6"/>
-        4. <build points="0/6/6/7/7/7/0/0"/>
-        5. <build points="0/6/6/0/7/7/0/7"/>
+        3. <build points="0/0/0/7/7/7/7/5"/>
     </section>
 
     <section name="Strategy">
-        - With it's further increased FOV, you can hide outside another player's FOV and ambush/kill them without them having time to react.
+        - With it's further increased FOV, hide outside other player's FOV and ambush them without giving time to react.
        
+        - Change your position to get more chances at clear shots and for your enemies to be unsure on your whereabouts.
+        
+        - Due to its low DPS Assassin isn't good at close range, avoid getting into combat with tanks.
+        
+        - Players should also use their increased Field of View to locate players and pick their battles.
+
+        - Keep players on the edge of your screen. When they come towards you, retreat and when they retreat, move towards them. 
     </section>
 
     <section name="Trivia">
-        - The achievement for upgrading to Assassin is "Insert uncreative achievement name here".
-        - The Assassin was the sixteenth tank to be added to the game, after Penta Shot; with its ID being '15'.
         - Despite being added to the game after the Overseer, it's upgrade background is blue, which is for the first upgrade of a tank, while Overseer's is green.
+
         - In one of the oldest versions of the game, Assassin used to upgrade into itself at level 45, with no added benefits.
     </section>
     
