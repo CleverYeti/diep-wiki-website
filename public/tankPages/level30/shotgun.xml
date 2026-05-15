@@ -1,36 +1,34 @@
 <content>
 
-
-
-    <section name="Basic info">
+    <section name="Shotgun info">
         <description>
-            Please provide us the stats if you know them
+            Shotgun is a tier 3 tank that can be selected upon reaching level 30 using "Machine Gun", and at level 45, can be upgraded into "Pellet Shot" and "Dual Barrel".
         </description>
     </section>
 
-
-
     <section name="Meta builds">
         <builds>
-            N/A
+            1. <build points="0/0/0/7/7/7/5/7"/>
+            2. <build points="0/2/3/7/7/7/0/7"/>
+            Alternatives:
+            3. <build points="0/0/0/5/7/7/7/7"/>
         </builds>
     </section>
 
-
-
     <section name="Strategy">
         <strategy>
-            N/A
+            - Shotgun has a very long bullet lifelength, it can damage targets from distance.
+
+            - Move vertically so ememies have less time to react to your shot.
+
+            - Get close to enemies before you shoot for a greater chance of killing.
         </strategy>
     </section>
 
-
-
     <section name="Trivia">
-        N/A
+        - Shotgun used to be an upgrade of Sniper aswell as Machine Gun before being removed.
+
+        - Shotgun had the same FOV as Sniper, before being only upgradable via Machine Gun.
     </section>
-
-
-
 
 </content>
