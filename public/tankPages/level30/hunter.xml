@@ -1,43 +1,38 @@
 <content>
 
-
-
-    <section name="Basic info">
-
-        <description>
-            Hunter is a generally weak sniper branch tank that isn't especially recommended but can do alright on it's own.
-        </description>
-
+    <section name="Hunter info">
+        Hunter is a tier 3 tank that can be selected upon reaching level 30 using "Sniper", and at level 45, can be upgraded into "Predator" and "Streamliner".
     </section>
-
-
 
     <section name="Meta builds">
         <builds>
-            1. <build points="0/0/0/5/7/7/7/7"/>
+            1. <build points="0/0/0/7/7/7/5/7"/>
             Alternatives:
-            3. <build points="0/0/0/7/7/7/6/6"/>
-            4. <build points="0/0/0/7/7/7/7/5"/>
+            2. <build points="0/0/0/7/7/7/7/5"/>
+            3. <build points="0/0/0/5/7/7/7/7"/>
         </builds>
     </section>
 
-
-
     <section name="Strategy">
         <strategy>
-            N/A
+        - Change your position outside enemies FOV for more chances at clear shots and for your enemies to be unsure on your whereabouts.
+        
+        - Due to its low DPS Hunter isn't good at close range, avoid getting into combat with tanks.
+        
+        - Players should also use their increased Field of View to locate players and pick their battles.
+
+        - Keep players on the edge of your screen. When they come towards you, retreat and when they retreat, move towards them.
+
+        - Stack your bullets for greater damage, unstack them against low hp tanks for more projectiles to dodge.
         </strategy>
     </section>
 
-
-
     <section name="Trivia">
-
-        N/A
-
+        - The Hunter has gone through more changes to its fighting style than any other tank. Initially, it had two Bullets, both the size of the cannon which shot it and both quite fast. This was changed probably because of how powerful it would be. Later, it was modified to shoot a group of 6 pellets, all significantly slow. After a while, it was reverted to the original bigger-smaller two-shot tank again, except with smaller and slightly slower Bullets. It was part of the June 13, 2016 power buff as well. During the July 4 update, its firing style was reversed to match the new X Hunter firing style.
+        
+        - Hunter used to be able to upgrade into the original Predator before it was merged with X Hunter.
+        
+        - Before the new hunter branch updates, the Hunter shot 6 bullets (3 Gunner bullets and 3 Auto-Turret-sized bullets). This would eventually become the basis for the Shotgun branch.
     </section>
-
-
-
 
 </content>
