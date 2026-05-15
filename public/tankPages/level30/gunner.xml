@@ -1,28 +1,40 @@
 <content>
 
-    <section name="Destroyer Info">
-        Destroyer is a tier 3 tank that can be selected upon reaching level 30 using "Machine Gun", and at level 45, can be upgraded into "Hybrid", "Annihilator", "Skimmer", "Rocketeer", "Glider" and "Firework".
+    <section name="Gunner Info">
+        Gunner is a tier 3 tank that can be selected upon reaching level 30 using "Machine Gun", and at level 45, can be upgraded into "Auto Gunner", "Gunner Trapper" and "Streamliner".
     </section>
 
-    <section name="Meta Builds">
-        1. <build points="0/0/0/7/6/6/7/7"/>
-        2. <build points="0/2/3/7/7/7/0/7"/>
-        Alternatives:
-        3. <build points="0/0/1/7/6/5/7/7"/>
+    <section name="Meta builds">
+        <builds>
+            1. <build points="0/0/0/5/7/7/7/7"/>
+            Alternatives:
+            2. <build points="0/0/0/7/7/7/7/5"/>
+            3. <build points="0/0/0/7/7/7/5/7"/>
+        </builds>
     </section>
 
     <section name="Strategy">
-        - Use the high recoil to your advantage to dodge attacks and retreat quickly if needed.
-       
-        - Using the "flicking" technique makes it hard for other players to know where you're aiming.
+        - Gunner has surprisingly high DPS, use this to get close to enemies and push them away.
 
-        - Move vertically so ememies have less time to react.
+        - When attacking low health enemies spread your bullets in that area minimising possible dodges and increasing chances of hitting your target.
 
-        - Get close to enemies before you shoot for a greater chance of killing, then retreat out of their fov to ambush again if they survived.
+        - Gunner is a fragile tank prioritise keeping your health high over dealing damage.
     </section>
 
     <section name="Trivia">
-        - Back in the early days of Diep.io, there was a bug that allowed the Machine Gun to upgrade into itself. The higher tiered versions of Machine Gun were referred to as Machine Gun II and Machine Gun III at tiers 3 and 4 respectively. These versions of Machine Gun had not changed from their original tank in terms of design whatsoever. Since at the time, the Machine Gun could upgrade into both itself and Destroyer, the tier 3 variant of Machine Gun could also upgrade into a variant of Destroyer. This Level 45 version was given the name "Mega Destroyer" by players, but was entirely identical to Destroyer. Machine Gun II was removed on May 24th 2016, taking Machine Gun III and Mega Destroyer along with it.
+        - In older versions, Gunner used to be able to upgrade into the old removed Auto Tank, and then Auto 5 when it was replaced.
+        
+        - All Gunner upgrades are not unique to it, as they can be selected from other tanks.
+
+        - Previously, it could upgrade into the Auto Tank and its successor Auto 5.
+        
+        - Until July 31st, 2016, the Gunner was the only Tier 3 tank in Diep.io without an upgrade, but on August 1st, 2016, the Gunner received its first upgrade, the Auto Gunner, Later that day,  Gunner Trapper was also made an upgrade to it.
+        
+        - A few hours after the Streamliner was released, it was also made a Gunner upgrade.
+        
+        - Although its Bullets look like the smallest in-game, when compared a Level 45 Gunner with a Level 45 Gunner Trapper, the Bullets of Gunner Trapper are even smaller, but due to the fact that the Gunner is a Tier 3 tank, and it is mostly used at lower Levels, its Bullets are considered as the smallest. A Level 30 Gunner fires the smallest Bullets in-game as long as it’s not leveled up.
+        
+        - Machine Gun II could have been a possible placeholder for Gunner, as Machine Gun II was removed when Gunner was added.
     </section>
     
 </content>
