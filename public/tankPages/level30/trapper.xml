@@ -1,43 +1,36 @@
 <content>
 
-
-
-    <section name="Basic info">
-
+    <section name="Trapper info">
         <description>
-            Trapper is widely considered to be the worst tank in the game due to it's inability to kill or farm for points. Do not use unless you're going for some sort of challenge run.
+        Trapper is a tier 3 tank that can be selected upon reaching level 30 using "Sniper", and at level 45, can be upgraded into "Tri-Trapper", "Gunner Trapper", "Overtrapper", "Mega Trapper" and "Auto-Trapper".
         </description>
 
     </section>
 
-
-
     <section name="Meta builds">
         <builds>
-            1. <build points="0/0/0/5/7/7/7/7"/>
+            1. <build points="0/0/0/7/7/7/5/7"/>
             Alternatives:
-            2. <build points="0/0/0/7/7/7/5/7"/>
-            3. <build points="5/0/0/0/7/7/7/7"/>
+            2. <build points="0/0/0/5/7/7/7/7"/>
         </builds>
     </section>
 
-
-
     <section name="Strategy">
         <strategy>
-            N/A
+        - Always have some traps placed to retreat into, if you're forced out of your traps if possible stop placing traps as they'll lead players to you without a place to retreat to.
+
+        - Try not to get surrounded or attacked from multiple sides, force those players to be next to each other and damage each other where you may be able to pick one off.
+        
+        - Create a ring of traps to cut off possible exits.
+
+        - Stay near edges of the map for easier trapping, and less angles to be surrounded by.
         </strategy>
     </section>
 
-
-
     <section name="Trivia">
-
-        N/A
-
-    </section>
-
-
-
+        - This is the first tank to place “Traps” which are a unique type of ammunition. Its all next Upgrades also use Traps as their weapon.
+        
+        - It was one of the two tanks that had a name upon official release of the July 18th update, the other being Tri-Trapper. Mega Trapper was named later that day.
+        </section>
 
 </content>
