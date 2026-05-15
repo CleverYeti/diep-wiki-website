@@ -1,30 +1,28 @@
 <content>
 
     <section name="Destroyer Info">
-        Destroyer is a tier 3 tank that can be selected upon reaching level 30 using "Machine Gun", and at level 45, can be upgraded into "Hybrid", "Annihilator", "Skimmer", "Rocketeer" and "Glider". It features 1 cannon (wide barrel) at the front of the tank. This tank shoots large bullet, (roughly the size of a level 1 tank, when at level 30). It can 1 shot any tank that has no health or body upgrades. The cannon also has very large recoil making this tank a popular rammer option.
+        Destroyer is a tier 3 tank that can be selected upon reaching level 30 using "Machine Gun", and at level 45, can be upgraded into "Hybrid", "Annihilator", "Skimmer", "Rocketeer", "Glider" and "Firework".
     </section>
 
     <section name="Meta Builds">
-        1. <build points="0/0/0/7/7/7/5/7"/>
-        2. <build points="5/7/7/0/0/0/7/7"/>
+        1. <build points="0/0/0/7/6/6/7/7"/>
+        2. <build points="0/2/3/7/7/7/0/7"/>
         Alternatives:
-        3. <build points="0/0/0/7/7/7/6/6"/>
-        4. <build points="0/0/0/7/6/6/7/7"/>
-   
+        3. <build points="0/0/1/7/6/5/7/7"/>
     </section>
 
     <section name="Strategy">
-        - Due to the high recoil, this tank is great for ambushing; shoot a bullet in the opposite direction of the player you want to attack to get close to them, then shot another bullet to 1 shot them
-                o or alternatively, ram them if you have rammer points.
+        - Use the high recoil to your advantage to dodge attacks and retreat quickly if needed.
        
+        - Using the "flicking" technique makes it hard for other players to know where you're aiming.
+
+        - Move vertically so ememies have less time to react.
+
+        - Get close to enemies before you shoot for a greater chance of killing, then retreat out of their fov to ambush again if they survived.
     </section>
 
     <section name="Trivia">
-        - In older versions, Destroyer was able to upgrade into itself at level 45. This however had no added benefits.
-                o At the same point, Machine Gun II (a level 30 upgrade from Machine Gun, with no added benefits) was also able to upgrade directly to Destroyer at 45.
-        - The achievement for upgrading to Destroyer is "BOOM you're dead".
-        - Destroyer was the eleventh tank to be added to the game, after Tri-Angle; with its ID being '10'.
-
+        - Back in the early days of Diep.io, there was a bug that allowed the Machine Gun to upgrade into itself. The higher tiered versions of Machine Gun were referred to as Machine Gun II and Machine Gun III at tiers 3 and 4 respectively. These versions of Machine Gun had not changed from their original tank in terms of design whatsoever. Since at the time, the Machine Gun could upgrade into both itself and Destroyer, the tier 3 variant of Machine Gun could also upgrade into a variant of Destroyer. This Level 45 version was given the name "Mega Destroyer" by players, but was entirely identical to Destroyer. Machine Gun II was removed on May 24th 2016, taking Machine Gun III and Mega Destroyer along with it.
     </section>
     
 </content>
